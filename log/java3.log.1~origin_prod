@@ -1,0 +1,70 @@
+2020.05.12 11:40:29,806	WARNING	1	org.l2jmobius.commons.util.PropertiesParser	[Event.ini] missing property for key: INSTANCED_EVENT_MIN_PLAYERS_IN_TEAMS using default value: 1
+2020.05.12 11:40:29,909	INFO	1	org.l2jmobius.commons.util.IXmlReader	Network Config: ipconfig.xml doesn't exists using automatic configuration...
+2020.05.12 11:40:30,190	INFO	1	org.l2jmobius.commons.util.IXmlReader	Network Config: Adding new subnet: 127.0.0.0/8 address: 127.0.0.1
+2020.05.12 11:40:30,199	INFO	1	org.l2jmobius.commons.util.IXmlReader	Network Config: Adding new subnet: 169.254.0.0/16 address: 169.254.57.29
+2020.05.12 11:40:30,204	INFO	1	org.l2jmobius.commons.util.IXmlReader	Network Config: Adding new subnet: 217.182.197.0/24 address: 217.182.197.173
+2020.05.12 11:40:30,217	INFO	1	org.l2jmobius.commons.util.IXmlReader	Network Config: Adding new subnet: 0.0.0.0/0 address: 217.182.197.173
+2020.05.12 11:40:30,252	WARNING	1	org.l2jmobius.commons.util.PropertiesParser	[Rates.ini] Invalid value specified for key: RateQuestRewardXP specified value: 1* should be "float" using default value: 1.0
+2020.05.12 11:40:30,260	INFO	1	org.l2jmobius.Config	Loaded 1 Filter Words.
+2020.05.12 11:40:30,438	INFO	1	org.l2jmobius.gameserver.GameServer	------------------------------------------------=[ Database ]
+2020.05.12 11:40:30,534	INFO	1	org.l2jmobius.commons.database.DatabaseFactory	Database: Initialized.
+2020.05.12 11:40:30,534	INFO	1	org.l2jmobius.gameserver.GameServer	----------------------------------------------=[ ThreadPool ]
+2020.05.12 11:40:30,539	INFO	1	org.l2jmobius.commons.concurrent.ThreadPool	ThreadPool: Initialized
+2020.05.12 11:40:30,540	INFO	1	org.l2jmobius.commons.concurrent.ThreadPool	...scheduled pool executor with 40 total threads.
+2020.05.12 11:40:30,540	INFO	1	org.l2jmobius.commons.concurrent.ThreadPool	...instant pool executor with 20 total threads.
+2020.05.12 11:40:30,540	INFO	1	org.l2jmobius.gameserver.GameServer	-----------------------------------------------=[ IdFactory ]
+2020.05.12 11:40:30,544	INFO	1	org.l2jmobius.gameserver.idfactory.IdFactory	Updated characters online status.
+2020.05.12 11:40:30,561	INFO	1	org.l2jmobius.gameserver.idfactory.IdFactory	IdFactory: Cleaned 0 elements from database in 0 seconds.
+2020.05.12 11:40:30,571	INFO	1	org.l2jmobius.gameserver.idfactory.IdFactory	IdFactory: Cleaned 0 expired timestamps from database.
+2020.05.12 11:40:30,592	INFO	1	org.l2jmobius.gameserver.idfactory.IdFactory	IdFactory: 411648 id's available.
+2020.05.12 11:40:30,593	INFO	1	org.l2jmobius.gameserver.GameServer	----------------------------------------=[ Scripting Engine ]
+2020.05.12 11:40:30,656	INFO	25	org.l2jmobius.gameserver.model.World	World: (288 by 272) World Region Grid set up.
+2020.05.12 11:40:30,787	INFO	1	org.l2jmobius.gameserver.scripting.ScriptEngineManager	Loaded 799 files to exclude.
+2020.05.12 11:40:30,788	INFO	1	org.l2jmobius.gameserver.GameServer	--------------------------------------------------=[ Telnet ]
+2020.05.12 11:40:30,928	INFO	1	org.l2jmobius.gameserver.network.telnet.TelnetServer	Telnet server is currently disabled.
+2020.05.12 11:40:30,928	INFO	1	org.l2jmobius.gameserver.GameServer	---------------------------------------------------=[ World ]
+2020.05.12 11:40:30,930	INFO	91	org.l2jmobius.gameserver.GameTimeController	GameTimeController: Started.
+2020.05.12 11:40:31,221	INFO	1	org.l2jmobius.gameserver.instancemanager.MapRegionManager	MapRegionManager: Loaded 61 map regions.
+2020.05.12 11:40:31,229	INFO	1	org.l2jmobius.gameserver.instancemanager.ZoneManager	ZoneManager 19 by 18 Zone Region Grid set up.
+2020.05.12 11:40:31,438	CONFIG	1	org.l2jmobius.gameserver.instancemanager.ZoneManager	ZoneManager: Caution: Zone (80013) from file: event_zones.xml overrides previous definition.
+2020.05.12 11:40:31,439	CONFIG	1	org.l2jmobius.gameserver.instancemanager.ZoneManager	ZoneManager: Caution: Zone (80014) from file: event_zones.xml overrides previous definition.
+2020.05.12 11:40:31,440	CONFIG	1	org.l2jmobius.gameserver.instancemanager.ZoneManager	ZoneManager: Caution: Zone (80015) from file: event_zones.xml overrides previous definition.
+2020.05.12 11:40:31,440	CONFIG	1	org.l2jmobius.gameserver.instancemanager.ZoneManager	ZoneManager: Caution: Zone (80016) from file: event_zones.xml overrides previous definition.
+2020.05.12 11:40:31,441	CONFIG	1	org.l2jmobius.gameserver.instancemanager.ZoneManager	ZoneManager: Caution: Zone (80018) from file: event_zones.xml overrides previous definition.
+2020.05.12 11:40:31,441	CONFIG	1	org.l2jmobius.gameserver.instancemanager.ZoneManager	ZoneManager: Caution: Zone (80020) from file: event_zones.xml overrides previous definition.
+2020.05.12 11:40:31,441	CONFIG	1	org.l2jmobius.gameserver.instancemanager.ZoneManager	ZoneManager: Caution: Zone (80022) from file: event_zones.xml overrides previous definition.
+2020.05.12 11:40:31,442	CONFIG	1	org.l2jmobius.gameserver.instancemanager.ZoneManager	ZoneManager: Caution: Zone (80023) from file: event_zones.xml overrides previous definition.
+2020.05.12 11:40:31,443	CONFIG	1	org.l2jmobius.gameserver.instancemanager.ZoneManager	ZoneManager: Caution: Zone (80027) from file: event_zones.xml overrides previous definition.
+2020.05.12 11:40:31,443	CONFIG	1	org.l2jmobius.gameserver.instancemanager.ZoneManager	ZoneManager: Caution: Zone (80028) from file: event_zones.xml overrides previous definition.
+2020.05.12 11:40:31,443	CONFIG	1	org.l2jmobius.gameserver.instancemanager.ZoneManager	ZoneManager: Caution: Zone (80029) from file: event_zones.xml overrides previous definition.
+2020.05.12 11:40:31,444	CONFIG	1	org.l2jmobius.gameserver.instancemanager.ZoneManager	ZoneManager: Caution: Zone (80031) from file: event_zones.xml overrides previous definition.
+2020.05.12 11:40:31,444	CONFIG	1	org.l2jmobius.gameserver.instancemanager.ZoneManager	ZoneManager: Caution: Zone (80033) from file: event_zones.xml overrides previous definition.
+2020.05.12 11:40:31,720	INFO	1	org.l2jmobius.gameserver.instancemanager.ZoneManager	ZoneManager: Loaded 34 zone classes and 2908 zones.
+2020.05.12 11:40:31,721	INFO	1	org.l2jmobius.gameserver.instancemanager.ZoneManager	ZoneManager: Loaded 16 NPC spawn territoriers.
+2020.05.12 11:40:31,723	INFO	1	org.l2jmobius.gameserver.instancemanager.ZoneManager	ZoneManager: Last static id 210110.
+2020.05.12 11:40:31,936	INFO	1	org.l2jmobius.gameserver.data.xml.impl.DoorData	DoorData: Loaded 1516 Door Templates for 24 regions.
+2020.05.12 11:40:31,943	INFO	1	FenceData	FenceData: Loaded 1 fences.
+2020.05.12 11:40:31,949	INFO	1	org.l2jmobius.gameserver.instancemanager.GlobalVariablesManager	GlobalVariablesManager: Loaded 9 variables.
+2020.05.12 11:40:31,950	INFO	1	org.l2jmobius.gameserver.GameServer	----------------------------------------------------=[ Data ]
+2020.05.12 11:40:31,959	INFO	1	org.l2jmobius.gameserver.data.xml.impl.ActionData	ActionData: Loaded 216 player actions.
+2020.05.12 11:40:31,991	INFO	1	org.l2jmobius.gameserver.data.xml.impl.CategoryData	CategoryData: Loaded 215 categories.
+2020.05.12 11:40:31,996	INFO	1	org.l2jmobius.gameserver.data.xml.impl.SecondaryAuthData	SecondaryAuthData: Loaded 328 forbidden passwords.
+2020.05.12 11:40:32,027	WARNING	1	org.l2jmobius.gameserver.engines.DocumentEngine	Dir C:\Users\Administrator\Desktop\tenkai_pow\data\stats\items\custom does not exist.
+2020.05.12 11:40:32,140	SEVERE	1	org.l2jmobius.gameserver.engines.items.DocumentItem	Error loading file C:\Users\Administrator\Desktop\tenkai_pow\data\stats\items\00900-00999.xml
+2020.05.12 11:40:35,138	INFO	1	org.l2jmobius.gameserver.datatables.ItemTable	ItemTable: Highest item id used: 91746
+2020.05.12 11:40:35,154	INFO	1	org.l2jmobius.gameserver.datatables.ItemTable	ItemTable: Loaded 22582 Etc Items
+2020.05.12 11:40:35,155	INFO	1	org.l2jmobius.gameserver.datatables.ItemTable	ItemTable: Loaded 12232 Armor Items
+2020.05.12 11:40:35,155	INFO	1	org.l2jmobius.gameserver.datatables.ItemTable	ItemTable: Loaded 9007 Weapon Items
+2020.05.12 11:40:35,156	INFO	1	org.l2jmobius.gameserver.datatables.ItemTable	ItemTable: Loaded 43821 Items in total.
+2020.05.12 11:40:35,174	INFO	1	org.l2jmobius.gameserver.data.xml.impl.CombinationItemsData	CombinationItemsData: Loaded 1366 combinations.
+2020.05.12 11:40:35,203	INFO	1	org.l2jmobius.gameserver.data.xml.impl.SayuneData	SayuneData: Loaded 71 maps.
+2020.05.12 11:40:36,374	INFO	1	handlers.DailyMissionMasterHandler	DailyMissionMasterHandler:  Loaded 10 handlers.
+2020.05.12 11:40:36,432	INFO	1	org.l2jmobius.gameserver.data.xml.impl.DailyMissionData	DailyMissionData: Loaded 46 one day rewards.
+2020.05.12 11:40:36,432	INFO	1	org.l2jmobius.gameserver.GameServer	--------------------------------------------------=[ Skills ]
+2020.05.12 11:40:38,068	INFO	1	handlers.EffectMasterHandler	EffectMasterHandler: Loaded 353 effect handlers.
+2020.05.12 11:40:38,092	INFO	1	org.l2jmobius.gameserver.data.xml.impl.EnchantSkillGroupsData	EnchantSkillGroupsData: Loaded 20 enchant routes, max enchant set to 20.
+2020.05.12 11:40:39,998	WARNING	1	org.l2jmobius.commons.util.IXmlReader	Could not parse file: 04100-04199.xml at line: 1, column: 1 :
+2020.05.12 11:40:40,002	WARNING	1	org.l2jmobius.commons.util.IXmlReader	Could not parse file: 04200-04299.xml at line: 1, column: 1 :
+2020.05.12 11:40:41,847	WARNING	23	org.l2jmobius.gameserver.Shutdown	Server scheduled restart issued shutdown command. Shutdown in 1 seconds!
+2020.05.12 11:40:42,865	WARNING	94	org.l2jmobius.gameserver.Shutdown	GM shutdown countdown is over. shutting down NOW!
+2020.05.12 11:40:42,933	WARNING	1	org.l2jmobius.commons.util.IXmlReader	Could not parse file: 19400-19499.xml at line: 1, column: 1 :

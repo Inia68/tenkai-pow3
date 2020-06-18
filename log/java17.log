@@ -1,0 +1,234 @@
+2020.06.12 17:19:28,392	WARNING	1	org.l2jmobius.commons.util.PropertiesParser	[Event.ini] missing property for key: INSTANCED_EVENT_MIN_PLAYERS_IN_TEAMS using default value: 1
+2020.06.12 17:19:28,442	INFO	1	org.l2jmobius.commons.util.IXmlReader	Network Config: ipconfig.xml doesn't exists using automatic configuration...
+2020.06.12 17:19:28,710	INFO	1	org.l2jmobius.commons.util.IXmlReader	Network Config: Adding new subnet: 127.0.0.0/8 address: 127.0.0.1
+2020.06.12 17:19:28,716	INFO	1	org.l2jmobius.commons.util.IXmlReader	Network Config: Adding new subnet: 116.202.247.0/26 address: 116.202.247.51
+2020.06.12 17:19:28,719	INFO	1	org.l2jmobius.commons.util.IXmlReader	Network Config: Adding new subnet: 0.0.0.0/0 address: 116.202.247.51
+2020.06.12 17:19:28,744	WARNING	1	org.l2jmobius.commons.util.PropertiesParser	[Rates.ini] Invalid value specified for key: RateQuestRewardXP specified value: 1* should be "float" using default value: 1.0
+2020.06.12 17:19:28,749	INFO	1	org.l2jmobius.Config	Loaded 1 Filter Words.
+2020.06.12 17:19:28,882	INFO	25	org.l2jmobius.gameserver.model.World	World: (288 by 272) World Region Grid set up.
+2020.06.12 17:19:28,888	INFO	1	org.l2jmobius.gameserver.GameServer	------------------------------------------------=[ Database ]
+2020.06.12 17:19:28,982	INFO	1	org.l2jmobius.commons.database.DatabaseFactory	Database: Initialized.
+2020.06.12 17:19:28,982	INFO	1	org.l2jmobius.gameserver.GameServer	----------------------------------------------=[ ThreadPool ]
+2020.06.12 17:19:28,988	INFO	1	org.l2jmobius.commons.concurrent.ThreadPool	ThreadPool: Initialized
+2020.06.12 17:19:28,989	INFO	1	org.l2jmobius.commons.concurrent.ThreadPool	...scheduled pool executor with 40 total threads.
+2020.06.12 17:19:28,990	INFO	1	org.l2jmobius.commons.concurrent.ThreadPool	...instant pool executor with 20 total threads.
+2020.06.12 17:19:28,990	INFO	1	org.l2jmobius.gameserver.GameServer	-----------------------------------------------=[ IdFactory ]
+2020.06.12 17:19:28,994	INFO	1	org.l2jmobius.gameserver.idfactory.IdFactory	Updated characters online status.
+2020.06.12 17:19:29,019	INFO	1	org.l2jmobius.gameserver.idfactory.IdFactory	IdFactory: Cleaned 0 elements from database in 0 seconds.
+2020.06.12 17:19:29,025	INFO	1	org.l2jmobius.gameserver.idfactory.IdFactory	IdFactory: Cleaned 1 expired timestamps from database.
+2020.06.12 17:19:29,042	WARNING	1	org.l2jmobius.gameserver.idfactory.IdFactory	IdFactory: Object ID 0 in DB is less than minimum ID of 268435456
+2020.06.12 17:19:29,044	INFO	1	org.l2jmobius.gameserver.idfactory.IdFactory	IdFactory: 411648 id's available.
+2020.06.12 17:19:29,044	INFO	1	org.l2jmobius.gameserver.GameServer	----------------------------------------=[ Scripting Engine ]
+2020.06.12 17:19:29,215	INFO	1	org.l2jmobius.gameserver.scripting.ScriptEngineManager	Loaded 803 files to exclude.
+2020.06.12 17:19:29,215	INFO	1	org.l2jmobius.gameserver.GameServer	--------------------------------------------------=[ Telnet ]
+2020.06.12 17:19:29,346	INFO	1	org.l2jmobius.gameserver.network.telnet.TelnetServer	Telnet server is currently disabled.
+2020.06.12 17:19:29,346	INFO	1	org.l2jmobius.gameserver.GameServer	---------------------------------------------------=[ World ]
+2020.06.12 17:19:29,348	INFO	91	org.l2jmobius.gameserver.GameTimeController	GameTimeController: Started.
+2020.06.12 17:19:29,532	INFO	1	org.l2jmobius.gameserver.instancemanager.MapRegionManager	MapRegionManager: Loaded 61 map regions.
+2020.06.12 17:19:29,537	INFO	1	org.l2jmobius.gameserver.instancemanager.ZoneManager	ZoneManager 19 by 18 Zone Region Grid set up.
+2020.06.12 17:19:29,702	CONFIG	1	org.l2jmobius.gameserver.instancemanager.ZoneManager	ZoneManager: Caution: Zone (80013) from file: event_zones.xml overrides previous definition.
+2020.06.12 17:19:29,703	CONFIG	1	org.l2jmobius.gameserver.instancemanager.ZoneManager	ZoneManager: Caution: Zone (80014) from file: event_zones.xml overrides previous definition.
+2020.06.12 17:19:29,703	CONFIG	1	org.l2jmobius.gameserver.instancemanager.ZoneManager	ZoneManager: Caution: Zone (80015) from file: event_zones.xml overrides previous definition.
+2020.06.12 17:19:29,704	CONFIG	1	org.l2jmobius.gameserver.instancemanager.ZoneManager	ZoneManager: Caution: Zone (80016) from file: event_zones.xml overrides previous definition.
+2020.06.12 17:19:29,704	CONFIG	1	org.l2jmobius.gameserver.instancemanager.ZoneManager	ZoneManager: Caution: Zone (80018) from file: event_zones.xml overrides previous definition.
+2020.06.12 17:19:29,704	CONFIG	1	org.l2jmobius.gameserver.instancemanager.ZoneManager	ZoneManager: Caution: Zone (80020) from file: event_zones.xml overrides previous definition.
+2020.06.12 17:19:29,704	CONFIG	1	org.l2jmobius.gameserver.instancemanager.ZoneManager	ZoneManager: Caution: Zone (80022) from file: event_zones.xml overrides previous definition.
+2020.06.12 17:19:29,705	CONFIG	1	org.l2jmobius.gameserver.instancemanager.ZoneManager	ZoneManager: Caution: Zone (80023) from file: event_zones.xml overrides previous definition.
+2020.06.12 17:19:29,705	CONFIG	1	org.l2jmobius.gameserver.instancemanager.ZoneManager	ZoneManager: Caution: Zone (80027) from file: event_zones.xml overrides previous definition.
+2020.06.12 17:19:29,706	CONFIG	1	org.l2jmobius.gameserver.instancemanager.ZoneManager	ZoneManager: Caution: Zone (80028) from file: event_zones.xml overrides previous definition.
+2020.06.12 17:19:29,706	CONFIG	1	org.l2jmobius.gameserver.instancemanager.ZoneManager	ZoneManager: Caution: Zone (80029) from file: event_zones.xml overrides previous definition.
+2020.06.12 17:19:29,706	CONFIG	1	org.l2jmobius.gameserver.instancemanager.ZoneManager	ZoneManager: Caution: Zone (80031) from file: event_zones.xml overrides previous definition.
+2020.06.12 17:19:29,707	CONFIG	1	org.l2jmobius.gameserver.instancemanager.ZoneManager	ZoneManager: Caution: Zone (80033) from file: event_zones.xml overrides previous definition.
+2020.06.12 17:19:30,002	INFO	1	org.l2jmobius.gameserver.instancemanager.ZoneManager	ZoneManager: Loaded 36 zone classes and 2895 zones.
+2020.06.12 17:19:30,002	INFO	1	org.l2jmobius.gameserver.instancemanager.ZoneManager	ZoneManager: Loaded 16 NPC spawn territoriers.
+2020.06.12 17:19:30,005	INFO	1	org.l2jmobius.gameserver.instancemanager.ZoneManager	ZoneManager: Last static id 210110.
+2020.06.12 17:19:30,288	INFO	1	org.l2jmobius.gameserver.data.xml.impl.DoorData	DoorData: Loaded 1516 Door Templates for 24 regions.
+2020.06.12 17:19:30,297	INFO	1	FenceData	FenceData: Loaded 1 fences.
+2020.06.12 17:19:30,308	INFO	1	org.l2jmobius.gameserver.instancemanager.GlobalVariablesManager	GlobalVariablesManager: Loaded 13 variables.
+2020.06.12 17:19:30,308	INFO	1	org.l2jmobius.gameserver.GameServer	----------------------------------------------------=[ Data ]
+2020.06.12 17:19:30,318	INFO	1	org.l2jmobius.gameserver.data.xml.impl.ActionData	ActionData: Loaded 216 player actions.
+2020.06.12 17:19:30,353	INFO	1	org.l2jmobius.gameserver.data.xml.impl.CategoryData	CategoryData: Loaded 215 categories.
+2020.06.12 17:19:30,362	INFO	1	org.l2jmobius.gameserver.data.xml.impl.SecondaryAuthData	SecondaryAuthData: Loaded 328 forbidden passwords.
+2020.06.12 17:19:30,424	WARNING	1	org.l2jmobius.gameserver.engines.DocumentEngine	Dir C:\Users\Administrator\IdeaProjects\tenkai_pow3\data\stats\items\custom does not exist.
+2020.06.12 17:19:32,876	WARNING	1	org.l2jmobius.gameserver.engines.items.DocumentItem	Cannot create item 81160
+2020.06.12 17:19:32,889	WARNING	1	org.l2jmobius.gameserver.engines.items.DocumentItem	Cannot create item 81172
+2020.06.12 17:19:32,914	INFO	1	org.l2jmobius.gameserver.datatables.ItemTable	ItemTable: Highest item id used: 91746
+2020.06.12 17:19:32,924	INFO	1	org.l2jmobius.gameserver.datatables.ItemTable	ItemTable: Loaded 22639 Etc Items
+2020.06.12 17:19:32,925	INFO	1	org.l2jmobius.gameserver.datatables.ItemTable	ItemTable: Loaded 12312 Armor Items
+2020.06.12 17:19:32,925	INFO	1	org.l2jmobius.gameserver.datatables.ItemTable	ItemTable: Loaded 9033 Weapon Items
+2020.06.12 17:19:32,926	INFO	1	org.l2jmobius.gameserver.datatables.ItemTable	ItemTable: Loaded 43984 Items in total.
+2020.06.12 17:19:32,970	INFO	1	org.l2jmobius.gameserver.data.xml.impl.CombinationItemsData	CombinationItemsData: Loaded 1377 combinations.
+2020.06.12 17:19:33,000	INFO	1	org.l2jmobius.gameserver.data.xml.impl.SayuneData	SayuneData: Loaded 71 maps.
+2020.06.12 17:19:34,207	INFO	1	handlers.DailyMissionMasterHandler	DailyMissionMasterHandler:  Loaded 10 handlers.
+2020.06.12 17:19:34,243	INFO	1	org.l2jmobius.gameserver.data.xml.impl.DailyMissionData	DailyMissionData: Loaded 46 one day rewards.
+2020.06.12 17:19:34,243	INFO	1	org.l2jmobius.gameserver.GameServer	--------------------------------------------------=[ Skills ]
+2020.06.12 17:19:35,531	INFO	1	handlers.EffectMasterHandler	EffectMasterHandler: Loaded 353 effect handlers.
+2020.06.12 17:19:35,541	INFO	1	org.l2jmobius.gameserver.data.xml.impl.EnchantSkillGroupsData	EnchantSkillGroupsData: Loaded 20 enchant routes, max enchant set to 20.
+2020.06.12 17:26:06,105	WARNING	1	org.l2jmobius.gameserver.data.xml.impl.SkillData	SkillData: Failed loading effect for Skill Id[13065] Level[1] SubLevel[0] Effect Scope[GENERAL] Effect Name[DefenceTrait]
+2020.06.12 17:26:06,109	WARNING	1	org.l2jmobius.gameserver.data.xml.impl.SkillData	SkillData: Missing effect for Skill Id[13065] Level[1] SubLevel[0] Effect Scope[GENERAL] Effect Name[AttributeDefence]
+2020.06.12 17:26:06,110	WARNING	1	org.l2jmobius.gameserver.data.xml.impl.SkillData	SkillData: Missing effect for Skill Id[13065] Level[1] SubLevel[0] Effect Scope[GENERAL] Effect Name[AttributeDefence]
+2020.06.12 17:26:06,111	WARNING	1	org.l2jmobius.gameserver.data.xml.impl.SkillData	SkillData: Missing effect for Skill Id[13065] Level[1] SubLevel[0] Effect Scope[GENERAL] Effect Name[AttributeDefence]
+2020.06.12 17:26:06,111	WARNING	1	org.l2jmobius.gameserver.data.xml.impl.SkillData	SkillData: Missing effect for Skill Id[13065] Level[1] SubLevel[0] Effect Scope[GENERAL] Effect Name[AttributeDefence]
+2020.06.12 17:26:06,111	WARNING	1	org.l2jmobius.gameserver.data.xml.impl.SkillData	SkillData: Missing effect for Skill Id[13065] Level[1] SubLevel[0] Effect Scope[GENERAL] Effect Name[AttributeDefence]
+2020.06.12 17:26:06,112	WARNING	1	org.l2jmobius.gameserver.data.xml.impl.SkillData	SkillData: Missing effect for Skill Id[13065] Level[1] SubLevel[0] Effect Scope[GENERAL] Effect Name[AttributeDefence]
+2020.06.12 17:26:06,112	WARNING	1	org.l2jmobius.gameserver.data.xml.impl.SkillData	SkillData: Failed loading effect for Skill Id[13065] Level[2] SubLevel[0] Effect Scope[GENERAL] Effect Name[DefenceTrait]
+2020.06.12 17:26:06,115	WARNING	1	org.l2jmobius.gameserver.data.xml.impl.SkillData	SkillData: Missing effect for Skill Id[13065] Level[2] SubLevel[0] Effect Scope[GENERAL] Effect Name[AttributeDefence]
+2020.06.12 17:26:06,115	WARNING	1	org.l2jmobius.gameserver.data.xml.impl.SkillData	SkillData: Missing effect for Skill Id[13065] Level[2] SubLevel[0] Effect Scope[GENERAL] Effect Name[AttributeDefence]
+2020.06.12 17:26:06,116	WARNING	1	org.l2jmobius.gameserver.data.xml.impl.SkillData	SkillData: Missing effect for Skill Id[13065] Level[2] SubLevel[0] Effect Scope[GENERAL] Effect Name[AttributeDefence]
+2020.06.12 17:26:06,116	WARNING	1	org.l2jmobius.gameserver.data.xml.impl.SkillData	SkillData: Missing effect for Skill Id[13065] Level[2] SubLevel[0] Effect Scope[GENERAL] Effect Name[AttributeDefence]
+2020.06.12 17:26:06,117	WARNING	1	org.l2jmobius.gameserver.data.xml.impl.SkillData	SkillData: Missing effect for Skill Id[13065] Level[2] SubLevel[0] Effect Scope[GENERAL] Effect Name[AttributeDefence]
+2020.06.12 17:26:06,118	WARNING	1	org.l2jmobius.gameserver.data.xml.impl.SkillData	SkillData: Missing effect for Skill Id[13065] Level[2] SubLevel[0] Effect Scope[GENERAL] Effect Name[AttributeDefence]
+2020.06.12 17:26:06,119	WARNING	1	org.l2jmobius.gameserver.data.xml.impl.SkillData	SkillData: Failed loading effect for Skill Id[13065] Level[3] SubLevel[0] Effect Scope[GENERAL] Effect Name[DefenceTrait]
+2020.06.12 17:26:06,123	WARNING	1	org.l2jmobius.gameserver.data.xml.impl.SkillData	SkillData: Missing effect for Skill Id[13065] Level[3] SubLevel[0] Effect Scope[GENERAL] Effect Name[AttributeDefence]
+2020.06.12 17:26:06,123	WARNING	1	org.l2jmobius.gameserver.data.xml.impl.SkillData	SkillData: Missing effect for Skill Id[13065] Level[3] SubLevel[0] Effect Scope[GENERAL] Effect Name[AttributeDefence]
+2020.06.12 17:26:06,124	WARNING	1	org.l2jmobius.gameserver.data.xml.impl.SkillData	SkillData: Missing effect for Skill Id[13065] Level[3] SubLevel[0] Effect Scope[GENERAL] Effect Name[AttributeDefence]
+2020.06.12 17:26:06,124	WARNING	1	org.l2jmobius.gameserver.data.xml.impl.SkillData	SkillData: Missing effect for Skill Id[13065] Level[3] SubLevel[0] Effect Scope[GENERAL] Effect Name[AttributeDefence]
+2020.06.12 17:26:06,124	WARNING	1	org.l2jmobius.gameserver.data.xml.impl.SkillData	SkillData: Missing effect for Skill Id[13065] Level[3] SubLevel[0] Effect Scope[GENERAL] Effect Name[AttributeDefence]
+2020.06.12 17:26:06,124	WARNING	1	org.l2jmobius.gameserver.data.xml.impl.SkillData	SkillData: Missing effect for Skill Id[13065] Level[3] SubLevel[0] Effect Scope[GENERAL] Effect Name[AttributeDefence]
+2020.06.12 17:26:06,125	WARNING	1	org.l2jmobius.gameserver.data.xml.impl.SkillData	SkillData: Failed loading effect for Skill Id[13065] Level[4] SubLevel[0] Effect Scope[GENERAL] Effect Name[DefenceTrait]
+2020.06.12 17:26:06,127	WARNING	1	org.l2jmobius.gameserver.data.xml.impl.SkillData	SkillData: Missing effect for Skill Id[13065] Level[4] SubLevel[0] Effect Scope[GENERAL] Effect Name[AttributeDefence]
+2020.06.12 17:26:06,127	WARNING	1	org.l2jmobius.gameserver.data.xml.impl.SkillData	SkillData: Missing effect for Skill Id[13065] Level[4] SubLevel[0] Effect Scope[GENERAL] Effect Name[AttributeDefence]
+2020.06.12 17:26:06,127	WARNING	1	org.l2jmobius.gameserver.data.xml.impl.SkillData	SkillData: Missing effect for Skill Id[13065] Level[4] SubLevel[0] Effect Scope[GENERAL] Effect Name[AttributeDefence]
+2020.06.12 17:26:06,127	WARNING	1	org.l2jmobius.gameserver.data.xml.impl.SkillData	SkillData: Missing effect for Skill Id[13065] Level[4] SubLevel[0] Effect Scope[GENERAL] Effect Name[AttributeDefence]
+2020.06.12 17:26:06,127	WARNING	1	org.l2jmobius.gameserver.data.xml.impl.SkillData	SkillData: Missing effect for Skill Id[13065] Level[4] SubLevel[0] Effect Scope[GENERAL] Effect Name[AttributeDefence]
+2020.06.12 17:26:06,128	WARNING	1	org.l2jmobius.gameserver.data.xml.impl.SkillData	SkillData: Missing effect for Skill Id[13065] Level[4] SubLevel[0] Effect Scope[GENERAL] Effect Name[AttributeDefence]
+2020.06.12 17:26:06,128	WARNING	1	org.l2jmobius.gameserver.data.xml.impl.SkillData	SkillData: Failed loading effect for Skill Id[13066] Level[1] SubLevel[0] Effect Scope[GENERAL] Effect Name[DefenceTrait]
+2020.06.12 17:26:06,129	WARNING	1	org.l2jmobius.gameserver.data.xml.impl.SkillData	SkillData: Missing effect for Skill Id[13066] Level[1] SubLevel[0] Effect Scope[GENERAL] Effect Name[AttributeDefence]
+2020.06.12 17:26:06,130	WARNING	1	org.l2jmobius.gameserver.data.xml.impl.SkillData	SkillData: Missing effect for Skill Id[13066] Level[1] SubLevel[0] Effect Scope[GENERAL] Effect Name[AttributeDefence]
+2020.06.12 17:26:06,130	WARNING	1	org.l2jmobius.gameserver.data.xml.impl.SkillData	SkillData: Missing effect for Skill Id[13066] Level[1] SubLevel[0] Effect Scope[GENERAL] Effect Name[AttributeDefence]
+2020.06.12 17:26:06,130	WARNING	1	org.l2jmobius.gameserver.data.xml.impl.SkillData	SkillData: Missing effect for Skill Id[13066] Level[1] SubLevel[0] Effect Scope[GENERAL] Effect Name[AttributeDefence]
+2020.06.12 17:26:06,130	WARNING	1	org.l2jmobius.gameserver.data.xml.impl.SkillData	SkillData: Missing effect for Skill Id[13066] Level[1] SubLevel[0] Effect Scope[GENERAL] Effect Name[AttributeDefence]
+2020.06.12 17:26:06,130	WARNING	1	org.l2jmobius.gameserver.data.xml.impl.SkillData	SkillData: Missing effect for Skill Id[13066] Level[1] SubLevel[0] Effect Scope[GENERAL] Effect Name[AttributeDefence]
+2020.06.12 17:26:06,131	WARNING	1	org.l2jmobius.gameserver.data.xml.impl.SkillData	SkillData: Failed loading effect for Skill Id[13066] Level[2] SubLevel[0] Effect Scope[GENERAL] Effect Name[DefenceTrait]
+2020.06.12 17:26:06,132	WARNING	1	org.l2jmobius.gameserver.data.xml.impl.SkillData	SkillData: Missing effect for Skill Id[13066] Level[2] SubLevel[0] Effect Scope[GENERAL] Effect Name[AttributeDefence]
+2020.06.12 17:26:06,132	WARNING	1	org.l2jmobius.gameserver.data.xml.impl.SkillData	SkillData: Missing effect for Skill Id[13066] Level[2] SubLevel[0] Effect Scope[GENERAL] Effect Name[AttributeDefence]
+2020.06.12 17:26:06,133	WARNING	1	org.l2jmobius.gameserver.data.xml.impl.SkillData	SkillData: Missing effect for Skill Id[13066] Level[2] SubLevel[0] Effect Scope[GENERAL] Effect Name[AttributeDefence]
+2020.06.12 17:26:06,133	WARNING	1	org.l2jmobius.gameserver.data.xml.impl.SkillData	SkillData: Missing effect for Skill Id[13066] Level[2] SubLevel[0] Effect Scope[GENERAL] Effect Name[AttributeDefence]
+2020.06.12 17:26:06,133	WARNING	1	org.l2jmobius.gameserver.data.xml.impl.SkillData	SkillData: Missing effect for Skill Id[13066] Level[2] SubLevel[0] Effect Scope[GENERAL] Effect Name[AttributeDefence]
+2020.06.12 17:26:06,133	WARNING	1	org.l2jmobius.gameserver.data.xml.impl.SkillData	SkillData: Missing effect for Skill Id[13066] Level[2] SubLevel[0] Effect Scope[GENERAL] Effect Name[AttributeDefence]
+2020.06.12 17:26:06,134	WARNING	1	org.l2jmobius.gameserver.data.xml.impl.SkillData	SkillData: Failed loading effect for Skill Id[13066] Level[3] SubLevel[0] Effect Scope[GENERAL] Effect Name[DefenceTrait]
+2020.06.12 17:26:06,135	WARNING	1	org.l2jmobius.gameserver.data.xml.impl.SkillData	SkillData: Missing effect for Skill Id[13066] Level[3] SubLevel[0] Effect Scope[GENERAL] Effect Name[AttributeDefence]
+2020.06.12 17:26:06,135	WARNING	1	org.l2jmobius.gameserver.data.xml.impl.SkillData	SkillData: Missing effect for Skill Id[13066] Level[3] SubLevel[0] Effect Scope[GENERAL] Effect Name[AttributeDefence]
+2020.06.12 17:26:06,136	WARNING	1	org.l2jmobius.gameserver.data.xml.impl.SkillData	SkillData: Missing effect for Skill Id[13066] Level[3] SubLevel[0] Effect Scope[GENERAL] Effect Name[AttributeDefence]
+2020.06.12 17:26:06,136	WARNING	1	org.l2jmobius.gameserver.data.xml.impl.SkillData	SkillData: Missing effect for Skill Id[13066] Level[3] SubLevel[0] Effect Scope[GENERAL] Effect Name[AttributeDefence]
+2020.06.12 17:26:06,136	WARNING	1	org.l2jmobius.gameserver.data.xml.impl.SkillData	SkillData: Missing effect for Skill Id[13066] Level[3] SubLevel[0] Effect Scope[GENERAL] Effect Name[AttributeDefence]
+2020.06.12 17:26:06,136	WARNING	1	org.l2jmobius.gameserver.data.xml.impl.SkillData	SkillData: Missing effect for Skill Id[13066] Level[3] SubLevel[0] Effect Scope[GENERAL] Effect Name[AttributeDefence]
+2020.06.12 17:26:06,136	WARNING	1	org.l2jmobius.gameserver.data.xml.impl.SkillData	SkillData: Failed loading effect for Skill Id[13066] Level[4] SubLevel[0] Effect Scope[GENERAL] Effect Name[DefenceTrait]
+2020.06.12 17:26:06,137	WARNING	1	org.l2jmobius.gameserver.data.xml.impl.SkillData	SkillData: Missing effect for Skill Id[13066] Level[4] SubLevel[0] Effect Scope[GENERAL] Effect Name[AttributeDefence]
+2020.06.12 17:26:06,138	WARNING	1	org.l2jmobius.gameserver.data.xml.impl.SkillData	SkillData: Missing effect for Skill Id[13066] Level[4] SubLevel[0] Effect Scope[GENERAL] Effect Name[AttributeDefence]
+2020.06.12 17:26:06,138	WARNING	1	org.l2jmobius.gameserver.data.xml.impl.SkillData	SkillData: Missing effect for Skill Id[13066] Level[4] SubLevel[0] Effect Scope[GENERAL] Effect Name[AttributeDefence]
+2020.06.12 17:26:06,138	WARNING	1	org.l2jmobius.gameserver.data.xml.impl.SkillData	SkillData: Missing effect for Skill Id[13066] Level[4] SubLevel[0] Effect Scope[GENERAL] Effect Name[AttributeDefence]
+2020.06.12 17:26:06,138	WARNING	1	org.l2jmobius.gameserver.data.xml.impl.SkillData	SkillData: Missing effect for Skill Id[13066] Level[4] SubLevel[0] Effect Scope[GENERAL] Effect Name[AttributeDefence]
+2020.06.12 17:26:06,138	WARNING	1	org.l2jmobius.gameserver.data.xml.impl.SkillData	SkillData: Missing effect for Skill Id[13066] Level[4] SubLevel[0] Effect Scope[GENERAL] Effect Name[AttributeDefence]
+2020.06.12 17:26:06,139	WARNING	1	org.l2jmobius.gameserver.data.xml.impl.SkillData	SkillData: Failed loading effect for Skill Id[13067] Level[1] SubLevel[0] Effect Scope[GENERAL] Effect Name[DefenceTrait]
+2020.06.12 17:26:06,140	WARNING	1	org.l2jmobius.gameserver.data.xml.impl.SkillData	SkillData: Missing effect for Skill Id[13067] Level[1] SubLevel[0] Effect Scope[GENERAL] Effect Name[AttributeDefence]
+2020.06.12 17:26:06,140	WARNING	1	org.l2jmobius.gameserver.data.xml.impl.SkillData	SkillData: Missing effect for Skill Id[13067] Level[1] SubLevel[0] Effect Scope[GENERAL] Effect Name[AttributeDefence]
+2020.06.12 17:26:06,140	WARNING	1	org.l2jmobius.gameserver.data.xml.impl.SkillData	SkillData: Missing effect for Skill Id[13067] Level[1] SubLevel[0] Effect Scope[GENERAL] Effect Name[AttributeDefence]
+2020.06.12 17:26:06,140	WARNING	1	org.l2jmobius.gameserver.data.xml.impl.SkillData	SkillData: Missing effect for Skill Id[13067] Level[1] SubLevel[0] Effect Scope[GENERAL] Effect Name[AttributeDefence]
+2020.06.12 17:26:06,141	WARNING	1	org.l2jmobius.gameserver.data.xml.impl.SkillData	SkillData: Missing effect for Skill Id[13067] Level[1] SubLevel[0] Effect Scope[GENERAL] Effect Name[AttributeDefence]
+2020.06.12 17:26:06,141	WARNING	1	org.l2jmobius.gameserver.data.xml.impl.SkillData	SkillData: Missing effect for Skill Id[13067] Level[1] SubLevel[0] Effect Scope[GENERAL] Effect Name[AttributeDefence]
+2020.06.12 17:26:06,141	WARNING	1	org.l2jmobius.gameserver.data.xml.impl.SkillData	SkillData: Failed loading effect for Skill Id[13067] Level[2] SubLevel[0] Effect Scope[GENERAL] Effect Name[DefenceTrait]
+2020.06.12 17:26:06,142	WARNING	1	org.l2jmobius.gameserver.data.xml.impl.SkillData	SkillData: Missing effect for Skill Id[13067] Level[2] SubLevel[0] Effect Scope[GENERAL] Effect Name[AttributeDefence]
+2020.06.12 17:26:06,143	WARNING	1	org.l2jmobius.gameserver.data.xml.impl.SkillData	SkillData: Missing effect for Skill Id[13067] Level[2] SubLevel[0] Effect Scope[GENERAL] Effect Name[AttributeDefence]
+2020.06.12 17:26:06,144	WARNING	1	org.l2jmobius.gameserver.data.xml.impl.SkillData	SkillData: Missing effect for Skill Id[13067] Level[2] SubLevel[0] Effect Scope[GENERAL] Effect Name[AttributeDefence]
+2020.06.12 17:26:06,144	WARNING	1	org.l2jmobius.gameserver.data.xml.impl.SkillData	SkillData: Missing effect for Skill Id[13067] Level[2] SubLevel[0] Effect Scope[GENERAL] Effect Name[AttributeDefence]
+2020.06.12 17:26:06,144	WARNING	1	org.l2jmobius.gameserver.data.xml.impl.SkillData	SkillData: Missing effect for Skill Id[13067] Level[2] SubLevel[0] Effect Scope[GENERAL] Effect Name[AttributeDefence]
+2020.06.12 17:26:06,144	WARNING	1	org.l2jmobius.gameserver.data.xml.impl.SkillData	SkillData: Missing effect for Skill Id[13067] Level[2] SubLevel[0] Effect Scope[GENERAL] Effect Name[AttributeDefence]
+2020.06.12 17:26:06,144	WARNING	1	org.l2jmobius.gameserver.data.xml.impl.SkillData	SkillData: Failed loading effect for Skill Id[13067] Level[3] SubLevel[0] Effect Scope[GENERAL] Effect Name[DefenceTrait]
+2020.06.12 17:26:06,145	WARNING	1	org.l2jmobius.gameserver.data.xml.impl.SkillData	SkillData: Missing effect for Skill Id[13067] Level[3] SubLevel[0] Effect Scope[GENERAL] Effect Name[AttributeDefence]
+2020.06.12 17:26:06,145	WARNING	1	org.l2jmobius.gameserver.data.xml.impl.SkillData	SkillData: Missing effect for Skill Id[13067] Level[3] SubLevel[0] Effect Scope[GENERAL] Effect Name[AttributeDefence]
+2020.06.12 17:26:06,146	WARNING	1	org.l2jmobius.gameserver.data.xml.impl.SkillData	SkillData: Missing effect for Skill Id[13067] Level[3] SubLevel[0] Effect Scope[GENERAL] Effect Name[AttributeDefence]
+2020.06.12 17:26:06,146	WARNING	1	org.l2jmobius.gameserver.data.xml.impl.SkillData	SkillData: Missing effect for Skill Id[13067] Level[3] SubLevel[0] Effect Scope[GENERAL] Effect Name[AttributeDefence]
+2020.06.12 17:26:06,146	WARNING	1	org.l2jmobius.gameserver.data.xml.impl.SkillData	SkillData: Missing effect for Skill Id[13067] Level[3] SubLevel[0] Effect Scope[GENERAL] Effect Name[AttributeDefence]
+2020.06.12 17:26:06,146	WARNING	1	org.l2jmobius.gameserver.data.xml.impl.SkillData	SkillData: Missing effect for Skill Id[13067] Level[3] SubLevel[0] Effect Scope[GENERAL] Effect Name[AttributeDefence]
+2020.06.12 17:26:06,147	WARNING	1	org.l2jmobius.gameserver.data.xml.impl.SkillData	SkillData: Failed loading effect for Skill Id[13067] Level[4] SubLevel[0] Effect Scope[GENERAL] Effect Name[DefenceTrait]
+2020.06.12 17:26:06,148	WARNING	1	org.l2jmobius.gameserver.data.xml.impl.SkillData	SkillData: Missing effect for Skill Id[13067] Level[4] SubLevel[0] Effect Scope[GENERAL] Effect Name[AttributeDefence]
+2020.06.12 17:26:06,148	WARNING	1	org.l2jmobius.gameserver.data.xml.impl.SkillData	SkillData: Missing effect for Skill Id[13067] Level[4] SubLevel[0] Effect Scope[GENERAL] Effect Name[AttributeDefence]
+2020.06.12 17:26:06,149	WARNING	1	org.l2jmobius.gameserver.data.xml.impl.SkillData	SkillData: Missing effect for Skill Id[13067] Level[4] SubLevel[0] Effect Scope[GENERAL] Effect Name[AttributeDefence]
+2020.06.12 17:26:06,149	WARNING	1	org.l2jmobius.gameserver.data.xml.impl.SkillData	SkillData: Missing effect for Skill Id[13067] Level[4] SubLevel[0] Effect Scope[GENERAL] Effect Name[AttributeDefence]
+2020.06.12 17:26:06,149	WARNING	1	org.l2jmobius.gameserver.data.xml.impl.SkillData	SkillData: Missing effect for Skill Id[13067] Level[4] SubLevel[0] Effect Scope[GENERAL] Effect Name[AttributeDefence]
+2020.06.12 17:26:06,149	WARNING	1	org.l2jmobius.gameserver.data.xml.impl.SkillData	SkillData: Missing effect for Skill Id[13067] Level[4] SubLevel[0] Effect Scope[GENERAL] Effect Name[AttributeDefence]
+2020.06.12 17:26:06,150	WARNING	1	org.l2jmobius.gameserver.data.xml.impl.SkillData	SkillData: Failed loading effect for Skill Id[13068] Level[1] SubLevel[0] Effect Scope[GENERAL] Effect Name[DefenceTrait]
+2020.06.12 17:26:06,152	WARNING	1	org.l2jmobius.gameserver.data.xml.impl.SkillData	SkillData: Missing effect for Skill Id[13068] Level[1] SubLevel[0] Effect Scope[GENERAL] Effect Name[AttributeDefence]
+2020.06.12 17:26:06,152	WARNING	1	org.l2jmobius.gameserver.data.xml.impl.SkillData	SkillData: Missing effect for Skill Id[13068] Level[1] SubLevel[0] Effect Scope[GENERAL] Effect Name[AttributeDefence]
+2020.06.12 17:26:06,152	WARNING	1	org.l2jmobius.gameserver.data.xml.impl.SkillData	SkillData: Missing effect for Skill Id[13068] Level[1] SubLevel[0] Effect Scope[GENERAL] Effect Name[AttributeDefence]
+2020.06.12 17:26:06,152	WARNING	1	org.l2jmobius.gameserver.data.xml.impl.SkillData	SkillData: Missing effect for Skill Id[13068] Level[1] SubLevel[0] Effect Scope[GENERAL] Effect Name[AttributeDefence]
+2020.06.12 17:26:06,152	WARNING	1	org.l2jmobius.gameserver.data.xml.impl.SkillData	SkillData: Missing effect for Skill Id[13068] Level[1] SubLevel[0] Effect Scope[GENERAL] Effect Name[AttributeDefence]
+2020.06.12 17:26:06,152	WARNING	1	org.l2jmobius.gameserver.data.xml.impl.SkillData	SkillData: Missing effect for Skill Id[13068] Level[1] SubLevel[0] Effect Scope[GENERAL] Effect Name[AttributeDefence]
+2020.06.12 17:26:06,152	WARNING	1	org.l2jmobius.gameserver.data.xml.impl.SkillData	SkillData: Failed loading effect for Skill Id[13068] Level[2] SubLevel[0] Effect Scope[GENERAL] Effect Name[DefenceTrait]
+2020.06.12 17:26:06,153	WARNING	1	org.l2jmobius.gameserver.data.xml.impl.SkillData	SkillData: Missing effect for Skill Id[13068] Level[2] SubLevel[0] Effect Scope[GENERAL] Effect Name[AttributeDefence]
+2020.06.12 17:26:06,153	WARNING	1	org.l2jmobius.gameserver.data.xml.impl.SkillData	SkillData: Missing effect for Skill Id[13068] Level[2] SubLevel[0] Effect Scope[GENERAL] Effect Name[AttributeDefence]
+2020.06.12 17:26:06,153	WARNING	1	org.l2jmobius.gameserver.data.xml.impl.SkillData	SkillData: Missing effect for Skill Id[13068] Level[2] SubLevel[0] Effect Scope[GENERAL] Effect Name[AttributeDefence]
+2020.06.12 17:26:06,154	WARNING	1	org.l2jmobius.gameserver.data.xml.impl.SkillData	SkillData: Missing effect for Skill Id[13068] Level[2] SubLevel[0] Effect Scope[GENERAL] Effect Name[AttributeDefence]
+2020.06.12 17:26:06,154	WARNING	1	org.l2jmobius.gameserver.data.xml.impl.SkillData	SkillData: Missing effect for Skill Id[13068] Level[2] SubLevel[0] Effect Scope[GENERAL] Effect Name[AttributeDefence]
+2020.06.12 17:26:06,154	WARNING	1	org.l2jmobius.gameserver.data.xml.impl.SkillData	SkillData: Missing effect for Skill Id[13068] Level[2] SubLevel[0] Effect Scope[GENERAL] Effect Name[AttributeDefence]
+2020.06.12 17:26:06,154	WARNING	1	org.l2jmobius.gameserver.data.xml.impl.SkillData	SkillData: Failed loading effect for Skill Id[13068] Level[3] SubLevel[0] Effect Scope[GENERAL] Effect Name[DefenceTrait]
+2020.06.12 17:26:06,155	WARNING	1	org.l2jmobius.gameserver.data.xml.impl.SkillData	SkillData: Missing effect for Skill Id[13068] Level[3] SubLevel[0] Effect Scope[GENERAL] Effect Name[AttributeDefence]
+2020.06.12 17:26:06,155	WARNING	1	org.l2jmobius.gameserver.data.xml.impl.SkillData	SkillData: Missing effect for Skill Id[13068] Level[3] SubLevel[0] Effect Scope[GENERAL] Effect Name[AttributeDefence]
+2020.06.12 17:26:06,155	WARNING	1	org.l2jmobius.gameserver.data.xml.impl.SkillData	SkillData: Missing effect for Skill Id[13068] Level[3] SubLevel[0] Effect Scope[GENERAL] Effect Name[AttributeDefence]
+2020.06.12 17:26:06,155	WARNING	1	org.l2jmobius.gameserver.data.xml.impl.SkillData	SkillData: Missing effect for Skill Id[13068] Level[3] SubLevel[0] Effect Scope[GENERAL] Effect Name[AttributeDefence]
+2020.06.12 17:26:06,155	WARNING	1	org.l2jmobius.gameserver.data.xml.impl.SkillData	SkillData: Missing effect for Skill Id[13068] Level[3] SubLevel[0] Effect Scope[GENERAL] Effect Name[AttributeDefence]
+2020.06.12 17:26:06,155	WARNING	1	org.l2jmobius.gameserver.data.xml.impl.SkillData	SkillData: Missing effect for Skill Id[13068] Level[3] SubLevel[0] Effect Scope[GENERAL] Effect Name[AttributeDefence]
+2020.06.12 17:26:06,155	WARNING	1	org.l2jmobius.gameserver.data.xml.impl.SkillData	SkillData: Failed loading effect for Skill Id[13068] Level[4] SubLevel[0] Effect Scope[GENERAL] Effect Name[DefenceTrait]
+2020.06.12 17:26:06,156	WARNING	1	org.l2jmobius.gameserver.data.xml.impl.SkillData	SkillData: Missing effect for Skill Id[13068] Level[4] SubLevel[0] Effect Scope[GENERAL] Effect Name[AttributeDefence]
+2020.06.12 17:26:06,156	WARNING	1	org.l2jmobius.gameserver.data.xml.impl.SkillData	SkillData: Missing effect for Skill Id[13068] Level[4] SubLevel[0] Effect Scope[GENERAL] Effect Name[AttributeDefence]
+2020.06.12 17:26:06,157	WARNING	1	org.l2jmobius.gameserver.data.xml.impl.SkillData	SkillData: Missing effect for Skill Id[13068] Level[4] SubLevel[0] Effect Scope[GENERAL] Effect Name[AttributeDefence]
+2020.06.12 17:26:06,157	WARNING	1	org.l2jmobius.gameserver.data.xml.impl.SkillData	SkillData: Missing effect for Skill Id[13068] Level[4] SubLevel[0] Effect Scope[GENERAL] Effect Name[AttributeDefence]
+2020.06.12 17:26:06,157	WARNING	1	org.l2jmobius.gameserver.data.xml.impl.SkillData	SkillData: Missing effect for Skill Id[13068] Level[4] SubLevel[0] Effect Scope[GENERAL] Effect Name[AttributeDefence]
+2020.06.12 17:26:06,157	WARNING	1	org.l2jmobius.gameserver.data.xml.impl.SkillData	SkillData: Missing effect for Skill Id[13068] Level[4] SubLevel[0] Effect Scope[GENERAL] Effect Name[AttributeDefence]
+2020.06.12 17:26:06,158	WARNING	1	org.l2jmobius.gameserver.data.xml.impl.SkillData	SkillData: Failed loading effect for Skill Id[13069] Level[1] SubLevel[0] Effect Scope[GENERAL] Effect Name[DefenceTrait]
+2020.06.12 17:26:06,160	WARNING	1	org.l2jmobius.gameserver.data.xml.impl.SkillData	SkillData: Missing effect for Skill Id[13069] Level[1] SubLevel[0] Effect Scope[GENERAL] Effect Name[AttributeDefence]
+2020.06.12 17:26:06,160	WARNING	1	org.l2jmobius.gameserver.data.xml.impl.SkillData	SkillData: Missing effect for Skill Id[13069] Level[1] SubLevel[0] Effect Scope[GENERAL] Effect Name[AttributeDefence]
+2020.06.12 17:26:06,160	WARNING	1	org.l2jmobius.gameserver.data.xml.impl.SkillData	SkillData: Missing effect for Skill Id[13069] Level[1] SubLevel[0] Effect Scope[GENERAL] Effect Name[AttributeDefence]
+2020.06.12 17:26:06,160	WARNING	1	org.l2jmobius.gameserver.data.xml.impl.SkillData	SkillData: Missing effect for Skill Id[13069] Level[1] SubLevel[0] Effect Scope[GENERAL] Effect Name[AttributeDefence]
+2020.06.12 17:26:06,161	WARNING	1	org.l2jmobius.gameserver.data.xml.impl.SkillData	SkillData: Missing effect for Skill Id[13069] Level[1] SubLevel[0] Effect Scope[GENERAL] Effect Name[AttributeDefence]
+2020.06.12 17:26:06,161	WARNING	1	org.l2jmobius.gameserver.data.xml.impl.SkillData	SkillData: Missing effect for Skill Id[13069] Level[1] SubLevel[0] Effect Scope[GENERAL] Effect Name[AttributeDefence]
+2020.06.12 17:26:06,161	WARNING	1	org.l2jmobius.gameserver.data.xml.impl.SkillData	SkillData: Failed loading effect for Skill Id[13069] Level[2] SubLevel[0] Effect Scope[GENERAL] Effect Name[DefenceTrait]
+2020.06.12 17:26:06,164	WARNING	1	org.l2jmobius.gameserver.data.xml.impl.SkillData	SkillData: Missing effect for Skill Id[13069] Level[2] SubLevel[0] Effect Scope[GENERAL] Effect Name[AttributeDefence]
+2020.06.12 17:26:06,164	WARNING	1	org.l2jmobius.gameserver.data.xml.impl.SkillData	SkillData: Missing effect for Skill Id[13069] Level[2] SubLevel[0] Effect Scope[GENERAL] Effect Name[AttributeDefence]
+2020.06.12 17:26:06,164	WARNING	1	org.l2jmobius.gameserver.data.xml.impl.SkillData	SkillData: Missing effect for Skill Id[13069] Level[2] SubLevel[0] Effect Scope[GENERAL] Effect Name[AttributeDefence]
+2020.06.12 17:26:06,165	WARNING	1	org.l2jmobius.gameserver.data.xml.impl.SkillData	SkillData: Missing effect for Skill Id[13069] Level[2] SubLevel[0] Effect Scope[GENERAL] Effect Name[AttributeDefence]
+2020.06.12 17:26:06,165	WARNING	1	org.l2jmobius.gameserver.data.xml.impl.SkillData	SkillData: Missing effect for Skill Id[13069] Level[2] SubLevel[0] Effect Scope[GENERAL] Effect Name[AttributeDefence]
+2020.06.12 17:26:06,165	WARNING	1	org.l2jmobius.gameserver.data.xml.impl.SkillData	SkillData: Missing effect for Skill Id[13069] Level[2] SubLevel[0] Effect Scope[GENERAL] Effect Name[AttributeDefence]
+2020.06.12 17:26:06,165	WARNING	1	org.l2jmobius.gameserver.data.xml.impl.SkillData	SkillData: Failed loading effect for Skill Id[13069] Level[3] SubLevel[0] Effect Scope[GENERAL] Effect Name[DefenceTrait]
+2020.06.12 17:26:06,167	WARNING	1	org.l2jmobius.gameserver.data.xml.impl.SkillData	SkillData: Missing effect for Skill Id[13069] Level[3] SubLevel[0] Effect Scope[GENERAL] Effect Name[AttributeDefence]
+2020.06.12 17:26:06,167	WARNING	1	org.l2jmobius.gameserver.data.xml.impl.SkillData	SkillData: Missing effect for Skill Id[13069] Level[3] SubLevel[0] Effect Scope[GENERAL] Effect Name[AttributeDefence]
+2020.06.12 17:26:06,167	WARNING	1	org.l2jmobius.gameserver.data.xml.impl.SkillData	SkillData: Missing effect for Skill Id[13069] Level[3] SubLevel[0] Effect Scope[GENERAL] Effect Name[AttributeDefence]
+2020.06.12 17:26:06,167	WARNING	1	org.l2jmobius.gameserver.data.xml.impl.SkillData	SkillData: Missing effect for Skill Id[13069] Level[3] SubLevel[0] Effect Scope[GENERAL] Effect Name[AttributeDefence]
+2020.06.12 17:26:06,168	WARNING	1	org.l2jmobius.gameserver.data.xml.impl.SkillData	SkillData: Missing effect for Skill Id[13069] Level[3] SubLevel[0] Effect Scope[GENERAL] Effect Name[AttributeDefence]
+2020.06.12 17:26:06,169	WARNING	1	org.l2jmobius.gameserver.data.xml.impl.SkillData	SkillData: Missing effect for Skill Id[13069] Level[3] SubLevel[0] Effect Scope[GENERAL] Effect Name[AttributeDefence]
+2020.06.12 17:26:06,170	WARNING	1	org.l2jmobius.gameserver.data.xml.impl.SkillData	SkillData: Failed loading effect for Skill Id[13069] Level[4] SubLevel[0] Effect Scope[GENERAL] Effect Name[DefenceTrait]
+2020.06.12 17:26:06,171	WARNING	1	org.l2jmobius.gameserver.data.xml.impl.SkillData	SkillData: Missing effect for Skill Id[13069] Level[4] SubLevel[0] Effect Scope[GENERAL] Effect Name[AttributeDefence]
+2020.06.12 17:26:06,171	WARNING	1	org.l2jmobius.gameserver.data.xml.impl.SkillData	SkillData: Missing effect for Skill Id[13069] Level[4] SubLevel[0] Effect Scope[GENERAL] Effect Name[AttributeDefence]
+2020.06.12 17:26:06,171	WARNING	1	org.l2jmobius.gameserver.data.xml.impl.SkillData	SkillData: Missing effect for Skill Id[13069] Level[4] SubLevel[0] Effect Scope[GENERAL] Effect Name[AttributeDefence]
+2020.06.12 17:26:06,171	WARNING	1	org.l2jmobius.gameserver.data.xml.impl.SkillData	SkillData: Missing effect for Skill Id[13069] Level[4] SubLevel[0] Effect Scope[GENERAL] Effect Name[AttributeDefence]
+2020.06.12 17:26:06,171	WARNING	1	org.l2jmobius.gameserver.data.xml.impl.SkillData	SkillData: Missing effect for Skill Id[13069] Level[4] SubLevel[0] Effect Scope[GENERAL] Effect Name[AttributeDefence]
+2020.06.12 17:26:06,172	WARNING	1	org.l2jmobius.gameserver.data.xml.impl.SkillData	SkillData: Missing effect for Skill Id[13069] Level[4] SubLevel[0] Effect Scope[GENERAL] Effect Name[AttributeDefence]
+2020.06.12 17:26:06,172	WARNING	1	org.l2jmobius.gameserver.data.xml.impl.SkillData	SkillData: Failed loading effect for Skill Id[13071] Level[1] SubLevel[0] Effect Scope[GENERAL] Effect Name[DefenceTrait]
+2020.06.12 17:26:06,173	WARNING	1	org.l2jmobius.gameserver.data.xml.impl.SkillData	SkillData: Missing effect for Skill Id[13071] Level[1] SubLevel[0] Effect Scope[GENERAL] Effect Name[AttributeDefence]
+2020.06.12 17:26:06,173	WARNING	1	org.l2jmobius.gameserver.data.xml.impl.SkillData	SkillData: Missing effect for Skill Id[13071] Level[1] SubLevel[0] Effect Scope[GENERAL] Effect Name[AttributeDefence]
+2020.06.12 17:26:06,174	WARNING	1	org.l2jmobius.gameserver.data.xml.impl.SkillData	SkillData: Missing effect for Skill Id[13071] Level[1] SubLevel[0] Effect Scope[GENERAL] Effect Name[AttributeDefence]
+2020.06.12 17:26:06,174	WARNING	1	org.l2jmobius.gameserver.data.xml.impl.SkillData	SkillData: Missing effect for Skill Id[13071] Level[1] SubLevel[0] Effect Scope[GENERAL] Effect Name[AttributeDefence]
+2020.06.12 17:26:06,174	WARNING	1	org.l2jmobius.gameserver.data.xml.impl.SkillData	SkillData: Missing effect for Skill Id[13071] Level[1] SubLevel[0] Effect Scope[GENERAL] Effect Name[AttributeDefence]
+2020.06.12 17:26:06,174	WARNING	1	org.l2jmobius.gameserver.data.xml.impl.SkillData	SkillData: Missing effect for Skill Id[13071] Level[1] SubLevel[0] Effect Scope[GENERAL] Effect Name[AttributeDefence]
+2020.06.12 17:26:06,174	WARNING	1	org.l2jmobius.gameserver.data.xml.impl.SkillData	SkillData: Failed loading effect for Skill Id[13071] Level[2] SubLevel[0] Effect Scope[GENERAL] Effect Name[DefenceTrait]
+2020.06.12 17:26:06,175	WARNING	1	org.l2jmobius.gameserver.data.xml.impl.SkillData	SkillData: Missing effect for Skill Id[13071] Level[2] SubLevel[0] Effect Scope[GENERAL] Effect Name[AttributeDefence]
+2020.06.12 17:26:06,177	WARNING	1	org.l2jmobius.gameserver.data.xml.impl.SkillData	SkillData: Missing effect for Skill Id[13071] Level[2] SubLevel[0] Effect Scope[GENERAL] Effect Name[AttributeDefence]
+2020.06.12 17:26:06,177	WARNING	1	org.l2jmobius.gameserver.data.xml.impl.SkillData	SkillData: Missing effect for Skill Id[13071] Level[2] SubLevel[0] Effect Scope[GENERAL] Effect Name[AttributeDefence]
+2020.06.12 17:26:06,177	WARNING	1	org.l2jmobius.gameserver.data.xml.impl.SkillData	SkillData: Missing effect for Skill Id[13071] Level[2] SubLevel[0] Effect Scope[GENERAL] Effect Name[AttributeDefence]
+2020.06.12 17:26:06,177	WARNING	1	org.l2jmobius.gameserver.data.xml.impl.SkillData	SkillData: Missing effect for Skill Id[13071] Level[2] SubLevel[0] Effect Scope[GENERAL] Effect Name[AttributeDefence]
+2020.06.12 17:26:06,177	WARNING	1	org.l2jmobius.gameserver.data.xml.impl.SkillData	SkillData: Missing effect for Skill Id[13071] Level[2] SubLevel[0] Effect Scope[GENERAL] Effect Name[AttributeDefence]
+2020.06.12 17:26:06,178	WARNING	1	org.l2jmobius.gameserver.data.xml.impl.SkillData	SkillData: Failed loading effect for Skill Id[13071] Level[3] SubLevel[0] Effect Scope[GENERAL] Effect Name[DefenceTrait]
+2020.06.12 17:26:06,179	WARNING	1	org.l2jmobius.gameserver.data.xml.impl.SkillData	SkillData: Missing effect for Skill Id[13071] Level[3] SubLevel[0] Effect Scope[GENERAL] Effect Name[AttributeDefence]
+2020.06.12 17:26:06,180	WARNING	1	org.l2jmobius.gameserver.data.xml.impl.SkillData	SkillData: Missing effect for Skill Id[13071] Level[3] SubLevel[0] Effect Scope[GENERAL] Effect Name[AttributeDefence]
+2020.06.12 17:26:06,180	WARNING	1	org.l2jmobius.gameserver.data.xml.impl.SkillData	SkillData: Missing effect for Skill Id[13071] Level[3] SubLevel[0] Effect Scope[GENERAL] Effect Name[AttributeDefence]
+2020.06.12 17:26:06,180	WARNING	1	org.l2jmobius.gameserver.data.xml.impl.SkillData	SkillData: Missing effect for Skill Id[13071] Level[3] SubLevel[0] Effect Scope[GENERAL] Effect Name[AttributeDefence]
+2020.06.12 17:26:06,180	WARNING	1	org.l2jmobius.gameserver.data.xml.impl.SkillData	SkillData: Missing effect for Skill Id[13071] Level[3] SubLevel[0] Effect Scope[GENERAL] Effect Name[AttributeDefence]
+2020.06.12 17:26:06,180	WARNING	1	org.l2jmobius.gameserver.data.xml.impl.SkillData	SkillData: Missing effect for Skill Id[13071] Level[3] SubLevel[0] Effect Scope[GENERAL] Effect Name[AttributeDefence]
+2020.06.12 17:26:06,180	WARNING	1	org.l2jmobius.gameserver.data.xml.impl.SkillData	SkillData: Failed loading effect for Skill Id[13071] Level[4] SubLevel[0] Effect Scope[GENERAL] Effect Name[DefenceTrait]
+2020.06.12 17:26:06,182	WARNING	1	org.l2jmobius.gameserver.data.xml.impl.SkillData	SkillData: Missing effect for Skill Id[13071] Level[4] SubLevel[0] Effect Scope[GENERAL] Effect Name[AttributeDefence]
+2020.06.12 17:26:06,182	WARNING	1	org.l2jmobius.gameserver.data.xml.impl.SkillData	SkillData: Missing effect for Skill Id[13071] Level[4] SubLevel[0] Effect Scope[GENERAL] Effect Name[AttributeDefence]
+2020.06.12 17:26:06,182	WARNING	1	org.l2jmobius.gameserver.data.xml.impl.SkillData	SkillData: Missing effect for Skill Id[13071] Level[4] SubLevel[0] Effect Scope[GENERAL] Effect Name[AttributeDefence]
+2020.06.12 17:26:06,183	WARNING	1	org.l2jmobius.gameserver.data.xml.impl.SkillData	SkillData: Missing effect for Skill Id[13071] Level[4] SubLevel[0] Effect Scope[GENERAL] Effect Name[AttributeDefence]
+2020.06.12 17:26:06,183	WARNING	1	org.l2jmobius.gameserver.data.xml.impl.SkillData	SkillData: Missing effect for Skill Id[13071] Level[4] SubLevel[0] Effect Scope[GENERAL] Effect Name[AttributeDefence]
+2020.06.12 17:26:06,183	WARNING	1	org.l2jmobius.gameserver.data.xml.impl.SkillData	SkillData: Missing effect for Skill Id[13071] Level[4] SubLevel[0] Effect Scope[GENERAL] Effect Name[AttributeDefence]

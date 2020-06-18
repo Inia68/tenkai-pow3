@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../xsd/optionsData.xsd">
+
+
+	<option id="64700" name="Enchanced La Vie En Rose's Brooch Lv1">
+		<passive_skill id="35626" level="1"/>
+	</option>
+	<option id="64701" name="Enchanced La Vie En Rose's Brooch Lv2">
+		<passive_skill id="35626" level="2"/>
+	</option>
+	<option id="64702" name="Enchanced La Vie En Rose's Brooch Lv3">
+		<passive_skill id="35626" level="3"/>
+	</option>
+	<option id="64703" name="Enchanced La Vie En Rose's Brooch Lv4">
+		<passive_skill id="35626" level="4"/>
+	</option>
+	<option id="64704" name="Enchanced La Vie En Rose's Brooch Lv5">
+		<passive_skill id="35626" level="5"/>
+	</option>
+	<option id="64705" name="Enchanced La Vie En Rose's Brooch Lv6">
+		<passive_skill id="35626" level="6"/>
+	</option>
+
+
+	<option id="64706" name="Top-grade La Vie En Rose's Brooch Lv1">
+		<passive_skill id="35627" level="1"/>
+	</option>
+	<option id="64707" name="Top-grade La Vie En Rose's Brooch Lv2">
+		<passive_skill id="35627" level="2"/>
+	</option>
+	<option id="64708" name="Top-grade La Vie En Rose's Brooch Lv3">
+		<passive_skill id="35627" level="3"/>
+	</option>
+	<option id="64709" name="Top-grade La Vie En Rose's Brooch Lv4">
+		<passive_skill id="35627" level="4"/>
+	</option>
+	<option id="64710" name="Top-grade La Vie En Rose's Brooch Lv5">
+		<passive_skill id="35627" level="5"/>
+	</option>
+	<option id="64711" name="Top-grade La Vie En Rose's Brooch Lv6">
+		<passive_skill id="35627" level="6"/>
+	</option>
+	<option id="64712" name="Top-grade La Vie En Rose's Brooch Lv7">
+		<passive_skill id="35627" level="7"/>
+	</option>
+	<option id="64713" name="Top-grade La Vie En Rose's Brooch Lv8">
+		<passive_skill id="35627" level="8"/>
+	</option>
+	<option id="64714" name="Top-grade La Vie En Rose's Brooch Lv9">
+		<passive_skill id="35627" level="9"/>
+	</option>
+	<option id="64715" name="Top-grade La Vie En Rose's Brooch Lv10">
+		<passive_skill id="35627" level="10"/>
+	</option>
+	<option id="64716" name="Top-grade La Vie En Rose's Brooch Lv11">
+		<passive_skill id="35627" level="11"/>
+	</option>
+</list>

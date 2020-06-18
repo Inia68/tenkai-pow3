@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/multisell.xsd">
+	<npcs>
+		<npc>-1</npc> <!-- CB -->
+	</npcs>
+
+	<!-- Leviathan Heavy Armor -->
+	<item>
+		<ingredient count="160000000" id="57" /><!-- Adena -->
+		<production count="1" id="80104" /><!-- Helmet -->
+	</item>
+	<item>
+		<ingredient count="500000000" id="57" /><!-- Adena -->
+		<production count="1" id="80105" /><!-- Breastplate -->
+	</item>
+	<item>
+		<ingredient count="300000000" id="57" /><!-- Adena -->
+		<production count="1" id="80106" /><!-- Gaiters -->
+	</item>
+	<item>
+		<ingredient count="120000000" id="57" /><!-- Adena -->
+		<production count="1" id="80107" /><!-- Gauntlets -->
+	</item>
+	<item>
+		<ingredient count="120000000" id="57" /><!-- Adena -->
+		<production count="1" id="80108" /><!-- Boots -->
+	</item>
+	<item>
+		<ingredient count="120000000" id="57" /><!-- Adena -->
+		<production count="1" id="80109" /><!-- Shield -->
+	</item>
+
+	<!-- Leviathan Light Armor -->
+	<item>
+		<ingredient count="160000000" id="57" /><!-- Adena -->
+		<production count="1" id="80110" /><!-- Leather Helmet -->
+	</item>
+	<item>
+		<ingredient count="500000000" id="57" /><!-- Adena -->
+		<production count="1" id="80111" /><!-- Leather Armor -->
+	</item>
+	<item>
+		<ingredient count="300000000" id="57" /><!-- Adena -->
+		<production count="1" id="80112" /><!-- Leggings -->
+	</item>
+	<item>
+		<ingredient count="120000000" id="57" /><!-- Adena -->
+		<production count="1" id="80113" /><!-- Gloves -->
+	</item>
+	<item>
+		<ingredient count="120000000" id="57" /><!-- Adena -->
+		<production count="1" id="80114" /><!-- Boots -->
+	</item>
+
+	<!-- Leviathan Robe -->
+	<item>
+		<ingredient count="160000000" id="57" /><!-- Adena -->
+		<production count="1" id="80115" /><!-- Circlet -->
+	</item>
+	<item>
+		<ingredient count="500000000" id="57" /><!-- Adena -->
+		<production count="1" id="80116" /><!-- Tunic -->
+	</item>
+	<item>
+		<ingredient count="300000000" id="57" /><!-- Adena -->
+		<production count="1" id="80117" /><!-- Stockings -->
+	</item>
+	<item>
+		<ingredient count="120000000" id="57" /><!-- Adena -->
+		<production count="1" id="80118" /><!-- Gloves -->
+	</item>
+	<item>
+		<ingredient count="120000000" id="57" /><!-- Adena -->
+		<production count="1" id="80119" /><!-- Shoes -->
+	</item>
+	<item>
+		<ingredient count="120000000" id="57" /><!-- Adena -->
+		<production count="1" id="80120" /><!-- Sigil -->
+	</item>
+</list>

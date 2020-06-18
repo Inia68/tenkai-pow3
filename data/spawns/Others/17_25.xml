@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/spawns.xsd">
+	<spawn name="17_25">
+		<group>
+			<npc id="33920" x="-78616" y="244008" z="-3712" heading="35268" respawnTime="60sec" /> <!-- Altar of Souls -->
+			<npc id="33920" x="-77640" y="244024" z="-3732" heading="65234" respawnTime="60sec" /> <!-- Altar of Souls -->
+		</group>
+	</spawn>
+</list>

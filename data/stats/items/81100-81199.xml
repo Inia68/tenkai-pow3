@@ -1,0 +1,968 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/items.xsd">
+
+	<item id="81200" name="Exalted Weapon Upgrade Stone" type="EtcItem">
+		<!-- Ingredient needed to upgrade Warrior's/ Wizard's/ Knight's Circlets into Noble Circlets. Talk to Head Blacksmith Ferris of Aden to upgrade +5 Circlets into Noble Circlets. -->
+		<set name="icon" val="icon.bm_hair_acc_upgrade_1" />
+		<set name="material" val="PAPER" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+
+	<item id="81157" name="Exalted Cutter" type="Weapon">
+		<!-- Weapon for those who have taken their path of honor not long ago.\nPvE Damage +10%, Max HP +15%, Atk. Spd. +15%, P. Critical Damage +5%, P. Critical Rate +100.\nCannot be enchanted, crystallized, appearance modified, soul crystal enhanced, augmented, or assigned with attributes.\n\nCan be exchanged for other Exalted weapon through Lionel Hunter in Heine.]	popup=-1	default_action=[action_equip]	use_order=99	name_class=-1	color=1	Tooltip_Texture=[None -->
+		<set name="icon" val="icon.bm_the_sword_of_hero_i01" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="rhand" />
+		<set name="weapon_type" val="SWORD" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="weight" val="500" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<skills>
+			<skill id="55033" level="1" /> <!-- Exalted Weapon -->
+		</skills>
+		<stats>
+			<stat type="pAtk">698</stat>
+			<stat type="mAtk">303</stat>
+			<stat type="pAtkSpd">379</stat>
+			<stat type="accCombat">0.0</stat>
+			<stat type="accMagic">0.0</stat>
+			<stat type="rCrit">8.0</stat>
+			<stat type="rEvas">0.0</stat>
+			<stat type="rEvas">0.0</stat>
+			<stat type="randomDamage">10</stat>
+		</stats>
+	</item>
+
+	<item id="81158" name="Exalted Slasher" type="Weapon">
+		<!-- Weapon for those who have taken their path of honor not long ago.\nPvE Damage +10%, Max HP +15%, Atk. Spd. +15%, P. Critical Damage +5%, P. Critical Rate +100.\nCannot be enchanted, crystallized, appearance modified, soul crystal enhanced, augmented, or assigned with attributes.\n\nCan be exchanged for other Exalted weapon through Lionel Hunter in Heine.]	popup=-1	default_action=[action_equip]	use_order=99	name_class=-1	color=1	Tooltip_Texture=[None -->
+		<set name="icon" val="icon.bm_the_two_handed_sword_of_hero_i01" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="lrhand" />
+		<set name="weapon_type" val="SWORD" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="weight" val="500" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<skills>
+			<skill id="55033" level="1" /> <!-- Exalted Weapon -->
+		</skills>
+		<stats>
+			<stat type="pAtk">849</stat>
+			<stat type="mAtk">303</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="accCombat">0.0</stat>
+			<stat type="accMagic">0.0</stat>
+			<stat type="rCrit">8.0</stat>
+			<stat type="rEvas">0.0</stat>
+			<stat type="rEvas">0.0</stat>
+			<stat type="randomDamage">10</stat>
+		</stats>
+	</item>
+
+	<item id="81159" name="Exalted Avenger" type="Weapon">
+		<!-- Weapon for those who have taken their path of honor not long ago.\nPvE Damage +10%, Max HP +15%, Atk. Spd. +15%, P. Critical Damage +5%, P. Critical Rate +100.\nCannot be enchanted, crystallized, appearance modified, soul crystal enhanced, augmented, or assigned with attributes.\n\nCan be exchanged for other Exalted weapon through Lionel Hunter in Heine.]	popup=-1	default_action=[action_equip]	use_order=99	name_class=-1	color=1	Tooltip_Texture=[None -->
+		<set name="icon" val="icon.bm_the_axe_of_hero_i01" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="rhand" />
+		<set name="weapon_type" val="SWORD" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="weight" val="500" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<skills>
+			<skill id="55033" level="1" /> <!-- Exalted Weapon -->
+		</skills>
+		<stats>
+			<stat type="pAtk">698</stat>
+			<stat type="mAtk">303</stat>
+			<stat type="pAtkSpd">379</stat>
+			<stat type="accCombat">8.0</stat>
+			<stat type="accMagic">0.0</stat>
+			<stat type="rCrit">6.0</stat>
+			<stat type="rEvas">0.0</stat>
+			<stat type="rEvas">0.0</stat>
+			<stat type="randomDamage">20</stat>
+		</stats>
+	</item>
+
+	<item id="81160" name="Exalted Fighter" type="Weapon">
+		<!-- Weapon for those who have taken their path of honor not long ago.\nPvE Damage +10%, Max HP +15%, Atk. Spd. +15%, P. Critical Damage +5%, P. Critical Rate +100.\nCannot be enchanted, crystallized, appearance modified, soul crystal enhanced, augmented, or assigned with attributes.\n\nCan be exchanged for other Exalted weapon through Lionel Hunter in Heine.]	popup=-1	default_action=[action_equip]	use_order=99	name_class=-1	color=1	Tooltip_Texture=[None -->
+		<set name="icon" val="icon.bm_the_fist_of_hero_i01" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="lrhand" />
+		<set name="weapon_type" val="DUALFIST" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="weight" val="500" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<skills>
+			<skill id="55033" level="1" /> <!-- Exalted Weapon -->
+		</skills>
+		<stats>
+			<stat type="pAtk">849</stat>
+			<stat type="mAtk">303</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="accCombat">8.0</stat>
+			<stat type="accMagic">0.0</stat>
+			<stat type="rCrit">6.0</stat>
+			<stat type="rEvas">0.0</stat>
+			<stat type="rEvas">0.0</stat>
+			<stat type="randomDamage">5</stat>
+		</stats>
+	</item>
+
+	<item id="81161" name="Exalted Stormer" type="Weapon">
+		<!-- Weapon for those who have taken their path of honor not long ago.\nPvE Damage +10%, Max HP +15%, Atk. Spd. +15%, P. Critical Damage +5%, P. Critical Rate +100.\nCannot be enchanted, crystallized, appearance modified, soul crystal enhanced, augmented, or assigned with attributes.\n\nCan be exchanged for other Exalted weapon through Lionel Hunter in Heine.]	popup=-1	default_action=[action_equip]	use_order=99	name_class=-1	color=1	Tooltip_Texture=[None -->
+		<set name="icon" val="icon.bm_the_pole_of_hero_i01" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="lrhand" />
+		<set name="weapon_type" val="POLE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="weight" val="500" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<skills>
+			<skill id="55033" level="1" /> <!-- Exalted Weapon -->
+		</skills>
+		<stats>
+			<stat type="pAtk">698</stat>
+			<stat type="mAtk">303</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="accCombat">-3.75</stat>
+			<stat type="accMagic">0.0</stat>
+			<stat type="rCrit">8.0</stat>
+			<stat type="rEvas">0.0</stat>
+			<stat type="rEvas">0.0</stat>
+			<stat type="randomDamage">10</stat>
+		</stats>
+	</item>
+
+	<item id="81162" name="Exalted Thrower" type="Weapon">
+		<!-- Weapon for those who have taken their path of honor not long ago.\nPvE Damage +10%, Max HP +15%, Atk. Spd. +15%, P. Critical Damage +10%, P. Critical Rate +50.\nCannot be enchanted, crystallized, appearance modified, soul crystal enhanced, augmented, or assigned with attributes.\n\nCan be exchanged for other Exalted weapon through Lionel Hunter in Heine.]	popup=-1	default_action=[action_equip]	use_order=99	name_class=-1	color=1	Tooltip_Texture=[None -->
+		<set name="icon" val="icon.bm_the_bow_of_hero_i01" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="lrhand" />
+		<set name="weapon_type" val="BOW" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="weight" val="500" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<skills>
+			<skill id="55033" level="1" /> <!-- Exalted Weapon -->
+		</skills>
+		<stats>
+			<stat type="pAtk">1374</stat>
+			<stat type="mAtk">303</stat>
+			<stat type="pAtkSpd">293</stat>
+			<stat type="accCombat">-3.75</stat>
+			<stat type="accMagic">0.0</stat>
+			<stat type="rCrit">12.0</stat>
+			<stat type="rEvas">0.0</stat>
+			<stat type="rEvas">0.0</stat>
+			<stat type="randomDamage">5</stat>
+		</stats>
+	</item>
+
+	<item id="81163" name="Exalted Shooter" type="Weapon">
+		<!-- Weapon for those who have taken their path of honor not long ago.\nPvE Damage +10%, Max HP +15%, Atk. Spd. +15%, P. Critical Damage +10%, P. Critical Rate +50.\nCannot be enchanted, crystallized, appearance modified, soul crystal enhanced, augmented, or assigned with attributes.\n\nCan be exchanged for other Exalted weapon through Lionel Hunter in Heine.]	popup=-1	default_action=[action_equip]	use_order=99	name_class=-1	color=1	Tooltip_Texture=[None -->
+		<set name="icon" val="icon.bm_the_shooter_of_hero_i01" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="lrhand" />
+		<set name="weapon_type" val="CROSSBOW" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="weight" val="500" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<skills>
+			<skill id="55033" level="1" /> <!-- Exalted Weapon -->
+		</skills>
+		<stats>
+			<stat type="pAtk">1237</stat>
+			<stat type="mAtk">303</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="accCombat">-3.75</stat>
+			<stat type="accMagic">0.0</stat>
+			<stat type="rCrit">12.0</stat>
+			<stat type="rEvas">0.0</stat>
+			<stat type="rEvas">0.0</stat>
+			<stat type="randomDamage">5</stat>
+		</stats>
+	</item>
+
+	<item id="81164" name="Exalted Buster" type="Weapon">
+		<!-- Weapon for those who have taken their path of honor not long ago.\nPvE Damage +10%, Max HP +15%, Atk. Spd. +15%, M. Skill Critical Damage +10%, M. Critical Rate +50.\nCannot be enchanted, crystallized, appearance modified, soul crystal enhanced, augmented, or assigned with attributes.\n\nCan be exchanged for other Exalted weapon through Lionel Hunter in Heine.]	popup=-1	default_action=[action_equip]	use_order=99	name_class=-1	color=1	Tooltip_Texture=[None -->
+		<set name="icon" val="icon.bm_the_magic_sword_of_hero_i01" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="rhand" />
+		<set name="weapon_type" val="SWORD" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="weight" val="500" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<skills>
+			<skill id="55034" level="1" /> <!-- Exalted Weapon -->
+		</skills>
+		<stats>
+			<stat type="pAtk">558</stat>
+			<stat type="mAtk">405</stat>
+			<stat type="pAtkSpd">379</stat>
+			<stat type="accCombat">0.0</stat>
+			<stat type="accMagic">0.0</stat>
+			<stat type="rCrit">8.0</stat>
+			<stat type="rEvas">0.0</stat>
+			<stat type="rEvas">0.0</stat>
+			<stat type="randomDamage">10</stat>
+		</stats>
+	</item>
+
+	<item id="81165" name="Exalted Caster" type="Weapon">
+		<!-- Weapon for those who have taken their path of honor not long ago.\nPvE Damage +10%, Max HP +15%, Atk. Spd. +15%, M. Skill Critical Damage +10%, M. Critical Rate +50.\nCannot be enchanted, crystallized, appearance modified, soul crystal enhanced, augmented, or assigned with attributes.\n\nCan be exchanged for other Exalted weapon through Lionel Hunter in Heine.]	popup=-1	default_action=[action_equip]	use_order=99	name_class=-1	color=1	Tooltip_Texture=[None -->
+		<set name="icon" val="icon.bm_the_mace_of_hero_i01" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="rhand" />
+		<set name="weapon_type" val="BLUNT" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="weight" val="500" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<skills>
+			<skill id="55034" level="1" /> <!-- Exalted Weapon -->
+		</skills>
+		<stats>
+			<stat type="pAtk">558</stat>
+			<stat type="mAtk">405</stat>
+			<stat type="pAtkSpd">379</stat>
+			<stat type="accCombat">8.0</stat>
+			<stat type="accMagic">0.0</stat>
+			<stat type="rCrit">6.0</stat>
+			<stat type="rEvas">0.0</stat>
+			<stat type="rEvas">0.0</stat>
+			<stat type="randomDamage">20</stat>
+		</stats>
+	</item>
+
+	<item id="81166" name="Exalted Retributer" type="Weapon">
+		<!-- Weapon for those who have taken their path of honor not long ago.\nPvE Damage +10%, Max HP +15%, Atk. Spd./ Casting Spd. +15%, P. Critical Damage/ M. Skill Critical Damage +10%.\nCannot be enchanted, crystallized, appearance modified, soul crystal enhanced, augmented, or assigned with attributes.\n\nCan be exchanged for other Exalted weapon through Lionel Hunter in Heine.]	popup=-1	default_action=[action_equip]	use_order=99	name_class=-1	color=1	Tooltip_Texture=[None -->
+		<set name="icon" val="icon.bm_the_staff_of_hero_i01" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="lrhand" />
+		<set name="weapon_type" val="BLUNT" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="weight" val="500" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<skills>
+			<skill id="55035" level="1" /> <!-- Exalted Weapon -->
+		</skills>
+		<stats>
+			<stat type="pAtk">679</stat>
+			<stat type="mAtk">445</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="accCombat">8.0</stat>
+			<stat type="accMagic">8.0</stat>
+			<stat type="rCrit">6.0</stat>
+			<stat type="rEvas">0.0</stat>
+			<stat type="rEvas">0.0</stat>
+			<stat type="randomDamage">20</stat>
+		</stats>
+	</item>
+
+	<item id="81167" name="Exalted Dual Swords" type="Weapon">
+		<!-- Weapon for those who have taken their path of honor not long ago.\nPvE Damage +10%, Max HP +15%, Atk. Spd. +15%, P. Critical Damage +5%, P. Critical Rate +100.\nCannot be enchanted, crystallized, appearance modified, soul crystal enhanced, augmented, or assigned with attributes.\n\nCan be exchanged for other Exalted weapon through Lionel Hunter in Heine.]	popup=-1	default_action=[action_equip]	use_order=99	name_class=-1	color=1	Tooltip_Texture=[None -->
+		<set name="icon" val="icon.bm_the_dualsword_of_hero_i01" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="lrhand" />
+		<set name="weapon_type" val="DUAL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="weight" val="500" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<skills>
+			<skill id="55033" level="1" /> <!-- Exalted Weapon -->
+		</skills>
+		<stats>
+			<stat type="pAtk">849</stat>
+			<stat type="mAtk">303</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="accCombat">0.0</stat>
+			<stat type="accMagic">0.0</stat>
+			<stat type="rCrit">8.0</stat>
+			<stat type="rEvas">0.0</stat>
+			<stat type="rEvas">0.0</stat>
+			<stat type="randomDamage">10</stat>
+		</stats>
+	</item>
+
+	<item id="81168" name="Exalted Dual Daggers" type="Weapon">
+		<!-- Weapon for those who have taken their path of honor not long ago.\nPvE Damage +10%, Max HP +15%, Atk. Spd. +15%, P. Critical Damage +10%, P. Critical Rate +50.\nCannot be enchanted, crystallized, appearance modified, soul crystal enhanced, augmented, or assigned with attributes.\n\nCan be exchanged for other Exalted weapon through Lionel Hunter in Heine.]	popup=-1	default_action=[action_equip]	use_order=99	name_class=-1	color=1	Tooltip_Texture=[None -->
+		<set name="icon" val="icon.bm_the_dualdagger_of_hero_i01" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="lrhand" />
+		<set name="weapon_type" val="DUALDAGGER" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="weight" val="500" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<skills>
+			<skill id="55033" level="1" /> <!-- Exalted Weapon -->
+		</skills>
+		<stats>
+			<stat type="pAtk">698</stat>
+			<stat type="mAtk">303</stat>
+			<stat type="pAtkSpd">433</stat>
+			<stat type="accCombat">-3.75</stat>
+			<stat type="accMagic">0.0</stat>
+			<stat type="rCrit">12.0</stat>
+			<stat type="rEvas">0.0</stat>
+			<stat type="rEvas">0.0</stat>
+			<stat type="randomDamage">10</stat>
+		</stats>
+	</item>
+
+	<item id="81169" name="Enhanced Exalted Cutter" type="Weapon">
+		<!-- Weapon for those who are going to overcome their limits.\nPvE Damage +10%, Max HP +15%, Atk. Spd. +15%, P. Critical Damage +5%, P. Critical Rate +100.\nCannot be enchanted, crystallized, appearance modified, augmented, or assigned with attributes. Special Soul Crystal can be used.\n\nCan be exchanged for other Exalted weapon through Lionel Hunter in Heine.]	popup=-1	default_action=[action_equip]	use_order=99	name_class=-1	color=1	Tooltip_Texture=[None -->
+		<set name="icon" val="icon.bm_the_sword_of_hero_i02" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="rhand" />
+		<set name="weapon_type" val="SWORD" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="weight" val="500" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<skills>
+			<skill id="55033" level="1" /> <!-- Exalted Weapon -->
+		</skills>
+		<stats>
+			<stat type="pAtk">833</stat>
+			<stat type="mAtk">363</stat>
+			<stat type="pAtkSpd">379</stat>
+			<stat type="accCombat">0.0</stat>
+			<stat type="accMagic">0.0</stat>
+			<stat type="rCrit">8.0</stat>
+			<stat type="rEvas">0.0</stat>
+			<stat type="rEvas">0.0</stat>
+			<stat type="randomDamage">10</stat>
+		</stats>
+	</item>
+
+	<item id="81170" name="Enhanced Exalted Slasher" type="Weapon">
+		<!-- Weapon for those who are going to overcome their limits.\nPvE Damage +10%, Max HP +15%, Atk. Spd. +15%, P. Critical Damage +5%, P. Critical Rate +100.\nCannot be enchanted, crystallized, appearance modified, augmented, or assigned with attributes. Special Soul Crystal can be used.\n\nCan be exchanged for other Exalted weapon through Lionel Hunter in Heine.]	popup=-1	default_action=[action_equip]	use_order=99	name_class=-1	color=1	Tooltip_Texture=[None -->
+		<set name="icon" val="icon.bm_the_two_handed_sword_of_hero_i02" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="lrhand" />
+		<set name="weapon_type" val="SWORD" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="weight" val="500" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<skills>
+			<skill id="55033" level="1" /> <!-- Exalted Weapon -->
+		</skills>
+		<stats>
+			<stat type="pAtk">1014</stat>
+			<stat type="mAtk">363</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="accCombat">0.0</stat>
+			<stat type="accMagic">0.0</stat>
+			<stat type="rCrit">8.0</stat>
+			<stat type="rEvas">0.0</stat>
+			<stat type="rEvas">0.0</stat>
+			<stat type="randomDamage">10</stat>
+		</stats>
+	</item>
+
+	<item id="81171" name="Enhanced Exalted Avenger" type="Weapon">
+		<!-- Weapon for those who are going to overcome their limits.\nPvE Damage +10%, Max HP +15%, Atk. Spd. +15%, P. Critical Damage +5%, P. Critical Rate +100.\nCannot be enchanted, crystallized, appearance modified, augmented, or assigned with attributes. Special Soul Crystal can be used.\n\nCan be exchanged for other Exalted weapon through Lionel Hunter in Heine.]	popup=-1	default_action=[action_equip]	use_order=99	name_class=-1	color=1	Tooltip_Texture=[None -->
+		<set name="icon" val="icon.bm_the_axe_of_hero_i02" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="rhand" />
+		<set name="weapon_type" val="SWORD" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="weight" val="500" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<skills>
+			<skill id="55033" level="1" /> <!-- Exalted Weapon -->
+		</skills>
+		<stats>
+			<stat type="pAtk">833</stat>
+			<stat type="mAtk">363</stat>
+			<stat type="pAtkSpd">379</stat>
+			<stat type="accCombat">8.0</stat>
+			<stat type="accMagic">0.0</stat>
+			<stat type="rCrit">6.0</stat>
+			<stat type="rEvas">0.0</stat>
+			<stat type="rEvas">0.0</stat>
+			<stat type="randomDamage">20</stat>
+		</stats>
+	</item>
+
+	<item id="81172" name="Enhanced Exalted Fighter" type="Weapon">
+		<!-- Weapon for those who are going to overcome their limits.\nPvE Damage +10%, Max HP +15%, Atk. Spd. +15%, P. Critical Damage +5%, P. Critical Rate +100.\nCannot be enchanted, crystallized, appearance modified, augmented, or assigned with attributes. Special Soul Crystal can be used.\n\nCan be exchanged for other Exalted weapon through Lionel Hunter in Heine.]	popup=-1	default_action=[action_equip]	use_order=99	name_class=-1	color=1	Tooltip_Texture=[None -->
+		<set name="icon" val="icon.bm_the_fist_of_hero_i02" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="lrhand" />
+		<set name="weapon_type" val="DUALFIST" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="weight" val="500" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<skills>
+			<skill id="55033" level="1" /> <!-- Exalted Weapon -->
+		</skills>
+		<stats>
+			<stat type="pAtk">1014</stat>
+			<stat type="mAtk">363</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="accCombat">8.0</stat>
+			<stat type="accMagic">0.0</stat>
+			<stat type="rCrit">6.0</stat>
+			<stat type="rEvas">0.0</stat>
+			<stat type="rEvas">0.0</stat>
+			<stat type="randomDamage">5</stat>
+		</stats>
+	</item>
+
+	<item id="81173" name="Enhanced Exalted Stormer" type="Weapon">
+		<!-- Weapon for those who are going to overcome their limits.\nPvE Damage +10%, Max HP +15%, Atk. Spd. +15%, P. Critical Damage +5%, P. Critical Rate +100.\nCannot be enchanted, crystallized, appearance modified, augmented, or assigned with attributes. Special Soul Crystal can be used.\n\nCan be exchanged for other Exalted weapon through Lionel Hunter in Heine.]	popup=-1	default_action=[action_equip]	use_order=99	name_class=-1	color=1	Tooltip_Texture=[None -->
+		<set name="icon" val="icon.bm_the_pole_of_hero_i02" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="lrhand" />
+		<set name="weapon_type" val="POLE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="weight" val="500" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<skills>
+			<skill id="55033" level="1" /> <!-- Exalted Weapon -->
+		</skills>
+		<stats>
+			<stat type="pAtk">833</stat>
+			<stat type="mAtk">363</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="accCombat">-3.75</stat>
+			<stat type="accMagic">0.0</stat>
+			<stat type="rCrit">8.0</stat>
+			<stat type="rEvas">0.0</stat>
+			<stat type="rEvas">0.0</stat>
+			<stat type="randomDamage">10</stat>
+		</stats>
+	</item>
+
+	<item id="81174" name="Enhanced Exalted Thrower" type="Weapon">
+		<!-- Weapon for those who are going to overcome their limits.\nPvE Damage +10%, Max HP +15%, Atk. Spd. +15%, P. Critical Damage +10%, P. Critical Rate +50.\nCannot be enchanted, crystallized, appearance modified, augmented, or assigned with attributes. Special Soul Crystal can be used.\n\nCan be exchanged for other Exalted weapon through Lionel Hunter in Heine.]	popup=-1	default_action=[action_equip]	use_order=99	name_class=-1	color=1	Tooltip_Texture=[None -->
+		<set name="icon" val="icon.bm_the_bow_of_hero_i02" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="lrhand" />
+		<set name="weapon_type" val="BOW" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="weight" val="500" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<skills>
+			<skill id="55033" level="1" /> <!-- Exalted Weapon -->
+		</skills>
+		<stats>
+			<stat type="pAtk">1641</stat>
+			<stat type="mAtk">363</stat>
+			<stat type="pAtkSpd">293</stat>
+			<stat type="accCombat">-3.75</stat>
+			<stat type="accMagic">0.0</stat>
+			<stat type="rCrit">12.0</stat>
+			<stat type="rEvas">0.0</stat>
+			<stat type="rEvas">0.0</stat>
+			<stat type="randomDamage">5</stat>
+		</stats>
+	</item>
+
+	<item id="81175" name="Enhanced Exalted Shooter" type="Weapon">
+		<!-- Weapon for those who are going to overcome their limits.\nPvE Damage +10%, Max HP +15%, Atk. Spd. +15%, P. Critical Damage +10%, P. Critical Rate +50.\nCannot be enchanted, crystallized, appearance modified, augmented, or assigned with attributes. Special Soul Crystal can be used.\n\nCan be exchanged for other Exalted weapon through Lionel Hunter in Heine.]	popup=-1	default_action=[action_equip]	use_order=99	name_class=-1	color=1	Tooltip_Texture=[None -->
+		<set name="icon" val="icon.bm_the_shooter_of_hero_i02" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="lrhand" />
+		<set name="weapon_type" val="CROSSBOW" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="weight" val="500" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<skills>
+			<skill id="55033" level="1" /> <!-- Exalted Weapon -->
+		</skills>
+		<stats>
+			<stat type="pAtk">1477</stat>
+			<stat type="mAtk">363</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="accCombat">-3.75</stat>
+			<stat type="accMagic">0.0</stat>
+			<stat type="rCrit">12.0</stat>
+			<stat type="rEvas">0.0</stat>
+			<stat type="rEvas">0.0</stat>
+			<stat type="randomDamage">5</stat>
+		</stats>
+	</item>
+
+	<item id="81176" name="Enhanced Exalted Buster" type="Weapon">
+		<!-- Weapon for those who are going to overcome their limits.\nPvE Damage +10%, Max HP +15%, Atk. Spd. +15%, M. Skill Critical Damage +10%, M. Critical Rate +50.\nCannot be enchanted, crystallized, appearance modified, augmented, or assigned with attributes. Special Soul Crystal can be used.\n\nCan be exchanged for other Exalted weapon through Lionel Hunter in Heine.]	popup=-1	default_action=[action_equip]	use_order=99	name_class=-1	color=1	Tooltip_Texture=[None -->
+		<set name="icon" val="icon.bm_the_magic_sword_of_hero_i02" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="rhand" />
+		<set name="weapon_type" val="SWORD" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="weight" val="500" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<skills>
+			<skill id="55034" level="1" /> <!-- Exalted Weapon -->
+		</skills>
+		<stats>
+			<stat type="pAtk">666</stat>
+			<stat type="mAtk">484</stat>
+			<stat type="pAtkSpd">379</stat>
+			<stat type="accCombat">0.0</stat>
+			<stat type="accMagic">0.0</stat>
+			<stat type="rCrit">8.0</stat>
+			<stat type="rEvas">0.0</stat>
+			<stat type="rEvas">0.0</stat>
+			<stat type="randomDamage">10</stat>
+		</stats>
+	</item>
+
+	<item id="81177" name="Enhanced Exalted Caster" type="Weapon">
+		<!-- Weapon for those who are going to overcome their limits.\nPvE Damage +10%, Max HP +15%, Atk. Spd. +15%, M. Skill Critical Damage +10%, M. Critical Rate +50.\nCannot be enchanted, crystallized, appearance modified, augmented, or assigned with attributes. Special Soul Crystal can be used.\n\nCan be exchanged for other Exalted weapon through Lionel Hunter in Heine.]	popup=-1	default_action=[action_equip]	use_order=99	name_class=-1	color=1	Tooltip_Texture=[None -->
+		<set name="icon" val="icon.bm_the_mace_of_hero_i02" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="rhand" />
+		<set name="weapon_type" val="BLUNT" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="weight" val="500" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<skills>
+			<skill id="55034" level="1" /> <!-- Exalted Weapon -->
+		</skills>
+		<stats>
+			<stat type="pAtk">666</stat>
+			<stat type="mAtk">484</stat>
+			<stat type="pAtkSpd">379</stat>
+			<stat type="accCombat">8.0</stat>
+			<stat type="accMagic">0.0</stat>
+			<stat type="rCrit">6.0</stat>
+			<stat type="rEvas">0.0</stat>
+			<stat type="rEvas">0.0</stat>
+			<stat type="randomDamage">20</stat>
+		</stats>
+	</item>
+
+	<item id="81178" name="Enhanced Exalted Retributer" type="Weapon">
+		<!-- Weapon for those who are going to overcome their limits.\nPvE Damage +10%, Max HP +15%, Atk. Spd./ Casting Spd. +15%, P. Critical Damage/ M. Skill Critical Damage +10%.\nCannot be enchanted, crystallized, appearance modified, augmented, or assigned with attributes. Special Soul Crystal can be used.\n\nCan be exchanged for other Exalted weapon through Lionel Hunter in Heine.]	popup=-1	default_action=[action_equip]	use_order=99	name_class=-1	color=1	Tooltip_Texture=[None -->
+		<set name="icon" val="icon.bm_the_staff_of_hero_i02" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="lrhand" />
+		<set name="weapon_type" val="BLUNT" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="weight" val="500" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<skills>
+			<skill id="55035" level="1" /> <!-- Exalted Weapon -->
+		</skills>
+		<stats>
+			<stat type="pAtk">811</stat>
+			<stat type="mAtk">532</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="accCombat">8.0</stat>
+			<stat type="accMagic">8.0</stat>
+			<stat type="rCrit">6.0</stat>
+			<stat type="rEvas">0.0</stat>
+			<stat type="rEvas">0.0</stat>
+			<stat type="randomDamage">20</stat>
+		</stats>
+	</item>
+
+	<item id="81179" name="Enhanced Exalted Dual Swords" type="Weapon">
+		<!-- Weapon for those who are going to overcome their limits.\nPvE Damage +10%, Max HP +15%, Atk. Spd. +15%, P. Critical Damage +5%, P. Critical Rate +100.\nCannot be enchanted, crystallized, appearance modified, augmented, or assigned with attributes. Special Soul Crystal can be used.\n\nCan be exchanged for other Exalted weapon through Lionel Hunter in Heine.]	popup=-1	default_action=[action_equip]	use_order=99	name_class=-1	color=1	Tooltip_Texture=[None -->
+		<set name="icon" val="icon.bm_the_dualsword_of_hero_i02" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="lrhand" />
+		<set name="weapon_type" val="DUAL" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="weight" val="500" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<skills>
+			<skill id="55033" level="1" /> <!-- Exalted Weapon -->
+		</skills>
+		<stats>
+			<stat type="pAtk">1014</stat>
+			<stat type="mAtk">363</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="accCombat">0.0</stat>
+			<stat type="accMagic">0.0</stat>
+			<stat type="rCrit">8.0</stat>
+			<stat type="rEvas">0.0</stat>
+			<stat type="rEvas">0.0</stat>
+			<stat type="randomDamage">10</stat>
+		</stats>
+	</item>
+
+	<item id="81180" name="Enhanced Exalted Dual Daggers" type="Weapon">
+		<!-- Weapon for those who are going to overcome their limits.\nPvE Damage +10%, Max HP +15%, Atk. Spd. +15%, P. Critical Damage +10%, P. Critical Rate +50.\nCannot be enchanted, crystallized, appearance modified, augmented, or assigned with attributes. Special Soul Crystal can be used.\n\nCan be exchanged for other Exalted weapon through Lionel Hunter in Heine.]	popup=-1	default_action=[action_equip]	use_order=99	name_class=-1	color=1	Tooltip_Texture=[None -->
+		<set name="icon" val="icon.bm_the_dualdagger_of_hero_i02" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="lrhand" />
+		<set name="weapon_type" val="DUALDAGGER" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="weight" val="500" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<skills>
+			<skill id="55033" level="1" /> <!-- Exalted Weapon -->
+		</skills>
+		<stats>
+			<stat type="pAtk">833</stat>
+			<stat type="mAtk">363</stat>
+			<stat type="pAtkSpd">433</stat>
+			<stat type="accCombat">-3.75</stat>
+			<stat type="accMagic">0.0</stat>
+			<stat type="rCrit">12.0</stat>
+			<stat type="rEvas">0.0</stat>
+			<stat type="rEvas">0.0</stat>
+			<stat type="randomDamage">10</stat>
+		</stats>
+	</item>
+
+	<item id="81186" name="Exalted Shield" type="Armor">
+		<!-- Armor for those who have taken their path of honor not long ago.\nCannot be enchanted, crystallized, appearance modified.\n\nCan be exchanged for other Exalted armor through Lionel Hunter in Heine.]	popup=-1	default_action=[action_equip]	use_order=99	name_class=-1	color=1	Tooltip_Texture=[None -->
+		<set name="icon" val="icon.bm_polyne_R99_1_heavy_shield" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="lhand" />
+		<set name="weapon_type" val="NONE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="weight" val="1130" />
+		<set name="soulshots" val="0" />
+		<set name="spiritshots" val="0" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<stats>
+			<stat type="pDef">156</stat>
+			<stat type="accCombat">0.0</stat>
+			<stat type="accMagic">0.0</stat>
+			<stat type="rCrit">0.0</stat>
+			<stat type="rEvas">0.0</stat>
+			<stat type="rEvas">0.0</stat>
+		</stats>
+	</item>
+
+	<item id="81181" name="Exalted Helmet" additionalName="Heavy Armor" type="Armor">
+		<set name="icon" val="icon.armor_circlet_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="head" />
+		<set name="weight" val="530" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="immediate_effect" val="true" />
+		<stats>
+			<stat type="pDef">156</stat>
+		</stats>
+	</item>
+	<item id="81182" name="Exalted Breastplate " additionalName="Heavy Armor" type="Armor">
+		<set name="icon" val="icon.armor_t803_u_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="armor_type" val="MAGIC" />
+		<set name="bodypart" val="chest" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="BRONZE" />
+		<set name="weight" val="7520" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_depositable" val="false" />
+		<stats>
+			<stat type="pDef">417</stat>
+		</stats>
+	</item>
+	<item id="81183" name="Exalted Gaiters" additionalName="Heavy Armor" type="Armor">
+		<set name="icon" val="icon.armor_t703_l_i00" />
+		<set name="armor_type" val="MAGIC" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="legs" />
+		<set name="weight" val="3170" />
+		<set name="immediate_effect" val="true" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_depositable" val="false" />
+		<stats>
+			<stat type="pDef">260</stat>
+		</stats>
+	</item>
+	<item id="81184" name="Exalted Gauntlets" additionalName="Heavy Armor" type="Armor">
+		<set name="icon" val="icon.armor_t703_g_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="gloves" />
+		<set name="weight" val="510" />
+		<set name="immediate_effect" val="true" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_depositable" val="false" />
+		<stats>
+			<stat type="pDef">104</stat>
+		</stats>
+	</item>
+	<item id="81185" name="Exalted Boots" additionalName="Heavy Armor" type="Armor">
+		<set name="icon" val="icon.armor_t703_b_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="feet" />
+		<set name="weight" val="1070" />
+		<set name="immediate_effect" val="true" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_depositable" val="false" />
+		<stats>
+			<stat type="pDef">104</stat>
+		</stats>
+	</item>
+
+	<item id="81187" name="Exalted Leather Helmet" additionalName="Heavy Armor" type="Armor">
+		<set name="icon" val="icon.armor_circlet_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="head" />
+		<set name="weight" val="530" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="immediate_effect" val="true" />
+		<stats>
+			<stat type="pDef">156</stat>
+		</stats>
+	</item>
+	<item id="81188" name="Exalted Leather Armor " additionalName="Heavy Armor" type="Armor">
+		<set name="icon" val="icon.armor_t803_u_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="armor_type" val="MAGIC" />
+		<set name="bodypart" val="chest" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="BRONZE" />
+		<set name="weight" val="7520" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_depositable" val="false" />
+		<stats>
+			<stat type="pDef">333</stat>
+		</stats>
+	</item>
+	<item id="81189" name="Exalted Leather Leggings" additionalName="Heavy Armor" type="Armor">
+		<set name="icon" val="icon.armor_t703_l_i00" />
+		<set name="armor_type" val="MAGIC" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="legs" />
+		<set name="weight" val="3170" />
+		<set name="immediate_effect" val="true" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_depositable" val="false" />
+		<stats>
+			<stat type="pDef">208</stat>
+		</stats>
+	</item>
+	<item id="81190" name="Exalted Leather Gloves" additionalName="Heavy Armor" type="Armor">
+		<set name="icon" val="icon.armor_t703_g_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="gloves" />
+		<set name="weight" val="510" />
+		<set name="immediate_effect" val="true" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_depositable" val="false" />
+		<stats>
+			<stat type="pDef">104</stat>
+		</stats>
+	</item>
+	<item id="81191" name="Exalted Leather Boots" additionalName="Heavy Armor" type="Armor">
+		<set name="icon" val="icon.armor_t703_b_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="feet" />
+		<set name="weight" val="1070" />
+		<set name="immediate_effect" val="true" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_depositable" val="false" />
+		<stats>
+			<stat type="pDef">104</stat>
+		</stats>
+	</item>
+
+	<item id="81192" name="Exalted Circlet" additionalName="Robe" type="Armor">
+		<set name="icon" val="icon.armor_circlet_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="head" />
+		<set name="weight" val="530" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="immediate_effect" val="true" />
+		<stats>
+			<stat type="pDef">156</stat>
+		</stats>
+	</item>
+	<item id="81193" name="Exalted Tunic" additionalName="Robe" type="Armor">
+		<set name="icon" val="icon.armor_t803_u_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="armor_type" val="MAGIC" />
+		<set name="bodypart" val="chest" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="BRONZE" />
+		<set name="weight" val="1750" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_depositable" val="false" />
+		<stats>
+			<stat type="mDef">49</stat>
+			<stat type="pDef">229</stat>
+			<stat type="maxMp">649</stat>
+		</stats>
+	</item>
+	<item id="81194" name="Exalted Stockings" additionalName="Robe" type="Armor">
+		<set name="icon" val="icon.armor_t703_l_i00" />
+		<set name="armor_type" val="MAGIC" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="legs" />
+		<set name="weight" val="850" />
+		<set name="immediate_effect" val="true" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_depositable" val="false" />
+		<stats>
+			<stat type="pDef">143</stat>
+			<stat type="mDef">33</stat>
+			<stat type="maxMp">427</stat>
+		</stats>
+	</item>
+	<item id="81195" name="Exalted Gloves" additionalName="Robe" type="Armor">
+		<set name="icon" val="icon.armor_t703_g_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="gloves" />
+		<set name="weight" val="510" />
+		<set name="immediate_effect" val="true" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_depositable" val="false" />
+		<stats>
+			<stat type="pDef">104</stat>
+		</stats>
+	</item>
+	<item id="81196" name="Exalted Shoes" additionalName="Robe" type="Armor">
+		<set name="icon" val="icon.armor_t703_b_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="feet" />
+		<set name="weight" val="1070" />
+		<set name="immediate_effect" val="true" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_depositable" val="false" />
+		<stats>
+			<stat type="pDef">104</stat>
+		</stats>
+	</item>
+
+
+</list>

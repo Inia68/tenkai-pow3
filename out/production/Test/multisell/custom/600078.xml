@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/multisell.xsd">
+	<npcs>
+		<npc>-1</npc> <!-- CB -->
+	</npcs>
+
+	<item>
+		<ingredient count="100" id="4355" /><!-- Blue Eva -->
+		<production count="1" id="28769" /><!-- Virgo Agathion Charm -->
+	</item>
+
+	<item>
+		<ingredient count="100" id="4355" /><!-- Blue Eva -->
+		<production count="1" id="28781" /><!-- Capricorn Agathion Charm -->
+	</item>
+
+	<item>
+		<ingredient count="100" id="4355" /><!-- Blue Eva -->
+		<production count="1" id="28793" /><!-- Libra Agathion Charm -->
+	</item>
+
+	<item>
+		<ingredient count="100" id="4355" /><!-- Blue Eva -->
+		<production count="1" id="28805" /><!-- Aries Agathion Charm -->
+	</item>
+
+	<item>
+		<ingredient count="100" id="4355" /><!-- Blue Eva -->
+		<production count="1" id="28817" /><!-- Taurus Agathion Charm -->
+	</item>
+
+	<item>
+		<ingredient count="100" id="4355" /><!-- Blue Eva -->
+		<production count="1" id="28829" /><!-- Leo Agathion Charm -->
+	</item>
+
+	<item>
+		<ingredient count="100" id="4355" /><!-- Blue Eva -->
+		<production count="1" id="28841" /><!-- Gemini Agathion Charm -->
+	</item>
+
+	<item>
+		<ingredient count="100" id="4355" /><!-- Blue Eva -->
+		<production count="1" id="28853" /><!-- Scorpio Agathion Charm -->
+	</item>
+
+	<item>
+		<ingredient count="100" id="4355" /><!-- Blue Eva -->
+		<production count="1" id="28865" /><!-- Aquarius Agathion Charm -->
+	</item>
+
+	<item>
+		<ingredient count="100" id="4355" /><!-- Blue Eva -->
+		<production count="1" id="28877" /><!-- Pisces Agathion Charm -->
+	</item>
+
+	<item>
+		<ingredient count="100" id="4355" /><!-- Blue Eva -->
+		<production count="1" id="28889" /><!-- Sagittarius  Agathion Charm -->
+	</item>
+
+	<item>
+		<ingredient count="100" id="4355" /><!-- Blue Eva -->
+		<production count="1" id="28901" /><!-- Cancer  Agathion Charm -->
+	</item>
+</list>

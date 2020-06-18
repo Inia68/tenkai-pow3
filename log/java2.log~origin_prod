@@ -1,0 +1,9 @@
+2020.05.12 11:56:46,342	WARNING	1	org.l2jmobius.commons.util.PropertiesParser	[Event.ini] missing property for key: INSTANCED_EVENT_MIN_PLAYERS_IN_TEAMS using default value: 1
+2020.05.12 11:56:46,403	INFO	1	org.l2jmobius.commons.util.IXmlReader	Network Config: ipconfig.xml doesn't exists using automatic configuration...
+2020.05.12 11:56:46,704	INFO	1	org.l2jmobius.commons.util.IXmlReader	Network Config: Adding new subnet: 127.0.0.0/8 address: 127.0.0.1
+2020.05.12 11:56:46,709	INFO	1	org.l2jmobius.commons.util.IXmlReader	Network Config: Adding new subnet: 169.254.0.0/16 address: 169.254.57.29
+2020.05.12 11:56:46,715	INFO	1	org.l2jmobius.commons.util.IXmlReader	Network Config: Adding new subnet: 217.182.197.0/24 address: 217.182.197.173
+2020.05.12 11:56:46,724	INFO	1	org.l2jmobius.commons.util.IXmlReader	Network Config: Adding new subnet: 0.0.0.0/0 address: 217.182.197.173
+2020.05.12 11:56:46,774	WARNING	1	org.l2jmobius.commons.util.PropertiesParser	[Rates.ini] Invalid value specified for key: RateQuestRewardXP specified value: 1* should be "float" using default value: 1.0
+2020.05.12 11:56:46,783	INFO	1	org.l2jmobius.Config	Loaded 1 Filter Words.
+2020.05.12 11:56:47,270	INFO	26	org.l2jmobius.gameserver.model.World	World: (288 by 272) World Region Grid set up.

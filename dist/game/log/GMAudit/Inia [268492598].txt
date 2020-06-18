@@ -1,0 +1,35 @@
+03/04/2020 19:54:18>Inia [268492598]>admin_admin>no-target>
+03/04/2020 19:54:19>Inia [268492598]>admin_admin7>no-target>
+03/04/2020 19:54:21>Inia [268492598]>admin_admin4>no-target>
+03/04/2020 19:54:22>Inia [268492598]>admin_html reload.htm>no-target>
+03/04/2020 19:54:25>Inia [268492598]>admin_reload handler>no-target>
+03/04/2020 19:55:02>Inia [268492598]>admin_gm_event>no-target>
+03/04/2020 19:55:39>Inia [268492598]>admin_admin>no-target>
+03/04/2020 19:55:41>Inia [268492598]>admin_admin7>no-target>
+03/04/2020 19:55:42>Inia [268492598]>admin_admin4>no-target>
+03/04/2020 19:55:43>Inia [268492598]>admin_html reload.htm>no-target>
+03/04/2020 19:55:45>Inia [268492598]>admin_reload html>no-target>
+03/04/2020 19:56:02>Inia [268492598]>admin_gm_event>no-target>
+03/04/2020 19:56:05>Inia [268492598]>admin_gm_event start creature_invasion>no-target>
+03/04/2020 19:56:42>Inia [268492598]>admin_admin>no-target>
+03/04/2020 19:56:44>Inia [268492598]>admin_admin7>no-target>
+03/04/2020 19:56:46>Inia [268492598]>admin_admin4>no-target>
+03/04/2020 19:56:47>Inia [268492598]>admin_html reload.htm>no-target>
+03/04/2020 19:56:52>Inia [268492598]>admin_reload npc>no-target>
+03/04/2020 19:57:08>Inia [268492598]>admin_gm_event>no-target>
+03/04/2020 19:57:10>Inia [268492598]>admin_gm_event start creature_invasion>no-target>
+03/04/2020 19:57:16>Inia [268492598]>admin_admin>no-target>
+03/04/2020 19:57:17>Inia [268492598]>admin_admin2>no-target>
+03/04/2020 19:57:18>Inia [268492598]>admin_admin6>no-target>
+03/04/2020 19:57:20>Inia [268492598]>admin_admin7>no-target>
+03/04/2020 19:57:22>Inia [268492598]>admin_admin>no-target>
+03/04/2020 19:57:23>Inia [268492598]>admin_move_to>no-target>
+03/04/2020 19:57:25>Inia [268492598]>admin_html teleports/OtherLocations.htm>no-target>
+03/04/2020 19:57:26>Inia [268492598]>admin_move_to -59193 -56893 -2039>no-target>
+03/04/2020 19:57:40>Inia [268492598]>admin_gm_event>no-target>
+03/04/2020 19:57:42>Inia [268492598]>admin_gm_event start creature_invasion>no-target>
+03/04/2020 19:57:49>Inia [268492598]>admin_admin>no-target>
+03/04/2020 19:57:51>Inia [268492598]>admin_move_to>no-target>
+03/04/2020 19:57:52>Inia [268492598]>admin_html teleports/TownAreas.htm>no-target>
+03/04/2020 19:57:53>Inia [268492598]>admin_html teleports/TownAreas/aden.htm>no-target>
+03/04/2020 19:57:54>Inia [268492598]>admin_move_to 147450 27064 -2208>no-target>

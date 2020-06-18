@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="../xsd/multisell.xsd">
+    <npcs>
+        <npc>40004</npc> <!-- Luxury Npc -->
+    </npcs>
+
+    <item>
+        <ingredient count="500" id="4355"/>    <!-- Blue Eva -->
+        <ingredient count="1" id="28486"/>        <!-- Magnificient Brooch Lv. 1 -->
+        <ingredient count="1" id="28539"/>        <!-- Brooch Spirit Stone -->
+        <production count="1" id="28487"/>        <!-- Magnificient Brooch Lv. 2 -->
+    </item>
+
+    <item>
+        <ingredient count="500" id="4355"/>    <!-- Blue Eva -->
+        <ingredient count="1" id="28487"/>        <!-- Magnificient Brooch Lv. 2 -->
+        <ingredient count="1" id="28540"/>        <!-- Brooch Spirit Stone (Rare)    -->
+        <production count="1" id="28488"/>        <!-- Magnificient Brooch Lv. 3 -->
+    </item>
+
+</list>

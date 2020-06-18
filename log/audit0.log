@@ -1,0 +1,67 @@
+[12 May 23:53:16] AUDIT, Client Emulator Detect: Player Pipichec using l2walker., PlayerInstance:Pipichec[268504526], NONE
+[14 May 14:07:33] AUDIT, Client Emulator Detect: Player Kebab using l2walker., PlayerInstance:Kebab[268552059], NONE
+[15 May 11:53:57] AUDIT, Player Gine is requesting skill Id: 1912 level 1 while having already learned 2 skills!, PlayerInstance:Gine[268519748], NONE
+[19 May 3:35:16] AUDIT, Player testest has invalid skill Provoke Aura (10028/1), class:Ertheia Wizard, PlayerInstance:testest[268501289], BROADCAST
+[19 May 3:35:16] AUDIT, Player testest has invalid skill Provoke Aura (10029/1), class:Ertheia Wizard, PlayerInstance:testest[268501289], BROADCAST
+[20 May 18:19:07] AUDIT, Player testest has invalid skill Provoke Aura (10028/1), class:Ertheia Wizard, PlayerInstance:testest[268501289], BROADCAST
+[21 May 4:14:04] AUDIT, Player Kyoto has invalid skill Novice Quick Shot (30619/1), class:Feoh Soulhounds, PlayerInstance:Kyoto[268493111], BROADCAST
+[21 May 4:14:04] AUDIT, Player Kyoto has invalid skill Bow/Crossbow Mastery (30636/1), class:Feoh Soulhounds, PlayerInstance:Kyoto[268493111], BROADCAST
+[21 May 4:14:04] AUDIT, Player Kyoto has invalid skill Light Armor Mastery (30630/1), class:Feoh Soulhounds, PlayerInstance:Kyoto[268493111], BROADCAST
+[21 May 13:13:51] AUDIT, Player Kuraikiri has invalid skill Wisdom (328/1), class:Feoh Soulhounds, PlayerInstance:Kuraikiri[268494399], BROADCAST
+[21 May 13:13:51] AUDIT, Player Kuraikiri has invalid skill Arcane Power (337/1), class:Feoh Soulhounds, PlayerInstance:Kuraikiri[268494399], BROADCAST
+[21 May 13:13:51] AUDIT, Player Kuraikiri has invalid skill Arcane Chaos (1338/1), class:Feoh Soulhounds, PlayerInstance:Kuraikiri[268494399], BROADCAST
+[21 May 13:13:51] AUDIT, Player Kuraikiri has invalid skill Super Haste (7029/4), class:Feoh Soulhounds, PlayerInstance:Kuraikiri[268494399], BROADCAST
+[21 May 13:13:51] AUDIT, Player Kuraikiri has invalid skill Novice Quick Shot (30619/1), class:Feoh Soulhounds, PlayerInstance:Kuraikiri[268494399], BROADCAST
+[21 May 13:13:51] AUDIT, Player Kuraikiri has invalid skill Bow/Crossbow Mastery (30636/1), class:Feoh Soulhounds, PlayerInstance:Kuraikiri[268494399], BROADCAST
+[21 May 13:13:51] AUDIT, Player Kuraikiri has invalid skill Light Armor Mastery (30630/1), class:Feoh Soulhounds, PlayerInstance:Kuraikiri[268494399], BROADCAST
+[23 May 19:23:27] AUDIT, Player Kyoguke has invalid skill Heroic Miracle (395/1), class:Yul Sagittarius, PlayerInstance:Kyoguke[268497641], BROADCAST
+[23 May 19:23:27] AUDIT, Player Kyoguke has invalid skill Super Haste (7029/4), class:Yul Sagittarius, PlayerInstance:Kyoguke[268497641], BROADCAST
+[23 May 19:23:27] AUDIT, Player Kyoguke has invalid skill Horn Melody - GM's Blessing (14779/1), class:Yul Sagittarius, PlayerInstance:Kyoguke[268497641], BROADCAST
+[23 May 19:23:27] AUDIT, Player Kyoguke has invalid skill Master's Call (23249/1), class:Yul Sagittarius, PlayerInstance:Kyoguke[268497641], BROADCAST
+[25 May 18:02:16] AUDIT, Player Inia is requesting skill Id: 1907 level 1 while having already learned 2 skills!, PlayerInstance:Inia[268493596], NONE
+[25 May 18:02:19] AUDIT, Player Inia is requesting skill Id: 1917 level 1 while having already learned 2 skills!, PlayerInstance:Inia[268493596], NONE
+[25 May 18:02:25] AUDIT, Player Inia is requesting skill Id: 1996 level 1 while having already learned 2 skills!, PlayerInstance:Inia[268493596], NONE
+[26 May 17:11:10] AUDIT, Player Rouben use autoenchant program , PlayerInstance:Rouben[268504712], NONE
+[30 May 14:03:35] AUDIT, Player Helion use autoenchant program , PlayerInstance:Helion[268639596], NONE
+[30 May 14:03:48] AUDIT, Player Helion use autoenchant program , PlayerInstance:Helion[268639596], NONE
+[02 Jun 19:18:11] AUDIT, Player Helion use autoenchant program , PlayerInstance:Helion[268639596], NONE
+[02 Jun 19:19:00] AUDIT, Player Helion use autoenchant program , PlayerInstance:Helion[268639596], NONE
+[02 Jun 19:19:30] AUDIT, Player Helion use autoenchant program , PlayerInstance:Helion[268639596], NONE
+[02 Jun 19:22:38] AUDIT, Player Helion use autoenchant program , PlayerInstance:Helion[268639596], NONE
+[02 Jun 19:23:03] AUDIT, Player Helion use autoenchant program , PlayerInstance:Helion[268639596], NONE
+[02 Jun 19:24:01] AUDIT, Player Helion use autoenchant program , PlayerInstance:Helion[268639596], NONE
+[03 Jun 19:43:25] AUDIT, Warning!! Character IntoTheVoid of account pro101 tried to purchase over 9999999999999 adena worth of goods., PlayerInstance:IntoTheVoid[268504277], NONE
+[04 Jun 13:45:15] AUDIT, Player Testt use autoenchant program , PlayerInstance:Testt[268544074], NONE
+[04 Jun 13:45:32] AUDIT, Player Testt use autoenchant program , PlayerInstance:Testt[268544074], NONE
+[04 Jun 13:51:41] AUDIT, Player Testt use autoenchant program , PlayerInstance:Testt[268544074], NONE
+[04 Jun 14:00:21] AUDIT, Player Testt use autoenchant program , PlayerInstance:Testt[268544074], NONE
+[06 Jun 15:09:02] AUDIT, Player Helion use autoenchant program , PlayerInstance:Helion[268639596], NONE
+[06 Jun 16:11:18] AUDIT, Player Helion use autoenchant program , PlayerInstance:Helion[268639596], NONE
+[06 Jun 16:11:32] AUDIT, Player Helion use autoenchant program , PlayerInstance:Helion[268639596], NONE
+[06 Jun 16:14:29] AUDIT, Player Helion use autoenchant program , PlayerInstance:Helion[268639596], NONE
+[06 Jun 19:18:38] AUDIT, Player Helion use autoenchant program , PlayerInstance:Helion[268639596], NONE
+[07 Jun 3:31:05] AUDIT, Player Meruril use autoenchant program , PlayerInstance:Meruril[268493010], NONE
+[07 Jun 9:37:31] AUDIT, Player Helion use autoenchant program , PlayerInstance:Helion[268639596], NONE
+[07 Jun 9:38:59] AUDIT, Player Helion use autoenchant program , PlayerInstance:Helion[268639596], NONE
+[07 Jun 13:52:49] AUDIT, Player OntoTheBright use autoenchant program , PlayerInstance:OntoTheBright[268493670], NONE
+[08 Jun 18:02:21] AUDIT, Player Helion use autoenchant program , PlayerInstance:Helion[268639596], NONE
+[08 Jun 18:22:41] AUDIT, Player Helion use autoenchant program , PlayerInstance:Helion[268639596], NONE
+[09 Jun 15:43:47] AUDIT, Player BuffMeMoar has invalid skill Divine Prayer (11851/6), class:Iss Doomcryer, PlayerInstance:BuffMeMoar[268496143], BROADCAST
+[09 Jun 15:43:47] AUDIT, Player BuffMeMoar has invalid skill Elemental Resistance (11861/1), class:Iss Doomcryer, PlayerInstance:BuffMeMoar[268496143], BROADCAST
+[09 Jun 15:43:47] AUDIT, Player BuffMeMoar has invalid skill Prophecy of Might (19204/1), class:Iss Doomcryer, PlayerInstance:BuffMeMoar[268496143], BROADCAST
+[09 Jun 15:43:47] AUDIT, Player BuffMeMoar has invalid skill Song of Assault (19231/1), class:Iss Doomcryer, PlayerInstance:BuffMeMoar[268496143], BROADCAST
+[09 Jun 15:43:47] AUDIT, Player BuffMeMoar has invalid skill Crippling Dance (19232/1), class:Iss Doomcryer, PlayerInstance:BuffMeMoar[268496143], BROADCAST
+[09 Jun 17:46:15] AUDIT, Player BuffMeMoar has invalid skill Elemental Resistance (11861/1), class:Iss Doomcryer, PlayerInstance:BuffMeMoar[268496143], BROADCAST
+[09 Jun 17:46:15] AUDIT, Player BuffMeMoar has invalid skill Crippling Dance (19232/1), class:Iss Doomcryer, PlayerInstance:BuffMeMoar[268496143], BROADCAST
+[09 Jun 17:46:15] AUDIT, Player BuffMeMoar has invalid skill Melee Weapon Resistance (11862/1), class:Iss Doomcryer, PlayerInstance:BuffMeMoar[268496143], BROADCAST
+[09 Jun 17:46:15] AUDIT, Player BuffMeMoar has invalid skill Prophecy of Might (19204/1), class:Iss Doomcryer, PlayerInstance:BuffMeMoar[268496143], BROADCAST
+[12 Jun 14:26:17] AUDIT, Player BuffMeMoar has invalid skill Prophecy of Might (19204/1), class:Iss Doomcryer, PlayerInstance:BuffMeMoar[268496143], BROADCAST
+[12 Jun 14:26:17] AUDIT, Player BuffMeMoar has invalid skill Elemental Resistance (11861/1), class:Iss Doomcryer, PlayerInstance:BuffMeMoar[268496143], BROADCAST
+[12 Jun 14:26:17] AUDIT, Player BuffMeMoar has invalid skill Crippling Dance (19232/1), class:Iss Doomcryer, PlayerInstance:BuffMeMoar[268496143], BROADCAST
+[18 Jun 1:15:57] AUDIT, Player Sfenx use autoenchant program , PlayerInstance:Sfenx[268497597], NONE
+[18 Jun 1:15:57] AUDIT, Player Sfenx use autoenchant program , PlayerInstance:Sfenx[268497597], NONE
+[18 Jun 1:15:57] AUDIT, Player Sfenx use autoenchant program , PlayerInstance:Sfenx[268497597], NONE
+[18 Jun 1:15:57] AUDIT, Player Sfenx use autoenchant program , PlayerInstance:Sfenx[268497597], NONE
+[18 Jun 1:15:58] AUDIT, Player Sfenx use autoenchant program , PlayerInstance:Sfenx[268497597], NONE
+[18 Jun 1:15:58] AUDIT, Player Sfenx use autoenchant program , PlayerInstance:Sfenx[268497597], NONE
+[18 Jun 1:15:58] AUDIT, Player Sfenx use autoenchant program , PlayerInstance:Sfenx[268497597], NONE

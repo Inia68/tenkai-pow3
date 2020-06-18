@@ -1,0 +1,1060 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list isChanceMultisell="true"   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../xsd/multisell.xsd">
+	<npcs>
+		<npc>30098</npc> <!-- Alexandria -->
+	</npcs>
+
+	<item>
+		<ingredient count="1" id="48969" enchantmentLevel="0" /> <!-- Artifact Lv. 0 -->
+		<ingredient count="5" id="80000" /> <!-- Artifact Fragment -->
+		<production count="1" id="48969"  enchantmentLevel="1"/> <!-- Artifact  Lv. 1 -->
+		<production count="1" id="48969" chance="100" enchantmentLevel="1"/> <!-- Artifact  Lv. 1 -->
+		<production count="1" id="48969" chance="0" enchantmentLevel="0"/> <!-- Artifact Lv. 0 -->
+	</item>
+	<item>
+		<ingredient count="1" id="48969" enchantmentLevel="1" /> <!-- Artifact Lv. 1 -->
+		<ingredient count="10" id="80000" /> <!-- Artifact Fragment -->
+		<production count="1" id="48969"  enchantmentLevel="2"/> <!-- Artifact  Lv. 2 -->
+		<production count="1" id="48969" chance="95" enchantmentLevel="2"/> <!-- Artifact  Lv. 2 -->
+		<production count="1" id="48969" chance="5" enchantmentLevel="1"/> <!-- Artifact Lv. 1 -->
+	</item>
+	<item>
+		<ingredient count="1" id="48969" enchantmentLevel="2" /> <!-- Artifact Lv. 2 -->
+		<ingredient count="15" id="80000" /> <!-- Artifact Fragment -->
+		<production count="1" id="48969"  enchantmentLevel="3"/> <!-- Artifact  Lv. 3 -->
+		<production count="1" id="48969" chance="90" enchantmentLevel="3"/> <!-- Artifact  Lv. 3 -->
+		<production count="1" id="48969" chance="10" enchantmentLevel="2"/> <!-- Artifact Lv. 2 -->
+	</item>
+	<item>
+		<ingredient count="1" id="48969" enchantmentLevel="3" /> <!-- Artifact Lv. 3 -->
+		<ingredient count="20" id="80000" /> <!-- Artifact Fragment -->
+		<production count="1" id="48969"  enchantmentLevel="4"/> <!-- Artifact  Lv. 4 -->
+		<production count="1" id="48969" chance="85" enchantmentLevel="4"/> <!-- Artifact  Lv. 4 -->
+		<production count="1" id="48969" chance="15" enchantmentLevel="3"/> <!-- Artifact Lv. 3 -->
+	</item>
+	<item>
+		<ingredient count="1" id="48969" enchantmentLevel="4" /> <!-- Artifact Lv. 4 -->
+		<ingredient count="25" id="80000" /> <!-- Artifact Fragment -->
+		<production count="1" id="48969"  enchantmentLevel="5"/> <!-- Artifact  Lv. 5 -->
+		<production count="1" id="48969" chance="80" enchantmentLevel="5"/> <!-- Artifact  Lv. 5 -->
+		<production count="1" id="48969" chance="20" enchantmentLevel="4"/> <!-- Artifact Lv. 4 -->
+	</item>
+	<item>
+		<ingredient count="1" id="48969" enchantmentLevel="5" /> <!-- Artifact Lv. 5 -->
+		<ingredient count="30" id="80000" /> <!-- Artifact Fragment -->
+		<production count="1" id="48969"  enchantmentLevel="6"/> <!-- Artifact  Lv. 6 -->
+		<production count="1" id="48969" chance="75" enchantmentLevel="6"/> <!-- Artifact  Lv. 6 -->
+		<production count="1" id="48969" chance="25" enchantmentLevel="5"/> <!-- Artifact Lv. 5 -->
+	</item>
+	<item>
+		<ingredient count="1" id="48969" enchantmentLevel="6" /> <!-- Artifact Lv. 6 -->
+		<ingredient count="35" id="80000" /> <!-- Artifact Fragment -->
+		<production count="1" id="48969"  enchantmentLevel="7"/> <!-- Artifact  Lv. 7 -->
+		<production count="1" id="48969" chance="70" enchantmentLevel="7"/> <!-- Artifact  Lv. 7 -->
+		<production count="1" id="48969" chance="30" enchantmentLevel="6"/> <!-- Artifact Lv. 6 -->
+	</item>
+	<item>
+		<ingredient count="1" id="48969" enchantmentLevel="7" /> <!-- Artifact Lv. 7 -->
+		<ingredient count="40" id="80000" /> <!-- Artifact Fragment -->
+		<production count="1" id="48969"  enchantmentLevel="8"/> <!-- Artifact  Lv. 8 -->
+		<production count="1" id="48969" chance="65" enchantmentLevel="8"/> <!-- Artifact  Lv. 8 -->
+		<production count="1" id="48969" chance="35" enchantmentLevel="7"/> <!-- Artifact Lv. 7 -->
+	</item>
+	<item>
+		<ingredient count="1" id="48969" enchantmentLevel="8" /> <!-- Artifact Lv. 8 -->
+		<ingredient count="45" id="80000" /> <!-- Artifact Fragment -->
+		<production count="1" id="48969"  enchantmentLevel="9"/> <!-- Artifact  Lv. 9 -->
+		<production count="1" id="48969" chance="60" enchantmentLevel="9"/> <!-- Artifact  Lv. 9 -->
+		<production count="1" id="48969" chance="40" enchantmentLevel="8"/> <!-- Artifact Lv. 8 -->
+	</item>
+	<item>
+		<ingredient count="1" id="48969" enchantmentLevel="9" /> <!-- Artifact Lv. 9 -->
+		<ingredient count="50" id="80000" /> <!-- Artifact Fragment -->
+		<production count="1" id="48969"  enchantmentLevel="10"/> <!-- Artifact  Lv. 10 -->
+		<production count="1" id="48969" chance="55" enchantmentLevel="10"/> <!-- Artifact  Lv. 10 -->
+		<production count="1" id="48969" chance="45" enchantmentLevel="9"/> <!-- Artifact Lv. 9 -->
+	</item>
+	<item>
+		<ingredient count="1" id="48970" enchantmentLevel="0" /> <!-- Artifact Lv. 0 -->
+		<ingredient count="5" id="80000" /> <!-- Artifact Fragment -->
+		<production count="1" id="48970"  enchantmentLevel="1"/> <!-- Artifact  Lv. 1 -->
+		<production count="1" id="48970" chance="100" enchantmentLevel="1"/> <!-- Artifact  Lv. 1 -->
+		<production count="1" id="48970" chance="0" enchantmentLevel="0"/> <!-- Artifact Lv. 0 -->
+	</item>
+	<item>
+		<ingredient count="1" id="48970" enchantmentLevel="1" /> <!-- Artifact Lv. 1 -->
+		<ingredient count="10" id="80000" /> <!-- Artifact Fragment -->
+		<production count="1" id="48970"  enchantmentLevel="2"/> <!-- Artifact  Lv. 2 -->
+		<production count="1" id="48970" chance="95" enchantmentLevel="2"/> <!-- Artifact  Lv. 2 -->
+		<production count="1" id="48970" chance="5" enchantmentLevel="1"/> <!-- Artifact Lv. 1 -->
+	</item>
+	<item>
+		<ingredient count="1" id="48970" enchantmentLevel="2" /> <!-- Artifact Lv. 2 -->
+		<ingredient count="15" id="80000" /> <!-- Artifact Fragment -->
+		<production count="1" id="48970"  enchantmentLevel="3"/> <!-- Artifact  Lv. 3 -->
+		<production count="1" id="48970" chance="90" enchantmentLevel="3"/> <!-- Artifact  Lv. 3 -->
+		<production count="1" id="48970" chance="10" enchantmentLevel="2"/> <!-- Artifact Lv. 2 -->
+	</item>
+	<item>
+		<ingredient count="1" id="48970" enchantmentLevel="3" /> <!-- Artifact Lv. 3 -->
+		<ingredient count="20" id="80000" /> <!-- Artifact Fragment -->
+		<production count="1" id="48970"  enchantmentLevel="4"/> <!-- Artifact  Lv. 4 -->
+		<production count="1" id="48970" chance="85" enchantmentLevel="4"/> <!-- Artifact  Lv. 4 -->
+		<production count="1" id="48970" chance="15" enchantmentLevel="3"/> <!-- Artifact Lv. 3 -->
+	</item>
+	<item>
+		<ingredient count="1" id="48970" enchantmentLevel="4" /> <!-- Artifact Lv. 4 -->
+		<ingredient count="25" id="80000" /> <!-- Artifact Fragment -->
+		<production count="1" id="48970"  enchantmentLevel="5"/> <!-- Artifact  Lv. 5 -->
+		<production count="1" id="48970" chance="80" enchantmentLevel="5"/> <!-- Artifact  Lv. 5 -->
+		<production count="1" id="48970" chance="20" enchantmentLevel="4"/> <!-- Artifact Lv. 4 -->
+	</item>
+	<item>
+		<ingredient count="1" id="48970" enchantmentLevel="5" /> <!-- Artifact Lv. 5 -->
+		<ingredient count="30" id="80000" /> <!-- Artifact Fragment -->
+		<production count="1" id="48970"  enchantmentLevel="6"/> <!-- Artifact  Lv. 6 -->
+		<production count="1" id="48970" chance="75" enchantmentLevel="6"/> <!-- Artifact  Lv. 6 -->
+		<production count="1" id="48970" chance="25" enchantmentLevel="5"/> <!-- Artifact Lv. 5 -->
+	</item>
+	<item>
+		<ingredient count="1" id="48970" enchantmentLevel="6" /> <!-- Artifact Lv. 6 -->
+		<ingredient count="35" id="80000" /> <!-- Artifact Fragment -->
+		<production count="1" id="48970"  enchantmentLevel="7"/> <!-- Artifact  Lv. 7 -->
+		<production count="1" id="48970" chance="70" enchantmentLevel="7"/> <!-- Artifact  Lv. 7 -->
+		<production count="1" id="48970" chance="30" enchantmentLevel="6"/> <!-- Artifact Lv. 6 -->
+	</item>
+	<item>
+		<ingredient count="1" id="48970" enchantmentLevel="7" /> <!-- Artifact Lv. 7 -->
+		<ingredient count="40" id="80000" /> <!-- Artifact Fragment -->
+		<production count="1" id="48970"  enchantmentLevel="8"/> <!-- Artifact  Lv. 8 -->
+		<production count="1" id="48970" chance="65" enchantmentLevel="8"/> <!-- Artifact  Lv. 8 -->
+		<production count="1" id="48970" chance="35" enchantmentLevel="7"/> <!-- Artifact Lv. 7 -->
+	</item>
+	<item>
+		<ingredient count="1" id="48970" enchantmentLevel="8" /> <!-- Artifact Lv. 8 -->
+		<ingredient count="45" id="80000" /> <!-- Artifact Fragment -->
+		<production count="1" id="48970"  enchantmentLevel="9"/> <!-- Artifact  Lv. 9 -->
+		<production count="1" id="48970" chance="60" enchantmentLevel="9"/> <!-- Artifact  Lv. 9 -->
+		<production count="1" id="48970" chance="40" enchantmentLevel="8"/> <!-- Artifact Lv. 8 -->
+	</item>
+	<item>
+		<ingredient count="1" id="48970" enchantmentLevel="9" /> <!-- Artifact Lv. 9 -->
+		<ingredient count="50" id="80000" /> <!-- Artifact Fragment -->
+		<production count="1" id="48970"  enchantmentLevel="10"/> <!-- Artifact  Lv. 10 -->
+		<production count="1" id="48970" chance="55" enchantmentLevel="10"/> <!-- Artifact  Lv. 10 -->
+		<production count="1" id="48970" chance="45" enchantmentLevel="9"/> <!-- Artifact Lv. 9 -->
+	</item>
+	<item>
+		<ingredient count="1" id="48971" enchantmentLevel="0" /> <!-- Artifact Lv. 0 -->
+		<ingredient count="5" id="80000" /> <!-- Artifact Fragment -->
+		<production count="1" id="48971"  enchantmentLevel="1"/> <!-- Artifact  Lv. 1 -->
+		<production count="1" id="48971" chance="100" enchantmentLevel="1"/> <!-- Artifact  Lv. 1 -->
+		<production count="1" id="48971" chance="0" enchantmentLevel="0"/> <!-- Artifact Lv. 0 -->
+	</item>
+	<item>
+		<ingredient count="1" id="48971" enchantmentLevel="1" /> <!-- Artifact Lv. 1 -->
+		<ingredient count="10" id="80000" /> <!-- Artifact Fragment -->
+		<production count="1" id="48971"  enchantmentLevel="2"/> <!-- Artifact  Lv. 2 -->
+		<production count="1" id="48971" chance="95" enchantmentLevel="2"/> <!-- Artifact  Lv. 2 -->
+		<production count="1" id="48971" chance="5" enchantmentLevel="1"/> <!-- Artifact Lv. 1 -->
+	</item>
+	<item>
+		<ingredient count="1" id="48971" enchantmentLevel="2" /> <!-- Artifact Lv. 2 -->
+		<ingredient count="15" id="80000" /> <!-- Artifact Fragment -->
+		<production count="1" id="48971"  enchantmentLevel="3"/> <!-- Artifact  Lv. 3 -->
+		<production count="1" id="48971" chance="90" enchantmentLevel="3"/> <!-- Artifact  Lv. 3 -->
+		<production count="1" id="48971" chance="10" enchantmentLevel="2"/> <!-- Artifact Lv. 2 -->
+	</item>
+	<item>
+		<ingredient count="1" id="48971" enchantmentLevel="3" /> <!-- Artifact Lv. 3 -->
+		<ingredient count="20" id="80000" /> <!-- Artifact Fragment -->
+		<production count="1" id="48971"  enchantmentLevel="4"/> <!-- Artifact  Lv. 4 -->
+		<production count="1" id="48971" chance="85" enchantmentLevel="4"/> <!-- Artifact  Lv. 4 -->
+		<production count="1" id="48971" chance="15" enchantmentLevel="3"/> <!-- Artifact Lv. 3 -->
+	</item>
+	<item>
+		<ingredient count="1" id="48971" enchantmentLevel="4" /> <!-- Artifact Lv. 4 -->
+		<ingredient count="25" id="80000" /> <!-- Artifact Fragment -->
+		<production count="1" id="48971"  enchantmentLevel="5"/> <!-- Artifact  Lv. 5 -->
+		<production count="1" id="48971" chance="80" enchantmentLevel="5"/> <!-- Artifact  Lv. 5 -->
+		<production count="1" id="48971" chance="20" enchantmentLevel="4"/> <!-- Artifact Lv. 4 -->
+	</item>
+	<item>
+		<ingredient count="1" id="48971" enchantmentLevel="5" /> <!-- Artifact Lv. 5 -->
+		<ingredient count="30" id="80000" /> <!-- Artifact Fragment -->
+		<production count="1" id="48971"  enchantmentLevel="6"/> <!-- Artifact  Lv. 6 -->
+		<production count="1" id="48971" chance="75" enchantmentLevel="6"/> <!-- Artifact  Lv. 6 -->
+		<production count="1" id="48971" chance="25" enchantmentLevel="5"/> <!-- Artifact Lv. 5 -->
+	</item>
+	<item>
+		<ingredient count="1" id="48971" enchantmentLevel="6" /> <!-- Artifact Lv. 6 -->
+		<ingredient count="35" id="80000" /> <!-- Artifact Fragment -->
+		<production count="1" id="48971"  enchantmentLevel="7"/> <!-- Artifact  Lv. 7 -->
+		<production count="1" id="48971" chance="70" enchantmentLevel="7"/> <!-- Artifact  Lv. 7 -->
+		<production count="1" id="48971" chance="30" enchantmentLevel="6"/> <!-- Artifact Lv. 6 -->
+	</item>
+	<item>
+		<ingredient count="1" id="48971" enchantmentLevel="7" /> <!-- Artifact Lv. 7 -->
+		<ingredient count="40" id="80000" /> <!-- Artifact Fragment -->
+		<production count="1" id="48971"  enchantmentLevel="8"/> <!-- Artifact  Lv. 8 -->
+		<production count="1" id="48971" chance="65" enchantmentLevel="8"/> <!-- Artifact  Lv. 8 -->
+		<production count="1" id="48971" chance="35" enchantmentLevel="7"/> <!-- Artifact Lv. 7 -->
+	</item>
+	<item>
+		<ingredient count="1" id="48971" enchantmentLevel="8" /> <!-- Artifact Lv. 8 -->
+		<ingredient count="45" id="80000" /> <!-- Artifact Fragment -->
+		<production count="1" id="48971"  enchantmentLevel="9"/> <!-- Artifact  Lv. 9 -->
+		<production count="1" id="48971" chance="60" enchantmentLevel="9"/> <!-- Artifact  Lv. 9 -->
+		<production count="1" id="48971" chance="40" enchantmentLevel="8"/> <!-- Artifact Lv. 8 -->
+	</item>
+	<item>
+		<ingredient count="1" id="48971" enchantmentLevel="9" /> <!-- Artifact Lv. 9 -->
+		<ingredient count="50" id="80000" /> <!-- Artifact Fragment -->
+		<production count="1" id="48971"  enchantmentLevel="10"/> <!-- Artifact  Lv. 10 -->
+		<production count="1" id="48971" chance="55" enchantmentLevel="10"/> <!-- Artifact  Lv. 10 -->
+		<production count="1" id="48971" chance="45" enchantmentLevel="9"/> <!-- Artifact Lv. 9 -->
+	</item>
+	<item>
+		<ingredient count="1" id="48972" enchantmentLevel="0" /> <!-- Artifact Lv. 0 -->
+		<ingredient count="5" id="80000" /> <!-- Artifact Fragment -->
+		<production count="1" id="48972"  enchantmentLevel="1"/> <!-- Artifact  Lv. 1 -->
+		<production count="1" id="48972" chance="100" enchantmentLevel="1"/> <!-- Artifact  Lv. 1 -->
+		<production count="1" id="48972" chance="0" enchantmentLevel="0"/> <!-- Artifact Lv. 0 -->
+	</item>
+	<item>
+		<ingredient count="1" id="48972" enchantmentLevel="1" /> <!-- Artifact Lv. 1 -->
+		<ingredient count="10" id="80000" /> <!-- Artifact Fragment -->
+		<production count="1" id="48972"  enchantmentLevel="2"/> <!-- Artifact  Lv. 2 -->
+		<production count="1" id="48972" chance="95" enchantmentLevel="2"/> <!-- Artifact  Lv. 2 -->
+		<production count="1" id="48972" chance="5" enchantmentLevel="1"/> <!-- Artifact Lv. 1 -->
+	</item>
+	<item>
+		<ingredient count="1" id="48972" enchantmentLevel="2" /> <!-- Artifact Lv. 2 -->
+		<ingredient count="15" id="80000" /> <!-- Artifact Fragment -->
+		<production count="1" id="48972"  enchantmentLevel="3"/> <!-- Artifact  Lv. 3 -->
+		<production count="1" id="48972" chance="90" enchantmentLevel="3"/> <!-- Artifact  Lv. 3 -->
+		<production count="1" id="48972" chance="10" enchantmentLevel="2"/> <!-- Artifact Lv. 2 -->
+	</item>
+	<item>
+		<ingredient count="1" id="48972" enchantmentLevel="3" /> <!-- Artifact Lv. 3 -->
+		<ingredient count="20" id="80000" /> <!-- Artifact Fragment -->
+		<production count="1" id="48972"  enchantmentLevel="4"/> <!-- Artifact  Lv. 4 -->
+		<production count="1" id="48972" chance="85" enchantmentLevel="4"/> <!-- Artifact  Lv. 4 -->
+		<production count="1" id="48972" chance="15" enchantmentLevel="3"/> <!-- Artifact Lv. 3 -->
+	</item>
+	<item>
+		<ingredient count="1" id="48972" enchantmentLevel="4" /> <!-- Artifact Lv. 4 -->
+		<ingredient count="25" id="80000" /> <!-- Artifact Fragment -->
+		<production count="1" id="48972"  enchantmentLevel="5"/> <!-- Artifact  Lv. 5 -->
+		<production count="1" id="48972" chance="80" enchantmentLevel="5"/> <!-- Artifact  Lv. 5 -->
+		<production count="1" id="48972" chance="20" enchantmentLevel="4"/> <!-- Artifact Lv. 4 -->
+	</item>
+	<item>
+		<ingredient count="1" id="48972" enchantmentLevel="5" /> <!-- Artifact Lv. 5 -->
+		<ingredient count="30" id="80000" /> <!-- Artifact Fragment -->
+		<production count="1" id="48972"  enchantmentLevel="6"/> <!-- Artifact  Lv. 6 -->
+		<production count="1" id="48972" chance="75" enchantmentLevel="6"/> <!-- Artifact  Lv. 6 -->
+		<production count="1" id="48972" chance="25" enchantmentLevel="5"/> <!-- Artifact Lv. 5 -->
+	</item>
+	<item>
+		<ingredient count="1" id="48972" enchantmentLevel="6" /> <!-- Artifact Lv. 6 -->
+		<ingredient count="35" id="80000" /> <!-- Artifact Fragment -->
+		<production count="1" id="48972"  enchantmentLevel="7"/> <!-- Artifact  Lv. 7 -->
+		<production count="1" id="48972" chance="70" enchantmentLevel="7"/> <!-- Artifact  Lv. 7 -->
+		<production count="1" id="48972" chance="30" enchantmentLevel="6"/> <!-- Artifact Lv. 6 -->
+	</item>
+	<item>
+		<ingredient count="1" id="48972" enchantmentLevel="7" /> <!-- Artifact Lv. 7 -->
+		<ingredient count="40" id="80000" /> <!-- Artifact Fragment -->
+		<production count="1" id="48972"  enchantmentLevel="8"/> <!-- Artifact  Lv. 8 -->
+		<production count="1" id="48972" chance="65" enchantmentLevel="8"/> <!-- Artifact  Lv. 8 -->
+		<production count="1" id="48972" chance="35" enchantmentLevel="7"/> <!-- Artifact Lv. 7 -->
+	</item>
+	<item>
+		<ingredient count="1" id="48972" enchantmentLevel="8" /> <!-- Artifact Lv. 8 -->
+		<ingredient count="45" id="80000" /> <!-- Artifact Fragment -->
+		<production count="1" id="48972"  enchantmentLevel="9"/> <!-- Artifact  Lv. 9 -->
+		<production count="1" id="48972" chance="60" enchantmentLevel="9"/> <!-- Artifact  Lv. 9 -->
+		<production count="1" id="48972" chance="40" enchantmentLevel="8"/> <!-- Artifact Lv. 8 -->
+	</item>
+	<item>
+		<ingredient count="1" id="48972" enchantmentLevel="9" /> <!-- Artifact Lv. 9 -->
+		<ingredient count="50" id="80000" /> <!-- Artifact Fragment -->
+		<production count="1" id="48972"  enchantmentLevel="10"/> <!-- Artifact  Lv. 10 -->
+		<production count="1" id="48972" chance="55" enchantmentLevel="10"/> <!-- Artifact  Lv. 10 -->
+		<production count="1" id="48972" chance="45" enchantmentLevel="9"/> <!-- Artifact Lv. 9 -->
+	</item>
+	<item>
+		<ingredient count="1" id="48973" enchantmentLevel="0" /> <!-- Artifact Lv. 0 -->
+		<ingredient count="5" id="80000" /> <!-- Artifact Fragment -->
+		<production count="1" id="48973"  enchantmentLevel="1"/> <!-- Artifact  Lv. 1 -->
+		<production count="1" id="48973" chance="100" enchantmentLevel="1"/> <!-- Artifact  Lv. 1 -->
+		<production count="1" id="48973" chance="0" enchantmentLevel="0"/> <!-- Artifact Lv. 0 -->
+	</item>
+	<item>
+		<ingredient count="1" id="48973" enchantmentLevel="1" /> <!-- Artifact Lv. 1 -->
+		<ingredient count="10" id="80000" /> <!-- Artifact Fragment -->
+		<production count="1" id="48973"  enchantmentLevel="2"/> <!-- Artifact  Lv. 2 -->
+		<production count="1" id="48973" chance="95" enchantmentLevel="2"/> <!-- Artifact  Lv. 2 -->
+		<production count="1" id="48973" chance="5" enchantmentLevel="1"/> <!-- Artifact Lv. 1 -->
+	</item>
+	<item>
+		<ingredient count="1" id="48973" enchantmentLevel="2" /> <!-- Artifact Lv. 2 -->
+		<ingredient count="15" id="80000" /> <!-- Artifact Fragment -->
+		<production count="1" id="48973"  enchantmentLevel="3"/> <!-- Artifact  Lv. 3 -->
+		<production count="1" id="48973" chance="90" enchantmentLevel="3"/> <!-- Artifact  Lv. 3 -->
+		<production count="1" id="48973" chance="10" enchantmentLevel="2"/> <!-- Artifact Lv. 2 -->
+	</item>
+	<item>
+		<ingredient count="1" id="48973" enchantmentLevel="3" /> <!-- Artifact Lv. 3 -->
+		<ingredient count="20" id="80000" /> <!-- Artifact Fragment -->
+		<production count="1" id="48973"  enchantmentLevel="4"/> <!-- Artifact  Lv. 4 -->
+		<production count="1" id="48973" chance="85" enchantmentLevel="4"/> <!-- Artifact  Lv. 4 -->
+		<production count="1" id="48973" chance="15" enchantmentLevel="3"/> <!-- Artifact Lv. 3 -->
+	</item>
+	<item>
+		<ingredient count="1" id="48973" enchantmentLevel="4" /> <!-- Artifact Lv. 4 -->
+		<ingredient count="25" id="80000" /> <!-- Artifact Fragment -->
+		<production count="1" id="48973"  enchantmentLevel="5"/> <!-- Artifact  Lv. 5 -->
+		<production count="1" id="48973" chance="80" enchantmentLevel="5"/> <!-- Artifact  Lv. 5 -->
+		<production count="1" id="48973" chance="20" enchantmentLevel="4"/> <!-- Artifact Lv. 4 -->
+	</item>
+	<item>
+		<ingredient count="1" id="48973" enchantmentLevel="5" /> <!-- Artifact Lv. 5 -->
+		<ingredient count="30" id="80000" /> <!-- Artifact Fragment -->
+		<production count="1" id="48973"  enchantmentLevel="6"/> <!-- Artifact  Lv. 6 -->
+		<production count="1" id="48973" chance="75" enchantmentLevel="6"/> <!-- Artifact  Lv. 6 -->
+		<production count="1" id="48973" chance="25" enchantmentLevel="5"/> <!-- Artifact Lv. 5 -->
+	</item>
+	<item>
+		<ingredient count="1" id="48973" enchantmentLevel="6" /> <!-- Artifact Lv. 6 -->
+		<ingredient count="35" id="80000" /> <!-- Artifact Fragment -->
+		<production count="1" id="48973"  enchantmentLevel="7"/> <!-- Artifact  Lv. 7 -->
+		<production count="1" id="48973" chance="70" enchantmentLevel="7"/> <!-- Artifact  Lv. 7 -->
+		<production count="1" id="48973" chance="30" enchantmentLevel="6"/> <!-- Artifact Lv. 6 -->
+	</item>
+	<item>
+		<ingredient count="1" id="48973" enchantmentLevel="7" /> <!-- Artifact Lv. 7 -->
+		<ingredient count="40" id="80000" /> <!-- Artifact Fragment -->
+		<production count="1" id="48973"  enchantmentLevel="8"/> <!-- Artifact  Lv. 8 -->
+		<production count="1" id="48973" chance="65" enchantmentLevel="8"/> <!-- Artifact  Lv. 8 -->
+		<production count="1" id="48973" chance="35" enchantmentLevel="7"/> <!-- Artifact Lv. 7 -->
+	</item>
+	<item>
+		<ingredient count="1" id="48973" enchantmentLevel="8" /> <!-- Artifact Lv. 8 -->
+		<ingredient count="45" id="80000" /> <!-- Artifact Fragment -->
+		<production count="1" id="48973"  enchantmentLevel="9"/> <!-- Artifact  Lv. 9 -->
+		<production count="1" id="48973" chance="60" enchantmentLevel="9"/> <!-- Artifact  Lv. 9 -->
+		<production count="1" id="48973" chance="40" enchantmentLevel="8"/> <!-- Artifact Lv. 8 -->
+	</item>
+	<item>
+		<ingredient count="1" id="48973" enchantmentLevel="9" /> <!-- Artifact Lv. 9 -->
+		<ingredient count="50" id="80000" /> <!-- Artifact Fragment -->
+		<production count="1" id="48973"  enchantmentLevel="10"/> <!-- Artifact  Lv. 10 -->
+		<production count="1" id="48973" chance="55" enchantmentLevel="10"/> <!-- Artifact  Lv. 10 -->
+		<production count="1" id="48973" chance="45" enchantmentLevel="9"/> <!-- Artifact Lv. 9 -->
+	</item>
+	<item>
+		<ingredient count="1" id="48974" enchantmentLevel="0" /> <!-- Artifact Lv. 0 -->
+		<ingredient count="5" id="80000" /> <!-- Artifact Fragment -->
+		<production count="1" id="48974"  enchantmentLevel="1"/> <!-- Artifact  Lv. 1 -->
+		<production count="1" id="48974" chance="100" enchantmentLevel="1"/> <!-- Artifact  Lv. 1 -->
+		<production count="1" id="48974" chance="0" enchantmentLevel="0"/> <!-- Artifact Lv. 0 -->
+	</item>
+	<item>
+		<ingredient count="1" id="48974" enchantmentLevel="1" /> <!-- Artifact Lv. 1 -->
+		<ingredient count="10" id="80000" /> <!-- Artifact Fragment -->
+		<production count="1" id="48974"  enchantmentLevel="2"/> <!-- Artifact  Lv. 2 -->
+		<production count="1" id="48974" chance="95" enchantmentLevel="2"/> <!-- Artifact  Lv. 2 -->
+		<production count="1" id="48974" chance="5" enchantmentLevel="1"/> <!-- Artifact Lv. 1 -->
+	</item>
+	<item>
+		<ingredient count="1" id="48974" enchantmentLevel="2" /> <!-- Artifact Lv. 2 -->
+		<ingredient count="15" id="80000" /> <!-- Artifact Fragment -->
+		<production count="1" id="48974"  enchantmentLevel="3"/> <!-- Artifact  Lv. 3 -->
+		<production count="1" id="48974" chance="90" enchantmentLevel="3"/> <!-- Artifact  Lv. 3 -->
+		<production count="1" id="48974" chance="10" enchantmentLevel="2"/> <!-- Artifact Lv. 2 -->
+	</item>
+	<item>
+		<ingredient count="1" id="48974" enchantmentLevel="3" /> <!-- Artifact Lv. 3 -->
+		<ingredient count="20" id="80000" /> <!-- Artifact Fragment -->
+		<production count="1" id="48974"  enchantmentLevel="4"/> <!-- Artifact  Lv. 4 -->
+		<production count="1" id="48974" chance="85" enchantmentLevel="4"/> <!-- Artifact  Lv. 4 -->
+		<production count="1" id="48974" chance="15" enchantmentLevel="3"/> <!-- Artifact Lv. 3 -->
+	</item>
+	<item>
+		<ingredient count="1" id="48974" enchantmentLevel="4" /> <!-- Artifact Lv. 4 -->
+		<ingredient count="25" id="80000" /> <!-- Artifact Fragment -->
+		<production count="1" id="48974"  enchantmentLevel="5"/> <!-- Artifact  Lv. 5 -->
+		<production count="1" id="48974" chance="80" enchantmentLevel="5"/> <!-- Artifact  Lv. 5 -->
+		<production count="1" id="48974" chance="20" enchantmentLevel="4"/> <!-- Artifact Lv. 4 -->
+	</item>
+	<item>
+		<ingredient count="1" id="48974" enchantmentLevel="5" /> <!-- Artifact Lv. 5 -->
+		<ingredient count="30" id="80000" /> <!-- Artifact Fragment -->
+		<production count="1" id="48974"  enchantmentLevel="6"/> <!-- Artifact  Lv. 6 -->
+		<production count="1" id="48974" chance="75" enchantmentLevel="6"/> <!-- Artifact  Lv. 6 -->
+		<production count="1" id="48974" chance="25" enchantmentLevel="5"/> <!-- Artifact Lv. 5 -->
+	</item>
+	<item>
+		<ingredient count="1" id="48974" enchantmentLevel="6" /> <!-- Artifact Lv. 6 -->
+		<ingredient count="35" id="80000" /> <!-- Artifact Fragment -->
+		<production count="1" id="48974"  enchantmentLevel="7"/> <!-- Artifact  Lv. 7 -->
+		<production count="1" id="48974" chance="70" enchantmentLevel="7"/> <!-- Artifact  Lv. 7 -->
+		<production count="1" id="48974" chance="30" enchantmentLevel="6"/> <!-- Artifact Lv. 6 -->
+	</item>
+	<item>
+		<ingredient count="1" id="48974" enchantmentLevel="7" /> <!-- Artifact Lv. 7 -->
+		<ingredient count="40" id="80000" /> <!-- Artifact Fragment -->
+		<production count="1" id="48974"  enchantmentLevel="8"/> <!-- Artifact  Lv. 8 -->
+		<production count="1" id="48974" chance="65" enchantmentLevel="8"/> <!-- Artifact  Lv. 8 -->
+		<production count="1" id="48974" chance="35" enchantmentLevel="7"/> <!-- Artifact Lv. 7 -->
+	</item>
+	<item>
+		<ingredient count="1" id="48974" enchantmentLevel="8" /> <!-- Artifact Lv. 8 -->
+		<ingredient count="45" id="80000" /> <!-- Artifact Fragment -->
+		<production count="1" id="48974"  enchantmentLevel="9"/> <!-- Artifact  Lv. 9 -->
+		<production count="1" id="48974" chance="60" enchantmentLevel="9"/> <!-- Artifact  Lv. 9 -->
+		<production count="1" id="48974" chance="40" enchantmentLevel="8"/> <!-- Artifact Lv. 8 -->
+	</item>
+	<item>
+		<ingredient count="1" id="48974" enchantmentLevel="9" /> <!-- Artifact Lv. 9 -->
+		<ingredient count="50" id="80000" /> <!-- Artifact Fragment -->
+		<production count="1" id="48974"  enchantmentLevel="10"/> <!-- Artifact  Lv. 10 -->
+		<production count="1" id="48974" chance="55" enchantmentLevel="10"/> <!-- Artifact  Lv. 10 -->
+		<production count="1" id="48974" chance="45" enchantmentLevel="9"/> <!-- Artifact Lv. 9 -->
+	</item>
+	<item>
+		<ingredient count="1" id="48975" enchantmentLevel="0" /> <!-- Artifact Lv. 0 -->
+		<ingredient count="5" id="80000" /> <!-- Artifact Fragment -->
+		<production count="1" id="48975"  enchantmentLevel="1"/> <!-- Artifact  Lv. 1 -->
+		<production count="1" id="48975" chance="100" enchantmentLevel="1"/> <!-- Artifact  Lv. 1 -->
+		<production count="1" id="48975" chance="0" enchantmentLevel="0"/> <!-- Artifact Lv. 0 -->
+	</item>
+	<item>
+		<ingredient count="1" id="48975" enchantmentLevel="1" /> <!-- Artifact Lv. 1 -->
+		<ingredient count="10" id="80000" /> <!-- Artifact Fragment -->
+		<production count="1" id="48975"  enchantmentLevel="2"/> <!-- Artifact  Lv. 2 -->
+		<production count="1" id="48975" chance="95" enchantmentLevel="2"/> <!-- Artifact  Lv. 2 -->
+		<production count="1" id="48975" chance="5" enchantmentLevel="1"/> <!-- Artifact Lv. 1 -->
+	</item>
+	<item>
+		<ingredient count="1" id="48975" enchantmentLevel="2" /> <!-- Artifact Lv. 2 -->
+		<ingredient count="15" id="80000" /> <!-- Artifact Fragment -->
+		<production count="1" id="48975"  enchantmentLevel="3"/> <!-- Artifact  Lv. 3 -->
+		<production count="1" id="48975" chance="90" enchantmentLevel="3"/> <!-- Artifact  Lv. 3 -->
+		<production count="1" id="48975" chance="10" enchantmentLevel="2"/> <!-- Artifact Lv. 2 -->
+	</item>
+	<item>
+		<ingredient count="1" id="48975" enchantmentLevel="3" /> <!-- Artifact Lv. 3 -->
+		<ingredient count="20" id="80000" /> <!-- Artifact Fragment -->
+		<production count="1" id="48975"  enchantmentLevel="4"/> <!-- Artifact  Lv. 4 -->
+		<production count="1" id="48975" chance="85" enchantmentLevel="4"/> <!-- Artifact  Lv. 4 -->
+		<production count="1" id="48975" chance="15" enchantmentLevel="3"/> <!-- Artifact Lv. 3 -->
+	</item>
+	<item>
+		<ingredient count="1" id="48975" enchantmentLevel="4" /> <!-- Artifact Lv. 4 -->
+		<ingredient count="25" id="80000" /> <!-- Artifact Fragment -->
+		<production count="1" id="48975"  enchantmentLevel="5"/> <!-- Artifact  Lv. 5 -->
+		<production count="1" id="48975" chance="80" enchantmentLevel="5"/> <!-- Artifact  Lv. 5 -->
+		<production count="1" id="48975" chance="20" enchantmentLevel="4"/> <!-- Artifact Lv. 4 -->
+	</item>
+	<item>
+		<ingredient count="1" id="48975" enchantmentLevel="5" /> <!-- Artifact Lv. 5 -->
+		<ingredient count="30" id="80000" /> <!-- Artifact Fragment -->
+		<production count="1" id="48975"  enchantmentLevel="6"/> <!-- Artifact  Lv. 6 -->
+		<production count="1" id="48975" chance="75" enchantmentLevel="6"/> <!-- Artifact  Lv. 6 -->
+		<production count="1" id="48975" chance="25" enchantmentLevel="5"/> <!-- Artifact Lv. 5 -->
+	</item>
+	<item>
+		<ingredient count="1" id="48975" enchantmentLevel="6" /> <!-- Artifact Lv. 6 -->
+		<ingredient count="35" id="80000" /> <!-- Artifact Fragment -->
+		<production count="1" id="48975"  enchantmentLevel="7"/> <!-- Artifact  Lv. 7 -->
+		<production count="1" id="48975" chance="70" enchantmentLevel="7"/> <!-- Artifact  Lv. 7 -->
+		<production count="1" id="48975" chance="30" enchantmentLevel="6"/> <!-- Artifact Lv. 6 -->
+	</item>
+	<item>
+		<ingredient count="1" id="48975" enchantmentLevel="7" /> <!-- Artifact Lv. 7 -->
+		<ingredient count="40" id="80000" /> <!-- Artifact Fragment -->
+		<production count="1" id="48975"  enchantmentLevel="8"/> <!-- Artifact  Lv. 8 -->
+		<production count="1" id="48975" chance="65" enchantmentLevel="8"/> <!-- Artifact  Lv. 8 -->
+		<production count="1" id="48975" chance="35" enchantmentLevel="7"/> <!-- Artifact Lv. 7 -->
+	</item>
+	<item>
+		<ingredient count="1" id="48975" enchantmentLevel="8" /> <!-- Artifact Lv. 8 -->
+		<ingredient count="45" id="80000" /> <!-- Artifact Fragment -->
+		<production count="1" id="48975"  enchantmentLevel="9"/> <!-- Artifact  Lv. 9 -->
+		<production count="1" id="48975" chance="60" enchantmentLevel="9"/> <!-- Artifact  Lv. 9 -->
+		<production count="1" id="48975" chance="40" enchantmentLevel="8"/> <!-- Artifact Lv. 8 -->
+	</item>
+	<item>
+		<ingredient count="1" id="48975" enchantmentLevel="9" /> <!-- Artifact Lv. 9 -->
+		<ingredient count="50" id="80000" /> <!-- Artifact Fragment -->
+		<production count="1" id="48975"  enchantmentLevel="10"/> <!-- Artifact  Lv. 10 -->
+		<production count="1" id="48975" chance="55" enchantmentLevel="10"/> <!-- Artifact  Lv. 10 -->
+		<production count="1" id="48975" chance="45" enchantmentLevel="9"/> <!-- Artifact Lv. 9 -->
+	</item>
+	<item>
+		<ingredient count="1" id="48976" enchantmentLevel="0" /> <!-- Artifact Lv. 0 -->
+		<ingredient count="5" id="80000" /> <!-- Artifact Fragment -->
+		<production count="1" id="48976"  enchantmentLevel="1"/> <!-- Artifact  Lv. 1 -->
+		<production count="1" id="48976" chance="100" enchantmentLevel="1"/> <!-- Artifact  Lv. 1 -->
+		<production count="1" id="48976" chance="0" enchantmentLevel="0"/> <!-- Artifact Lv. 0 -->
+	</item>
+	<item>
+		<ingredient count="1" id="48976" enchantmentLevel="1" /> <!-- Artifact Lv. 1 -->
+		<ingredient count="10" id="80000" /> <!-- Artifact Fragment -->
+		<production count="1" id="48976"  enchantmentLevel="2"/> <!-- Artifact  Lv. 2 -->
+		<production count="1" id="48976" chance="95" enchantmentLevel="2"/> <!-- Artifact  Lv. 2 -->
+		<production count="1" id="48976" chance="5" enchantmentLevel="1"/> <!-- Artifact Lv. 1 -->
+	</item>
+	<item>
+		<ingredient count="1" id="48976" enchantmentLevel="2" /> <!-- Artifact Lv. 2 -->
+		<ingredient count="15" id="80000" /> <!-- Artifact Fragment -->
+		<production count="1" id="48976"  enchantmentLevel="3"/> <!-- Artifact  Lv. 3 -->
+		<production count="1" id="48976" chance="90" enchantmentLevel="3"/> <!-- Artifact  Lv. 3 -->
+		<production count="1" id="48976" chance="10" enchantmentLevel="2"/> <!-- Artifact Lv. 2 -->
+	</item>
+	<item>
+		<ingredient count="1" id="48976" enchantmentLevel="3" /> <!-- Artifact Lv. 3 -->
+		<ingredient count="20" id="80000" /> <!-- Artifact Fragment -->
+		<production count="1" id="48976"  enchantmentLevel="4"/> <!-- Artifact  Lv. 4 -->
+		<production count="1" id="48976" chance="85" enchantmentLevel="4"/> <!-- Artifact  Lv. 4 -->
+		<production count="1" id="48976" chance="15" enchantmentLevel="3"/> <!-- Artifact Lv. 3 -->
+	</item>
+	<item>
+		<ingredient count="1" id="48976" enchantmentLevel="4" /> <!-- Artifact Lv. 4 -->
+		<ingredient count="25" id="80000" /> <!-- Artifact Fragment -->
+		<production count="1" id="48976"  enchantmentLevel="5"/> <!-- Artifact  Lv. 5 -->
+		<production count="1" id="48976" chance="80" enchantmentLevel="5"/> <!-- Artifact  Lv. 5 -->
+		<production count="1" id="48976" chance="20" enchantmentLevel="4"/> <!-- Artifact Lv. 4 -->
+	</item>
+	<item>
+		<ingredient count="1" id="48976" enchantmentLevel="5" /> <!-- Artifact Lv. 5 -->
+		<ingredient count="30" id="80000" /> <!-- Artifact Fragment -->
+		<production count="1" id="48976"  enchantmentLevel="6"/> <!-- Artifact  Lv. 6 -->
+		<production count="1" id="48976" chance="75" enchantmentLevel="6"/> <!-- Artifact  Lv. 6 -->
+		<production count="1" id="48976" chance="25" enchantmentLevel="5"/> <!-- Artifact Lv. 5 -->
+	</item>
+	<item>
+		<ingredient count="1" id="48976" enchantmentLevel="6" /> <!-- Artifact Lv. 6 -->
+		<ingredient count="35" id="80000" /> <!-- Artifact Fragment -->
+		<production count="1" id="48976"  enchantmentLevel="7"/> <!-- Artifact  Lv. 7 -->
+		<production count="1" id="48976" chance="70" enchantmentLevel="7"/> <!-- Artifact  Lv. 7 -->
+		<production count="1" id="48976" chance="30" enchantmentLevel="6"/> <!-- Artifact Lv. 6 -->
+	</item>
+	<item>
+		<ingredient count="1" id="48976" enchantmentLevel="7" /> <!-- Artifact Lv. 7 -->
+		<ingredient count="40" id="80000" /> <!-- Artifact Fragment -->
+		<production count="1" id="48976"  enchantmentLevel="8"/> <!-- Artifact  Lv. 8 -->
+		<production count="1" id="48976" chance="65" enchantmentLevel="8"/> <!-- Artifact  Lv. 8 -->
+		<production count="1" id="48976" chance="35" enchantmentLevel="7"/> <!-- Artifact Lv. 7 -->
+	</item>
+	<item>
+		<ingredient count="1" id="48976" enchantmentLevel="8" /> <!-- Artifact Lv. 8 -->
+		<ingredient count="45" id="80000" /> <!-- Artifact Fragment -->
+		<production count="1" id="48976"  enchantmentLevel="9"/> <!-- Artifact  Lv. 9 -->
+		<production count="1" id="48976" chance="60" enchantmentLevel="9"/> <!-- Artifact  Lv. 9 -->
+		<production count="1" id="48976" chance="40" enchantmentLevel="8"/> <!-- Artifact Lv. 8 -->
+	</item>
+	<item>
+		<ingredient count="1" id="48976" enchantmentLevel="9" /> <!-- Artifact Lv. 9 -->
+		<ingredient count="50" id="80000" /> <!-- Artifact Fragment -->
+		<production count="1" id="48976"  enchantmentLevel="10"/> <!-- Artifact  Lv. 10 -->
+		<production count="1" id="48976" chance="55" enchantmentLevel="10"/> <!-- Artifact  Lv. 10 -->
+		<production count="1" id="48976" chance="45" enchantmentLevel="9"/> <!-- Artifact Lv. 9 -->
+	</item>
+	<item>
+		<ingredient count="1" id="48977" enchantmentLevel="0" /> <!-- Artifact Lv. 0 -->
+		<ingredient count="5" id="80000" /> <!-- Artifact Fragment -->
+		<production count="1" id="48977"  enchantmentLevel="1"/> <!-- Artifact  Lv. 1 -->
+		<production count="1" id="48977" chance="100" enchantmentLevel="1"/> <!-- Artifact  Lv. 1 -->
+		<production count="1" id="48977" chance="0" enchantmentLevel="0"/> <!-- Artifact Lv. 0 -->
+	</item>
+	<item>
+		<ingredient count="1" id="48977" enchantmentLevel="1" /> <!-- Artifact Lv. 1 -->
+		<ingredient count="10" id="80000" /> <!-- Artifact Fragment -->
+		<production count="1" id="48977"  enchantmentLevel="2"/> <!-- Artifact  Lv. 2 -->
+		<production count="1" id="48977" chance="95" enchantmentLevel="2"/> <!-- Artifact  Lv. 2 -->
+		<production count="1" id="48977" chance="5" enchantmentLevel="1"/> <!-- Artifact Lv. 1 -->
+	</item>
+	<item>
+		<ingredient count="1" id="48977" enchantmentLevel="2" /> <!-- Artifact Lv. 2 -->
+		<ingredient count="15" id="80000" /> <!-- Artifact Fragment -->
+		<production count="1" id="48977"  enchantmentLevel="3"/> <!-- Artifact  Lv. 3 -->
+		<production count="1" id="48977" chance="90" enchantmentLevel="3"/> <!-- Artifact  Lv. 3 -->
+		<production count="1" id="48977" chance="10" enchantmentLevel="2"/> <!-- Artifact Lv. 2 -->
+	</item>
+	<item>
+		<ingredient count="1" id="48977" enchantmentLevel="3" /> <!-- Artifact Lv. 3 -->
+		<ingredient count="20" id="80000" /> <!-- Artifact Fragment -->
+		<production count="1" id="48977"  enchantmentLevel="4"/> <!-- Artifact  Lv. 4 -->
+		<production count="1" id="48977" chance="85" enchantmentLevel="4"/> <!-- Artifact  Lv. 4 -->
+		<production count="1" id="48977" chance="15" enchantmentLevel="3"/> <!-- Artifact Lv. 3 -->
+	</item>
+	<item>
+		<ingredient count="1" id="48977" enchantmentLevel="4" /> <!-- Artifact Lv. 4 -->
+		<ingredient count="25" id="80000" /> <!-- Artifact Fragment -->
+		<production count="1" id="48977"  enchantmentLevel="5"/> <!-- Artifact  Lv. 5 -->
+		<production count="1" id="48977" chance="80" enchantmentLevel="5"/> <!-- Artifact  Lv. 5 -->
+		<production count="1" id="48977" chance="20" enchantmentLevel="4"/> <!-- Artifact Lv. 4 -->
+	</item>
+	<item>
+		<ingredient count="1" id="48977" enchantmentLevel="5" /> <!-- Artifact Lv. 5 -->
+		<ingredient count="30" id="80000" /> <!-- Artifact Fragment -->
+		<production count="1" id="48977"  enchantmentLevel="6"/> <!-- Artifact  Lv. 6 -->
+		<production count="1" id="48977" chance="75" enchantmentLevel="6"/> <!-- Artifact  Lv. 6 -->
+		<production count="1" id="48977" chance="25" enchantmentLevel="5"/> <!-- Artifact Lv. 5 -->
+	</item>
+	<item>
+		<ingredient count="1" id="48977" enchantmentLevel="6" /> <!-- Artifact Lv. 6 -->
+		<ingredient count="35" id="80000" /> <!-- Artifact Fragment -->
+		<production count="1" id="48977"  enchantmentLevel="7"/> <!-- Artifact  Lv. 7 -->
+		<production count="1" id="48977" chance="70" enchantmentLevel="7"/> <!-- Artifact  Lv. 7 -->
+		<production count="1" id="48977" chance="30" enchantmentLevel="6"/> <!-- Artifact Lv. 6 -->
+	</item>
+	<item>
+		<ingredient count="1" id="48977" enchantmentLevel="7" /> <!-- Artifact Lv. 7 -->
+		<ingredient count="40" id="80000" /> <!-- Artifact Fragment -->
+		<production count="1" id="48977"  enchantmentLevel="8"/> <!-- Artifact  Lv. 8 -->
+		<production count="1" id="48977" chance="65" enchantmentLevel="8"/> <!-- Artifact  Lv. 8 -->
+		<production count="1" id="48977" chance="35" enchantmentLevel="7"/> <!-- Artifact Lv. 7 -->
+	</item>
+	<item>
+		<ingredient count="1" id="48977" enchantmentLevel="8" /> <!-- Artifact Lv. 8 -->
+		<ingredient count="45" id="80000" /> <!-- Artifact Fragment -->
+		<production count="1" id="48977"  enchantmentLevel="9"/> <!-- Artifact  Lv. 9 -->
+		<production count="1" id="48977" chance="60" enchantmentLevel="9"/> <!-- Artifact  Lv. 9 -->
+		<production count="1" id="48977" chance="40" enchantmentLevel="8"/> <!-- Artifact Lv. 8 -->
+	</item>
+	<item>
+		<ingredient count="1" id="48977" enchantmentLevel="9" /> <!-- Artifact Lv. 9 -->
+		<ingredient count="50" id="80000" /> <!-- Artifact Fragment -->
+		<production count="1" id="48977"  enchantmentLevel="10"/> <!-- Artifact  Lv. 10 -->
+		<production count="1" id="48977" chance="55" enchantmentLevel="10"/> <!-- Artifact  Lv. 10 -->
+		<production count="1" id="48977" chance="45" enchantmentLevel="9"/> <!-- Artifact Lv. 9 -->
+	</item>
+	<item>
+		<ingredient count="1" id="48980" enchantmentLevel="0" /> <!-- Artifact Lv. 0 -->
+		<ingredient count="5" id="80000" /> <!-- Artifact Fragment -->
+		<production count="1" id="48980"  enchantmentLevel="1"/> <!-- Artifact  Lv. 1 -->
+		<production count="1" id="48980" chance="100" enchantmentLevel="1"/> <!-- Artifact  Lv. 1 -->
+		<production count="1" id="48980" chance="0" enchantmentLevel="0"/> <!-- Artifact Lv. 0 -->
+	</item>
+	<item>
+		<ingredient count="1" id="48980" enchantmentLevel="1" /> <!-- Artifact Lv. 1 -->
+		<ingredient count="10" id="80000" /> <!-- Artifact Fragment -->
+		<production count="1" id="48980"  enchantmentLevel="2"/> <!-- Artifact  Lv. 2 -->
+		<production count="1" id="48980" chance="95" enchantmentLevel="2"/> <!-- Artifact  Lv. 2 -->
+		<production count="1" id="48980" chance="5" enchantmentLevel="1"/> <!-- Artifact Lv. 1 -->
+	</item>
+	<item>
+		<ingredient count="1" id="48980" enchantmentLevel="2" /> <!-- Artifact Lv. 2 -->
+		<ingredient count="15" id="80000" /> <!-- Artifact Fragment -->
+		<production count="1" id="48980"  enchantmentLevel="3"/> <!-- Artifact  Lv. 3 -->
+		<production count="1" id="48980" chance="90" enchantmentLevel="3"/> <!-- Artifact  Lv. 3 -->
+		<production count="1" id="48980" chance="10" enchantmentLevel="2"/> <!-- Artifact Lv. 2 -->
+	</item>
+	<item>
+		<ingredient count="1" id="48980" enchantmentLevel="3" /> <!-- Artifact Lv. 3 -->
+		<ingredient count="20" id="80000" /> <!-- Artifact Fragment -->
+		<production count="1" id="48980"  enchantmentLevel="4"/> <!-- Artifact  Lv. 4 -->
+		<production count="1" id="48980" chance="85" enchantmentLevel="4"/> <!-- Artifact  Lv. 4 -->
+		<production count="1" id="48980" chance="15" enchantmentLevel="3"/> <!-- Artifact Lv. 3 -->
+	</item>
+	<item>
+		<ingredient count="1" id="48980" enchantmentLevel="4" /> <!-- Artifact Lv. 4 -->
+		<ingredient count="25" id="80000" /> <!-- Artifact Fragment -->
+		<production count="1" id="48980"  enchantmentLevel="5"/> <!-- Artifact  Lv. 5 -->
+		<production count="1" id="48980" chance="80" enchantmentLevel="5"/> <!-- Artifact  Lv. 5 -->
+		<production count="1" id="48980" chance="20" enchantmentLevel="4"/> <!-- Artifact Lv. 4 -->
+	</item>
+	<item>
+		<ingredient count="1" id="48980" enchantmentLevel="5" /> <!-- Artifact Lv. 5 -->
+		<ingredient count="30" id="80000" /> <!-- Artifact Fragment -->
+		<production count="1" id="48980"  enchantmentLevel="6"/> <!-- Artifact  Lv. 6 -->
+		<production count="1" id="48980" chance="75" enchantmentLevel="6"/> <!-- Artifact  Lv. 6 -->
+		<production count="1" id="48980" chance="25" enchantmentLevel="5"/> <!-- Artifact Lv. 5 -->
+	</item>
+	<item>
+		<ingredient count="1" id="48980" enchantmentLevel="6" /> <!-- Artifact Lv. 6 -->
+		<ingredient count="35" id="80000" /> <!-- Artifact Fragment -->
+		<production count="1" id="48980"  enchantmentLevel="7"/> <!-- Artifact  Lv. 7 -->
+		<production count="1" id="48980" chance="70" enchantmentLevel="7"/> <!-- Artifact  Lv. 7 -->
+		<production count="1" id="48980" chance="30" enchantmentLevel="6"/> <!-- Artifact Lv. 6 -->
+	</item>
+	<item>
+		<ingredient count="1" id="48980" enchantmentLevel="7" /> <!-- Artifact Lv. 7 -->
+		<ingredient count="40" id="80000" /> <!-- Artifact Fragment -->
+		<production count="1" id="48980"  enchantmentLevel="8"/> <!-- Artifact  Lv. 8 -->
+		<production count="1" id="48980" chance="65" enchantmentLevel="8"/> <!-- Artifact  Lv. 8 -->
+		<production count="1" id="48980" chance="35" enchantmentLevel="7"/> <!-- Artifact Lv. 7 -->
+	</item>
+	<item>
+		<ingredient count="1" id="48980" enchantmentLevel="8" /> <!-- Artifact Lv. 8 -->
+		<ingredient count="45" id="80000" /> <!-- Artifact Fragment -->
+		<production count="1" id="48980"  enchantmentLevel="9"/> <!-- Artifact  Lv. 9 -->
+		<production count="1" id="48980" chance="60" enchantmentLevel="9"/> <!-- Artifact  Lv. 9 -->
+		<production count="1" id="48980" chance="40" enchantmentLevel="8"/> <!-- Artifact Lv. 8 -->
+	</item>
+	<item>
+		<ingredient count="1" id="48980" enchantmentLevel="9" /> <!-- Artifact Lv. 9 -->
+		<ingredient count="50" id="80000" /> <!-- Artifact Fragment -->
+		<production count="1" id="48980"  enchantmentLevel="10"/> <!-- Artifact  Lv. 10 -->
+		<production count="1" id="48980" chance="55" enchantmentLevel="10"/> <!-- Artifact  Lv. 10 -->
+		<production count="1" id="48980" chance="45" enchantmentLevel="9"/> <!-- Artifact Lv. 9 -->
+	</item>
+	<item>
+		<ingredient count="1" id="48981" enchantmentLevel="0" /> <!-- Artifact Lv. 0 -->
+		<ingredient count="5" id="80000" /> <!-- Artifact Fragment -->
+		<production count="1" id="48981"  enchantmentLevel="1"/> <!-- Artifact  Lv. 1 -->
+		<production count="1" id="48981" chance="100" enchantmentLevel="1"/> <!-- Artifact  Lv. 1 -->
+		<production count="1" id="48981" chance="0" enchantmentLevel="0"/> <!-- Artifact Lv. 0 -->
+	</item>
+	<item>
+		<ingredient count="1" id="48981" enchantmentLevel="1" /> <!-- Artifact Lv. 1 -->
+		<ingredient count="10" id="80000" /> <!-- Artifact Fragment -->
+		<production count="1" id="48981"  enchantmentLevel="2"/> <!-- Artifact  Lv. 2 -->
+		<production count="1" id="48981" chance="95" enchantmentLevel="2"/> <!-- Artifact  Lv. 2 -->
+		<production count="1" id="48981" chance="5" enchantmentLevel="1"/> <!-- Artifact Lv. 1 -->
+	</item>
+	<item>
+		<ingredient count="1" id="48981" enchantmentLevel="2" /> <!-- Artifact Lv. 2 -->
+		<ingredient count="15" id="80000" /> <!-- Artifact Fragment -->
+		<production count="1" id="48981"  enchantmentLevel="3"/> <!-- Artifact  Lv. 3 -->
+		<production count="1" id="48981" chance="90" enchantmentLevel="3"/> <!-- Artifact  Lv. 3 -->
+		<production count="1" id="48981" chance="10" enchantmentLevel="2"/> <!-- Artifact Lv. 2 -->
+	</item>
+	<item>
+		<ingredient count="1" id="48981" enchantmentLevel="3" /> <!-- Artifact Lv. 3 -->
+		<ingredient count="20" id="80000" /> <!-- Artifact Fragment -->
+		<production count="1" id="48981"  enchantmentLevel="4"/> <!-- Artifact  Lv. 4 -->
+		<production count="1" id="48981" chance="85" enchantmentLevel="4"/> <!-- Artifact  Lv. 4 -->
+		<production count="1" id="48981" chance="15" enchantmentLevel="3"/> <!-- Artifact Lv. 3 -->
+	</item>
+	<item>
+		<ingredient count="1" id="48981" enchantmentLevel="4" /> <!-- Artifact Lv. 4 -->
+		<ingredient count="25" id="80000" /> <!-- Artifact Fragment -->
+		<production count="1" id="48981"  enchantmentLevel="5"/> <!-- Artifact  Lv. 5 -->
+		<production count="1" id="48981" chance="80" enchantmentLevel="5"/> <!-- Artifact  Lv. 5 -->
+		<production count="1" id="48981" chance="20" enchantmentLevel="4"/> <!-- Artifact Lv. 4 -->
+	</item>
+	<item>
+		<ingredient count="1" id="48981" enchantmentLevel="5" /> <!-- Artifact Lv. 5 -->
+		<ingredient count="30" id="80000" /> <!-- Artifact Fragment -->
+		<production count="1" id="48981"  enchantmentLevel="6"/> <!-- Artifact  Lv. 6 -->
+		<production count="1" id="48981" chance="75" enchantmentLevel="6"/> <!-- Artifact  Lv. 6 -->
+		<production count="1" id="48981" chance="25" enchantmentLevel="5"/> <!-- Artifact Lv. 5 -->
+	</item>
+	<item>
+		<ingredient count="1" id="48981" enchantmentLevel="6" /> <!-- Artifact Lv. 6 -->
+		<ingredient count="35" id="80000" /> <!-- Artifact Fragment -->
+		<production count="1" id="48981"  enchantmentLevel="7"/> <!-- Artifact  Lv. 7 -->
+		<production count="1" id="48981" chance="70" enchantmentLevel="7"/> <!-- Artifact  Lv. 7 -->
+		<production count="1" id="48981" chance="30" enchantmentLevel="6"/> <!-- Artifact Lv. 6 -->
+	</item>
+	<item>
+		<ingredient count="1" id="48981" enchantmentLevel="7" /> <!-- Artifact Lv. 7 -->
+		<ingredient count="40" id="80000" /> <!-- Artifact Fragment -->
+		<production count="1" id="48981"  enchantmentLevel="8"/> <!-- Artifact  Lv. 8 -->
+		<production count="1" id="48981" chance="65" enchantmentLevel="8"/> <!-- Artifact  Lv. 8 -->
+		<production count="1" id="48981" chance="35" enchantmentLevel="7"/> <!-- Artifact Lv. 7 -->
+	</item>
+	<item>
+		<ingredient count="1" id="48981" enchantmentLevel="8" /> <!-- Artifact Lv. 8 -->
+		<ingredient count="45" id="80000" /> <!-- Artifact Fragment -->
+		<production count="1" id="48981"  enchantmentLevel="9"/> <!-- Artifact  Lv. 9 -->
+		<production count="1" id="48981" chance="60" enchantmentLevel="9"/> <!-- Artifact  Lv. 9 -->
+		<production count="1" id="48981" chance="40" enchantmentLevel="8"/> <!-- Artifact Lv. 8 -->
+	</item>
+	<item>
+		<ingredient count="1" id="48981" enchantmentLevel="9" /> <!-- Artifact Lv. 9 -->
+		<ingredient count="50" id="80000" /> <!-- Artifact Fragment -->
+		<production count="1" id="48981"  enchantmentLevel="10"/> <!-- Artifact  Lv. 10 -->
+		<production count="1" id="48981" chance="55" enchantmentLevel="10"/> <!-- Artifact  Lv. 10 -->
+		<production count="1" id="48981" chance="45" enchantmentLevel="9"/> <!-- Artifact Lv. 9 -->
+	</item>
+	<item>
+		<ingredient count="1" id="48982" enchantmentLevel="0" /> <!-- Artifact Lv. 0 -->
+		<ingredient count="5" id="80000" /> <!-- Artifact Fragment -->
+		<production count="1" id="48982"  enchantmentLevel="1"/> <!-- Artifact  Lv. 1 -->
+		<production count="1" id="48982" chance="100" enchantmentLevel="1"/> <!-- Artifact  Lv. 1 -->
+		<production count="1" id="48982" chance="0" enchantmentLevel="0"/> <!-- Artifact Lv. 0 -->
+	</item>
+	<item>
+		<ingredient count="1" id="48982" enchantmentLevel="1" /> <!-- Artifact Lv. 1 -->
+		<ingredient count="10" id="80000" /> <!-- Artifact Fragment -->
+		<production count="1" id="48982"  enchantmentLevel="2"/> <!-- Artifact  Lv. 2 -->
+		<production count="1" id="48982" chance="95" enchantmentLevel="2"/> <!-- Artifact  Lv. 2 -->
+		<production count="1" id="48982" chance="5" enchantmentLevel="1"/> <!-- Artifact Lv. 1 -->
+	</item>
+	<item>
+		<ingredient count="1" id="48982" enchantmentLevel="2" /> <!-- Artifact Lv. 2 -->
+		<ingredient count="15" id="80000" /> <!-- Artifact Fragment -->
+		<production count="1" id="48982"  enchantmentLevel="3"/> <!-- Artifact  Lv. 3 -->
+		<production count="1" id="48982" chance="90" enchantmentLevel="3"/> <!-- Artifact  Lv. 3 -->
+		<production count="1" id="48982" chance="10" enchantmentLevel="2"/> <!-- Artifact Lv. 2 -->
+	</item>
+	<item>
+		<ingredient count="1" id="48982" enchantmentLevel="3" /> <!-- Artifact Lv. 3 -->
+		<ingredient count="20" id="80000" /> <!-- Artifact Fragment -->
+		<production count="1" id="48982"  enchantmentLevel="4"/> <!-- Artifact  Lv. 4 -->
+		<production count="1" id="48982" chance="85" enchantmentLevel="4"/> <!-- Artifact  Lv. 4 -->
+		<production count="1" id="48982" chance="15" enchantmentLevel="3"/> <!-- Artifact Lv. 3 -->
+	</item>
+	<item>
+		<ingredient count="1" id="48982" enchantmentLevel="4" /> <!-- Artifact Lv. 4 -->
+		<ingredient count="25" id="80000" /> <!-- Artifact Fragment -->
+		<production count="1" id="48982"  enchantmentLevel="5"/> <!-- Artifact  Lv. 5 -->
+		<production count="1" id="48982" chance="80" enchantmentLevel="5"/> <!-- Artifact  Lv. 5 -->
+		<production count="1" id="48982" chance="20" enchantmentLevel="4"/> <!-- Artifact Lv. 4 -->
+	</item>
+	<item>
+		<ingredient count="1" id="48982" enchantmentLevel="5" /> <!-- Artifact Lv. 5 -->
+		<ingredient count="30" id="80000" /> <!-- Artifact Fragment -->
+		<production count="1" id="48982"  enchantmentLevel="6"/> <!-- Artifact  Lv. 6 -->
+		<production count="1" id="48982" chance="75" enchantmentLevel="6"/> <!-- Artifact  Lv. 6 -->
+		<production count="1" id="48982" chance="25" enchantmentLevel="5"/> <!-- Artifact Lv. 5 -->
+	</item>
+	<item>
+		<ingredient count="1" id="48982" enchantmentLevel="6" /> <!-- Artifact Lv. 6 -->
+		<ingredient count="35" id="80000" /> <!-- Artifact Fragment -->
+		<production count="1" id="48982"  enchantmentLevel="7"/> <!-- Artifact  Lv. 7 -->
+		<production count="1" id="48982" chance="70" enchantmentLevel="7"/> <!-- Artifact  Lv. 7 -->
+		<production count="1" id="48982" chance="30" enchantmentLevel="6"/> <!-- Artifact Lv. 6 -->
+	</item>
+	<item>
+		<ingredient count="1" id="48982" enchantmentLevel="7" /> <!-- Artifact Lv. 7 -->
+		<ingredient count="40" id="80000" /> <!-- Artifact Fragment -->
+		<production count="1" id="48982"  enchantmentLevel="8"/> <!-- Artifact  Lv. 8 -->
+		<production count="1" id="48982" chance="65" enchantmentLevel="8"/> <!-- Artifact  Lv. 8 -->
+		<production count="1" id="48982" chance="35" enchantmentLevel="7"/> <!-- Artifact Lv. 7 -->
+	</item>
+	<item>
+		<ingredient count="1" id="48982" enchantmentLevel="8" /> <!-- Artifact Lv. 8 -->
+		<ingredient count="45" id="80000" /> <!-- Artifact Fragment -->
+		<production count="1" id="48982"  enchantmentLevel="9"/> <!-- Artifact  Lv. 9 -->
+		<production count="1" id="48982" chance="60" enchantmentLevel="9"/> <!-- Artifact  Lv. 9 -->
+		<production count="1" id="48982" chance="40" enchantmentLevel="8"/> <!-- Artifact Lv. 8 -->
+	</item>
+	<item>
+		<ingredient count="1" id="48982" enchantmentLevel="9" /> <!-- Artifact Lv. 9 -->
+		<ingredient count="50" id="80000" /> <!-- Artifact Fragment -->
+		<production count="1" id="48982"  enchantmentLevel="10"/> <!-- Artifact  Lv. 10 -->
+		<production count="1" id="48982" chance="55" enchantmentLevel="10"/> <!-- Artifact  Lv. 10 -->
+		<production count="1" id="48982" chance="45" enchantmentLevel="9"/> <!-- Artifact Lv. 9 -->
+	</item>
+	<item>
+		<ingredient count="1" id="48983" enchantmentLevel="0" /> <!-- Artifact Lv. 0 -->
+		<ingredient count="5" id="80000" /> <!-- Artifact Fragment -->
+		<production count="1" id="48983"  enchantmentLevel="1"/> <!-- Artifact  Lv. 1 -->
+		<production count="1" id="48983" chance="100" enchantmentLevel="1"/> <!-- Artifact  Lv. 1 -->
+		<production count="1" id="48983" chance="0" enchantmentLevel="0"/> <!-- Artifact Lv. 0 -->
+	</item>
+	<item>
+		<ingredient count="1" id="48983" enchantmentLevel="1" /> <!-- Artifact Lv. 1 -->
+		<ingredient count="10" id="80000" /> <!-- Artifact Fragment -->
+		<production count="1" id="48983"  enchantmentLevel="2"/> <!-- Artifact  Lv. 2 -->
+		<production count="1" id="48983" chance="95" enchantmentLevel="2"/> <!-- Artifact  Lv. 2 -->
+		<production count="1" id="48983" chance="5" enchantmentLevel="1"/> <!-- Artifact Lv. 1 -->
+	</item>
+	<item>
+		<ingredient count="1" id="48983" enchantmentLevel="2" /> <!-- Artifact Lv. 2 -->
+		<ingredient count="15" id="80000" /> <!-- Artifact Fragment -->
+		<production count="1" id="48983"  enchantmentLevel="3"/> <!-- Artifact  Lv. 3 -->
+		<production count="1" id="48983" chance="90" enchantmentLevel="3"/> <!-- Artifact  Lv. 3 -->
+		<production count="1" id="48983" chance="10" enchantmentLevel="2"/> <!-- Artifact Lv. 2 -->
+	</item>
+	<item>
+		<ingredient count="1" id="48983" enchantmentLevel="3" /> <!-- Artifact Lv. 3 -->
+		<ingredient count="20" id="80000" /> <!-- Artifact Fragment -->
+		<production count="1" id="48983"  enchantmentLevel="4"/> <!-- Artifact  Lv. 4 -->
+		<production count="1" id="48983" chance="85" enchantmentLevel="4"/> <!-- Artifact  Lv. 4 -->
+		<production count="1" id="48983" chance="15" enchantmentLevel="3"/> <!-- Artifact Lv. 3 -->
+	</item>
+	<item>
+		<ingredient count="1" id="48983" enchantmentLevel="4" /> <!-- Artifact Lv. 4 -->
+		<ingredient count="25" id="80000" /> <!-- Artifact Fragment -->
+		<production count="1" id="48983"  enchantmentLevel="5"/> <!-- Artifact  Lv. 5 -->
+		<production count="1" id="48983" chance="80" enchantmentLevel="5"/> <!-- Artifact  Lv. 5 -->
+		<production count="1" id="48983" chance="20" enchantmentLevel="4"/> <!-- Artifact Lv. 4 -->
+	</item>
+	<item>
+		<ingredient count="1" id="48983" enchantmentLevel="5" /> <!-- Artifact Lv. 5 -->
+		<ingredient count="30" id="80000" /> <!-- Artifact Fragment -->
+		<production count="1" id="48983"  enchantmentLevel="6"/> <!-- Artifact  Lv. 6 -->
+		<production count="1" id="48983" chance="75" enchantmentLevel="6"/> <!-- Artifact  Lv. 6 -->
+		<production count="1" id="48983" chance="25" enchantmentLevel="5"/> <!-- Artifact Lv. 5 -->
+	</item>
+	<item>
+		<ingredient count="1" id="48983" enchantmentLevel="6" /> <!-- Artifact Lv. 6 -->
+		<ingredient count="35" id="80000" /> <!-- Artifact Fragment -->
+		<production count="1" id="48983"  enchantmentLevel="7"/> <!-- Artifact  Lv. 7 -->
+		<production count="1" id="48983" chance="70" enchantmentLevel="7"/> <!-- Artifact  Lv. 7 -->
+		<production count="1" id="48983" chance="30" enchantmentLevel="6"/> <!-- Artifact Lv. 6 -->
+	</item>
+	<item>
+		<ingredient count="1" id="48983" enchantmentLevel="7" /> <!-- Artifact Lv. 7 -->
+		<ingredient count="40" id="80000" /> <!-- Artifact Fragment -->
+		<production count="1" id="48983"  enchantmentLevel="8"/> <!-- Artifact  Lv. 8 -->
+		<production count="1" id="48983" chance="65" enchantmentLevel="8"/> <!-- Artifact  Lv. 8 -->
+		<production count="1" id="48983" chance="35" enchantmentLevel="7"/> <!-- Artifact Lv. 7 -->
+	</item>
+	<item>
+		<ingredient count="1" id="48983" enchantmentLevel="8" /> <!-- Artifact Lv. 8 -->
+		<ingredient count="45" id="80000" /> <!-- Artifact Fragment -->
+		<production count="1" id="48983"  enchantmentLevel="9"/> <!-- Artifact  Lv. 9 -->
+		<production count="1" id="48983" chance="60" enchantmentLevel="9"/> <!-- Artifact  Lv. 9 -->
+		<production count="1" id="48983" chance="40" enchantmentLevel="8"/> <!-- Artifact Lv. 8 -->
+	</item>
+	<item>
+		<ingredient count="1" id="48983" enchantmentLevel="9" /> <!-- Artifact Lv. 9 -->
+		<ingredient count="50" id="80000" /> <!-- Artifact Fragment -->
+		<production count="1" id="48983"  enchantmentLevel="10"/> <!-- Artifact  Lv. 10 -->
+		<production count="1" id="48983" chance="55" enchantmentLevel="10"/> <!-- Artifact  Lv. 10 -->
+		<production count="1" id="48983" chance="45" enchantmentLevel="9"/> <!-- Artifact Lv. 9 -->
+	</item>
+	<item>
+		<ingredient count="1" id="48984" enchantmentLevel="0" /> <!-- Artifact Lv. 0 -->
+		<ingredient count="5" id="80000" /> <!-- Artifact Fragment -->
+		<production count="1" id="48984"  enchantmentLevel="1"/> <!-- Artifact  Lv. 1 -->
+		<production count="1" id="48984" chance="100" enchantmentLevel="1"/> <!-- Artifact  Lv. 1 -->
+		<production count="1" id="48984" chance="0" enchantmentLevel="0"/> <!-- Artifact Lv. 0 -->
+	</item>
+	<item>
+		<ingredient count="1" id="48984" enchantmentLevel="1" /> <!-- Artifact Lv. 1 -->
+		<ingredient count="10" id="80000" /> <!-- Artifact Fragment -->
+		<production count="1" id="48984"  enchantmentLevel="2"/> <!-- Artifact  Lv. 2 -->
+		<production count="1" id="48984" chance="95" enchantmentLevel="2"/> <!-- Artifact  Lv. 2 -->
+		<production count="1" id="48984" chance="5" enchantmentLevel="1"/> <!-- Artifact Lv. 1 -->
+	</item>
+	<item>
+		<ingredient count="1" id="48984" enchantmentLevel="2" /> <!-- Artifact Lv. 2 -->
+		<ingredient count="15" id="80000" /> <!-- Artifact Fragment -->
+		<production count="1" id="48984"  enchantmentLevel="3"/> <!-- Artifact  Lv. 3 -->
+		<production count="1" id="48984" chance="90" enchantmentLevel="3"/> <!-- Artifact  Lv. 3 -->
+		<production count="1" id="48984" chance="10" enchantmentLevel="2"/> <!-- Artifact Lv. 2 -->
+	</item>
+	<item>
+		<ingredient count="1" id="48984" enchantmentLevel="3" /> <!-- Artifact Lv. 3 -->
+		<ingredient count="20" id="80000" /> <!-- Artifact Fragment -->
+		<production count="1" id="48984"  enchantmentLevel="4"/> <!-- Artifact  Lv. 4 -->
+		<production count="1" id="48984" chance="85" enchantmentLevel="4"/> <!-- Artifact  Lv. 4 -->
+		<production count="1" id="48984" chance="15" enchantmentLevel="3"/> <!-- Artifact Lv. 3 -->
+	</item>
+	<item>
+		<ingredient count="1" id="48984" enchantmentLevel="4" /> <!-- Artifact Lv. 4 -->
+		<ingredient count="25" id="80000" /> <!-- Artifact Fragment -->
+		<production count="1" id="48984"  enchantmentLevel="5"/> <!-- Artifact  Lv. 5 -->
+		<production count="1" id="48984" chance="80" enchantmentLevel="5"/> <!-- Artifact  Lv. 5 -->
+		<production count="1" id="48984" chance="20" enchantmentLevel="4"/> <!-- Artifact Lv. 4 -->
+	</item>
+	<item>
+		<ingredient count="1" id="48984" enchantmentLevel="5" /> <!-- Artifact Lv. 5 -->
+		<ingredient count="30" id="80000" /> <!-- Artifact Fragment -->
+		<production count="1" id="48984"  enchantmentLevel="6"/> <!-- Artifact  Lv. 6 -->
+		<production count="1" id="48984" chance="75" enchantmentLevel="6"/> <!-- Artifact  Lv. 6 -->
+		<production count="1" id="48984" chance="25" enchantmentLevel="5"/> <!-- Artifact Lv. 5 -->
+	</item>
+	<item>
+		<ingredient count="1" id="48984" enchantmentLevel="6" /> <!-- Artifact Lv. 6 -->
+		<ingredient count="35" id="80000" /> <!-- Artifact Fragment -->
+		<production count="1" id="48984"  enchantmentLevel="7"/> <!-- Artifact  Lv. 7 -->
+		<production count="1" id="48984" chance="70" enchantmentLevel="7"/> <!-- Artifact  Lv. 7 -->
+		<production count="1" id="48984" chance="30" enchantmentLevel="6"/> <!-- Artifact Lv. 6 -->
+	</item>
+	<item>
+		<ingredient count="1" id="48984" enchantmentLevel="7" /> <!-- Artifact Lv. 7 -->
+		<ingredient count="40" id="80000" /> <!-- Artifact Fragment -->
+		<production count="1" id="48984"  enchantmentLevel="8"/> <!-- Artifact  Lv. 8 -->
+		<production count="1" id="48984" chance="65" enchantmentLevel="8"/> <!-- Artifact  Lv. 8 -->
+		<production count="1" id="48984" chance="35" enchantmentLevel="7"/> <!-- Artifact Lv. 7 -->
+	</item>
+	<item>
+		<ingredient count="1" id="48984" enchantmentLevel="8" /> <!-- Artifact Lv. 8 -->
+		<ingredient count="45" id="80000" /> <!-- Artifact Fragment -->
+		<production count="1" id="48984"  enchantmentLevel="9"/> <!-- Artifact  Lv. 9 -->
+		<production count="1" id="48984" chance="60" enchantmentLevel="9"/> <!-- Artifact  Lv. 9 -->
+		<production count="1" id="48984" chance="40" enchantmentLevel="8"/> <!-- Artifact Lv. 8 -->
+	</item>
+	<item>
+		<ingredient count="1" id="48984" enchantmentLevel="9" /> <!-- Artifact Lv. 9 -->
+		<ingredient count="50" id="80000" /> <!-- Artifact Fragment -->
+		<production count="1" id="48984"  enchantmentLevel="10"/> <!-- Artifact  Lv. 10 -->
+		<production count="1" id="48984" chance="55" enchantmentLevel="10"/> <!-- Artifact  Lv. 10 -->
+		<production count="1" id="48984" chance="45" enchantmentLevel="9"/> <!-- Artifact Lv. 9 -->
+	</item>
+	<item>
+		<ingredient count="1" id="48985" enchantmentLevel="0" /> <!-- Artifact Lv. 0 -->
+		<ingredient count="5" id="80000" /> <!-- Artifact Fragment -->
+		<production count="1" id="48985"  enchantmentLevel="1"/> <!-- Artifact  Lv. 1 -->
+		<production count="1" id="48985" chance="100" enchantmentLevel="1"/> <!-- Artifact  Lv. 1 -->
+		<production count="1" id="48985" chance="0" enchantmentLevel="0"/> <!-- Artifact Lv. 0 -->
+	</item>
+	<item>
+		<ingredient count="1" id="48985" enchantmentLevel="1" /> <!-- Artifact Lv. 1 -->
+		<ingredient count="10" id="80000" /> <!-- Artifact Fragment -->
+		<production count="1" id="48985"  enchantmentLevel="2"/> <!-- Artifact  Lv. 2 -->
+		<production count="1" id="48985" chance="95" enchantmentLevel="2"/> <!-- Artifact  Lv. 2 -->
+		<production count="1" id="48985" chance="5" enchantmentLevel="1"/> <!-- Artifact Lv. 1 -->
+	</item>
+	<item>
+		<ingredient count="1" id="48985" enchantmentLevel="2" /> <!-- Artifact Lv. 2 -->
+		<ingredient count="15" id="80000" /> <!-- Artifact Fragment -->
+		<production count="1" id="48985"  enchantmentLevel="3"/> <!-- Artifact  Lv. 3 -->
+		<production count="1" id="48985" chance="90" enchantmentLevel="3"/> <!-- Artifact  Lv. 3 -->
+		<production count="1" id="48985" chance="10" enchantmentLevel="2"/> <!-- Artifact Lv. 2 -->
+	</item>
+	<item>
+		<ingredient count="1" id="48985" enchantmentLevel="3" /> <!-- Artifact Lv. 3 -->
+		<ingredient count="20" id="80000" /> <!-- Artifact Fragment -->
+		<production count="1" id="48985"  enchantmentLevel="4"/> <!-- Artifact  Lv. 4 -->
+		<production count="1" id="48985" chance="85" enchantmentLevel="4"/> <!-- Artifact  Lv. 4 -->
+		<production count="1" id="48985" chance="15" enchantmentLevel="3"/> <!-- Artifact Lv. 3 -->
+	</item>
+	<item>
+		<ingredient count="1" id="48985" enchantmentLevel="4" /> <!-- Artifact Lv. 4 -->
+		<ingredient count="25" id="80000" /> <!-- Artifact Fragment -->
+		<production count="1" id="48985"  enchantmentLevel="5"/> <!-- Artifact  Lv. 5 -->
+		<production count="1" id="48985" chance="80" enchantmentLevel="5"/> <!-- Artifact  Lv. 5 -->
+		<production count="1" id="48985" chance="20" enchantmentLevel="4"/> <!-- Artifact Lv. 4 -->
+	</item>
+	<item>
+		<ingredient count="1" id="48985" enchantmentLevel="5" /> <!-- Artifact Lv. 5 -->
+		<ingredient count="30" id="80000" /> <!-- Artifact Fragment -->
+		<production count="1" id="48985"  enchantmentLevel="6"/> <!-- Artifact  Lv. 6 -->
+		<production count="1" id="48985" chance="75" enchantmentLevel="6"/> <!-- Artifact  Lv. 6 -->
+		<production count="1" id="48985" chance="25" enchantmentLevel="5"/> <!-- Artifact Lv. 5 -->
+	</item>
+	<item>
+		<ingredient count="1" id="48985" enchantmentLevel="6" /> <!-- Artifact Lv. 6 -->
+		<ingredient count="35" id="80000" /> <!-- Artifact Fragment -->
+		<production count="1" id="48985"  enchantmentLevel="7"/> <!-- Artifact  Lv. 7 -->
+		<production count="1" id="48985" chance="70" enchantmentLevel="7"/> <!-- Artifact  Lv. 7 -->
+		<production count="1" id="48985" chance="30" enchantmentLevel="6"/> <!-- Artifact Lv. 6 -->
+	</item>
+	<item>
+		<ingredient count="1" id="48985" enchantmentLevel="7" /> <!-- Artifact Lv. 7 -->
+		<ingredient count="40" id="80000" /> <!-- Artifact Fragment -->
+		<production count="1" id="48985"  enchantmentLevel="8"/> <!-- Artifact  Lv. 8 -->
+		<production count="1" id="48985" chance="65" enchantmentLevel="8"/> <!-- Artifact  Lv. 8 -->
+		<production count="1" id="48985" chance="35" enchantmentLevel="7"/> <!-- Artifact Lv. 7 -->
+	</item>
+	<item>
+		<ingredient count="1" id="48985" enchantmentLevel="8" /> <!-- Artifact Lv. 8 -->
+		<ingredient count="45" id="80000" /> <!-- Artifact Fragment -->
+		<production count="1" id="48985"  enchantmentLevel="9"/> <!-- Artifact  Lv. 9 -->
+		<production count="1" id="48985" chance="60" enchantmentLevel="9"/> <!-- Artifact  Lv. 9 -->
+		<production count="1" id="48985" chance="40" enchantmentLevel="8"/> <!-- Artifact Lv. 8 -->
+	</item>
+	<item>
+		<ingredient count="1" id="48985" enchantmentLevel="9" /> <!-- Artifact Lv. 9 -->
+		<ingredient count="50" id="80000" /> <!-- Artifact Fragment -->
+		<production count="1" id="48985"  enchantmentLevel="10"/> <!-- Artifact  Lv. 10 -->
+		<production count="1" id="48985" chance="55" enchantmentLevel="10"/> <!-- Artifact  Lv. 10 -->
+		<production count="1" id="48985" chance="45" enchantmentLevel="9"/> <!-- Artifact Lv. 9 -->
+	</item>
+
+
+
+</list>

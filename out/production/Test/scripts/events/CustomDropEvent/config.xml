@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<event name="Custom Drop Event" active="19 11 2019-19 11 2029" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../xsd/eventConfig.xsd">
+	<droplist>
+	    <add item="9911" min="1" max="3" chance="0.5%" minLevel="99" maxLevel="120" /> <!-- Blood Alliance -->
+		<add item="35563" min="1" max="2" chance="1%" minLevel="85" maxLevel="120" /> <!-- Giants Energy -->
+		<add item="35562" min="2" max="3" chance="3%" minLevel="85" maxLevel="120" /> <!-- Energy of Destruction -->
+		<add item="23768" min="1" max="1" chance="0.7%" minLevel="99" maxLevel="120" /> <!-- Luxury Tarot Card -->
+		<add item="28470" min="1" max="1" chance="0.5%" minLevel="100" maxLevel="120" /> <!-- Ultimate Jewerly Box -->
+		<add item="30297" min="1" max="1" chance="1%" minLevel="99" maxLevel="120" /> <!-- Superior Giant Codex -->
+		<add item="30298" min="1" max="1" chance="0.5%" minLevel="99" maxLevel="120" /> <!-- Superior Giant Codex - Mastery -->
+		<add item="19440" min="1" max="3" chance="0.5%" minLevel="85" maxLevel="120" /> <!-- Gemstones R -->
+		<add item="36308" min="1" max="3" chance="0.5%" minLevel="99" maxLevel="120" /> <!-- Royal Beauty Tickets -->
+		<add item="8600" min="1" max="1" chance="10%" minLevel="99" maxLevel="120" /> <!-- Herb of Life -->
+		<add item="8601" min="1" max="1" chance="8%" minLevel="99" maxLevel="120" /> <!-- Major Herb of Life -->
+		<add item="8602" min="1" max="1" chance="3%" minLevel="99" maxLevel="120" /> <!-- Superior Herb of Life -->
+		<add item="8603" min="1" max="1" chance="90%" minLevel="99" maxLevel="120" /> <!-- Herb of Mana -->
+		<add item="8604" min="1" max="1" chance="10%" minLevel="99" maxLevel="120" /> <!-- Major Herb of Mana -->
+		<add item="8605" min="1" max="1" chance="3%" minLevel="99" maxLevel="120" /> <!-- Superior Herb of Mana -->
+		<add item="13028" min="1" max="1" chance="0.1%" minLevel="99" maxLevel="120" /> <!-- Vitality Replenishing Herb -->
+		<add item="80901" min="1" max="1" chance="1%" monsterIds="29325,29001,29006,26044,26045,26046,26047,26048,26049,26131,26137,26162,26163,26164,26165,26170,26171,26172,26173,26178,26179,26180,26181,26186,26187,26188,26189,26277,26278,26279,26280,26285,26286,26287,26288,26293,26294,26295,26296,26301,26302,26303,26304,26312,26372,26373,26374,26375,26380,26381,26382,26383,29374,26431,26432,26433,26434,26435,26436,26437,26438,26439,26440" /> <!-- Zariche's Blood -->
+		<add item="80902" min="1" max="1" chance="1%" monsterIds="29325,29001,29006,26044,26045,26046,26047,26048,26049,26131,26137,26162,26163,26164,26165,26170,26171,26172,26173,26178,26179,26180,26181,26186,26187,26188,26189,26277,26278,26279,26280,26285,26286,26287,26288,26293,26294,26295,26296,26301,26302,26303,26304,26312,26372,26373,26374,26375,26380,26381,26382,26383,29374,26431,26432,26433,26434,26435,26436,26437,26438,26439,26440" /> <!-- Akamanah's Blood -->
+		<add item="80903" min="1" max="1" chance="1%" monsterIds="29325,29001,29006,26044,26045,26046,26047,26048,26049,26131,26137,26162,26163,26164,26165,26170,26171,26172,26173,26178,26179,26180,26181,26186,26187,26188,26189,26277,26278,26279,26280,26285,26286,26287,26288,26293,26294,26295,26296,26301,26302,26303,26304,26312,26372,26373,26374,26375,26380,26381,26382,26383,29374,26431,26432,26433,26434,26435,26436,26437,26438,26439,26440" /> <!-- Zariche's Sealed Box -->
+		<add item="80904" min="1" max="1" chance="1%" monsterIds="29325,29001,29006,26044,26045,26046,26047,26048,26049,26131,26137,26162,26163,26164,26165,26170,26171,26172,26173,26178,26179,26180,26181,26186,26187,26188,26189,26277,26278,26279,26280,26285,26286,26287,26288,26293,26294,26295,26296,26301,26302,26303,26304,26312,26372,26373,26374,26375,26380,26381,26382,26383,29374,26431,26432,26433,26434,26435,26436,26437,26438,26439,26440" /> <!-- Akamanah's Sealed Box -->
+	</droplist>
+</event>

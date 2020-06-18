@@ -1,0 +1,202 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/items.xsd">
+
+	<item id="81364" name="Fallen Angel's Ring" additionalName="Charisma Lv. 1" type="Armor">
+		<!-- When enchanted, increases Confusion Resistance/ Atk. Rate, Vitality Bonus, acquired XP/ SP, P. Critical Damage, P./ M. Skill Critical Damage and damage to immobilized targets. The effect doesn't stack if two identical earring are equipped.-->
+		<set name="icon" val="icon.bm_ring_of_fallen_angel" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="rfinger;lfinger" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="SILVER" />
+		<set name="weight" val="150" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="enchant_enabled" val="8" />
+		<skills>
+			<skill id="39620" level="1"/>
+		</skills>
+		<stats>
+			<stat type="mDef">101</stat>
+		</stats>
+	</item>
+
+	<item id="81365" name="Fallen Angel's Ring" additionalName="Charisma Lv. 2" type="Armor">
+		<!-- When enchanted, increases Confusion Resistance/ Atk. Rate, Vitality Bonus, acquired XP/ SP, P. Critical Damage, P./ M. Skill Critical Damage and damage to immobilized targets. The effect doesn't stack if two identical earring are equipped.-->
+		<set name="icon" val="icon.bm_ring_of_fallen_angel" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="rfinger;lfinger" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="SILVER" />
+		<set name="weight" val="150" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="enchant_enabled" val="8" />
+		<skills>
+			<skill id="39620" level="2"/>
+		</skills>
+		<stats>
+			<stat type="mDef">101</stat>
+		</stats>
+	</item>
+
+	<item id="81366" name="Fallen Angel's Ring" additionalName="Charisma Lv. 3" type="Armor">
+		<!-- When enchanted, increases Confusion Resistance/ Atk. Rate, Vitality Bonus, acquired XP/ SP, P. Critical Damage, P./ M. Skill Critical Damage and damage to immobilized targets. The effect doesn't stack if two identical earring are equipped.-->
+		<set name="icon" val="icon.bm_ring_of_fallen_angel" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="rfinger;lfinger" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="SILVER" />
+		<set name="weight" val="150" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="enchant_enabled" val="8" />
+		<skills>
+			<skill id="39620" level="3"/>
+		</skills>
+		<stats>
+			<stat type="mDef">101</stat>
+		</stats>
+	</item>
+	<item id="80964" name="Energy of Protection" type="EtcItem">
+	<!-- A compound material for upgrading Talisman of Protection Lv. 9 or lower. In case of failure, Talisman of Protection is not destroyed, but its upgrade level is reset to a certain value. However, Energy of Protection is consumed in any case. -->
+	<set name="icon" val="icon.defend_talisman_energy" />
+	<set name="is_sellable" val="false" />
+	<set name="is_stackable" val="true" />
+	</item>
+
+	<item id="80963" name="Blood-stained Talisman of Protection" additionalName="8 Hours" type="Armor">
+		<!-- Talisman of Protection stained with blood of Zariche or Akamanah.\nP./ M. Def. +850, received damage -3%, Bow/ Crossbow Attack Resistance +3%, Dagger/ Dual Dagger Attack Resistance +3%, Fixed Damage Resistance +5%, received M. Skill Critical Damage -3%, received damage when immobilized -3%. -->
+		<set name="icon" val="icon.cursed_defend_talisman_lv1" />
+		<set name="bodypart" val="deco1" />
+		<set name="default_action" val="EQUIP" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="150" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="false"/>
+		<set name="time" val="480" />
+		<skills>
+			<skill id="35554" level="1" /> <!--Blood-stained Talisman of Protection Lv1 -->
+		</skills>
+	</item>
+
+	<item id="81345" name="Expert's Mask" type="Armor">
+	<!-- CHA +1.\nWhen enchanted, increases Attribute Attack, Attribute Resistance, Atk. Spd./ Casting Spd., Max HP/ MP/ CP, P./ M. Def., P./ M. Atk.\n\n<Enchanting>\nUse Scroll: Enchant Expert�s Mask. -->
+	<set name="icon" val="icon.explorer_mask" />
+	<set name="default_action" val="EQUIP" />
+	<set name="bodypart" val="hair" />
+	<set name="immediate_effect" val="true" />
+	<set name="material" val="WOOD" />
+	<set name="weight" val="10" />
+	<set name="is_tradable" val="false" />
+	<set name="is_dropable" val="false" />
+	<set name="is_depositable" val="false" />
+	<set name="is_sellable" val="false" />
+	<set name="enchant_enabled" val="10" />
+	</item>
+
+	<item id="81346" name="Scroll: Enchant Expert's Mask" type="EtcItem">
+		<!-- Enchant scroll for Scroll: Enchant Expert's Mask. The maximum enchantment value is +5. -->
+		<set name="icon" val="icon.episode_scrl_of_ench_hair" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="material" val="PAPER" />
+		<set name="weight" val="10" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="etcitem_type" val="ENCHT_AM" />
+		<set name="handler" val="EnchantScrolls" />
+		<set name="immediate_effect" val="true" />
+		<set name="commissionItemType" val="SCROLL_ENCHANT_ARMOR" />
+		<skills>
+			<skill id="39616" level="1" /> <!-- Scroll: Enchant Expert's Mask -->
+		</skills>
+	</item>
+
+	<item id="81153" name="Navari's Mask" type="Armor">
+		<!-- When enchanted, increases Attribute Attack, Attribute Resistance, Max HP/ MP/ CP, P./ M. Def., P./ M. Atk., P./ M. Skill Power, P. Critical Damage and P./ M. Skill Critical Damage.\n\n<Enchanting>\nUse Scroll: Enchant Mask. -->
+		<set name="icon" val="icon.serenia_mask" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="hair" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="WOOD" />
+		<set name="weight" val="10" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="enchant_enabled" val="10" />
+	</item>
+
+	<item id="81150" name="Energy of Destruction" type="EtcItem">
+		<!-- Used to craft Talisman - Annihilation. Combining Talisman - Destruction with Giant's Energy you can obtain Talisman - Annihilation. Can be created through Seed Talisman Manager. -->
+		<set name="icon" val="icon.etc_spirit_kalie_i00" />
+		<set name="is_stackable" val="true" />
+		<set name="is_sellable" val="false" />
+		<set name="is_oly_restricted" val="true" />
+		<set name="immediate_effect" val="true" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
+	</item>
+	<item id="81359" name="Enhanced La Vie En Rose's Brooch" type="Armor">
+		<!-- Activates 6 jewel slots. Inventory Slots +12.\n\n<Enchanting>\nUse Blessed Scroll: Enchant Brooch.\n\n<Enhancing>\nTake a La Vie En Rose's Brooch enchanted to +5 to Head Blacksmith in any town to get a Top-grade La Vie En Rose's Brooch.\nCan be augmented -->
+		<set name="icon" val="icon.etc_bm_brooch_6slot_lavianrose_4" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="brooch" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="SILVER" />
+		<set name="weight" val="5" />
+		<set name="enchant_enabled" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_sellable" val="false" />
+		<stats>
+			<stat type="mDef">128</stat>
+		</stats>
+	</item>
+	<item id="81360" name="Top-grade La Vie En Rose's Brooch" type="Armor">
+		<!-- Activates 6 jewel slots. Inventory Slots +12.\n\n<Enchanting>\nUse Blessed Scroll: Enchant Brooch.\nCan be augmented. -->
+		<set name="icon" val="icon.etc_bm_brooch_6slot_lavianrose_5" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="brooch" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="SILVER" />
+		<set name="weight" val="5" />
+		<set name="is_tradable" val="false" />
+		<set name="enchant_enabled" val="1" />
+		<set name="is_dropable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_sellable" val="false" />
+		<stats>
+			<stat type="mDef">144</stat>
+		</stats>
+	</item>
+	<item id="81361" name="Blessed Scroll: Enchant Brooch" type="EtcItem">
+		<!-- Enchant Scroll for Enhanced La Vie En Rose's Brooch and Top-grade La Vie En Rose's Brooch. In case of failure, enchant value of La Vie En Rose's Brooch is reset but its type is unchanged. -->
+		<set name="icon" val="icon.bm_blessed_scrl_of_ench_brooch" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="material" val="PAPER" />
+		<set name="weight" val="10" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="etcitem_type" val="ENCHT_AM" />
+		<set name="handler" val="EnchantScrolls" />
+		<set name="immediate_effect" val="true" />
+		<set name="commissionItemType" val="SCROLL_ENCHANT_ARMOR" />
+		<skills>
+			<skill id="39619" level="1" /> <!-- Blessed Scroll: Enchant Brooch Lv1 -->
+		</skills>
+	</item>
+
+</list>

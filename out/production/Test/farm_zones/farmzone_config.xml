@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list>
+    <farmzone>
+        <upgrade>
+            <condition level="2" adena="1000000000"/>
+            <condition level="3" adena="1000000000"/>
+        </upgrade>
+    </farmzone>
+</list>

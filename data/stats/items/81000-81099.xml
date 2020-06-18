@@ -1,0 +1,115 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/items.xsd">
+	<item id="81044" name="Heal Costume" type="Armor">
+		<set name="icon" val="icon.healer_chest_change" />
+		<set name="default_action" val="EQUIP" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="SILVER" />
+		<set name="weight" val="5" />
+		<set name="armor_type" val="MAGIC" />
+		<set name="isAppearanceable" val="true" />
+		<set name="bodypart" val="chest" />
+		<set name="is_sellable" val="false" />
+		<stats>
+			<stat type="pDef">400</stat>
+		</stats>
+	</item>
+	<item id="81045" name="Heal Costume" type="Armor">
+		<set name="icon" val="icon.healer_chest_change" />
+		<set name="default_action" val="EQUIP" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="SILVER" />
+		<set name="weight" val="5" />
+		<set name="armor_type" val="MAGIC" />
+		<set name="isAppearanceable" val="true" />
+		<set name="bodypart" val="chest" />
+		<set name="is_sellable" val="false" />
+		<stats>
+			<stat type="pDef">400</stat>
+		</stats>
+	</item>
+	<item id="81046" name="Heal Costume" type="Armor">
+		<set name="icon" val="icon.healer_chest_change" />
+		<set name="default_action" val="EQUIP" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="SILVER" />
+		<set name="weight" val="5" />
+		<set name="armor_type" val="MAGIC" />
+		<set name="isAppearanceable" val="true" />
+		<set name="bodypart" val="chest" />
+		<set name="is_sellable" val="false" />
+		<stats>
+			<stat type="pDef">400</stat>
+		</stats>
+	</item>
+	<item id="81047" name="Heal Costume" type="Armor">
+		<set name="icon" val="icon.healer_chest_change" />
+		<set name="default_action" val="EQUIP" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="SILVER" />
+		<set name="weight" val="5" />
+		<set name="armor_type" val="MAGIC" />
+		<set name="isAppearanceable" val="true" />
+		<set name="bodypart" val="chest" />
+		<set name="is_sellable" val="false" />
+		<stats>
+			<stat type="pDef">400</stat>
+		</stats>
+	</item>
+	<item id="81048" name="Heal Costume" type="Armor">
+		<set name="icon" val="icon.healer_chest_change" />
+		<set name="default_action" val="EQUIP" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="SILVER" />
+		<set name="weight" val="5" />
+		<set name="armor_type" val="MAGIC" />
+		<set name="isAppearanceable" val="true" />
+		<set name="bodypart" val="chest" />
+		<set name="is_sellable" val="false" />
+		<stats>
+			<stat type="pDef">400</stat>
+		</stats>
+	</item>
+	<item id="81049" name="Heal Costume" type="Armor">
+		<set name="icon" val="icon.healer_chest_change" />
+		<set name="default_action" val="EQUIP" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="SILVER" />
+		<set name="weight" val="5" />
+		<set name="armor_type" val="MAGIC" />
+		<set name="isAppearanceable" val="true" />
+		<set name="bodypart" val="chest" />
+		<set name="is_sellable" val="false" />
+		<stats>
+			<stat type="pDef">400</stat>
+		</stats>
+	</item>
+	<item id="81050" name="Heal Costume" type="Armor">
+		<set name="icon" val="icon.healer_chest_change" />
+		<set name="default_action" val="EQUIP" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="SILVER" />
+		<set name="weight" val="5" />
+		<set name="armor_type" val="MAGIC" />
+		<set name="isAppearanceable" val="true" />
+		<set name="bodypart" val="chest" />
+		<set name="is_sellable" val="false" />
+		<stats>
+			<stat type="pDef">400</stat>
+		</stats>
+	</item>
+	<item id="81052" name="Yellow Nymph Costume" type="Armor">
+		<set name="icon" val="BranchIcon.Icon.g_bm_costume_nymph" />
+		<set name="default_action" val="EQUIP" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="SILVER" />
+		<set name="weight" val="5" />
+		<set name="armor_type" val="MAGIC" />
+		<set name="isAppearanceable" val="true" />
+		<set name="bodypart" val="chest" />
+		<set name="is_sellable" val="false" />
+		<stats>
+			<stat type="pDef">400</stat>
+		</stats>
+	</item>
+</list>

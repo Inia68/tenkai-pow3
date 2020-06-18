@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/multisell.xsd">
+	<npcs>
+		<npc>-1</npc> <!-- CB -->
+	</npcs>
+	<item>
+		<ingredient count="1" id="37718" enchantmentLevel="10" /> <!-- Shiny Elemental Shirt -->
+		<ingredient count="1" id="46193" enchantmentLevel="10" /> <!-- Physical Reflect Shirt -->
+		<ingredient count="1" id="46194" enchantmentLevel="10" /> <!-- Magical Reflect Shirt -->
+		<production count="1" id="48491" /> <!--Dragon Skin Shirt -->
+	</item>
+</list>

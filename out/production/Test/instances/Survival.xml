@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Fortress of the Dead-->
+<instance id="295" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:noNamespaceSchemaLocation="../xsd/instance.xsd">
+    <time  empty="5"/>
+    <locations>
+        <enter type="FIXED">
+            <location x="153569" y="142075" z="-12732"/>
+        </enter>
+        <exit  type="ORIGIN" />
+    </locations>
+    <conditions>
+        <condition type="Level">
+            <param name="min" value="76"/>
+        </condition>
+    </conditions>
+    <reenter apply="ON_FINISH">
+        <reset day="MONDAY" hour="6" minute="30" />
+        <reset day="TUESDAY" hour="6" minute="30" />
+        <reset day="WEDNESDAY" hour="6" minute="30" />
+        <reset day="THURSDAY" hour="6" minute="30" />
+        <reset day="FRIDAY" hour="6" minute="30" />
+        <reset day="SATURDAY" hour="6" minute="30" />
+        <reset day="SUNDAY" hour="6" minute="30" />
+    </reenter>
+    <spawnlist>
+    </spawnlist>
+</instance>

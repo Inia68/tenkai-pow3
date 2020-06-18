@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list>
+
+    <customFarm farmZone="fairy_settlement" adjustDropsPerMob="22883" overrideDrops="true"
+                hpMultiplier="0.9"> <!-- Lvl: 90 | Strength: 160 | Exp Score: 5 -->
+    </customFarm>
+
+    <customFarm farmZone="isle_of_souls" adjustDropsPerMob="23253"> <!-- Lvl: 94 | Strength: 231 | Exp Score: 35 -->
+        <itemDrop itemId="19446" min="1" max="1" chance="60"/> <!-- Unbind Scroll (R99-grade) -->
+    </customFarm>
+
+
+
+    <customFarm farmZone="plains_of_lizardmen" overrideDrops="true" adjustDropsPerMob="24342"
+                adenaMin="50000" adenaMax="60000" adenaChance="100">
+        <itemDrop itemId="39415" min="1" max="1" chance="40"/> <!-- Lv.5 Legendary STR Charisma Dye -->
+        <itemDrop itemId="39416" min="1" max="1" chance="40"/> <!-- Lv.5 Legendary DEX Charisma Dye -->
+        <itemDrop itemId="39417" min="1" max="1" chance="40"/> <!-- Lv.5 Legendary CON Charisma Dye -->
+        <itemDrop itemId="39418" min="1" max="1" chance="40"/> <!-- Lv.5 Legendary INT Charisma Dye -->
+        <itemDrop itemId="39419" min="1" max="1" chance="40"/> <!-- Lv.5 Legendary WIT Charisma Dye -->
+        <itemDrop itemId="39420" min="1" max="1" chance="40"/> <!-- Lv.5 Legendary MEN Charisma Dye -->
+        <itemDrop itemId="80762" min="1" max="1" chance="60"/> <!-- Dye Powder -->
+    </customFarm>
+
+
+    <customFarm farmZone="nornils_cave_special"
+                adjustDropsPerMob="23304"> <!-- Lvl: 96 | Strength: 1700 | Exp Score: 30 -->
+        <itemDrop itemId="17526" min="1" max="1" chance="80"/> <!-- Scroll: Enchant Weapon (R-grade) -->
+        <itemDrop itemId="17527" min="1" max="3" chance="100"/> <!-- Scroll: Enchant Armor (R-grade) -->
+        <itemDrop itemId="9552" min="1" max="1" chance="16.6"/> <!-- Fire Crystal -->
+        <itemDrop itemId="9553" min="1" max="1" chance="16.6"/> <!-- Water Crystal -->
+        <itemDrop itemId="9554" min="1" max="1" chance="16.6"/> <!-- Earth Crystal -->
+        <itemDrop itemId="9555" min="1" max="1" chance="16.6"/> <!-- Wind Crystal -->
+        <itemDrop itemId="9556" min="1" max="1" chance="16.6"/> <!-- Dark Crystal -->
+        <itemDrop itemId="9557" min="1" max="1" chance="17"/> <!-- Holy Crystal -->
+    </customFarm>
+
+
+    <customFarm farmZone="cemetery" adjustDropsPerMob="23299"
+                adenaMin="50000" adenaMax="60000" adenaChance="100"
+                hpMultiplier="10"> <!-- Lvl: 98 | Strength: 60000/1720 | Exp Score: 20 | Extremelly easy for mages -->
+        <itemDrop itemId="35562" min="1" max="2" chance="80"/> <!-- Energy of Destruction -->
+        <itemDrop itemId="38941" min="1" max="1" chance="8"/> <!-- La Vie En Rose's Jewelry Box -->
+        <itemDrop itemId="30297" min="1" max="1" chance="90"/> <!-- Superior Giant's Codex -->
+        <itemDrop itemId="30299" min="1" max="1" chance="10"/> <!-- Superior Giant's CoDEX - Discipline -->
+        <itemDrop itemId="19168" min="1" max="2" chance="10"/> <!-- Life Stone: Accessory (R99-grade) -->
+    </customFarm>
+
+    <customFarm farmZone="ladar" overrideDrops="true">   <!-- Flaming Ladar -->
+        <itemDrop itemId="36550" min="20" max="70" chance="80"/> <!-- Weapon Fragment (Top-grade) -->
+        <itemDrop itemId="36545" min="20" max="70" chance="80"/> <!-- Durandil Wire -->
+        <itemDrop itemId="36565" min="20" max="70" chance="80"/> <!-- Exquisite Synthetic Cokes -->
+        <itemDrop itemId="36514" min="26" max="38" chance="100"/> <!-- Elcyum Crystal -->
+        <itemDrop itemId="4355" min="25" max="40" chance="100"/> <!-- Blue Eva -->
+        <itemDrop itemId="24333" min="5" max="10" chance="80"/> <!-- La Vie En Rose Box -->
+        <itemDrop itemId="24334" min="1" max="1" chance="30"/> <!-- La Vie En Rose Pack -->
+    </customFarm>
+
+    <customFarm farmZone="cassius" overrideDrops="true">  <!-- Wind Cassius -->
+        <itemDrop itemId="36550" min="20" max="70" chance="80"/> <!-- Weapon Fragment (Top-grade) -->
+        <itemDrop itemId="36545" min="20" max="70" chance="80"/> <!-- Durandil Wire -->
+        <itemDrop itemId="36565" min="20" max="70" chance="80"/> <!-- Exquisite Synthetic Cokes -->
+        <itemDrop itemId="36514" min="15" max="29" chance="100"/> <!-- Elcyum Crystal -->
+        <itemDrop itemId="4355" min="10" max="20" chance="100"/> <!-- Blue Eva -->
+        <itemDrop itemId="24333" min="5" max="8" chance="70"/> <!-- La Vie En Rose Box -->
+        <itemDrop itemId="24334" min="1" max="1" chance="20"/> <!-- La Vie En Rose Pack -->
+    </customFarm>
+
+    <customFarm farmZone="terakan" overrideDrops="true">   <!-- Earth Terakan -->
+        <itemDrop itemId="36550" min="20" max="70" chance="80"/> <!-- Weapon Fragment (Top-grade) -->
+        <itemDrop itemId="36545" min="20" max="70" chance="80"/> <!-- Durandil Wire -->
+        <itemDrop itemId="36565" min="20" max="70" chance="80"/> <!-- Exquisite Synthetic Cokes -->
+        <itemDrop itemId="36514" min="8" max="17" chance="100"/> <!-- Elcyum Crystal -->
+        <itemDrop itemId="4355" min="5" max="10" chance="100"/> <!-- Blue Eva -->
+        <itemDrop itemId="24333" min="2" max="5" chance="50"/> <!-- La Vie En Rose Box -->
+        <itemDrop itemId="24334" min="1" max="1" chance="10"/> <!-- La Vie En Rose Pack -->
+    </customFarm>
+
+    <customFarm farmZone="raider_crossroads"
+                adenaMin="20000" adenaMax="30000" adenaChance="100" adjustDropsPerMob="23316"> <!-- Lvl: 99 | Strength: 19842 | Exp Score: 60 | Extremelly high attack | Good for scouts -->
+        <itemDrop itemId="35562" min="25" max="40" chance="100"/> <!-- Energy of Destruction -->
+        <itemDrop itemId="36665" min="1" max="1" chance="5"/> <!-- Nerva's Temporary Prison Key -->
+        <itemDrop itemId="18577" min="1" max="1" chance="30"/> <!-- Legendary Life Stone (R99-grade) -->
+        <itemDrop itemId="30297" min="2" max="3" chance="70"/> <!-- Superior Giant's Codex -->
+        <itemDrop itemId="30298" min="2" max="3" chance="30"/> <!-- Superior Giant's CoDEX - Mastery -->
+        <itemDrop itemId="35566" min="1" max="1" chance="6"/> <!-- Dark Amaranthine Enhancement Stone -->
+        <itemDrop itemId="35567" min="1" max="1" chance="14"/> <!-- Dark Eternal Enhancement Stone -->
+        <itemDrop itemId="35568" min="1" max="1" chance="25"/> <!-- Bloody Amaranthine Enhancement Stone -->
+        <itemDrop itemId="35569" min="1" max="1" chance="55"/> <!-- Bloody Eternal Enhancement Stone -->
+        <itemDrop itemId="38573" min="1" max="1" chance="1"/> <!-- Apparition Stone lvl 93 -->
+        <itemDrop itemId="19440" min="10" max="20" chance="68"/> <!-- Gemstone (R-Grade) -->
+    </customFarm>
+
+
+    <customFarm farmZone="atelia_fortress" adjustDropsPerMob="23511" atkMultiplier="0.4"
+                adenaMin="22000" adenaMax="35000" adenaChance="100"
+                defMultiplier="0.7"> <!-- Lvl: 103 | Strength: 50795 | Exp Score: 47 -->
+        <itemDrop itemId="38941" min="1" max="1" chance="80"/> <!-- La Vie En Rose's Jewelry Box -->
+        <itemDrop itemId="36513" min="1" max="1" chance="50"/> <!-- Elcyum Powder -->
+        <itemDrop itemId="36731" min="1" max="1" chance="15"/> <!-- Life Stone Instilled with Giants' Power -->
+        <itemDrop itemId="46150" min="1" max="1" chance="30"/> <!-- Superior Giant's Codex Chapter 1 -->
+        <itemDrop itemId="46152" min="1" max="1" chance="10"/> <!-- Superior Giant's Codex - Discipline Chapter 1 -->
+        <itemDrop itemId="46151" min="1" max="1" chance="2"/> <!-- Superior Giant's Codex - Mastery Chapter 1 -->
+        <itemDrop itemId="4355" min="1" max="1" chance="40"/> <!-- Blue Eva -->
+        <itemDrop itemId="38574" min="1" max="1" chance="1"/> <!-- Apparition Stone lvl 99 -->
+    </customFarm>
+
+    <customFarm farmZone="gainak_siege" adjustDropsPerMob="19471"> <!-- Lvl: 99 | Strength: 15785 | Exp Score: 0 -->
+        <itemDrop itemId="4355" min="1" max="1" chance="80"/> <!-- Blue Eva -->
+    </customFarm>
+
+    <customFarm farmZone="storm_isle" includeEvent="true">
+        <itemDrop itemId="80419" min="1" max="1" chance="10"/> <!-- Artifact Box -->
+        <itemDrop itemId="80000" min="1" max="5" chance="30"/> <!-- Artifact Fragment -->
+        <itemDrop itemId="23767" min="1" max="1" chance="30"/> <!-- Tarot Card -->
+        <itemDrop itemId="23768" min="1" max="1" chance="5"/> <!-- Luxury Tarot Card -->
+        <itemDrop itemId="4355" min="1" max="5" chance="100"/> <!-- Blue Eva -->
+        <itemDrop itemId="36515" min="1" max="2" chance="100"/> <!-- Elcyum  -->
+        <itemDrop itemId="36545" min="1" max="5" chance="35"/> <!-- Durandil Wire Lv5  -->
+        <itemDrop itemId="36565" min="1" max="5" chance="35"/> <!-- Exquisite Syntheic Cokes AKA Cocaine Lv5  -->
+        <itemDrop itemId="36550" min="1" max="5" chance="35"/> <!-- Weapon Fragment (Top - Grade) -->
+    </customFarm>
+
+    <customFarm farmZone="primeval_isle" includeEvent="true">
+        <itemDrop itemId="23767" min="1" max="1" chance="30"/> <!-- Tarot Card -->
+        <itemDrop itemId="23768" min="1" max="1" chance="5"/> <!-- Luxury Tarot Card -->
+        <itemDrop itemId="4355" min="1" max="5" chance="100"/> <!-- Blue Eva -->
+        <itemDrop itemId="36515" min="1" max="2" chance="100"/> <!-- Elcyum  -->
+        <itemDrop itemId="36545" min="1" max="5" chance="35"/> <!-- Durandil Wire Lv5  -->
+        <itemDrop itemId="36565" min="1" max="5" chance="35"/> <!-- Exquisite Syntheic Cokes AKA Cocaine Lv5  -->
+        <itemDrop itemId="36550" min="1" max="5" chance="35"/> <!-- Weapon Fragment (Top - Grade) -->
+    </customFarm>
+
+    <customFarm farmZone="alligator_island"
+                hpMultiplier="1.0" atkMultiplier="1.0" defMultiplier="1.0" mdefMultiplier="1.0"
+                includeEvent="true"
+                adenaMin="500000" adenaMax="750000" adenaChance="100"
+                adjustDropsPerMob="24376">
+        <itemDrop itemId="23241" min="1" max="1" chance="10"/> <!-- Blessed Scroll: Enchant Elemental Shirt -->
+        <itemDrop itemId="36514" min="1" max="2" chance="40"/> <!-- Elcyum Crystal -->
+        <itemDrop itemId="4355" min="1" max="5" chance="20"/> <!-- Blue Eva -->
+    </customFarm>
+
+    <customFarm farmZone="tanor_canyon" hpMultiplier="1.0" atkMultiplier="1.0" defMultiplier="1.0" mdefMultiplier="1.0" includeEvent="true"
+                adenaMin="250000" adenaMax="375000" adenaChance="100" adjustDropsPerMob="20939">
+        <itemDrop itemId="36514" min="2" max="10" chance="60"/> <!-- Elcyum Crystal -->
+        <itemDrop itemId="4355" min="1" max="5" chance="20"/> <!-- Blue Eva -->
+        <itemDrop itemId="80762" min="1" max="1" chance="40"/> <!-- Dye Powder -->
+    </customFarm>
+
+    <customFarm farmZone="forest_of_mirrors"
+                adenaMin="550000" adenaMax="750000" adenaChance="100"
+                adjustDropsPerMob="24466" hpMultiplier="1.0" atkMultiplier="2.0" defMultiplier="1.0" mdefMultiplier="1.0" includeEvent="true">
+        <itemDrop itemId="28364" min="1" max="2" chance="25"/> <!-- Enchant Scroll:Blessed Bracelet -->
+        <itemDrop itemId="48498" min="1" max="2" chance="25"/> <!-- Enchant Dragon Shirt -->
+        <itemDrop itemId="48211" min="1" max="2" chance="25"/> <!-- Blessed Circlet Enchant Scroll -->
+    </customFarm>
+
+    <customFarm farmZone="fafurion_temple" overrideDrops="true"
+                hpMultiplier="4.0" atkMultiplier="6.0" defMultiplier="3.0" mdefMultiplier="3.0" >
+        <itemDrop itemId="57" min="500000" max="1000000" chance="100"/><!-- Adena -->
+        <itemDrop itemId="4355" min="5" max="25" chance="25"/> <!-- Blue Eva -->
+        <itemDrop itemId="28757" min="1" max="2" chance="25"/> <!-- Zodiac Agathion Charm Book of Growth -->
+    </customFarm>
+
+    <customFarm farmZone="brekas_stronghold" overrideDrops="true" adjustDropsPerMob="24420"
+        hpMultiplier="2.0" atkMultiplier="2.0" defMultiplier="1.0" mdefMultiplier="1.0">
+        <itemDrop itemId="57" min="500000" max="1000000" chance="100"/><!-- Adena -->
+        <itemDrop itemId="4355" min="1" max="10" chance="25"/> <!-- Blue Eva -->
+        <itemDrop itemId="23241" min="1" max="2" chance="25"/> <!-- Blessed Scroll Enchant Shiny Elemental Shirt -->
+    </customFarm>
+
+    <customFarm farmZone="dimensionnal_wrap">
+        <itemDrop itemId="80306" min="1" max="2" chance="10"/> <!-- Bloody Coin -->
+    </customFarm>
+
+    <customFarm farmZone="ss_dimensional_door_raids" hpMultiplier="2" atkMultiplier="1.2" defMultiplier="1.2" mdefMultiplier="1.2"
+                adenaChance="100" adenaMin="10000000" adenaMax="20000000">
+        <itemDrop itemId="80306" min="30" max="50" chance="100"/> <!-- Bloody Coin -->
+        <itemDrop itemId="48979" min="50" max="100" chance="100"/> <!-- Damaged SpellBook -->
+
+    </customFarm>
+</list>

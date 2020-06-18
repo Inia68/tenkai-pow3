@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list maintainEnchantment="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../xsd/multisell.xsd">
+	<npcs>
+		<npc>40004</npc> <!-- Luxury Npc -->
+	</npcs>
+
+	<!-- Dark  -->
+
+	<!-- Dark -> Supreme  -->
+
+	<!-- Heavy -->
+	<item>
+		<ingredient count="1" id="80220" /> 		<!-- Dark Leviathan's Circlet (Heavy) -->
+		<ingredient count="9616" id="19440" /> 	<!-- Gemstone (R Grade) -->
+		<ingredient count="1" id="35569" /> 	<!-- Bloody Armor Enhancement Stone -->
+		<ingredient count="8" id="36515" /> 		<!-- Elcyum -->
+		<production count="1" id="80235" /> 		<!-- Limite Leviathan's Circlet (Heavy) -->
+	</item>
+	<item>
+		<ingredient count="1" id="80221" /> 		<!-- Dark Leviathan's Breastplate (Heavy) -->
+		<ingredient count="9616" id="19440" /> 	<!-- Gemstone (R Grade) -->
+		<ingredient count="1" id="35569" /> 	<!-- Bloody Armor Enhancement Stone -->
+		<ingredient count="8" id="36515" /> 		<!-- Elcyum -->
+		<production count="1" id="80236" /> 		<!-- Limite Leviathan's Breastplate (Heavy) -->
+	</item>
+	<item>
+		<ingredient count="1" id="80222" /> 		<!-- Dark Leviathan's Gaiter (Heavy) -->
+		<ingredient count="9616" id="19440" /> 	<!-- Gemstone (R Grade) -->
+		<ingredient count="1" id="35569" /> 	<!-- Bloody Armor Enhancement Stone -->
+		<ingredient count="8" id="36515" /> 		<!-- Elcyum -->
+		<production count="1" id="80237" /> 		<!-- Limite Leviathan's Gaiter (Heavy) -->
+	</item>
+	<item>
+		<ingredient count="1" id="80223" /> 		<!-- Dark Leviathan's Gauntlets (Heavy) -->
+		<ingredient count="9616" id="19440" /> 	<!-- Gemstone (R Grade) -->
+		<ingredient count="1" id="35569" /> 	<!-- Bloody Armor Enhancement Stone -->
+		<ingredient count="8" id="36515" /> 		<!-- Elcyum -->
+		<production count="1" id="80238" /> 		<!-- Limite Leviathan's Gauntlets (Heavy) -->
+	</item>
+	<item>
+		<ingredient count="1" id="80224" /> 		<!-- Dark Leviathan's Shoes (Heavy) -->
+		<ingredient count="9616" id="19440" /> 	<!-- Gemstone (R Grade) -->
+		<ingredient count="1" id="35569" /> 	<!-- Bloody Armor Enhancement Stone -->
+		<ingredient count="8" id="36515" /> 		<!-- Elcyum -->
+		<production count="1" id="80239" /> 		<!-- Limite Leviathan's Shoes (Heavy) -->
+	</item>
+
+	<!-- Light -->
+	<item>
+		<ingredient count="1" id="80225" /> 		<!-- Dark Leviathan's Circlet (Light) -->
+		<ingredient count="9616" id="19440" /> 	<!-- Gemstone (R Grade) -->
+		<ingredient count="1" id="35569" /> 	<!-- Bloody Armor Enhancement Stone -->
+		<ingredient count="8" id="36515" /> 		<!-- Elcyum -->
+		<production count="1" id="80240" /> 		<!-- Limited Leviathan's Circlet (Light) -->
+	</item>
+	<item>
+		<ingredient count="1" id="80226" /> 		<!-- Dark Leviathan's Armor (Light) -->
+		<ingredient count="9616" id="19440" /> 	<!-- Gemstone (R Grade) -->
+		<ingredient count="1" id="35569" /> 	<!-- Bloody Armor Enhancement Stone -->
+		<ingredient count="8" id="36515" /> 		<!-- Elcyum -->
+		<production count="1" id="80241" /> 		<!-- Limited Leviathan's Armor (Light) -->
+	</item>
+	<item>
+		<ingredient count="1" id="80227" /> 		<!-- Dark Leviathan's Legging (Light) -->
+		<ingredient count="9616" id="19440" /> 	<!-- Gemstone (R Grade) -->
+		<ingredient count="1" id="35569" /> 	<!-- Bloody Armor Enhancement Stone -->
+		<ingredient count="8" id="36515" /> 		<!-- Elcyum -->
+		<production count="1" id="80242" /> 		<!-- Limited Leviathan's Legging (Light) -->
+	</item>
+	<item>
+		<ingredient count="1" id="80228" /> 		<!-- Dark Leviathan's Gloves (Light) -->
+		<ingredient count="9616" id="19440" /> 	<!-- Gemstone (R Grade) -->
+		<ingredient count="1" id="35569" /> 	<!-- Bloody Armor Enhancement Stone -->
+		<ingredient count="8" id="36515" /> 		<!-- Elcyum -->
+		<production count="1" id="80243" /> 		<!-- Limited Leviathan's Gloves (Light) -->
+	</item>
+	<item>
+		<ingredient count="1" id="80229" /> 		<!-- Dark Leviathan's Shoes (Light) -->
+		<ingredient count="9616" id="19440" /> 	<!-- Gemstone (R Grade) -->
+		<ingredient count="1" id="35569" /> 	<!-- Bloody Armor Enhancement Stone -->
+		<ingredient count="8" id="36515" /> 		<!-- Elcyum -->
+		<production count="1" id="80244" /> 		<!-- Limited Leviathan's Shoes (Light) -->
+	</item>
+
+	<!-- Robe -->
+	<item>
+		<ingredient count="1" id="80230" /> 		<!-- Dark Leviathan's Circlet (Robe) -->
+		<ingredient count="9616" id="19440" /> 	<!-- Gemstone (R Grade) -->
+		<ingredient count="8" id="36515" /> 		<!-- Elcyum -->
+		<ingredient count="1" id="35569" /> 	<!-- Bloody Armor Enhancement Stone -->
+		<production count="1" id="80245" /> 		<!-- Limited Leviathan's Circlet (Robe) -->
+	</item>
+	<item>
+		<ingredient count="1" id="80231" /> 		<!-- Dark Leviathan's Tunic (Robe) -->
+		<ingredient count="9616" id="19440" /> 	<!-- Gemstone (R Grade) -->
+		<ingredient count="8" id="36515" /> 		<!-- Elcyum -->
+		<ingredient count="1" id="35569" /> 	<!-- Bloody Armor Enhancement Stone -->
+		<production count="1" id="80246" /> 		<!-- Limited Leviathan's Tunic (Robe) -->
+	</item>
+	<item>
+		<ingredient count="1" id="80232" /> 		<!-- Dark Leviathan's Legging (Robe) -->
+		<ingredient count="9616" id="19440" /> 	<!-- Gemstone (R Grade) -->
+		<ingredient count="8" id="36515" /> 		<!-- Elcyum -->
+		<ingredient count="1" id="35569" /> 	<!-- Bloody Armor Enhancement Stone -->
+		<production count="1" id="80247" /> 		<!-- Limited Leviathan's Legging (Robe) -->
+	</item>
+	<item>
+		<ingredient count="1" id="80233" /> 		<!-- Dark Leviathan's Glvoes (Robe) -->
+		<ingredient count="9616" id="19440" /> 	<!-- Gemstone (R Grade) -->
+		<ingredient count="8" id="36515" /> 		<!-- Elcyum -->
+		<ingredient count="1" id="35569" /> 	<!-- Bloody Armor Enhancement Stone -->
+		<production count="1" id="80248" /> 		<!-- Limited Leviathan's gloves (Robe) -->
+	</item>
+	<item>
+		<ingredient count="1" id="80234" /> 		<!-- Dark Leviathan's Shoes (Robe) -->
+		<ingredient count="9616" id="19440" /> 	<!-- Gemstone (R Grade) -->
+		<ingredient count="8" id="36515" /> 		<!-- Elcyum -->
+		<ingredient count="1" id="35569" /> 	<!-- Bloody Armor Enhancement Stone -->
+		<production count="1" id="80249" /> 		<!-- Limited Leviathan's Shoes (Robe) -->
+	</item>
+
+	<!-- Bloody -->
+
+	<!-- Heavy -->
+	<item>
+		<ingredient count="1" id="80205" /> 		<!-- Bloody Leviathan's Circlet (Heavy) -->
+		<ingredient count="9616" id="19440" /> 	<!-- Gemstone (R Grade) -->
+		<ingredient count="1" id="35567" /> 	<!-- Dark Armor Enhancement Stone -->
+		<ingredient count="8" id="36515" /> 		<!-- Elcyum -->
+		<production count="1" id="80235" /> 		<!-- Limited Leviathan's Circlet (Heavy) -->
+	</item>
+	<item>
+		<ingredient count="1" id="80206" /> 		<!-- Bloody Leviathan's Tunic (Heavy) -->
+		<ingredient count="9616" id="19440" /> 	<!-- Gemstone (R Grade) -->
+		<ingredient count="1" id="35567" /> 	<!-- Dark Armor Enhancement Stone -->
+		<ingredient count="8" id="36515" /> 		<!-- Elcyum -->
+		<production count="1" id="80236" /> 		<!-- Limited Leviathan's Tunic (Heavy) -->
+	</item>
+	<item>
+		<ingredient count="1" id="80207" /> 		<!-- Bloody Leviathan's Legging (Heavy) -->
+		<ingredient count="9616" id="19440" /> 	<!-- Gemstone (R Grade) -->
+		<ingredient count="1" id="35567" /> 	<!-- Dark Armor Enhancement Stone -->
+		<ingredient count="8" id="36515" /> 		<!-- Elcyum -->
+		<production count="1" id="80237" /> 		<!-- Limited Leviathan's Legging (Heavy) -->
+	</item>
+	<item>
+		<ingredient count="1" id="80208" /> 		<!-- Bloody Leviathan's Gloves (Heavy) -->
+		<ingredient count="9616" id="19440" /> 	<!-- Gemstone (R Grade) -->
+		<ingredient count="1" id="35567" /> 	<!-- Dark Armor Enhancement Stone -->
+		<ingredient count="8" id="36515" /> 		<!-- Elcyum -->
+		<production count="1" id="80238" /> 		<!-- Limited Leviathan's Gloves (Heavy) -->
+	</item>
+	<item>
+		<ingredient count="1" id="80209" /> 		<!-- Bloody Leviathan's Shoes (Heavy) -->
+		<ingredient count="9616" id="19440" /> 	<!-- Gemstone (R Grade) -->
+		<ingredient count="1" id="35567" /> 	<!-- Dark Armor Enhancement Stone -->
+		<ingredient count="8" id="36515" /> 		<!-- Elcyum -->
+		<production count="1" id="80239" /> 		<!-- Limited Leviathan's Shoes (Heavy) -->
+	</item>
+
+	<!-- Light -->
+	<item>
+		<ingredient count="1" id="80210" /> 		<!-- Bloody Leviathan's circlet (Light) -->
+		<ingredient count="9616" id="19440" /> 	<!-- Gemstone (R Grade) -->
+		<ingredient count="1" id="35567" /> 	<!-- Dark Armor Enhancement Stone -->
+		<ingredient count="8" id="36515" /> 		<!-- Elcyum -->
+		<production count="1" id="80240" /> 		<!-- Limtied Leviathan's circlet (Light) -->
+	</item>
+	<item>
+		<ingredient count="1" id="80211" /> 		<!-- Bloody Leviathan's Armor (Light) -->
+		<ingredient count="9616" id="19440" /> 	<!-- Gemstone (R Grade) -->
+		<ingredient count="1" id="35567" /> 	<!-- Dark Armor Enhancement Stone -->
+		<ingredient count="8" id="36515" /> 		<!-- Elcyum -->
+		<production count="1" id="80241" /> 		<!-- Limtied Leviathan's Armor (Light) -->
+	</item>
+	<item>
+		<ingredient count="1" id="80212" /> 		<!-- Bloody Leviathan's Legigng (Light) -->
+		<ingredient count="9616" id="19440" /> 	<!-- Gemstone (R Grade) -->
+		<ingredient count="1" id="35567" /> 	<!-- Dark Armor Enhancement Stone -->
+		<ingredient count="8" id="36515" /> 		<!-- Elcyum -->
+		<production count="1" id="80242" /> 		<!-- Limtied Leviathan's Legging (Light) -->
+	</item>
+	<item>
+		<ingredient count="1" id="80213" /> 		<!-- Bloody Leviathan's Gloves (Light) -->
+		<ingredient count="9616" id="19440" /> 	<!-- Gemstone (R Grade) -->
+		<ingredient count="1" id="35567" /> 	<!-- Dark Armor Enhancement Stone -->
+		<ingredient count="8" id="36515" /> 		<!-- Elcyum -->
+		<production count="1" id="80243" /> 		<!-- Limtied Leviathan's Gloves (Light) -->
+	</item>
+	<item>
+		<ingredient count="1" id="80214" /> 		<!-- Bloody Leviathan's Shoes (Light) -->
+		<ingredient count="9616" id="19440" /> 	<!-- Gemstone (R Grade) -->
+		<ingredient count="1" id="35567" /> 	<!-- Dark Armor Enhancement Stone -->
+		<ingredient count="8" id="36515" /> 		<!-- Elcyum -->
+		<production count="1" id="80244" /> 		<!-- Limtied Leviathan's Shoes (Light) -->
+	</item>
+
+
+	<!-- Robe -->
+	<item>
+		<ingredient count="1" id="80215" /> 		<!-- Bloody Leviathan's Circlet (Robe) -->
+		<ingredient count="9616" id="19440" /> 	<!-- Gemstone (R Grade) -->
+		<ingredient count="8" id="36515" /> 		<!-- Elcyum -->
+		<ingredient count="1" id="35567" /> 	<!-- Dark Armor Enhancement Stone -->
+		<production count="1" id="80245" /> 		<!-- Limited Leviathan's Circlet (Robe) -->
+	</item>
+	<item>
+		<ingredient count="1" id="80216" /> 		<!-- Bloody Leviathan's Tunic (Robe) -->
+		<ingredient count="9616" id="19440" /> 	<!-- Gemstone (R Grade) -->
+		<ingredient count="8" id="36515" /> 		<!-- Elcyum -->
+		<ingredient count="1" id="35567" /> 	<!-- Dark Armor Enhancement Stone -->
+		<production count="1" id="80246" /> 		<!-- Limited Leviathan's Tunic (Robe) -->
+	</item>
+	<item>
+		<ingredient count="1" id="80217" /> 		<!-- Bloody Leviathan's Legging (Robe) -->
+		<ingredient count="9616" id="19440" /> 	<!-- Gemstone (R Grade) -->
+		<ingredient count="8" id="36515" /> 		<!-- Elcyum -->
+		<ingredient count="1" id="35567" /> 	<!-- Dark Armor Enhancement Stone -->
+		<production count="1" id="80247" /> 		<!-- Limited Leviathan's Legging (Robe) -->
+	</item>
+	<item>
+		<ingredient count="1" id="80218" /> 		<!-- Bloody Leviathan's Glvoes (Robe) -->
+		<ingredient count="9616" id="19440" /> 	<!-- Gemstone (R Grade) -->
+		<ingredient count="8" id="36515" /> 		<!-- Elcyum -->
+		<ingredient count="1" id="35567" /> 	<!-- Dark Armor Enhancement Stone -->
+		<production count="1" id="80248" /> 		<!-- Limited Leviathan's Glvoes (Robe) -->
+	</item>
+	<item>
+		<ingredient count="1" id="80219" /> 		<!-- Bloody Leviathan's Shoes (Robe) -->
+		<ingredient count="9616" id="19440" /> 	<!-- Gemstone (R Grade) -->
+		<ingredient count="8" id="36515" /> 		<!-- Elcyum -->
+		<ingredient count="1" id="35567" /> 	<!-- Dark Armor Enhancement Stone -->
+		<production count="1" id="80249" /> 		<!-- Limited Leviathan's Shoes (Robe) -->
+	</item>
+
+
+</list>

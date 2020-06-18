@@ -1,0 +1,185 @@
+2020.06.12 21:55:24,058	INFO	1	org.l2jmobius.commons.database.DatabaseFactory	Database: Initialized.
+2020.06.12 21:55:24,105	INFO	1	org.l2jmobius.loginserver.LoginController	Loading LoginController...
+2020.06.12 21:55:24,850	INFO	1	org.l2jmobius.loginserver.LoginController	Cached 10 KeyPairs for RSA communication.
+2020.06.12 21:55:24,916	INFO	1	org.l2jmobius.loginserver.GameServerTable	Loaded 127 server names.
+2020.06.12 21:55:24,921	INFO	1	org.l2jmobius.loginserver.GameServerTable	Loaded 5 registered Game Servers.
+2020.06.12 21:55:24,975	INFO	1	org.l2jmobius.loginserver.GameServerTable	Cached 10 RSA keys for Game Server communication.
+2020.06.12 21:55:24,976	WARNING	1	org.l2jmobius.loginserver.LoginServer	IP Bans file (banned_ip.cfg) is missing or is a directory, skipped.
+2020.06.12 21:55:24,978	INFO	1	org.l2jmobius.loginserver.LoginServer	Listening for GameServers on 127.0.0.1:9014
+2020.06.12 21:55:25,128	INFO	1	org.l2jmobius.commons.network.NetworkManager	ClientNetworkManager: Listening on 0.0.0.0:2106
+2020.06.12 21:55:25,440	INFO	33	org.l2jmobius.loginserver.GameServerThread	Updated Gameserver [32] Roien IP's:
+2020.06.12 21:55:25,443	INFO	33	org.l2jmobius.loginserver.GameServerThread	127.0.0.1/127.0.0.0/8
+2020.06.12 21:55:25,443	INFO	33	org.l2jmobius.loginserver.GameServerThread	116.202.247.51/116.202.247.0/26
+2020.06.12 21:55:25,443	INFO	33	org.l2jmobius.loginserver.GameServerThread	116.202.247.51/0.0.0.0/0
+2020.06.12 21:56:23,491	INFO	34	org.l2jmobius.loginserver.GameServerThread	Updated Gameserver [31] Khadia IP's:
+2020.06.12 21:56:23,492	INFO	34	org.l2jmobius.loginserver.GameServerThread	127.0.0.1/127.0.0.0/8
+2020.06.12 21:56:23,492	INFO	34	org.l2jmobius.loginserver.GameServerThread	116.202.247.51/116.202.247.0/26
+2020.06.12 21:56:23,492	INFO	34	org.l2jmobius.loginserver.GameServerThread	116.202.247.51/0.0.0.0/0
+2020.06.13 16:55:26,258	INFO	34	org.l2jmobius.loginserver.GameServerThread	GameServer [31] Khadia: Connection lost: Connection reset
+2020.06.13 16:55:26,258	INFO	34	org.l2jmobius.loginserver.GameServerThread	Server [31] Khadia is now set as disconnected.
+2020.06.13 16:56:38,497	INFO	544	org.l2jmobius.loginserver.GameServerThread	Updated Gameserver [31] Khadia IP's:
+2020.06.13 16:56:38,498	INFO	544	org.l2jmobius.loginserver.GameServerThread	127.0.0.1/127.0.0.0/8
+2020.06.13 16:56:38,498	INFO	544	org.l2jmobius.loginserver.GameServerThread	116.202.247.51/116.202.247.0/26
+2020.06.13 16:56:38,498	INFO	544	org.l2jmobius.loginserver.GameServerThread	116.202.247.51/0.0.0.0/0
+2020.06.13 16:57:14,653	INFO	33	org.l2jmobius.loginserver.GameServerThread	GameServer [32] Roien: Connection lost: Connection reset
+2020.06.13 16:57:14,654	INFO	33	org.l2jmobius.loginserver.GameServerThread	Server [32] Roien is now set as disconnected.
+2020.06.13 17:00:09,313	INFO	544	org.l2jmobius.loginserver.GameServerThread	GameServer [31] Khadia: Connection lost: Connection reset
+2020.06.13 17:00:09,314	INFO	544	org.l2jmobius.loginserver.GameServerThread	Server [31] Khadia is now set as disconnected.
+2020.06.13 17:01:00,000	INFO	547	org.l2jmobius.loginserver.GameServerThread	Updated Gameserver [31] Khadia IP's:
+2020.06.13 17:01:00,001	INFO	547	org.l2jmobius.loginserver.GameServerThread	127.0.0.1/127.0.0.0/8
+2020.06.13 17:01:00,002	INFO	547	org.l2jmobius.loginserver.GameServerThread	116.202.247.51/116.202.247.0/26
+2020.06.13 17:01:00,002	INFO	547	org.l2jmobius.loginserver.GameServerThread	116.202.247.51/0.0.0.0/0
+2020.06.13 17:12:08,814	INFO	547	org.l2jmobius.loginserver.GameServerThread	GameServer [31] Khadia: Connection lost: Connection reset
+2020.06.13 17:12:08,814	INFO	547	org.l2jmobius.loginserver.GameServerThread	Server [31] Khadia is now set as disconnected.
+2020.06.13 17:13:01,252	INFO	557	org.l2jmobius.loginserver.GameServerThread	Updated Gameserver [31] Khadia IP's:
+2020.06.13 17:13:01,252	INFO	557	org.l2jmobius.loginserver.GameServerThread	127.0.0.1/127.0.0.0/8
+2020.06.13 17:13:01,252	INFO	557	org.l2jmobius.loginserver.GameServerThread	116.202.247.51/116.202.247.0/26
+2020.06.13 17:13:01,253	INFO	557	org.l2jmobius.loginserver.GameServerThread	116.202.247.51/0.0.0.0/0
+2020.06.13 17:14:58,552	INFO	557	org.l2jmobius.loginserver.GameServerThread	GameServer [31] Khadia: Connection lost: Connection reset
+2020.06.13 17:14:58,552	INFO	557	org.l2jmobius.loginserver.GameServerThread	Server [31] Khadia is now set as disconnected.
+2020.06.13 17:15:54,024	INFO	560	org.l2jmobius.loginserver.GameServerThread	Updated Gameserver [31] Khadia IP's:
+2020.06.13 17:15:54,024	INFO	560	org.l2jmobius.loginserver.GameServerThread	127.0.0.1/127.0.0.0/8
+2020.06.13 17:15:54,025	INFO	560	org.l2jmobius.loginserver.GameServerThread	116.202.247.51/116.202.247.0/26
+2020.06.13 17:15:54,025	INFO	560	org.l2jmobius.loginserver.GameServerThread	116.202.247.51/0.0.0.0/0
+2020.06.13 17:20:14,640	INFO	560	org.l2jmobius.loginserver.GameServerThread	GameServer [31] Khadia: Connection lost: Connection reset
+2020.06.13 17:20:14,641	INFO	560	org.l2jmobius.loginserver.GameServerThread	Server [31] Khadia is now set as disconnected.
+2020.06.13 17:21:08,850	INFO	565	org.l2jmobius.loginserver.GameServerThread	Updated Gameserver [31] Khadia IP's:
+2020.06.13 17:21:08,850	INFO	565	org.l2jmobius.loginserver.GameServerThread	127.0.0.1/127.0.0.0/8
+2020.06.13 17:21:08,851	INFO	565	org.l2jmobius.loginserver.GameServerThread	116.202.247.51/116.202.247.0/26
+2020.06.13 17:21:08,851	INFO	565	org.l2jmobius.loginserver.GameServerThread	116.202.247.51/0.0.0.0/0
+2020.06.13 17:28:50,049	INFO	565	org.l2jmobius.loginserver.GameServerThread	GameServer [31] Khadia: Connection lost: Connection reset
+2020.06.13 17:28:50,049	INFO	565	org.l2jmobius.loginserver.GameServerThread	Server [31] Khadia is now set as disconnected.
+2020.06.13 17:29:49,431	INFO	572	org.l2jmobius.loginserver.GameServerThread	Updated Gameserver [31] Khadia IP's:
+2020.06.13 17:29:49,432	INFO	572	org.l2jmobius.loginserver.GameServerThread	127.0.0.1/127.0.0.0/8
+2020.06.13 17:29:49,432	INFO	572	org.l2jmobius.loginserver.GameServerThread	116.202.247.51/116.202.247.0/26
+2020.06.13 17:29:49,432	INFO	572	org.l2jmobius.loginserver.GameServerThread	116.202.247.51/0.0.0.0/0
+2020.06.14 13:34:13,971	INFO	1155	org.l2jmobius.loginserver.GameServerThread	Updated Gameserver [32] Roien IP's:
+2020.06.14 13:34:13,971	INFO	1155	org.l2jmobius.loginserver.GameServerThread	127.0.0.1/127.0.0.0/8
+2020.06.14 13:34:13,971	INFO	1155	org.l2jmobius.loginserver.GameServerThread	116.202.247.51/116.202.247.0/26
+2020.06.14 13:34:13,971	INFO	1155	org.l2jmobius.loginserver.GameServerThread	116.202.247.51/0.0.0.0/0
+2020.06.14 15:55:39,310	INFO	1155	org.l2jmobius.loginserver.GameServerThread	GameServer [32] Roien: Connection lost: Connection reset
+2020.06.14 15:55:39,310	INFO	1155	org.l2jmobius.loginserver.GameServerThread	Server [32] Roien is now set as disconnected.
+2020.06.14 15:56:32,880	INFO	1226	org.l2jmobius.loginserver.GameServerThread	Updated Gameserver [32] Roien IP's:
+2020.06.14 15:56:32,880	INFO	1226	org.l2jmobius.loginserver.GameServerThread	127.0.0.1/127.0.0.0/8
+2020.06.14 15:56:32,880	INFO	1226	org.l2jmobius.loginserver.GameServerThread	116.202.247.51/116.202.247.0/26
+2020.06.14 15:56:32,881	INFO	1226	org.l2jmobius.loginserver.GameServerThread	116.202.247.51/0.0.0.0/0
+2020.06.14 16:07:44,794	INFO	1226	org.l2jmobius.loginserver.GameServerThread	GameServer [32] Roien: Connection lost: Connection reset
+2020.06.14 16:07:44,795	INFO	1226	org.l2jmobius.loginserver.GameServerThread	Server [32] Roien is now set as disconnected.
+2020.06.14 16:13:32,689	INFO	1237	org.l2jmobius.loginserver.GameServerThread	Updated Gameserver [32] Roien IP's:
+2020.06.14 16:13:32,689	INFO	1237	org.l2jmobius.loginserver.GameServerThread	127.0.0.1/127.0.0.0/8
+2020.06.14 16:13:32,689	INFO	1237	org.l2jmobius.loginserver.GameServerThread	116.202.247.51/116.202.247.0/26
+2020.06.14 16:13:32,690	INFO	1237	org.l2jmobius.loginserver.GameServerThread	116.202.247.51/0.0.0.0/0
+2020.06.14 18:01:56,346	INFO	1237	org.l2jmobius.loginserver.GameServerThread	GameServer [32] Roien: Connection lost: Connection reset
+2020.06.14 18:01:56,346	INFO	1237	org.l2jmobius.loginserver.GameServerThread	Server [32] Roien is now set as disconnected.
+2020.06.14 18:02:52,267	INFO	1292	org.l2jmobius.loginserver.GameServerThread	Updated Gameserver [32] Roien IP's:
+2020.06.14 18:02:52,268	INFO	1292	org.l2jmobius.loginserver.GameServerThread	127.0.0.1/127.0.0.0/8
+2020.06.14 18:02:52,268	INFO	1292	org.l2jmobius.loginserver.GameServerThread	116.202.247.51/116.202.247.0/26
+2020.06.14 18:02:52,268	INFO	1292	org.l2jmobius.loginserver.GameServerThread	116.202.247.51/0.0.0.0/0
+2020.06.14 18:20:37,844	INFO	1292	org.l2jmobius.loginserver.GameServerThread	GameServer [32] Roien: Connection lost: Connection reset
+2020.06.14 18:20:37,844	INFO	1292	org.l2jmobius.loginserver.GameServerThread	Server [32] Roien is now set as disconnected.
+2020.06.14 18:21:30,138	INFO	1303	org.l2jmobius.loginserver.GameServerThread	Updated Gameserver [32] Roien IP's:
+2020.06.14 18:21:30,138	INFO	1303	org.l2jmobius.loginserver.GameServerThread	127.0.0.1/127.0.0.0/8
+2020.06.14 18:21:30,138	INFO	1303	org.l2jmobius.loginserver.GameServerThread	116.202.247.51/116.202.247.0/26
+2020.06.14 18:21:30,138	INFO	1303	org.l2jmobius.loginserver.GameServerThread	116.202.247.51/0.0.0.0/0
+2020.06.14 18:21:48,677	INFO	1303	org.l2jmobius.loginserver.GameServerThread	GameServer [32] Roien: Connection lost: Connection reset
+2020.06.14 18:21:48,677	INFO	1303	org.l2jmobius.loginserver.GameServerThread	Server [32] Roien is now set as disconnected.
+2020.06.14 18:22:44,908	INFO	1304	org.l2jmobius.loginserver.GameServerThread	Updated Gameserver [32] Roien IP's:
+2020.06.14 18:22:44,908	INFO	1304	org.l2jmobius.loginserver.GameServerThread	127.0.0.1/127.0.0.0/8
+2020.06.14 18:22:44,908	INFO	1304	org.l2jmobius.loginserver.GameServerThread	116.202.247.51/116.202.247.0/26
+2020.06.14 18:22:44,908	INFO	1304	org.l2jmobius.loginserver.GameServerThread	116.202.247.51/0.0.0.0/0
+2020.06.14 18:37:10,150	INFO	1304	org.l2jmobius.loginserver.GameServerThread	GameServer [32] Roien: Connection lost: Connection reset
+2020.06.14 18:37:10,150	INFO	1304	org.l2jmobius.loginserver.GameServerThread	Server [32] Roien is now set as disconnected.
+2020.06.14 18:38:10,124	INFO	1311	org.l2jmobius.loginserver.GameServerThread	Updated Gameserver [32] Roien IP's:
+2020.06.14 18:38:10,124	INFO	1311	org.l2jmobius.loginserver.GameServerThread	127.0.0.1/127.0.0.0/8
+2020.06.14 18:38:10,124	INFO	1311	org.l2jmobius.loginserver.GameServerThread	116.202.247.51/116.202.247.0/26
+2020.06.14 18:38:10,125	INFO	1311	org.l2jmobius.loginserver.GameServerThread	116.202.247.51/0.0.0.0/0
+2020.06.14 18:55:59,747	INFO	1311	org.l2jmobius.loginserver.GameServerThread	GameServer [32] Roien: Connection lost: Connection reset
+2020.06.14 18:55:59,748	INFO	1311	org.l2jmobius.loginserver.GameServerThread	Server [32] Roien is now set as disconnected.
+2020.06.14 18:57:58,943	INFO	1322	org.l2jmobius.loginserver.GameServerThread	Updated Gameserver [32] Roien IP's:
+2020.06.14 18:57:58,944	INFO	1322	org.l2jmobius.loginserver.GameServerThread	127.0.0.1/127.0.0.0/8
+2020.06.14 18:57:58,944	INFO	1322	org.l2jmobius.loginserver.GameServerThread	116.202.247.51/116.202.247.0/26
+2020.06.14 18:57:58,944	INFO	1322	org.l2jmobius.loginserver.GameServerThread	116.202.247.51/0.0.0.0/0
+2020.06.14 21:48:29,954	INFO	1322	org.l2jmobius.loginserver.GameServerThread	GameServer [32] Roien: Connection lost: Connection reset
+2020.06.14 21:48:29,954	INFO	1322	org.l2jmobius.loginserver.GameServerThread	Server [32] Roien is now set as disconnected.
+2020.06.14 21:50:17,097	INFO	1411	org.l2jmobius.loginserver.GameServerThread	Updated Gameserver [32] Roien IP's:
+2020.06.14 21:50:17,097	INFO	1411	org.l2jmobius.loginserver.GameServerThread	127.0.0.1/127.0.0.0/8
+2020.06.14 21:50:17,097	INFO	1411	org.l2jmobius.loginserver.GameServerThread	116.202.247.51/116.202.247.0/26
+2020.06.14 21:50:17,097	INFO	1411	org.l2jmobius.loginserver.GameServerThread	116.202.247.51/0.0.0.0/0
+2020.06.14 21:58:23,551	INFO	1411	org.l2jmobius.loginserver.GameServerThread	GameServer [32] Roien: Connection lost: Connection reset
+2020.06.14 21:58:23,552	INFO	1411	org.l2jmobius.loginserver.GameServerThread	Server [32] Roien is now set as disconnected.
+2020.06.14 21:59:25,992	INFO	1416	org.l2jmobius.loginserver.GameServerThread	Updated Gameserver [32] Roien IP's:
+2020.06.14 21:59:25,992	INFO	1416	org.l2jmobius.loginserver.GameServerThread	127.0.0.1/127.0.0.0/8
+2020.06.14 21:59:25,992	INFO	1416	org.l2jmobius.loginserver.GameServerThread	116.202.247.51/116.202.247.0/26
+2020.06.14 21:59:25,992	INFO	1416	org.l2jmobius.loginserver.GameServerThread	116.202.247.51/0.0.0.0/0
+2020.06.15 01:43:17,714	INFO	1416	org.l2jmobius.loginserver.GameServerThread	GameServer [32] Roien: Connection lost: Connection reset
+2020.06.15 01:43:17,714	INFO	1416	org.l2jmobius.loginserver.GameServerThread	Server [32] Roien is now set as disconnected.
+2020.06.15 01:45:10,698	INFO	1533	org.l2jmobius.loginserver.GameServerThread	Updated Gameserver [32] Roien IP's:
+2020.06.15 01:45:10,698	INFO	1533	org.l2jmobius.loginserver.GameServerThread	127.0.0.1/127.0.0.0/8
+2020.06.15 01:45:10,698	INFO	1533	org.l2jmobius.loginserver.GameServerThread	116.202.247.51/116.202.247.0/26
+2020.06.15 01:45:10,699	INFO	1533	org.l2jmobius.loginserver.GameServerThread	116.202.247.51/0.0.0.0/0
+2020.06.15 01:55:10,865	INFO	1533	org.l2jmobius.loginserver.GameServerThread	GameServer [32] Roien: Connection lost: Connection reset
+2020.06.15 01:55:10,866	INFO	1533	org.l2jmobius.loginserver.GameServerThread	Server [32] Roien is now set as disconnected.
+2020.06.15 01:59:58,808	INFO	1544	org.l2jmobius.loginserver.GameServerThread	Updated Gameserver [32] Roien IP's:
+2020.06.15 01:59:58,808	INFO	1544	org.l2jmobius.loginserver.GameServerThread	127.0.0.1/127.0.0.0/8
+2020.06.15 01:59:58,808	INFO	1544	org.l2jmobius.loginserver.GameServerThread	116.202.247.51/116.202.247.0/26
+2020.06.15 01:59:58,808	INFO	1544	org.l2jmobius.loginserver.GameServerThread	116.202.247.51/0.0.0.0/0
+2020.06.15 02:18:18,050	INFO	1544	org.l2jmobius.loginserver.GameServerThread	GameServer [32] Roien: Connection lost: Connection reset
+2020.06.15 02:18:18,051	INFO	1544	org.l2jmobius.loginserver.GameServerThread	Server [32] Roien is now set as disconnected.
+2020.06.15 02:19:12,660	INFO	1555	org.l2jmobius.loginserver.GameServerThread	Updated Gameserver [32] Roien IP's:
+2020.06.15 02:19:12,660	INFO	1555	org.l2jmobius.loginserver.GameServerThread	127.0.0.1/127.0.0.0/8
+2020.06.15 02:19:12,661	INFO	1555	org.l2jmobius.loginserver.GameServerThread	116.202.247.51/116.202.247.0/26
+2020.06.15 02:19:12,661	INFO	1555	org.l2jmobius.loginserver.GameServerThread	116.202.247.51/0.0.0.0/0
+2020.06.16 16:51:02,759	INFO	572	org.l2jmobius.loginserver.GameServerThread	GameServer [31] Khadia: Connection lost: Connection reset
+2020.06.16 16:51:02,760	INFO	572	org.l2jmobius.loginserver.GameServerThread	Server [31] Khadia is now set as disconnected.
+2020.06.16 16:52:04,572	INFO	2652	org.l2jmobius.loginserver.GameServerThread	Updated Gameserver [31] Khadia IP's:
+2020.06.16 16:52:04,572	INFO	2652	org.l2jmobius.loginserver.GameServerThread	127.0.0.1/127.0.0.0/8
+2020.06.16 16:52:04,572	INFO	2652	org.l2jmobius.loginserver.GameServerThread	116.202.247.51/116.202.247.0/26
+2020.06.16 16:52:04,572	INFO	2652	org.l2jmobius.loginserver.GameServerThread	116.202.247.51/0.0.0.0/0
+2020.06.16 18:31:06,152	INFO	2652	org.l2jmobius.loginserver.GameServerThread	GameServer [31] Khadia: Connection lost: Connection reset
+2020.06.16 18:31:06,153	INFO	2652	org.l2jmobius.loginserver.GameServerThread	Server [31] Khadia is now set as disconnected.
+2020.06.16 18:32:04,427	INFO	2703	org.l2jmobius.loginserver.GameServerThread	Updated Gameserver [31] Khadia IP's:
+2020.06.16 18:32:04,427	INFO	2703	org.l2jmobius.loginserver.GameServerThread	127.0.0.1/127.0.0.0/8
+2020.06.16 18:32:04,427	INFO	2703	org.l2jmobius.loginserver.GameServerThread	116.202.247.51/116.202.247.0/26
+2020.06.16 18:32:04,427	INFO	2703	org.l2jmobius.loginserver.GameServerThread	116.202.247.51/0.0.0.0/0
+2020.06.16 18:48:36,094	INFO	2703	org.l2jmobius.loginserver.GameServerThread	GameServer [31] Khadia: Connection lost: Connection reset
+2020.06.16 18:48:36,094	INFO	2703	org.l2jmobius.loginserver.GameServerThread	Server [31] Khadia is now set as disconnected.
+2020.06.16 18:49:40,185	INFO	2714	org.l2jmobius.loginserver.GameServerThread	Updated Gameserver [31] Khadia IP's:
+2020.06.16 18:49:40,185	INFO	2714	org.l2jmobius.loginserver.GameServerThread	127.0.0.1/127.0.0.0/8
+2020.06.16 18:49:40,185	INFO	2714	org.l2jmobius.loginserver.GameServerThread	116.202.247.51/116.202.247.0/26
+2020.06.16 18:49:40,185	INFO	2714	org.l2jmobius.loginserver.GameServerThread	116.202.247.51/0.0.0.0/0
+2020.06.17 16:35:50,640	INFO	1555	org.l2jmobius.loginserver.GameServerThread	GameServer [32] Roien: Connection lost: Connection reset
+2020.06.17 16:35:50,640	INFO	1555	org.l2jmobius.loginserver.GameServerThread	Server [32] Roien is now set as disconnected.
+2020.06.17 16:36:44,577	INFO	3349	org.l2jmobius.loginserver.GameServerThread	Updated Gameserver [32] Roien IP's:
+2020.06.17 16:36:44,577	INFO	3349	org.l2jmobius.loginserver.GameServerThread	127.0.0.1/127.0.0.0/8
+2020.06.17 16:36:44,577	INFO	3349	org.l2jmobius.loginserver.GameServerThread	116.202.247.51/116.202.247.0/26
+2020.06.17 16:36:44,577	INFO	3349	org.l2jmobius.loginserver.GameServerThread	116.202.247.51/0.0.0.0/0
+2020.06.17 17:26:15,395	INFO	3349	org.l2jmobius.loginserver.GameServerThread	GameServer [32] Roien: Connection lost: Connection reset
+2020.06.17 17:26:15,395	INFO	3349	org.l2jmobius.loginserver.GameServerThread	Server [32] Roien is now set as disconnected.
+2020.06.17 17:27:48,179	INFO	3376	org.l2jmobius.loginserver.GameServerThread	Updated Gameserver [32] Roien IP's:
+2020.06.17 17:27:48,180	INFO	3376	org.l2jmobius.loginserver.GameServerThread	127.0.0.1/127.0.0.0/8
+2020.06.17 17:27:48,180	INFO	3376	org.l2jmobius.loginserver.GameServerThread	116.202.247.51/116.202.247.0/26
+2020.06.17 17:27:48,180	INFO	3376	org.l2jmobius.loginserver.GameServerThread	116.202.247.51/0.0.0.0/0
+2020.06.17 17:32:55,740	INFO	3376	org.l2jmobius.loginserver.GameServerThread	GameServer [32] Roien: Connection lost: Connection reset
+2020.06.17 17:32:55,740	INFO	3376	org.l2jmobius.loginserver.GameServerThread	Server [32] Roien is now set as disconnected.
+2020.06.17 17:33:51,001	INFO	3379	org.l2jmobius.loginserver.GameServerThread	Updated Gameserver [32] Roien IP's:
+2020.06.17 17:33:51,001	INFO	3379	org.l2jmobius.loginserver.GameServerThread	127.0.0.1/127.0.0.0/8
+2020.06.17 17:33:51,002	INFO	3379	org.l2jmobius.loginserver.GameServerThread	116.202.247.51/116.202.247.0/26
+2020.06.17 17:33:51,002	INFO	3379	org.l2jmobius.loginserver.GameServerThread	116.202.247.51/0.0.0.0/0
+2020.06.17 17:36:36,791	INFO	3379	org.l2jmobius.loginserver.GameServerThread	GameServer [32] Roien: Connection lost: Connection reset
+2020.06.17 17:36:36,792	INFO	3379	org.l2jmobius.loginserver.GameServerThread	Server [32] Roien is now set as disconnected.
+2020.06.17 17:41:03,833	INFO	3380	org.l2jmobius.loginserver.GameServerThread	Updated Gameserver [32] Roien IP's:
+2020.06.17 17:41:03,833	INFO	3380	org.l2jmobius.loginserver.GameServerThread	127.0.0.1/127.0.0.0/8
+2020.06.17 17:41:03,834	INFO	3380	org.l2jmobius.loginserver.GameServerThread	116.202.247.51/116.202.247.0/26
+2020.06.17 17:41:03,834	INFO	3380	org.l2jmobius.loginserver.GameServerThread	116.202.247.51/0.0.0.0/0
+2020.06.17 17:42:54,118	INFO	2714	org.l2jmobius.loginserver.GameServerThread	GameServer [31] Khadia: Connection lost: Connection reset
+2020.06.17 17:42:54,119	INFO	2714	org.l2jmobius.loginserver.GameServerThread	Server [31] Khadia is now set as disconnected.
+2020.06.17 17:43:49,356	INFO	3381	org.l2jmobius.loginserver.GameServerThread	Updated Gameserver [31] Khadia IP's:
+2020.06.17 17:43:49,356	INFO	3381	org.l2jmobius.loginserver.GameServerThread	127.0.0.1/127.0.0.0/8
+2020.06.17 17:43:49,357	INFO	3381	org.l2jmobius.loginserver.GameServerThread	116.202.247.51/116.202.247.0/26
+2020.06.17 17:43:49,357	INFO	3381	org.l2jmobius.loginserver.GameServerThread	116.202.247.51/0.0.0.0/0
+2020.06.17 18:37:58,942	INFO	3381	org.l2jmobius.loginserver.GameServerThread	GameServer [31] Khadia: Connection lost: Connection reset
+2020.06.17 18:37:58,943	INFO	3381	org.l2jmobius.loginserver.GameServerThread	Server [31] Khadia is now set as disconnected.
+2020.06.17 18:39:00,238	INFO	3412	org.l2jmobius.loginserver.GameServerThread	Updated Gameserver [31] Khadia IP's:
+2020.06.17 18:39:00,239	INFO	3412	org.l2jmobius.loginserver.GameServerThread	127.0.0.1/127.0.0.0/8
+2020.06.17 18:39:00,239	INFO	3412	org.l2jmobius.loginserver.GameServerThread	116.202.247.51/116.202.247.0/26
+2020.06.17 18:39:00,239	INFO	3412	org.l2jmobius.loginserver.GameServerThread	116.202.247.51/0.0.0.0/0

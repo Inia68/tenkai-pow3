@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="../xsd/multisell.xsd">
+    <npcs>
+        <npc>40004</npc> <!-- Luxury Npc -->
+    </npcs>
+
+    <item>
+        <ingredient count="300" id="4355"/> <!-- Blue Eva -->
+        <ingredient count="1" id="23833"/> <!-- Talisman - Abundance War -->
+        <ingredient count="1" id="23834"/> <!-- Talisman - Abundance Tactics -->
+        <ingredient count="1" id="23835"/> <!-- Talisman - Abundance Morale -->
+        <ingredient count="1" id="23836"/> <!-- Talisman - Abundance Physique -->
+        <production count="1" id="26338"/> <!-- Abundance Lv. 1 -->
+    </item>
+
+    <item>
+        <ingredient count="300" id="4355"/>    <!-- Blue Eva -->
+        <ingredient count="1" id="23833"/> <!-- Talisman - Abundance War -->
+        <ingredient count="1" id="23834"/> <!-- Talisman - Abundance Tactics -->
+        <ingredient count="1" id="23835"/> <!-- Talisman - Abundance Morale -->
+        <ingredient count="1" id="23836"/> <!-- Talisman - Abundance Physique -->
+        <ingredient count="1" id="26338"/>        <!-- Abundance Lv. 1 -->
+        <production count="1" id="26339"/>        <!-- Abundance Lv. 2 -->
+    </item>
+
+    <item>
+        <ingredient count="400" id="4355"/>    <!-- Blue Eva -->
+        <ingredient count="1" id="23833"/> <!-- Talisman - Abundance War -->
+        <ingredient count="1" id="23834"/> <!-- Talisman - Abundance Tactics -->
+        <ingredient count="1" id="23835"/> <!-- Talisman - Abundance Morale -->
+        <ingredient count="1" id="23836"/> <!-- Talisman - Abundance Physique -->
+        <ingredient count="1" id="26339"/>        <!-- Abundance Lv. 2 -->
+        <production count="1" id="26340"/>        <!-- Abundance Lv. 3 -->
+    </item>
+
+    <item>
+        <ingredient count="500" id="4355"/>    <!-- Blue Eva -->
+        <ingredient count="1" id="23833"/> <!-- Talisman - Abundance War -->
+        <ingredient count="1" id="23834"/> <!-- Talisman - Abundance Tactics -->
+        <ingredient count="1" id="23835"/> <!-- Talisman - Abundance Morale -->
+        <ingredient count="1" id="23836"/> <!-- Talisman - Abundance Physique -->
+        <ingredient count="1" id="26340"/>        <!-- Abundance Lv. 3 -->
+        <production count="1" id="26341"/>        <!-- Abundance Lv. 4 -->
+    </item>
+</list>

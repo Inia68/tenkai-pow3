@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list>
+    <zone name="talking_island" id="1">
+        <mobs>
+            <group level="1">
+                <mob id="22910" /> <!-- Satyr Witch -->
+                <mob id="22912" /> <!-- Satyr Witch -->
+            </group>
+            <group points="6" level="2" adena="250000000" be="500">
+                <mob id="20939" /> <!-- Tanor Silenos Warrior -->
+                <mob id="20940" /> <!-- Tanor Silenos Shaman -->
+                <mob id="20941" /> <!-- Tanor Silenos Chieftain -->
+            </group>
+            <group points="11" level="3" adena="500000000" be="1000">
+                <mob id="24372" /> <!-- Crokian Lad -->
+                <mob id="24373" /> <!-- Dailaon Lad -->
+                <mob id="24374" /> <!-- Crokian Lad Warrior -->
+                <mob id="24375" /> <!-- Farhite Lad -->
+                <mob id="24376" /> <!-- Nos Lad -->
+                <mob id="24377" /> <!-- Swamp Tribe -->
+                <mob id="24378" /> <!-- Swamp Alligator -->
+                <mob id="24379" /> <!-- Swamp Warrior -->
+            </group>
+        </mobs>
+        <drops>
+            <group level="1">
+                <itemDrop itemId="4038" min="1" max="100" chance="100"/> <!-- CoL -->
+            </group>
+            <group level="2" adena="500000000">
+                <itemDrop itemId="4038" min="100" max="1000" chance="100"/> <!-- CoL -->
+            </group>
+        </drops>
+    </zone>
+</list>

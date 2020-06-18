@@ -1,0 +1,333 @@
+/*
+ * This file is part of the L2J Mobius project.
+ * 
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ * 
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
+ * General Public License for more details.
+ * 
+ * You should have received a copy of the GNU General Public License
+ * along with this program. If not, see <http://www.gnu.org/licenses/>.
+ */
+package org.l2jmobius.gameserver.model.actor.instance;
+
+import org.l2jmobius.Config;
+import org.l2jmobius.gameserver.data.xml.impl.BuyListData;
+import org.l2jmobius.gameserver.data.xml.impl.SkillData;
+import org.l2jmobius.gameserver.enums.InstanceType;
+import org.l2jmobius.gameserver.enums.TaxType;
+import org.l2jmobius.gameserver.instancemanager.CastleManager;
+import org.l2jmobius.gameserver.model.actor.Creature;
+import org.l2jmobius.gameserver.model.actor.Summon;
+import org.l2jmobius.gameserver.model.actor.templates.NpcTemplate;
+import org.l2jmobius.gameserver.model.buylist.ProductList;
+import org.l2jmobius.gameserver.model.entity.Castle;
+import org.l2jmobius.gameserver.model.itemcontainer.Inventory;
+import org.l2jmobius.gameserver.model.items.Item;
+import org.l2jmobius.gameserver.model.items.instance.ItemInstance;
+import org.l2jmobius.gameserver.model.olympiad.OlympiadManager;
+import org.l2jmobius.gameserver.model.skills.EffectScope;
+import org.l2jmobius.gameserver.model.skills.Skill;
+import org.l2jmobius.gameserver.model.zone.ZoneId;
+import org.l2jmobius.gameserver.network.SystemMessageId;
+import org.l2jmobius.gameserver.network.serverpackets.*;
+import org.l2jmobius.gameserver.taskmanager.AttackStanceTaskManager;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.StringTokenizer;
+
+/**
+ * @version $Revision: 1.10.4.9 $ $Date: 2005/04/11 10:06:08 $
+ */
+public class BufferInstance extends NpcInstance
+{
+	private static final int[] buffs = { 14791, 14792, 14793, 14794, 30814, 14788, 14789, 14790, 17175, 17176, 17177};
+
+	public BufferInstance(NpcTemplate template)
+	{
+		super(template);
+		setInstanceType(InstanceType.BufferInstance);
+	}
+
+	@Override
+	public void onBypassFeedback(PlayerInstance player, String command)
+	{
+		if (player == null)
+		{
+			return;
+		}
+
+		if (player.getEvent() != null)
+		{
+			player.sendMessage("I can not help you if you are registered for an event");
+			player.sendPacket(ActionFailed.STATIC_PACKET);
+			return;
+		}
+
+		if (AttackStanceTaskManager.getInstance().hasAttackStanceTask(player))
+		{
+			player.sendMessage("I can not help you while you are fighting");
+			player.sendPacket(ActionFailed.STATIC_PACKET);
+			return;
+		}
+
+		if (command.startsWith("BuffMe"))
+		{
+			if (player.isInCombat() || player.isDead() || player.isInOlympiadMode() || player.getPvpFlag() > 0 ||
+					OlympiadManager.getInstance().isRegisteredInComp(player) || player.isPlayingEvent())
+			{
+				player.sendMessage("You can't use this option now!");
+				return;
+			}
+
+			StringTokenizer st = new StringTokenizer(command, " ");
+			st.nextToken();
+			int skillId = Integer.valueOf(st.nextToken());
+
+			if (skillId < 4)
+			{
+				int i = 0;
+				for (int id : buffs)
+				{
+					int level = 1;
+					if (i < 4) {
+						level = 4;
+					}
+					giveBuff(player, id, level);
+					i++;
+				}
+
+
+			}
+			else
+			{
+				giveBuff(player, skillId, 1);
+			}
+
+			showChatWindow(player, 2);
+		}
+		else if (command.startsWith("Buff"))
+		{
+			StringTokenizer st = new StringTokenizer(command.substring(5), " ");
+			int buffId = Integer.parseInt(st.nextToken());
+			int chatPage = Integer.parseInt(st.nextToken());
+			int buffLevel = SkillData.getInstance().getMaxLevel(buffId);
+
+			Skill skill = SkillData.getInstance().getSkill(buffId, buffLevel);
+			if (skill != null)
+			{
+				skill.applyEffects(player, player);
+				player.setCurrentMp(player.getMaxMp());
+			}
+
+			showChatWindow(player, chatPage);
+		}
+		else if (command.startsWith("Heal"))
+		{
+			if ((player.isInCombat() || player.getPvpFlag() > 0) && !player.isInsideZone(ZoneId.PEACE))
+			{
+				player.sendMessage("You cannot be healed while engaged in combat.");
+				return;
+			}
+
+			player.setCurrentHp(player.getMaxHp());
+			player.setCurrentMp(player.getMaxMp());
+			player.setCurrentCp(player.getMaxCp());
+
+			for (Summon summon : player.getServitorsAndPets())
+			{
+				summon.setCurrentHp(summon.getMaxHp());
+				summon.setCurrentMp(summon.getMaxMp());
+				summon.setCurrentCp(summon.getMaxCp());
+			}
+
+			showChatWindow(player);
+		}
+		else if (command.startsWith("RemoveBuffs"))
+		{
+			player.stopAllEffectsExceptThoseThatLastThroughDeath();
+			showChatWindow(player, 0);
+		}
+		else if (command.startsWith("Pet") && player.getPet() == null && player.getServitorsAndPets().isEmpty())
+		{
+			player.sendPacket(SystemMessageId.THAT_IS_AN_INCORRECT_TARGET);
+		}
+		else if (command.startsWith("PetBuff"))
+		{
+			StringTokenizer st = new StringTokenizer(command.substring(8), " ");
+			int buffId = Integer.parseInt(st.nextToken());
+			int chatPage = Integer.parseInt(st.nextToken());
+			int buffLevel = SkillData.getInstance().getMaxLevel(buffId);
+
+			Skill skill = SkillData.getInstance().getSkill(buffId, buffLevel);
+			if (skill != null)
+			{
+				if (player.getPet() != null)
+				{
+					skill.applyEffects(player, player.getPet());
+					player.setCurrentMp(player.getMaxMp());
+				}
+				for (Summon summon : player.getServitorsAndPets())
+				{
+					skill.applyEffects(player, summon);
+					player.setCurrentMp(player.getMaxMp());
+				}
+			}
+
+			showChatWindow(player, chatPage);
+		}
+		else if (command.startsWith("PetHeal"))
+		{
+			if (player.getPet() != null)
+			{
+				player.getPet().setCurrentHp(player.getPet().getMaxHp());
+				player.getPet().setCurrentMp(player.getPet().getMaxMp());
+				player.getPet().setCurrentCp(player.getPet().getMaxCp());
+			}
+			for (Summon summon : player.getServitorsAndPets())
+			{
+				summon.setCurrentHp(summon.getMaxHp());
+				summon.setCurrentMp(summon.getMaxMp());
+				summon.setCurrentCp(summon.getMaxCp());
+			}
+			showChatWindow(player, 10);
+		}
+		else if (command.startsWith("PetRemoveBuffs"))
+		{
+			player.getPet().stopAllEffects();
+			showChatWindow(player, 0);
+		}
+		else if (command.startsWith("Chat"))
+		{
+			showChatWindow(player, Integer.valueOf(command.substring(5)));
+		}
+		else
+		{
+			super.onBypassFeedback(player, command);
+		}
+	}
+
+	private static void giveBuff(PlayerInstance player, int skillId, int level)
+	{
+		if (player == null)
+		{
+			return;
+		}
+
+		boolean buffSelf = true;
+		boolean buffSummon = player.getTarget() != player;
+
+		if (buffSummon)
+		{
+			if (player.getPet() != null)
+			{
+				SkillData.getInstance().getSkill(skillId, level).applyEffects(player.getPet(), player.getPet());
+				player.getPet().setCurrentHpMp(player.getPet().getMaxHp(), player.getPet().getMaxMp());
+				if (player.getTarget() == player.getPet())
+				{
+					buffSelf = false;
+				}
+			}
+
+			if (player.getServitorsAndPets() != null)
+			{
+				for (Summon summon : player.getServitorsAndPets())
+				{
+					if (summon == null)
+					{
+						continue;
+					}
+
+					SkillData.getInstance().getSkill(skillId, level).applyEffects(summon, summon);
+					summon.setCurrentHpMp(summon.getMaxHp(), summon.getMaxMp());
+					if (player.getTarget() == summon)
+					{
+						buffSelf = false;
+					}
+				}
+			}
+		}
+
+		if (buffSelf)
+		{
+			SkillData.getInstance().getSkill(skillId, level).applyEffects(player, player);
+			player.setCurrentHpMp(player.getMaxHp(), player.getMaxMp());
+		}
+	}
+
+	public static void buff(PlayerInstance character)
+	{
+		int type = 2;
+		if (character instanceof PlayerInstance)
+		{
+			PlayerInstance player = (PlayerInstance) character;
+			if (!player.isMageClass())
+			{
+				ItemInstance shield = player.getInventory().getPaperdollItem(Inventory.PAPERDOLL_LHAND);
+				if (shield != null && shield.getItem().getType1() == Item.TYPE1_SHIELD_ARMOR)
+				{
+					type = 0;
+				}
+				else
+				{
+					type = 1;
+				}
+			}
+		}
+		else
+		{
+			type = 1;
+		}
+
+		for (int buff : buffs)
+		{
+			if (buff == 15649 && type != 0 || buff == 15650 && type != 1 || buff == 15648 && type != 2)
+			{
+				continue;
+			}
+
+			SkillData.getInstance().getSkill(buff, 1).applyEffects(character, character);
+			character.setCurrentMp(character.getMaxMp());
+		}
+	}
+
+	@Override
+	public String getHtmlPath(int npcId, int value, PlayerInstance player)
+	{
+		String pom;
+		if (value == 0)
+		{
+			pom = Integer.toString(npcId);
+		}
+		else
+		{
+			pom = npcId + "-" + value;
+		}
+		return "data/html/buffer/" + pom + ".htm";
+	}
+
+	@Override
+	public void showChatWindow(PlayerInstance player, int val)
+	{
+		if (val >= 10 && player.getPet() == null && player.getServitorsAndPets().isEmpty())
+		{
+			val = 0;
+		}
+		// Send a Server->Client NpcHtmlMessage containing the text of the L2NpcInstance to the L2PcInstance
+		NpcHtmlMessage html = new NpcHtmlMessage(getObjectId());
+		html.setFile(player, getHtmlPath(getId(), val, player));
+		html.replace("%objectId%", String.valueOf(getObjectId()));
+		player.sendPacket(html);
+
+		// Send a Server->Client ActionFailed to the L2PcInstance in order to avoid that the client wait another packet
+		player.sendPacket(ActionFailed.STATIC_PACKET);
+	}
+
+
+}

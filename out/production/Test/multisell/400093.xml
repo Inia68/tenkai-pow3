@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../xsd/multisell.xsd">
+	<npcs>
+		<npc>40016</npc>
+	</npcs>
+
+	<item>
+		<ingredient id="47557" count="1"/> <!-- Master Fishing Rod Lv.1 -->
+		<ingredient id="47551" count="2"/> <!-- Nimble Fish -->
+		<ingredient id="47552" count="1"/> <!-- Powerfull Fish -->
+		<production id="47558" count="1"/> <!-- Master Fishing Rod Lv.2 -->
+	</item>
+	<item>
+		<ingredient id="47558" count="1"/> <!-- Master Fishing Rod Lv.2 -->
+		<ingredient id="47551" count="4"/> <!-- Nimble Fish -->
+		<ingredient id="47552" count="2"/> <!-- Powerfull Fish -->
+		<production id="47559" count="1"/> <!-- Master Fishing Rod Lv.3 -->
+	</item>
+	<item>
+		<ingredient id="47559" count="1"/> <!-- Master Fishing Rod Lv.3 -->
+		<ingredient id="47551" count="6"/> <!-- Nimble Fish -->
+		<ingredient id="47552" count="3"/> <!-- Powerfull Fish -->
+		<production id="47560" count="1"/> <!-- Master Fishing Rod Lv.4 -->
+	</item>
+	<item>
+		<ingredient id="47560" count="1"/> <!-- Master Fishing Rod Lv.4 -->
+		<ingredient id="47551" count="8"/> <!-- Nimble Fish -->
+		<ingredient id="47552" count="4"/> <!-- Powerfull Fish -->
+		<production id="47561" count="1"/> <!-- Master Fishing Rod Lv.5 -->
+	</item>
+
+	</list>

@@ -1,0 +1,183 @@
+Jun 12, 2020 9:55:34 PM org.l2jmobius.gameserver.engines.items.DocumentItem parseDocument
+WARNING: Cannot create item 81160
+java.lang.reflect.InvocationTargetException
+	at org.l2jmobius.gameserver.engines.items.DocumentItem.makeItem(DocumentItem.java:228)
+	at org.l2jmobius.gameserver.engines.items.DocumentItem.parseItem(DocumentItem.java:154)
+	at org.l2jmobius.gameserver.engines.items.DocumentItem.parseDocument(DocumentItem.java:92)
+	at org.l2jmobius.gameserver.engines.DocumentBase.parse(DocumentBase.java:170)
+	at org.l2jmobius.gameserver.engines.DocumentEngine.loadItems(DocumentEngine.java:101)
+	at org.l2jmobius.gameserver.datatables.ItemTable.load(ItemTable.java:131)
+	at org.l2jmobius.gameserver.datatables.ItemTable.<init>(ItemTable.java:122)
+	at org.l2jmobius.gameserver.datatables.ItemTable$SingletonHolder.<clinit>(ItemTable.java:471)
+	at org.l2jmobius.gameserver.datatables.ItemTable.getInstance(ItemTable.java:117)
+	at org.l2jmobius.gameserver.data.xml.impl.CombinationItemsData.lambda$parseDocument$0(CombinationItemsData.java:68)
+	at org.l2jmobius.commons.util.IXmlReader.forEach(IXmlReader.java:769)
+	at org.l2jmobius.commons.util.IXmlReader.forEach(IXmlReader.java:752)
+	at org.l2jmobius.gameserver.data.xml.impl.CombinationItemsData.lambda$parseDocument$1(CombinationItemsData.java:62)
+	at org.l2jmobius.commons.util.IXmlReader.forEach(IXmlReader.java:769)
+	at org.l2jmobius.commons.util.IXmlReader.forEach(IXmlReader.java:752)
+	at org.l2jmobius.gameserver.data.xml.impl.CombinationItemsData.lambda$parseDocument$2(CombinationItemsData.java:58)
+	at org.l2jmobius.commons.util.IXmlReader.forEach(IXmlReader.java:769)
+	at org.l2jmobius.commons.util.IXmlReader.forEach(IXmlReader.java:752)
+	at org.l2jmobius.gameserver.data.xml.impl.CombinationItemsData.parseDocument(CombinationItemsData.java:58)
+	at org.l2jmobius.commons.util.IXmlReader.parseFile(IXmlReader.java:102)
+	at org.l2jmobius.commons.util.IXmlReader.parseDatapackFile(IXmlReader.java:76)
+	at org.l2jmobius.gameserver.data.xml.impl.CombinationItemsData.load(CombinationItemsData.java:51)
+	at org.l2jmobius.gameserver.data.xml.impl.CombinationItemsData.<init>(CombinationItemsData.java:44)
+	at org.l2jmobius.gameserver.data.xml.impl.CombinationItemsData$SingletonHolder.<clinit>(CombinationItemsData.java:109)
+	at org.l2jmobius.gameserver.data.xml.impl.CombinationItemsData.getInstance(CombinationItemsData.java:104)
+	at org.l2jmobius.gameserver.GameServer.<init>(GameServer.java:218)
+	at org.l2jmobius.gameserver.GameServer.main(GameServer.java:486)
+Caused by: java.lang.reflect.InvocationTargetException
+	at jdk.internal.reflect.GeneratedConstructorAccessor24.newInstance(Unknown Source)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:481)
+	at org.l2jmobius.gameserver.engines.items.DocumentItem.makeItem(DocumentItem.java:224)
+	... 26 more
+Caused by: java.lang.IllegalArgumentException: No enum constant org.l2jmobius.gameserver.model.items.type.WeaponType.FIST_WEAPON
+	at java.base/java.lang.Enum.valueOf(Enum.java:273)
+	at org.l2jmobius.gameserver.model.items.type.WeaponType.valueOf(WeaponType.java:25)
+	at org.l2jmobius.gameserver.model.items.Weapon.set(Weapon.java:72)
+	at org.l2jmobius.gameserver.model.items.Item.<init>(Item.java:186)
+	at org.l2jmobius.gameserver.model.items.Weapon.<init>(Weapon.java:65)
+	... 31 more
+
+Jun 12, 2020 9:55:34 PM org.l2jmobius.gameserver.engines.items.DocumentItem parseDocument
+WARNING: Cannot create item 81172
+java.lang.reflect.InvocationTargetException
+	at org.l2jmobius.gameserver.engines.items.DocumentItem.makeItem(DocumentItem.java:228)
+	at org.l2jmobius.gameserver.engines.items.DocumentItem.parseItem(DocumentItem.java:154)
+	at org.l2jmobius.gameserver.engines.items.DocumentItem.parseDocument(DocumentItem.java:92)
+	at org.l2jmobius.gameserver.engines.DocumentBase.parse(DocumentBase.java:170)
+	at org.l2jmobius.gameserver.engines.DocumentEngine.loadItems(DocumentEngine.java:101)
+	at org.l2jmobius.gameserver.datatables.ItemTable.load(ItemTable.java:131)
+	at org.l2jmobius.gameserver.datatables.ItemTable.<init>(ItemTable.java:122)
+	at org.l2jmobius.gameserver.datatables.ItemTable$SingletonHolder.<clinit>(ItemTable.java:471)
+	at org.l2jmobius.gameserver.datatables.ItemTable.getInstance(ItemTable.java:117)
+	at org.l2jmobius.gameserver.data.xml.impl.CombinationItemsData.lambda$parseDocument$0(CombinationItemsData.java:68)
+	at org.l2jmobius.commons.util.IXmlReader.forEach(IXmlReader.java:769)
+	at org.l2jmobius.commons.util.IXmlReader.forEach(IXmlReader.java:752)
+	at org.l2jmobius.gameserver.data.xml.impl.CombinationItemsData.lambda$parseDocument$1(CombinationItemsData.java:62)
+	at org.l2jmobius.commons.util.IXmlReader.forEach(IXmlReader.java:769)
+	at org.l2jmobius.commons.util.IXmlReader.forEach(IXmlReader.java:752)
+	at org.l2jmobius.gameserver.data.xml.impl.CombinationItemsData.lambda$parseDocument$2(CombinationItemsData.java:58)
+	at org.l2jmobius.commons.util.IXmlReader.forEach(IXmlReader.java:769)
+	at org.l2jmobius.commons.util.IXmlReader.forEach(IXmlReader.java:752)
+	at org.l2jmobius.gameserver.data.xml.impl.CombinationItemsData.parseDocument(CombinationItemsData.java:58)
+	at org.l2jmobius.commons.util.IXmlReader.parseFile(IXmlReader.java:102)
+	at org.l2jmobius.commons.util.IXmlReader.parseDatapackFile(IXmlReader.java:76)
+	at org.l2jmobius.gameserver.data.xml.impl.CombinationItemsData.load(CombinationItemsData.java:51)
+	at org.l2jmobius.gameserver.data.xml.impl.CombinationItemsData.<init>(CombinationItemsData.java:44)
+	at org.l2jmobius.gameserver.data.xml.impl.CombinationItemsData$SingletonHolder.<clinit>(CombinationItemsData.java:109)
+	at org.l2jmobius.gameserver.data.xml.impl.CombinationItemsData.getInstance(CombinationItemsData.java:104)
+	at org.l2jmobius.gameserver.GameServer.<init>(GameServer.java:218)
+	at org.l2jmobius.gameserver.GameServer.main(GameServer.java:486)
+Caused by: java.lang.reflect.InvocationTargetException
+	at jdk.internal.reflect.GeneratedConstructorAccessor24.newInstance(Unknown Source)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:481)
+	at org.l2jmobius.gameserver.engines.items.DocumentItem.makeItem(DocumentItem.java:224)
+	... 26 more
+Caused by: java.lang.IllegalArgumentException: No enum constant org.l2jmobius.gameserver.model.items.type.WeaponType.FIST_WEAPON
+	at java.base/java.lang.Enum.valueOf(Enum.java:273)
+	at org.l2jmobius.gameserver.model.items.type.WeaponType.valueOf(WeaponType.java:25)
+	at org.l2jmobius.gameserver.model.items.Weapon.set(Weapon.java:72)
+	at org.l2jmobius.gameserver.model.items.Item.<init>(Item.java:186)
+	at org.l2jmobius.gameserver.model.items.Weapon.<init>(Weapon.java:65)
+	... 31 more
+
+Jun 13, 2020 4:55:04 PM org.l2jmobius.gameserver.engines.items.DocumentItem parseDocument
+WARNING: Cannot create item 81160
+java.lang.reflect.InvocationTargetException
+	at org.l2jmobius.gameserver.engines.items.DocumentItem.makeItem(DocumentItem.java:228)
+	at org.l2jmobius.gameserver.engines.items.DocumentItem.parseItem(DocumentItem.java:154)
+	at org.l2jmobius.gameserver.engines.items.DocumentItem.parseDocument(DocumentItem.java:92)
+	at org.l2jmobius.gameserver.engines.DocumentBase.parse(DocumentBase.java:170)
+	at org.l2jmobius.gameserver.engines.DocumentEngine.loadItems(DocumentEngine.java:101)
+	at org.l2jmobius.gameserver.datatables.ItemTable.load(ItemTable.java:131)
+	at org.l2jmobius.gameserver.datatables.ItemTable.reload(ItemTable.java:408)
+	at handlers.admincommandhandlers.AdminReload.useAdminCommand(AdminReload.java:201)
+	at org.l2jmobius.gameserver.handler.AdminCommandHandler.lambda$useAdminCommand$0(AdminCommandHandler.java:127)
+	at org.l2jmobius.commons.concurrent.RunnableWrapper.run(RunnableWrapper.java:38)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:630)
+	at java.base/java.lang.Thread.run(Thread.java:832)
+Caused by: java.lang.reflect.InvocationTargetException
+	at jdk.internal.reflect.GeneratedConstructorAccessor60.newInstance(Unknown Source)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:481)
+	at org.l2jmobius.gameserver.engines.items.DocumentItem.makeItem(DocumentItem.java:224)
+	... 12 more
+Caused by: java.lang.IllegalArgumentException: No enum constant org.l2jmobius.gameserver.model.items.type.WeaponType.FIST_WEAPON
+	at java.base/java.lang.Enum.valueOf(Enum.java:273)
+	at org.l2jmobius.gameserver.model.items.type.WeaponType.valueOf(WeaponType.java:25)
+	at org.l2jmobius.gameserver.model.items.Weapon.set(Weapon.java:72)
+	at org.l2jmobius.gameserver.model.items.Item.<init>(Item.java:186)
+	at org.l2jmobius.gameserver.model.items.Weapon.<init>(Weapon.java:65)
+	... 17 more
+
+Jun 13, 2020 4:55:04 PM org.l2jmobius.gameserver.engines.items.DocumentItem parseDocument
+WARNING: Cannot create item 81172
+java.lang.reflect.InvocationTargetException
+	at org.l2jmobius.gameserver.engines.items.DocumentItem.makeItem(DocumentItem.java:228)
+	at org.l2jmobius.gameserver.engines.items.DocumentItem.parseItem(DocumentItem.java:154)
+	at org.l2jmobius.gameserver.engines.items.DocumentItem.parseDocument(DocumentItem.java:92)
+	at org.l2jmobius.gameserver.engines.DocumentBase.parse(DocumentBase.java:170)
+	at org.l2jmobius.gameserver.engines.DocumentEngine.loadItems(DocumentEngine.java:101)
+	at org.l2jmobius.gameserver.datatables.ItemTable.load(ItemTable.java:131)
+	at org.l2jmobius.gameserver.datatables.ItemTable.reload(ItemTable.java:408)
+	at handlers.admincommandhandlers.AdminReload.useAdminCommand(AdminReload.java:201)
+	at org.l2jmobius.gameserver.handler.AdminCommandHandler.lambda$useAdminCommand$0(AdminCommandHandler.java:127)
+	at org.l2jmobius.commons.concurrent.RunnableWrapper.run(RunnableWrapper.java:38)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:630)
+	at java.base/java.lang.Thread.run(Thread.java:832)
+Caused by: java.lang.reflect.InvocationTargetException
+	at jdk.internal.reflect.GeneratedConstructorAccessor60.newInstance(Unknown Source)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:481)
+	at org.l2jmobius.gameserver.engines.items.DocumentItem.makeItem(DocumentItem.java:224)
+	... 12 more
+Caused by: java.lang.IllegalArgumentException: No enum constant org.l2jmobius.gameserver.model.items.type.WeaponType.FIST_WEAPON
+	at java.base/java.lang.Enum.valueOf(Enum.java:273)
+	at org.l2jmobius.gameserver.model.items.type.WeaponType.valueOf(WeaponType.java:25)
+	at org.l2jmobius.gameserver.model.items.Weapon.set(Weapon.java:72)
+	at org.l2jmobius.gameserver.model.items.Item.<init>(Item.java:186)
+	at org.l2jmobius.gameserver.model.items.Weapon.<init>(Weapon.java:65)
+	... 17 more
+
+Jun 13, 2020 4:55:04 PM org.l2jmobius.gameserver.engines.items.DocumentItem parseDocument
+WARNING: Cannot create item 81359
+java.lang.reflect.InvocationTargetException
+	at org.l2jmobius.gameserver.engines.items.DocumentItem.makeItem(DocumentItem.java:228)
+	at org.l2jmobius.gameserver.engines.items.DocumentItem.parseItem(DocumentItem.java:141)
+	at org.l2jmobius.gameserver.engines.items.DocumentItem.parseDocument(DocumentItem.java:92)
+	at org.l2jmobius.gameserver.engines.DocumentBase.parse(DocumentBase.java:170)
+	at org.l2jmobius.gameserver.engines.DocumentEngine.loadItems(DocumentEngine.java:101)
+	at org.l2jmobius.gameserver.datatables.ItemTable.load(ItemTable.java:131)
+	at org.l2jmobius.gameserver.datatables.ItemTable.reload(ItemTable.java:408)
+	at handlers.admincommandhandlers.AdminReload.useAdminCommand(AdminReload.java:201)
+	at org.l2jmobius.gameserver.handler.AdminCommandHandler.lambda$useAdminCommand$0(AdminCommandHandler.java:127)
+	at org.l2jmobius.commons.concurrent.RunnableWrapper.run(RunnableWrapper.java:38)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:630)
+	at java.base/java.lang.Thread.run(Thread.java:832)
+Caused by: java.lang.reflect.InvocationTargetException
+	at jdk.internal.reflect.GeneratedConstructorAccessor61.newInstance(Unknown Source)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:481)
+	at org.l2jmobius.gameserver.engines.items.DocumentItem.makeItem(DocumentItem.java:224)
+	... 12 more
+Caused by: java.lang.IllegalArgumentException: Integer value required, but found: true
+	at org.l2jmobius.gameserver.model.StatSet.getInt(StatSet.java:346)
+	at org.l2jmobius.gameserver.model.items.Item.set(Item.java:222)
+	at org.l2jmobius.gameserver.model.items.Armor.set(Armor.java:41)
+	at org.l2jmobius.gameserver.model.items.Item.<init>(Item.java:186)
+	at org.l2jmobius.gameserver.model.items.Armor.<init>(Armor.java:35)
+	... 17 more
+

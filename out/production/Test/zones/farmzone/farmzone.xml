@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list enabled="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/zones.xsd">
+	<zone id="1"  name="talking_island" type="FarmZone" shape="NPoly" minZ="-3800" maxZ="-3250">
+		<node X="-115256" Y="246424" />
+		<node X="-114184" Y="246664" />
+		<node X="-113208" Y="247160" />
+		<node X="-112568" Y="246200" />
+		<node X="-113384" Y="244808" />
+		<node X="-114232" Y="245272" />
+		<node X="-115544" Y="246072" />
+	</zone>
+</list>

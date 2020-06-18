@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../xsd/multisell.xsd">
+    <npcs>
+        <npc>40007</npc> <!-- Abercrombie (Mercenary Supplier) -->
+    </npcs>
+
+    <item>
+        <ingredient id="57" count="5000000"/> <!-- Adena -->
+        <production id="46738" count="1"/> <!-- Pratctice Rod -->
+    </item>
+
+    <item>
+        <ingredient id="57" count="50000"/> <!-- Adena -->
+        <production id="46737" count="100"/> <!-- Practice Bait -->
+    </item>
+    <item>
+        <ingredient id="57" count="250000"/> <!-- Adena -->
+        <production id="48537" count="100"/> <!-- Bait -->
+    </item>
+    <item>
+        <ingredient id="57" count="500000"/> <!-- Adena -->
+        <production id="47548" count="100"/> <!-- Bait(R99) -->
+    </item>
+    <item>
+        <ingredient id="57" count="600000"/> <!-- Adena -->
+        <production id="48538" count="100"/> <!-- Bait(R102) -->
+    </item>
+    <item>
+        <ingredient id="57" count="8500000"/> <!-- Adena -->
+        <production id="48539" count="100"/> <!-- Bait(R105) -->
+    </item>
+
+    <item>
+        <ingredient id="46736" count="10"/> <!-- Practice Fish -->
+        <ingredient id="46738" count="1"/> <!-- Pratctice Rod -->
+        <production id="47557" count="1"/> <!-- Master Fishing Rod Lv.1 -->
+    </item>
+
+
+
+</list>

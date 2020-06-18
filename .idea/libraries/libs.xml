@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="libs">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/dist/libs/slf4j-simple-1.7.27.jar!/" />
+      <root url="jar://$PROJECT_DIR$/dist/libs/slf4j-api-1.7.27.jar!/" />
+      <root url="jar://$PROJECT_DIR$/dist/libs/mariadb-java-client-2.4.3.jar!/" />
+      <root url="jar://$PROJECT_DIR$/dist/libs/HikariCP-3.3.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/dist/libs/netty-all-4.1.38.Final.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

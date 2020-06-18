@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/multisell.xsd">
+	<npcs>
+		<npc>-1</npc> <!-- CB -->
+	</npcs>
+	<item>
+		<!-- Adena -->
+		<ingredient count="49905000" id="57" />
+		<!-- Blessed Seraph Necklace -->
+		<production count="1" id="18066" />
+	</item>
+	<item>
+		<!-- Adena -->
+		<ingredient count="37428000" id="57" />
+		<!-- Blessed Seraph Earring -->
+		<production count="1" id="18067" />
+	</item>
+	<item>
+		<!-- Adena -->
+		<ingredient count="24952000" id="57" />
+		<!-- Blessed Seraph Ring -->
+		<production count="1" id="18068" />
+	</item>
+</list>

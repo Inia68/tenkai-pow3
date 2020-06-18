@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list enabled="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../xsd/zones.xsd">
+	<zone name="talking_island_main_town" type="MainTown" shape="NPoly" minZ="-1600" maxZ="-1500">
+		<node  X="-113608" Y="253688" />
+		<node  X="-113544" Y="252600" />
+		<node  X="-114200" Y="252200" />
+		<node  X="-114600" Y="252232" />
+		<node  X="-115128" Y="252568" />
+		<node  X="-115144" Y="253688" />
+	</zone>
+</list>

@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../xsd/multisell.xsd">
+	<npcs>
+		<npc>34445</npc> <!-- Accessory Artisan Denign -->
+	</npcs>
+	<item>
+		<ingredient id="37521" count="1" /> <!-- Baium's Soul Ring -->
+		<ingredient id="37520" count="10" /> <!-- Bottle of Baium's Soul -->
+		<production id="27716" count="57" /> <!-- Bottle of Honorable God's Soul -->
+	</item>
+	<item>
+		<ingredient id="19463" count="1" /> <!-- Blessed Antharas' Earring -->
+		<ingredient id="19465" count="10" /> <!-- Bottle of Antharas' Soul -->
+		<production id="27715" count="450" /> <!-- Bottle of Splendid God's Soul -->
+	</item>
+	<item>
+		<ingredient id="16026" count="1" /> <!-- Blessed Freya's Necklace -->
+		<ingredient id="16027" count="10" /> <!-- Bottle of Freya's Soul -->
+		<production id="27714" count="3" /> <!-- Bottle of Luminous God's Soul -->
+	</item>
+	<item>
+		<ingredient id="19464" count="1" /> <!-- Blessed Valakas' Necklace -->
+		<ingredient id="19466" count="10" /> <!-- Bottle of Valakas' Soul -->
+		<production id="27714" count="280" /> <!-- Bottle of Luminous God's Soul -->
+	</item>
+	<item>
+		<ingredient id="37522" count="1" /> <!-- Frintezza's Soul Necklace -->
+		<ingredient id="37519" count="10" /> <!-- Bottle of Frintezza's Soul -->
+		<production id="27714" count="30" /> <!-- Bottle of Luminous God's Soul -->
+	</item>
+	<item>
+		<ingredient id="36255" count="1" /> <!-- Orfen's Soul Earring -->
+		<ingredient id="36253" count="10" /> <!-- Bottle of Orfen's Soul -->
+		<production id="27715" count="30" /> <!-- Bottle of Splendid God's Soul -->
+	</item>
+	<item>
+		<ingredient id="36254" count="1" /> <!-- Queen Ant's Ring -->
+		<ingredient id="36252" count="10" /> <!-- Bottle of Queen Ant's Soul -->
+		<production id="27716" count="65" /> <!-- Bottle of Honorable God's Soul -->
+	</item>
+	<item>
+		<ingredient id="10314" count="1" /> <!-- Beleth's Ring -->
+		<production id="27716" count="25" /> <!-- Bottle of Honorable God's Soul -->
+	</item>
+	<item>
+		<ingredient id="35570" count="1" /> <!-- Tauti's Ring -->
+		<production id="27716" count="200" /> <!-- Bottle of Honorable God's Soul -->
+	</item>
+	<item>
+		<ingredient id="17623" count="1" /> <!-- Earth Wyrm Heart Ring -->
+		<production id="27716" count="263" /> <!-- Bottle of Honorable God's Soul -->
+	</item>
+	<item>
+		<ingredient id="6659" count="1" /> <!-- Zaken's Earring -->
+		<production id="27715" count="5" /> <!-- Bottle of Splendid God's Soul -->
+	</item>
+	<item>
+		<ingredient id="36946" count="1" /> <!-- Lindvior's Earring -->
+		<ingredient id="36947" count="10" /> <!-- Bottle of Lindvior Soul -->
+		<production id="27715" count="1140" /> <!-- Bottle of Splendid God's Soul -->
+	</item>
+	<item>
+		<ingredient id="21712" count="1" /> <!-- Blessed Zaken's Earring -->
+		<production id="27715" count="28" /> <!-- Bottle of Splendid God's Soul -->
+	</item>
+</list>

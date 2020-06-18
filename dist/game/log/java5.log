@@ -1,0 +1,46 @@
+2020.04.01 21:30:57,129	WARNING	1	org.l2jmobius.commons.util.PropertiesParser	[Event.ini] There was an error loading config reason: .\config\Event.ini (Le fichier spécifié est introuvable)
+2020.04.01 21:30:57,165	WARNING	1	org.l2jmobius.commons.util.PropertiesParser	[Event.ini] missing property for key: InstancedEventEnabled using default value: true
+2020.04.01 21:30:57,166	WARNING	1	org.l2jmobius.commons.util.PropertiesParser	[Event.ini] missing property for key: InstancedEventInterval using default value: 300
+2020.04.01 21:30:57,166	WARNING	1	org.l2jmobius.commons.util.PropertiesParser	[Event.ini] missing property for key: InstancedEventRunningTime using default value: 10
+2020.04.01 21:30:57,166	WARNING	1	org.l2jmobius.commons.util.PropertiesParser	[Event.ini] missing property for key: INSTANCED_EVENT_MIN_PLAYERS_IN_TEAMS using default value: 1
+2020.04.01 21:30:57,167	WARNING	1	org.l2jmobius.commons.util.PropertiesParser	[Event.ini] missing property for key: InstancedEventRespawnTeleportDelay using default value: 5
+2020.04.01 21:30:57,167	WARNING	1	org.l2jmobius.commons.util.PropertiesParser	[Event.ini] missing property for key: InstancedEventStartLeaveTeleportDelay using default value: 5
+2020.04.01 21:30:57,168	WARNING	1	org.l2jmobius.commons.util.PropertiesParser	[Event.ini] missing property for key: InstancedEventTargetTeamMembersAllowed using default value: true
+2020.04.01 21:30:57,168	WARNING	1	org.l2jmobius.commons.util.PropertiesParser	[Event.ini] missing property for key: InstancedEventScrollsAllowed using default value: false
+2020.04.01 21:30:57,168	WARNING	1	org.l2jmobius.commons.util.PropertiesParser	[Event.ini] missing property for key: InstancedEventPotionsAllowed using default value: false
+2020.04.01 21:30:57,168	WARNING	1	org.l2jmobius.commons.util.PropertiesParser	[Event.ini] missing property for key: InstancedEventSummonByItemAllowed using default value: false
+2020.04.01 21:30:57,169	WARNING	1	org.l2jmobius.commons.util.PropertiesParser	[Event.ini] missing property for key: InstancedEventRewardTeamTie using default value: true
+2020.04.01 21:30:57,169	WARNING	1	org.l2jmobius.commons.util.PropertiesParser	[Event.ini] missing property for key: InstancedEventMinPlayerLevel using default value: 85
+2020.04.01 21:30:57,169	WARNING	1	org.l2jmobius.commons.util.PropertiesParser	[Event.ini] missing property for key: InstancedEventEffectsRemoval using default value: 0
+2020.04.01 21:30:57,180	INFO	1	org.l2jmobius.commons.util.IXmlReader	Network Config: ipconfig.xml doesn't exists using automatic configuration...
+2020.04.01 21:30:57,448	INFO	1	org.l2jmobius.commons.util.IXmlReader	Network Config: Adding new subnet: 127.0.0.0/8 address: 127.0.0.1
+2020.04.01 21:30:57,496	INFO	1	org.l2jmobius.commons.util.IXmlReader	Network Config: Adding new subnet: 192.168.0.0/24 address: 192.168.0.13
+2020.04.01 21:30:57,579	INFO	1	org.l2jmobius.commons.util.IXmlReader	Network Config: Adding new subnet: 0.0.0.0/0 address: 91.172.190.136
+2020.04.01 21:30:57,625	INFO	1	org.l2jmobius.Config	Loaded 6 Filter Words.
+2020.04.01 21:30:57,866	INFO	1	org.l2jmobius.gameserver.GameServer	------------------------------------------------=[ Database ]
+2020.04.01 21:30:58,072	INFO	1	org.l2jmobius.commons.database.DatabaseFactory	Database: Initialized.
+2020.04.01 21:30:58,072	INFO	1	org.l2jmobius.gameserver.GameServer	----------------------------------------------=[ ThreadPool ]
+2020.04.01 21:30:58,083	INFO	1	org.l2jmobius.commons.concurrent.ThreadPool	ThreadPool: Initialized
+2020.04.01 21:30:58,084	INFO	1	org.l2jmobius.commons.concurrent.ThreadPool	...scheduled pool executor with 40 total threads.
+2020.04.01 21:30:58,084	INFO	1	org.l2jmobius.commons.concurrent.ThreadPool	...instant pool executor with 20 total threads.
+2020.04.01 21:30:58,084	INFO	1	org.l2jmobius.gameserver.GameServer	-----------------------------------------------=[ IdFactory ]
+2020.04.01 21:30:58,093	INFO	21	org.l2jmobius.gameserver.model.World	World: (288 by 272) World Region Grid set up.
+2020.04.01 21:30:58,120	INFO	1	org.l2jmobius.gameserver.idfactory.IdFactory	Updated characters online status.
+2020.04.01 21:30:58,150	INFO	1	org.l2jmobius.gameserver.idfactory.IdFactory	IdFactory: Cleaned 0 elements from database in 0 seconds.
+2020.04.01 21:30:58,170	INFO	1	org.l2jmobius.gameserver.idfactory.IdFactory	IdFactory: Cleaned 0 expired timestamps from database.
+2020.04.01 21:30:58,194	INFO	1	org.l2jmobius.gameserver.idfactory.IdFactory	IdFactory: 102912 id's available.
+2020.04.01 21:30:58,196	INFO	1	org.l2jmobius.gameserver.GameServer	----------------------------------------=[ Scripting Engine ]
+2020.04.01 21:30:58,562	INFO	1	org.l2jmobius.gameserver.scripting.ScriptEngineManager	Loaded 794 files to exclude.
+2020.04.01 21:30:58,569	INFO	1	org.l2jmobius.gameserver.GameServer	--------------------------------------------------=[ Telnet ]
+2020.04.01 21:30:58,758	INFO	1	org.l2jmobius.gameserver.network.telnet.TelnetServer	Telnet server is currently disabled.
+2020.04.01 21:30:58,759	INFO	1	org.l2jmobius.gameserver.GameServer	---------------------------------------------------=[ World ]
+2020.04.01 21:30:58,761	INFO	87	org.l2jmobius.gameserver.GameTimeController	GameTimeController: Started.
+2020.04.01 21:30:59,132	INFO	1	org.l2jmobius.gameserver.instancemanager.MapRegionManager	MapRegionManager: Loaded 61 map regions.
+2020.04.01 21:30:59,138	INFO	1	org.l2jmobius.gameserver.instancemanager.ZoneManager	ZoneManager 19 by 18 Zone Region Grid set up.
+2020.04.01 21:31:00,179	INFO	1	org.l2jmobius.gameserver.instancemanager.ZoneManager	ZoneManager: Loaded 33 zone classes and 2866 zones.
+2020.04.01 21:31:00,180	INFO	1	org.l2jmobius.gameserver.instancemanager.ZoneManager	ZoneManager: Loaded 16 NPC spawn territoriers.
+2020.04.01 21:31:00,186	INFO	1	org.l2jmobius.gameserver.instancemanager.ZoneManager	ZoneManager: Last static id 210110.
+2020.04.01 21:31:00,725	INFO	1	org.l2jmobius.gameserver.data.xml.impl.DoorData	DoorData: Loaded 1516 Door Templates for 24 regions.
+2020.04.01 21:31:00,735	INFO	1	FenceData	FenceData: Loaded 1 fences.
+2020.04.01 21:31:00,744	INFO	1	org.l2jmobius.gameserver.instancemanager.GlobalVariablesManager	GlobalVariablesManager: Loaded 11 variables.
+2020.04.01 21:31:05,998	WARNING	19	org.l2jmobius.gameserver.Shutdown	Server scheduled restart issued shutdown command. Shutdown in 1 seconds!

@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="xsd/LuckyGameData.xsd">
+	<luckygame index="2" turning_point="50000">
+		<common_reward>
+			<item id="39738" count="15" chance="5" /> <!-- Rune Stone -->
+			<item id="19466" count="1" chance="1" /> <!-- Bottle of Valaka's Soul -->
+			<item id="19465" count="1" chance="1" /> <!-- Bottle of Anthara's Soul -->
+			<item id="37520" count="1" chance="1" /> <!-- Bottle of Baium's Soul -->
+			<item id="36253" count="1" chance="1" /> <!-- Bottle of Orfen's Soul -->
+			<item id="36252" count="1" chance="1" /> <!-- Bottle of Queen Ant's Soul -->
+			<item id="37519" count="1" chance="1" /> <!-- Bottle of Frinteza's Soul -->
+			<item id="16027" count="1" chance="1" /> <!-- Bottle of Freya's Soul -->
+			<item id="6656" count="1" chance="1" /> <!-- Antharas' Earring -->
+			<item id="6660" count="1" chance="1" /> <!-- Queen Ant's Ring -->
+			<item id="6657" count="1" chance="1" /> <!-- Valakas' Necklace -->
+			<item id="21712" count="1" chance="1" /> <!-- Blessed Zaken's Earring -->
+			<item id="46395" count="1" chance="1" /> <!-- Shadow Ingot -->
+			<item id="46494" count="1" chance="1" /> <!-- Pantheon's Soul Crystal - Stage 6 -->
+			<item id="46509" count="1" chance="1" /> <!-- Lionel's Soul Crystal - Stage 6 -->
+			<item id="46449" count="1" chance="1" /> <!-- Kain's Soul Crystal - Stage 6 -->
+			<item id="46464" count="1" chance="1" /> <!-- Mermoden's Soul Crystal - Stage 6 -->
+			<item id="6661" count="1" chance="1" /> <!-- Orfen's Earring -->
+			<item id="36513" count="30" chance="1" /> <!-- Elcyum Powder -->
+			<item id="46553" count="1" chance="1" /> <!-- Mystic Soul Crystal -->
+			<item id="20581" count="1" chance="1" /> <!-- XP Rune 30% (3-Hour Pack) -->
+			<item id="39647" count="1" chance="1" /> <!-- Venir's Talisman - Stage 14 -->
+			<item id="21087" count="1" chance="1" /> <!-- SP Rune 30% (1-Hour Pack) -->
+			<item id="36731" count="1" chance="1" /> <!-- Life Stone Instilled with Giants Power -->
+			<item id="34627" count="3" chance="1" /> <!-- Scroll: Enchant Elemental Shirt -->
+			<item id="26446" count="1" chance="1" /> <!-- Shadow Dualsword Box -->
+			<item id="36515" count="5" chance="1" /> <!-- Elcyum -->
+			<item id="36514" count="20" chance="1" /> <!-- Elcyum Crystal -->
+			<item id="17623" count="1" chance="1" /> <!-- Earth Wyrm Heart Ring -->
+			<item id="26440" count="1" chance="1" /> <!-- Shadow Fighter Box -->
+			<item id="26445" count="1" chance="1" /> <!-- Shadow Retributer Box -->
+			<item id="26442" count="1" chance="1" /> <!-- Shadow Thrower Box -->
+			<item id="26441" count="1" chance="1" /> <!-- Shadow Stormer Box -->
+			<item id="26438" count="1" chance="1" /> <!-- Shadow Cutter Box -->
+			<item id="26439" count="1" chance="1" /> <!-- Shadow Slasher Box -->
+			<item id="26437" count="1" chance="1" /> <!-- Shadow Shaper Box -->
+			<item id="26444" count="1" chance="1" /> <!-- Shadow Buster Box -->
+			<item id="26443" count="1" chance="1" /> <!-- Shadow Shooter Box -->
+			<item id="46395" count="3" chance="1" /> <!-- Shadow Ingot -->
+			<item id="48213" count="1" chance="1" /> <!-- Radiant Circlet Upgrade Stone -->
+			<item id="48212" count="1" chance="1" /> <!-- Noble Circlet Upgrade Stone -->
+			<item id="48495" count="1" chance="1" /> <!-- Noble Leather Upgrade Stone -->
+			<item id="48496" count="1" chance="1" /> <!-- Radiant Rind Upgrade Stone -->
+			<item id="28453" count="1" chance="1" /> <!-- Sayha's Energy -->
+			<item id="28454" count="1" chance="1" /> <!-- Sayha's Blessing -->
+			<item id="46553" count="1" chance="1" /> <!-- Mystic Soul Crystal -->
+			<item id="34627" count="3" chance="1" /> <!-- Scroll: Enchant Elemental Shirt -->
+			<item id="48213" count="1" chance="1" /> <!-- Radiant Circlet Upgrade Stone -->
+			<item id="48212" count="1" chance="1" /> <!-- Noble Circlet Upgrade Stone -->
+			<item id="48495" count="1" chance="1" /> <!-- Noble Leather Upgrade Stone -->
+			<item id="48496" count="1" chance="1" /> <!-- Radiant Rind Upgrade Stone -->
+			<item id="35569" count="10" chance="1" /> <!-- Bloody Armor Enchancement Stone -->
+			<item id="35568" count="10" chance="1" /> <!-- Bloody Weapon Enchancement Stone -->
+			<item id="35566" count="10" chance="1" /> <!-- Dark Weapon Enchancement Stone -->
+			<item id="35567" count="10" chance="1" /> <!-- Dark Armor Enchancement Stone -->
+			<item id="8191" count="1" chance="1" /> <!-- Frintezza Necklace -->
+			<item id="46079" count="1" chance="1" /> <!-- Kelbim Fragment -->
+			<item id="47885" count="1" chance="1" /> <!-- Insane Kelbim Fragment -->
+			<item id="35667" count="1" chance="1" /> <!-- Tauti Fragment -->
+			<item id="47884" count="1" chance="1" /> <!-- Frenzied Tauti Fragment -->
+			<item id="23605" count="1" chance="1" /> <!-- SP Rune 50% Pack (1-Hour) -->
+			<item id="22614" count="1" chance="1" /> <!-- XP Rune 50% Pack (1-Hour) -->
+			<item id="37731" count="1" chance="2.7" /> <!-- Dandy's Scroll: Challenge -->
+			<item id="37729" count="1" chance="2.7" /> <!-- Dandy's Scroll: Faith  -->
+			<item id="37730" count="1" chance="2.7" /> <!-- Dandy's Scroll: Passion -->
+			<item id="45415" count="1" chance="2.7" /> <!-- Dandy's Home Run Ball -->
+			<item id="47663" count="1" chance="2.7" /> <!-- Freya's Art of Seduction -->
+			<item id="48830" count="1" chance="2.7" /> <!-- Freya's Ice Rose -->
+			<item id="37928" count="1" chance="2.7" /> <!-- PA Art of Seduction  -->
+			<item id="47665" count="1" chance="2.7" /> <!-- Pa'agrio's Blessing -->
+			<item id="40056" count="1" chance="2.7" /> <!-- Mysterious Wind Scroll -->
+		</common_reward>
+	</luckygame>
+	<luckygame index="102" turning_point="10000">
+		<common_reward>
+			<item id="39738" count="15" chance="5" /> <!-- Rune Stone -->
+			<item id="19466" count="1" chance="1" /> <!-- Bottle of Valaka's Soul -->
+			<item id="19465" count="1" chance="1" /> <!-- Bottle of Anthara's Soul -->
+			<item id="37520" count="1" chance="1" /> <!-- Bottle of Baium's Soul -->
+			<item id="36253" count="1" chance="1" /> <!-- Bottle of Orfen's Soul -->
+			<item id="36252" count="1" chance="1" /> <!-- Bottle of Queen Ant's Soul -->
+			<item id="37519" count="1" chance="1" /> <!-- Bottle of Frinteza's Soul -->
+			<item id="16027" count="1" chance="1" /> <!-- Bottle of Freya's Soul -->
+			<item id="6656" count="1" chance="1" /> <!-- Antharas' Earring -->
+			<item id="6660" count="1" chance="1" /> <!-- Queen Ant's Ring -->
+			<item id="6657" count="1" chance="1" /> <!-- Valakas' Necklace -->
+			<item id="21712" count="1" chance="1" /> <!-- Blessed Zaken's Earring -->
+			<item id="46395" count="1" chance="1" /> <!-- Shadow Ingot -->
+			<item id="46494" count="1" chance="1" /> <!-- Pantheon's Soul Crystal - Stage 6 -->
+			<item id="46509" count="1" chance="1" /> <!-- Lionel's Soul Crystal - Stage 6 -->
+			<item id="46449" count="1" chance="1" /> <!-- Kain's Soul Crystal - Stage 6 -->
+			<item id="46464" count="1" chance="1" /> <!-- Mermoden's Soul Crystal - Stage 6 -->
+			<item id="6661" count="1" chance="1" /> <!-- Orfen's Earring -->
+			<item id="36513" count="30" chance="1" /> <!-- Elcyum Powder -->
+			<item id="46553" count="1" chance="1" /> <!-- Mystic Soul Crystal -->
+			<item id="20581" count="1" chance="1" /> <!-- XP Rune 30% (3-Hour Pack) -->
+			<item id="39647" count="1" chance="1" /> <!-- Venir's Talisman - Stage 14 -->
+			<item id="21087" count="1" chance="1" /> <!-- SP Rune 30% (1-Hour Pack) -->
+			<item id="36731" count="1" chance="1" /> <!-- Life Stone Instilled with Giants Power -->
+			<item id="34627" count="3" chance="1" /> <!-- Scroll: Enchant Elemental Shirt -->
+			<item id="26446" count="1" chance="1" /> <!-- Shadow Dualsword Box -->
+			<item id="36515" count="5" chance="1" /> <!-- Elcyum -->
+			<item id="36514" count="20" chance="1" /> <!-- Elcyum Crystal -->
+			<item id="17623" count="1" chance="1" /> <!-- Earth Wyrm Heart Ring -->
+			<item id="26440" count="1" chance="1" /> <!-- Shadow Fighter Box -->
+			<item id="26445" count="1" chance="1" /> <!-- Shadow Retributer Box -->
+			<item id="26442" count="1" chance="1" /> <!-- Shadow Thrower Box -->
+			<item id="26441" count="1" chance="1" /> <!-- Shadow Stormer Box -->
+			<item id="26438" count="1" chance="1" /> <!-- Shadow Cutter Box -->
+			<item id="26439" count="1" chance="1" /> <!-- Shadow Slasher Box -->
+			<item id="26437" count="1" chance="1" /> <!-- Shadow Shaper Box -->
+			<item id="26444" count="1" chance="1" /> <!-- Shadow Buster Box -->
+			<item id="26443" count="1" chance="1" /> <!-- Shadow Shooter Box -->
+			<item id="46395" count="3" chance="1" /> <!-- Shadow Ingot -->
+			<item id="48213" count="1" chance="1" /> <!-- Radiant Circlet Upgrade Stone -->
+			<item id="48212" count="1" chance="1" /> <!-- Noble Circlet Upgrade Stone -->
+			<item id="48495" count="1" chance="1" /> <!-- Noble Leather Upgrade Stone -->
+			<item id="48496" count="1" chance="1" /> <!-- Radiant Rind Upgrade Stone -->
+			<item id="28453" count="1" chance="1" /> <!-- Sayha's Energy -->
+			<item id="28454" count="1" chance="1" /> <!-- Sayha's Blessing -->
+			<item id="46553" count="1" chance="1" /> <!-- Mystic Soul Crystal -->
+			<item id="34627" count="3" chance="1" /> <!-- Scroll: Enchant Elemental Shirt -->
+			<item id="48213" count="1" chance="1" /> <!-- Radiant Circlet Upgrade Stone -->
+			<item id="48212" count="1" chance="1" /> <!-- Noble Circlet Upgrade Stone -->
+			<item id="48495" count="1" chance="1" /> <!-- Noble Leather Upgrade Stone -->
+			<item id="48496" count="1" chance="1" /> <!-- Radiant Rind Upgrade Stone -->
+			<item id="35569" count="10" chance="1" /> <!-- Bloody Armor Enchancement Stone -->
+			<item id="35568" count="10" chance="1" /> <!-- Bloody Weapon Enchancement Stone -->
+			<item id="35566" count="10" chance="1" /> <!-- Dark Weapon Enchancement Stone -->
+			<item id="35567" count="10" chance="1" /> <!-- Dark Armor Enchancement Stone -->
+			<item id="8191" count="1" chance="1" /> <!-- Frintezza Necklace -->
+			<item id="46079" count="1" chance="1" /> <!-- Kelbim Fragment -->
+			<item id="47885" count="1" chance="1" /> <!-- Insane Kelbim Fragment -->
+			<item id="35667" count="1" chance="1" /> <!-- Tauti Fragment -->
+			<item id="47884" count="1" chance="1" /> <!-- Frenzied Tauti Fragment -->
+			<item id="23605" count="1" chance="1" /> <!-- SP Rune 50% Pack (1-Hour) -->
+			<item id="22614" count="1" chance="1" /> <!-- XP Rune 50% Pack (1-Hour) -->
+			<item id="37731" count="1" chance="2.7" /> <!-- Dandy's Scroll: Challenge -->
+			<item id="37729" count="1" chance="2.7" /> <!-- Dandy's Scroll: Faith  -->
+			<item id="37730" count="1" chance="2.7" /> <!-- Dandy's Scroll: Passion -->
+			<item id="45415" count="1" chance="2.7" /> <!-- Dandy's Home Run Ball -->
+			<item id="47663" count="1" chance="2.7" /> <!-- Freya's Art of Seduction -->
+			<item id="48830" count="1" chance="2.7" /> <!-- Freya's Ice Rose -->
+			<item id="37928" count="1" chance="2.7" /> <!-- PA Art of Seduction  -->
+			<item id="47665" count="1" chance="2.7" /> <!-- Pa'agrio's Blessing -->
+			<item id="40056" count="1" chance="2.7" /> <!-- Mysterious Wind Scroll -->
+		</common_reward>
+		<unique_reward>
+			<item id="36946" count="1" points="1100" /> <!-- Lindvior's Earring -->
+			<item id="19463" count="1" points="1000" /> <!-- Blessed Antharas' Earring -->
+			<item id="19464" count="1" points="1200" /> <!-- Blessed Valakas' Necklace -->
+			<item id="17623" count="1" points="300" /> <!-- Earth Wyrm Heart Ring -->
+			<item id="37521" count="1" points="900" /> <!-- Baium's Soul Ring -->
+			<item id="36254" count="1" points="850" /> <!-- Queen Ant's Soul Ring -->
+			<item id="35570" count="1" points="500" /> <!-- Tauti's Ring -->
+			<item id="26511" count="1" points="250" /> <!-- Anakim Set Pack -->
+		</unique_reward>
+		<modify_reward min_game="40" max_game="50">
+			<item id="39738" count="15" chance="5" /> <!-- Rune Stone -->
+			<item id="19466" count="1" chance="1" /> <!-- Bottle of Valaka's Soul -->
+			<item id="19465" count="1" chance="1" /> <!-- Bottle of Anthara's Soul -->
+			<item id="37520" count="1" chance="1" /> <!-- Bottle of Baium's Soul -->
+			<item id="36253" count="1" chance="1" /> <!-- Bottle of Orfen's Soul -->
+			<item id="36252" count="1" chance="1" /> <!-- Bottle of Queen Ant's Soul -->
+			<item id="37519" count="1" chance="1" /> <!-- Bottle of Frinteza's Soul -->
+			<item id="16027" count="1" chance="1" /> <!-- Bottle of Freya's Soul -->
+			<item id="6656" count="1" chance="1" /> <!-- Antharas' Earring -->
+			<item id="6660" count="1" chance="1" /> <!-- Queen Ant's Ring -->
+			<item id="6657" count="1" chance="1" /> <!-- Valakas' Necklace -->
+			<item id="21712" count="1" chance="1" /> <!-- Blessed Zaken's Earring -->
+			<item id="46395" count="1" chance="1" /> <!-- Shadow Ingot -->
+			<item id="46494" count="1" chance="1" /> <!-- Pantheon's Soul Crystal - Stage 6 -->
+			<item id="46509" count="1" chance="1" /> <!-- Lionel's Soul Crystal - Stage 6 -->
+			<item id="46449" count="1" chance="1" /> <!-- Kain's Soul Crystal - Stage 6 -->
+			<item id="46464" count="1" chance="1" /> <!-- Mermoden's Soul Crystal - Stage 6 -->
+			<item id="6661" count="1" chance="1" /> <!-- Orfen's Earring -->
+			<item id="36513" count="30" chance="1" /> <!-- Elcyum Powder -->
+			<item id="46553" count="1" chance="1" /> <!-- Mystic Soul Crystal -->
+			<item id="20581" count="1" chance="1" /> <!-- XP Rune 30% (3-Hour Pack) -->
+			<item id="39647" count="1" chance="1" /> <!-- Venir's Talisman - Stage 14 -->
+			<item id="21087" count="1" chance="1" /> <!-- SP Rune 30% (1-Hour Pack) -->
+			<item id="36731" count="1" chance="1" /> <!-- Life Stone Instilled with Giants Power -->
+			<item id="34627" count="3" chance="1" /> <!-- Scroll: Enchant Elemental Shirt -->
+			<item id="26446" count="1" chance="1" /> <!-- Shadow Dualsword Box -->
+			<item id="36515" count="5" chance="1" /> <!-- Elcyum -->
+			<item id="36514" count="20" chance="1" /> <!-- Elcyum Crystal -->
+			<item id="17623" count="1" chance="1" /> <!-- Earth Wyrm Heart Ring -->
+			<item id="26440" count="1" chance="1" /> <!-- Shadow Fighter Box -->
+			<item id="26445" count="1" chance="1" /> <!-- Shadow Retributer Box -->
+			<item id="26442" count="1" chance="1" /> <!-- Shadow Thrower Box -->
+			<item id="26441" count="1" chance="1" /> <!-- Shadow Stormer Box -->
+			<item id="26438" count="1" chance="1" /> <!-- Shadow Cutter Box -->
+			<item id="26439" count="1" chance="1" /> <!-- Shadow Slasher Box -->
+			<item id="26437" count="1" chance="1" /> <!-- Shadow Shaper Box -->
+			<item id="26444" count="1" chance="1" /> <!-- Shadow Buster Box -->
+			<item id="26443" count="1" chance="1" /> <!-- Shadow Shooter Box -->
+			<item id="46395" count="3" chance="1" /> <!-- Shadow Ingot -->
+			<item id="48213" count="1" chance="1" /> <!-- Radiant Circlet Upgrade Stone -->
+			<item id="48212" count="1" chance="1" /> <!-- Noble Circlet Upgrade Stone -->
+			<item id="48495" count="1" chance="1" /> <!-- Noble Leather Upgrade Stone -->
+			<item id="48496" count="1" chance="1" /> <!-- Radiant Rind Upgrade Stone -->
+			<item id="28453" count="1" chance="1" /> <!-- Sayha's Energy -->
+			<item id="28454" count="1" chance="1" /> <!-- Sayha's Blessing -->
+			<item id="46553" count="1" chance="1" /> <!-- Mystic Soul Crystal -->
+			<item id="34627" count="3" chance="1" /> <!-- Scroll: Enchant Elemental Shirt -->
+			<item id="48213" count="1" chance="1" /> <!-- Radiant Circlet Upgrade Stone -->
+			<item id="48212" count="1" chance="1" /> <!-- Noble Circlet Upgrade Stone -->
+			<item id="48495" count="1" chance="1" /> <!-- Noble Leather Upgrade Stone -->
+			<item id="48496" count="1" chance="1" /> <!-- Radiant Rind Upgrade Stone -->
+			<item id="35569" count="10" chance="1" /> <!-- Bloody Armor Enchancement Stone -->
+			<item id="35568" count="10" chance="1" /> <!-- Bloody Weapon Enchancement Stone -->
+			<item id="35566" count="10" chance="1" /> <!-- Dark Weapon Enchancement Stone -->
+			<item id="35567" count="10" chance="1" /> <!-- Dark Armor Enchancement Stone -->
+			<item id="8191" count="1" chance="1" /> <!-- Frintezza Necklace -->
+			<item id="46079" count="1" chance="1" /> <!-- Kelbim Fragment -->
+			<item id="47885" count="1" chance="1" /> <!-- Insane Kelbim Fragment -->
+			<item id="35667" count="1" chance="1" /> <!-- Tauti Fragment -->
+			<item id="47884" count="1" chance="1" /> <!-- Frenzied Tauti Fragment -->
+			<item id="23605" count="1" chance="1" /> <!-- SP Rune 50% Pack (1-Hour) -->
+			<item id="22614" count="1" chance="1" /> <!-- XP Rune 50% Pack (1-Hour) -->
+			<item id="37731" count="1" chance="2.7" /> <!-- Dandy's Scroll: Challenge -->
+			<item id="37729" count="1" chance="2.7" /> <!-- Dandy's Scroll: Faith  -->
+			<item id="37730" count="1" chance="2.7" /> <!-- Dandy's Scroll: Passion -->
+			<item id="45415" count="1" chance="2.7" /> <!-- Dandy's Home Run Ball -->
+			<item id="47663" count="1" chance="2.7" /> <!-- Freya's Art of Seduction -->
+			<item id="48830" count="1" chance="2.7" /> <!-- Freya's Ice Rose -->
+			<item id="37928" count="1" chance="2.7" /> <!-- PA Art of Seduction  -->
+			<item id="47665" count="1" chance="2.7" /> <!-- Pa'agrio's Blessing -->
+			<item id="40056" count="1" chance="2.7" /> <!-- Mysterious Wind Scroll -->
+		</modify_reward>
+	</luckygame>
+</list>

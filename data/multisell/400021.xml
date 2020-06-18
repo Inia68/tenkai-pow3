@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list maintainEnchantment="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="../xsd/multisell.xsd">
+    <npcs>
+        <npc>40004</npc> <!-- Luxury Npc -->
+    </npcs>
+
+    <item>
+        <ingredient count="500" id="4355"/>    <!-- Blue Eva -->
+        <production count="1" id="28486"/>        <!-- Magnificient Brooch Lv. 1 -->
+    </item>
+
+</list>

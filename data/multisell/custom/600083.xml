@@ -1,0 +1,553 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/multisell.xsd">
+	<npcs>
+		<npc>31126</npc> <!-- Blacksmith of Mammon -->
+	</npcs>
+
+	<!-- Baium's Soul Ring -->
+	<item>
+		<ingredient count="1" id="47468" /> <!-- Baium's Soul Ring (CON) -->
+		<ingredient count="10" id="35563" /> <!-- Giant's Energy -->
+		<ingredient count="15" id="47494" /> <!-- Selenite-->
+		<production count="1" id="47466" /> <!-- Baium's Soul Ring (STR) -->
+	</item>
+	<item>
+		<ingredient count="1" id="47467" /> <!-- Baium's Soul Ring (INT) -->
+		<ingredient count="10" id="35563" /> <!-- Giant's Energy -->
+		<ingredient count="15" id="47494" /> <!-- Selenite-->
+		<production count="1" id="47466" /> <!-- Baium's Soul Ring (STR) -->
+	</item>
+	<item>
+		<ingredient count="1" id="37521" /> <!-- Baium's Soul Ring  -->
+		<ingredient count="20" id="35563" /> <!-- Giant's Energy -->
+		<ingredient count="30" id="47494" /> <!-- Selenite-->
+		<production count="1" id="47466" /> <!-- Baium's Soul Ring (STR) -->
+	</item>
+
+	<item>
+		<ingredient count="1" id="47468" /> <!-- Baium's Soul Ring (CON) -->
+		<ingredient count="10" id="35563" /> <!-- Giant's Energy -->
+		<ingredient count="15" id="47494" /> <!-- Selenite-->
+		<production count="1" id="47467" /> <!-- Baium's Soul Ring (INT) -->
+	</item>
+	<item>
+		<ingredient count="1" id="47466" /> <!-- Baium's Soul Ring (STR) -->
+		<ingredient count="10" id="35563" /> <!-- Giant's Energy -->
+		<ingredient count="15" id="47494" /> <!-- Selenite-->
+		<production count="1" id="47467" /> <!-- Baium's Soul Ring (INT) -->
+	</item>
+	<item>
+		<ingredient count="1" id="37521" /> <!-- Baium's Soul Ring  -->
+		<ingredient count="20" id="35563" /> <!-- Giant's Energy -->
+		<ingredient count="30" id="47494" /> <!-- Selenite-->
+		<production count="1" id="47467" /> <!-- Baium's Soul Ring (INT) -->
+	</item>
+
+	<item>
+		<ingredient count="1" id="47467" /> <!-- Baium's Soul Ring (INT) -->
+		<ingredient count="10" id="35563" /> <!-- Giant's Energy -->
+		<ingredient count="15" id="47494" /> <!-- Selenite-->
+		<production count="1" id="47468" /> <!-- Baium's Soul Ring (CON) -->
+	</item>
+	<item>
+		<ingredient count="1" id="47466" /> <!-- Baium's Soul Ring (STR) -->
+		<ingredient count="10" id="35563" /> <!-- Giant's Energy -->
+		<ingredient count="15" id="47494" /> <!-- Selenite-->
+		<production count="1" id="47468" /> <!-- Baium's Soul Ring (CON) -->
+	</item>
+	<item>
+		<ingredient count="1" id="37521" /> <!-- Baium's Soul Ring  -->
+		<ingredient count="20" id="35563" /> <!-- Giant's Energy -->
+		<ingredient count="30" id="47494" /> <!-- Selenite-->
+		<production count="1" id="47468" /> <!-- Baium's Soul Ring (CON) -->
+	</item>
+
+	<!-- Blessed Valakas Necklace -->
+	<item>
+		<ingredient count="1" id="47489" /> <!-- Blessed Valakas Necklace (Barrier) -->
+		<ingredient count="10" id="35563" /> <!-- Giant's Energy -->
+		<ingredient count="15" id="47494" /> <!-- Selenite-->
+		<production count="1" id="47487" /> <!-- Blessed Valakas Necklace (Body) -->
+	</item>
+	<item>
+		<ingredient count="1" id="47488" /> <!-- Blessed Valakas Necklace (Mind) -->
+		<ingredient count="10" id="35563" /> <!-- Giant's Energy -->
+		<ingredient count="15" id="47494" /> <!-- Selenite-->
+		<production count="1" id="47487" /> <!-- Blessed Valakas Necklace (Body) -->
+	</item>
+	<item>
+		<ingredient count="1" id="19464" /> <!-- Blessed Valakas Necklace  -->
+		<ingredient count="20" id="35563" /> <!-- Giant's Energy -->
+		<ingredient count="30" id="47494" /> <!-- Selenite-->
+		<production count="1" id="47487" /> <!-- Blessed Valakas Necklace (Body) -->
+	</item>
+
+	<item>
+		<ingredient count="1" id="47489" /> <!-- Blessed Valakas Necklace (Barrier) -->
+		<ingredient count="10" id="35563" /> <!-- Giant's Energy -->
+		<ingredient count="15" id="47494" /> <!-- Selenite-->
+		<production count="1" id="47488" /> <!-- Blessed Valakas Necklace (Mind) -->
+	</item>
+	<item>
+		<ingredient count="1" id="47487" /> <!-- Blessed Valakas Necklace (Body) -->
+		<ingredient count="10" id="35563" /> <!-- Giant's Energy -->
+		<ingredient count="15" id="47494" /> <!-- Selenite-->
+		<production count="1" id="47488" /> <!-- Blessed Valakas Necklace (Mind) -->
+	</item>
+	<item>
+		<ingredient count="1" id="19464" /> <!-- Blessed Valakas Necklace  -->
+		<ingredient count="20" id="35563" /> <!-- Giant's Energy -->
+		<ingredient count="30" id="47494" /> <!-- Selenite-->
+		<production count="1" id="47488" /> <!-- Blessed Valakas Necklace (Mind) -->
+	</item>
+
+	<item>
+		<ingredient count="1" id="47488" /> <!-- Blessed Valakas Necklace (Mind) -->
+		<ingredient count="10" id="35563" /> <!-- Giant's Energy -->
+		<ingredient count="15" id="47494" /> <!-- Selenite-->
+		<production count="1" id="47489" /> <!-- Blessed Valakas Necklace (Barrier) -->
+	</item>
+	<item>
+		<ingredient count="1" id="47487" /> <!-- Blessed Valakas Necklace (Body) -->
+		<ingredient count="10" id="35563" /> <!-- Giant's Energy -->
+		<ingredient count="15" id="47494" /> <!-- Selenite-->
+		<production count="1" id="47489" /> <!-- Blessed Valakas Necklace (Barrier) -->
+	</item>
+	<item>
+		<ingredient count="1" id="19464" /> <!--Blessed Valakas Necklace  -->
+		<ingredient count="20" id="35563" /> <!-- Giant's Energy -->
+		<ingredient count="30" id="47494" /> <!-- Selenite-->
+		<production count="1" id="47489" /> <!-- Blessed Valakas Necklace (Barrier) -->
+	</item>
+
+	<!-- Frintezza's Soul Necklace -->
+	<item>
+		<ingredient count="1" id="47471" /> <!-- Frintezza's Soul Necklace (Barrier) -->
+		<ingredient count="10" id="35563" /> <!-- Giant's Energy -->
+		<ingredient count="15" id="47494" /> <!-- Selenite-->
+		<production count="1" id="47469" /> <!-- Frintezza's Soul Necklace (Body) -->
+	</item>
+	<item>
+		<ingredient count="1" id="47470" /> <!-- Frintezza's Soul Necklace (Mind) -->
+		<ingredient count="10" id="35563" /> <!-- Giant's Energy -->
+		<ingredient count="15" id="47494" /> <!-- Selenite-->
+		<production count="1" id="47469" /> <!-- Frintezza's Soul Necklace (Body) -->
+	</item>
+	<item>
+		<ingredient count="1" id="37522" /> <!-- Frintezza's Soul Necklace  -->
+		<ingredient count="20" id="35563" /> <!-- Giant's Energy -->
+		<ingredient count="30" id="47494" /> <!-- Selenite-->
+		<production count="1" id="47469" /> <!-- Frintezza's Soul Necklace (Body) -->
+	</item>
+
+	<item>
+		<ingredient count="1" id="47471" /> <!-- Frintezza's Soul Necklace (Barrier) -->
+		<ingredient count="10" id="35563" /> <!-- Giant's Energy -->
+		<ingredient count="15" id="47494" /> <!-- Selenite-->
+		<production count="1" id="47470" /> <!-- Frintezza's Soul Necklace (Mind) -->
+	</item>
+	<item>
+		<ingredient count="1" id="47469" /> <!-- Frintezza's Soul Necklace (Body) -->
+		<ingredient count="10" id="35563" /> <!-- Giant's Energy -->
+		<ingredient count="15" id="47494" /> <!-- Selenite-->
+		<production count="1" id="47470" /> <!-- Frintezza's Soul Necklace (Mind) -->
+	</item>
+	<item>
+		<ingredient count="1" id="37522" /> <!-- Frintezza's Soul Necklace  -->
+		<ingredient count="20" id="35563" /> <!-- Giant's Energy -->
+		<ingredient count="30" id="47494" /> <!-- Selenite-->
+		<production count="1" id="47470" /> <!-- Frintezza's Soul Necklace (Mind) -->
+	</item>
+
+	<item>
+		<ingredient count="1" id="47470" /> <!-- Frintezza's Soul Necklace (Mind) -->
+		<ingredient count="10" id="35563" /> <!-- Giant's Energy -->
+		<ingredient count="15" id="47494" /> <!-- Selenite-->
+		<production count="1" id="47471" /> <!-- Frintezza's Soul Necklace (Barrier) -->
+	</item>
+	<item>
+		<ingredient count="1" id="47469" /> <!-- Frintezza's Soul Necklace (Body) -->
+		<ingredient count="10" id="35563" /> <!-- Giant's Energy -->
+		<ingredient count="15" id="47494" /> <!-- Selenite-->
+		<production count="1" id="47471" /> <!-- Frintezza's Soul Necklace (Barrier) -->
+	</item>
+	<item>
+		<ingredient count="1" id="37522" /> <!-- Frintezza's Soul Necklace  -->
+		<ingredient count="20" id="35563" /> <!-- Giant's Energy -->
+		<ingredient count="30" id="47494" /> <!-- Selenite-->
+		<production count="1" id="47471" /> <!-- Frintezza's Soul Necklace (Barrier) -->
+	</item>
+
+	<!-- Queen Ant's Soul Ring -->
+	<item>
+		<ingredient count="1" id="47474" /> <!-- Queen Ant's Soul Ring (CON) -->
+		<ingredient count="10" id="35563" /> <!-- Giant's Energy -->
+		<ingredient count="15" id="47494" /> <!-- Selenite-->
+		<production count="1" id="47472" /> <!-- Queen Ant's Soul Ring (STR) -->
+	</item>
+	<item>
+		<ingredient count="1" id="47473" /> <!-- Queen Ant's Soul Ring (INT) -->
+		<ingredient count="10" id="35563" /> <!-- Giant's Energy -->
+		<ingredient count="15" id="47494" /> <!-- Selenite-->
+		<production count="1" id="47472" /> <!-- Queen Ant's Soul Ring (STR) -->
+	</item>
+	<item>
+		<ingredient count="1" id="36254" /> <!-- Queen Ant's Soul Ring  -->
+		<ingredient count="20" id="35563" /> <!-- Giant's Energy -->
+		<ingredient count="30" id="47494" /> <!-- Selenite-->
+		<production count="1" id="47472" /> <!-- Queen Ant's Soul Ring (STR) -->
+	</item>
+
+	<item>
+		<ingredient count="1" id="47474" /> <!-- Queen Ant's Soul Ring (CON) -->
+		<ingredient count="10" id="35563" /> <!-- Giant's Energy -->
+		<ingredient count="15" id="47494" /> <!-- Selenite-->
+		<production count="1" id="47473" /> <!-- Queen Ant's Soul Ring (INT) -->
+	</item>
+	<item>
+		<ingredient count="1" id="47472" /> <!-- Queen Ant's Soul Ring (STR) -->
+		<ingredient count="10" id="35563" /> <!-- Giant's Energy -->
+		<ingredient count="15" id="47494" /> <!-- Selenite-->
+		<production count="1" id="47473" /> <!-- Queen Ant's Soul Ring (INT) -->
+	</item>
+	<item>
+		<ingredient count="1" id="36254" /> <!-- Queen Ant's Soul Ring  -->
+		<ingredient count="20" id="35563" /> <!-- Giant's Energy -->
+		<ingredient count="30" id="47494" /> <!-- Selenite-->
+		<production count="1" id="47473" /> <!-- Queen Ant's Soul Ring (INT) -->
+	</item>
+
+	<item>
+		<ingredient count="1" id="47473" /> <!-- Queen Ant's Soul Ring (INT) -->
+		<ingredient count="10" id="35563" /> <!-- Giant's Energy -->
+		<ingredient count="15" id="47494" /> <!-- Selenite-->
+		<production count="1" id="47474" /> <!-- Queen Ant's Soul Ring (CON) -->
+	</item>
+	<item>
+		<ingredient count="1" id="47472" /> <!-- Queen Ant's Soul Ring (STR) -->
+		<ingredient count="10" id="35563" /> <!-- Giant's Energy -->
+		<ingredient count="15" id="47494" /> <!-- Selenite-->
+		<production count="1" id="47474" /> <!-- Queen Ant's Soul Ring (CON) -->
+	</item>
+	<item>
+		<ingredient count="1" id="36254" /> <!-- Queen Ant's Soul Ring  -->
+		<ingredient count="20" id="35563" /> <!-- Giant's Energy -->
+		<ingredient count="30" id="47494" /> <!-- Selenite-->
+		<production count="1" id="47474" /> <!-- Queen Ant's Soul Ring (CON) -->
+	</item>
+
+
+	<!-- Orfen's Soul Earring -->
+	<item>
+		<ingredient count="1" id="47477" /> <!-- Orfen's Soul Earring (Pure) -->
+		<ingredient count="10" id="35563" /> <!-- Giant's Energy -->
+		<ingredient count="15" id="47494" /> <!-- Selenite-->
+		<production count="1" id="47475" /> <!-- Orfen's Soul Earring (Shield) -->
+	</item>
+	<item>
+		<ingredient count="1" id="47476" /> <!-- Orfen's Soul Earring (Earth) -->
+		<ingredient count="10" id="35563" /> <!-- Giant's Energy -->
+		<ingredient count="15" id="47494" /> <!-- Selenite-->
+		<production count="1" id="47475" /> <!-- Orfen's Soul Earring (Shield) -->
+	</item>
+	<item>
+		<ingredient count="1" id="36255" /> <!-- Orfen's Soul Earring  -->
+		<ingredient count="20" id="35563" /> <!-- Giant's Energy -->
+		<ingredient count="30" id="47494" /> <!-- Selenite-->
+		<production count="1" id="47475" /> <!-- Orfen's Soul Earring (Shield) -->
+	</item>
+
+	<item>
+		<ingredient count="1" id="47477" /> <!-- Orfen's Soul Earring (Pure) -->
+		<ingredient count="10" id="35563" /> <!-- Giant's Energy -->
+		<ingredient count="15" id="47494" /> <!-- Selenite-->
+		<production count="1" id="47476" /> <!-- Orfen's Soul Earring (Earth) -->
+	</item>
+	<item>
+		<ingredient count="1" id="47475" /> <!-- Orfen's Soul Earring (Shield) -->
+		<ingredient count="10" id="35563" /> <!-- Giant's Energy -->
+		<ingredient count="15" id="47494" /> <!-- Selenite-->
+		<production count="1" id="47476" /> <!-- Orfen's Soul Earring (Earth) -->
+	</item>
+	<item>
+		<ingredient count="1" id="36255" /> <!-- Orfen's Soul Earring  -->
+		<ingredient count="20" id="35563" /> <!-- Giant's Energy -->
+		<ingredient count="30" id="47494" /> <!-- Selenite-->
+		<production count="1" id="47476" /> <!-- Orfen's Soul Earring (Earth) -->
+	</item>
+
+	<item>
+		<ingredient count="1" id="47476" /> <!-- Orfen's Soul Earring (Earth) -->
+		<ingredient count="10" id="35563" /> <!-- Giant's Energy -->
+		<ingredient count="15" id="47494" /> <!-- Selenite-->
+		<production count="1" id="47477" /> <!-- Orfen's Soul Earring (Pure) -->
+	</item>
+	<item>
+		<ingredient count="1" id="47475" /> <!-- Orfen's Soul Earring (Shield) -->
+		<ingredient count="10" id="35563" /> <!-- Giant's Energy -->
+		<ingredient count="15" id="47494" /> <!-- Selenite-->
+		<production count="1" id="47477" /> <!-- Orfen's Soul Earring (Pure) -->
+	</item>
+	<item>
+		<ingredient count="1" id="36255" /> <!-- Orfen's Soul Earring  -->
+		<ingredient count="20" id="35563" /> <!-- Giant's Energy -->
+		<ingredient count="30" id="47494" /> <!-- Selenite-->
+		<production count="1" id="47477" /> <!-- Orfen's Soul Earring (Pure) -->
+	</item>
+
+	<!-- Blessed Antharas Earring -->
+	<item>
+		<ingredient count="1" id="47486" /> <!-- Blessed Antharas Earring (Pure) -->
+		<ingredient count="10" id="35563" /> <!-- Giant's Energy -->
+		<ingredient count="15" id="47494" /> <!-- Selenite-->
+		<production count="1" id="47484" /> <!-- Blessed Antharas Earring (Shield) -->
+	</item>
+	<item>
+		<ingredient count="1" id="47485" /> <!-- Blessed Antharas Earring (Earth) -->
+		<ingredient count="10" id="35563" /> <!-- Giant's Energy -->
+		<ingredient count="15" id="47494" /> <!-- Selenite-->
+		<production count="1" id="47484" /> <!-- Blessed Antharas Earring (Shield) -->
+	</item>
+	<item>
+		<ingredient count="1" id="19463" /> <!--Blessed Antharas Earring  -->
+		<ingredient count="20" id="35563" /> <!-- Giant's Energy -->
+		<ingredient count="30" id="47494" /> <!-- Selenite-->
+		<production count="1" id="47484" /> <!-- Blessed Antharas Earring (Shield) -->
+	</item>
+
+	<item>
+		<ingredient count="1" id="47486" /> <!-- Blessed Antharas Earring (Pure) -->
+		<ingredient count="10" id="35563" /> <!-- Giant's Energy -->
+		<ingredient count="15" id="47494" /> <!-- Selenite-->
+		<production count="1" id="47485" /> <!-- Blessed Antharas Earring (Earth) -->
+	</item>
+	<item>
+		<ingredient count="1" id="47484" /> <!-- Blessed Antharas Earring (Shield) -->
+		<ingredient count="10" id="35563" /> <!-- Giant's Energy -->
+		<ingredient count="15" id="47494" /> <!-- Selenite-->
+		<production count="1" id="47485" /> <!-- Blessed Antharas Earring (Earth) -->
+	</item>
+	<item>
+		<ingredient count="1" id="19463" /> <!-- Blessed Antharas Earring  -->
+		<ingredient count="20" id="35563" /> <!-- Giant's Energy -->
+		<ingredient count="30" id="47494" /> <!-- Selenite-->
+		<production count="1" id="47485" /> <!-- Blessed Antharas Earring (Earth) -->
+	</item>
+
+	<item>
+		<ingredient count="1" id="47485" /> <!-- Blessed Antharas Earring (Earth) -->
+		<ingredient count="10" id="35563" /> <!-- Giant's Energy -->
+		<ingredient count="15" id="47494" /> <!-- Selenite-->
+		<production count="1" id="47486" /> <!-- Blessed Antharas Earring (Pure) -->
+	</item>
+	<item>
+		<ingredient count="1" id="47484" /> <!-- Blessed Antharas Earring (Shield) -->
+		<ingredient count="10" id="35563" /> <!-- Giant's Energy -->
+		<ingredient count="15" id="47494" /> <!-- Selenite-->
+		<production count="1" id="47486" /> <!-- Blessed Antharas Earring (Pure) -->
+	</item>
+	<item>
+		<ingredient count="1" id="19463" /> <!--Blessed Antharas Earring  -->
+		<ingredient count="20" id="35563" /> <!-- Giant's Energy -->
+		<ingredient count="30" id="47494" /> <!-- Selenite-->
+		<production count="1" id="47486" /> <!--Blessed Antharas Earring (Pure) -->
+	</item>
+
+	<!-- Lindvior's Earring -->
+	<item>
+		<ingredient count="1" id="47492" /> <!-- Lindvior's  Earring (Pure) -->
+		<ingredient count="10" id="35563" /> <!-- Giant's Energy -->
+		<ingredient count="15" id="47494" /> <!-- Selenite-->
+		<production count="1" id="47490" /> <!-- Lindvior's  Earring (Shield) -->
+	</item>
+	<item>
+		<ingredient count="1" id="47491" /> <!-- Lindvior's  Earring (Earth) -->
+		<ingredient count="10" id="35563" /> <!-- Giant's Energy -->
+		<ingredient count="15" id="47494" /> <!-- Selenite-->
+		<production count="1" id="47490" /> <!-- Lindvior's  Earring (Shield) -->
+	</item>
+	<item>
+		<ingredient count="1" id="36946" /> <!--Lindvior's Earring  -->
+		<ingredient count="20" id="35563" /> <!-- Giant's Energy -->
+		<ingredient count="30" id="47494" /> <!-- Selenite-->
+		<production count="1" id="47490" /> <!-- Lindvior's  Earring (Shield) -->
+	</item>
+
+	<item>
+		<ingredient count="1" id="47492" /> <!-- Lindvior's  Earring (Pure) -->
+		<ingredient count="10" id="35563" /> <!-- Giant's Energy -->
+		<ingredient count="15" id="47494" /> <!-- Selenite-->
+		<production count="1" id="47491" /> <!-- Lindvior's  Earring (Earth) -->
+	</item>
+	<item>
+		<ingredient count="1" id="47490" /> <!-- Lindvior's  Earring (Shield) -->
+		<ingredient count="10" id="35563" /> <!-- Giant's Energy -->
+		<ingredient count="15" id="47494" /> <!-- Selenite-->
+		<production count="1" id="47491" /> <!-- Lindvior's  Earring (Earth) -->
+	</item>
+	<item>
+		<ingredient count="1" id="36946" /> <!-- Lindvior's  Earring  -->
+		<ingredient count="20" id="35563" /> <!-- Giant's Energy -->
+		<ingredient count="30" id="47494" /> <!-- Selenite-->
+		<production count="1" id="47491" /> <!-- Lindvior's  Earring (Earth) -->
+	</item>
+
+	<item>
+		<ingredient count="1" id="47491" /> <!-- Lindvior's  Earring (Earth) -->
+		<ingredient count="10" id="35563" /> <!-- Giant's Energy -->
+		<ingredient count="15" id="47494" /> <!-- Selenite-->
+		<production count="1" id="47492" /> <!-- Lindvior's  Earring (Pure) -->
+	</item>
+	<item>
+		<ingredient count="1" id="47490" /> <!-- Lindvior's  Earring (Shield) -->
+		<ingredient count="10" id="35563" /> <!-- Giant's Energy -->
+		<ingredient count="15" id="47494" /> <!-- Selenite-->
+		<production count="1" id="47492" /> <!-- Lindvior's  Earring (Pure) -->
+	</item>
+	<item>
+		<ingredient count="1" id="36946" /> <!-- Lindvior's  Earring  -->
+		<ingredient count="20" id="35563" /> <!-- Giant's Energy -->
+		<ingredient count="30" id="47494" /> <!-- Selenite-->
+		<production count="1" id="47492" /> <!-- Lindvior's  Earring (Pure) -->
+	</item>
+
+	<!-- Ruler's Ring of Authority -->
+	<item>
+		<ingredient count="1" id="47480" /> <!-- Ruler's Ring of Authority  (CON) -->
+		<ingredient count="10" id="35563" /> <!-- Giant's Energy -->
+		<ingredient count="15" id="47494" /> <!-- Selenite-->
+		<production count="1" id="47478" /> <!-- Ruler's Ring of Authority  (STR) -->
+	</item>
+	<item>
+		<ingredient count="1" id="47479" /> <!-- Ruler's Ring of Authority  (INT) -->
+		<ingredient count="10" id="35563" /> <!-- Giant's Energy -->
+		<ingredient count="15" id="47494" /> <!-- Selenite-->
+		<production count="1" id="47478" /> <!-- Ruler's Ring of Authority  (STR) -->
+	</item>
+	<item>
+		<ingredient count="1" id="47216" /> <!-- Ruler's Ring of Authority   -->
+		<ingredient count="20" id="35563" /> <!-- Giant's Energy -->
+		<ingredient count="30" id="47494" /> <!-- Selenite-->
+		<production count="1" id="47478" /> <!-- Ruler's Ring of Authority  (STR) -->
+	</item>
+
+	<item>
+		<ingredient count="1" id="47480" /> <!-- Ruler's Ring of Authority (CON) -->
+		<ingredient count="10" id="35563" /> <!-- Giant's Energy -->
+		<ingredient count="15" id="47494" /> <!-- Selenite-->
+		<production count="1" id="47479" /> <!-- Ruler's Ring of Authority  (INT) -->
+	</item>
+	<item>
+		<ingredient count="1" id="47478" /> <!-- Ruler's Ring of Authority  (STR) -->
+		<ingredient count="10" id="35563" /> <!-- Giant's Energy -->
+		<ingredient count="15" id="47494" /> <!-- Selenite-->
+		<production count="1" id="47479" /> <!-- Ruler's Ring of Authority  (INT) -->
+	</item>
+	<item>
+		<ingredient count="1" id="47216" /> <!-- Ruler's Ring of Authority   -->
+		<ingredient count="20" id="35563" /> <!-- Giant's Energy -->
+		<ingredient count="30" id="47494" /> <!-- Selenite-->
+		<production count="1" id="47479" /> <!-- Ruler's Ring of Authority  (INT) -->
+	</item>
+
+	<item>
+		<ingredient count="1" id="47479" /> <!-- Ruler's Ring of Authority  (INT) -->
+		<ingredient count="10" id="35563" /> <!-- Giant's Energy -->
+		<ingredient count="15" id="47494" /> <!-- Selenite-->
+		<production count="1" id="47480" /> <!-- Ruler's Ring of Authority  (CON) -->
+	</item>
+	<item>
+		<ingredient count="1" id="47478" /> <!-- Ruler's Ring of Authority (STR) -->
+		<ingredient count="10" id="35563" /> <!-- Giant's Energy -->
+		<ingredient count="15" id="47494" /> <!-- Selenite-->
+		<production count="1" id="47480" /> <!-- Ruler's Ring of Authority  (CON) -->
+	</item>
+	<item>
+		<ingredient count="1" id="47216" /> <!-- Ruler's Ring of Authority   -->
+		<ingredient count="20" id="35563" /> <!-- Giant's Energy -->
+		<ingredient count="30" id="47494" /> <!-- Selenite-->
+		<production count="1" id="47480" /> <!-- Ruler's Ring of Authority  (CON) -->
+	</item>
+
+	<!-- Ring of the Truth-Seeker -->
+	<item>
+		<ingredient count="1" id="47483" /> <!-- Ring of the Truth-Seeker (CON) -->
+		<ingredient count="10" id="35563" /> <!-- Giant's Energy -->
+		<ingredient count="15" id="47494" /> <!-- Selenite-->
+		<production count="1" id="47482" /> <!-- Ring of the Truth-Seeker  (STR) -->
+	</item>
+	<item>
+		<ingredient count="1" id="47482" /> <!-- Ring of the Truth-Seeker (INT) -->
+		<ingredient count="10" id="35563" /> <!-- Giant's Energy -->
+		<ingredient count="15" id="47494" /> <!-- Selenite-->
+		<production count="1" id="47481" /> <!-- Ring of the Truth-Seeker (STR) -->
+	</item>
+	<item>
+		<ingredient count="1" id="47218" /> <!-- Ring of the Truth-Seeker  -->
+		<ingredient count="20" id="35563" /> <!-- Giant's Energy -->
+		<ingredient count="30" id="47494" /> <!-- Selenite-->
+		<production count="1" id="47481" /> <!-- Ring of the Truth-Seeker (STR) -->
+	</item>
+
+	<item>
+		<ingredient count="1" id="47483" /> <!-- Ring of the Truth-Seeker (CON) -->
+		<ingredient count="10" id="35563" /> <!-- Giant's Energy -->
+		<ingredient count="15" id="47494" /> <!-- Selenite-->
+		<production count="1" id="47482" /> <!-- Ring of the Truth-Seeker  (INT) -->
+	</item>
+	<item>
+		<ingredient count="1" id="47481" /> <!-- Ring of the Truth-Seeker  (STR) -->
+		<ingredient count="10" id="35563" /> <!-- Giant's Energy -->
+		<ingredient count="15" id="47494" /> <!-- Selenite-->
+		<production count="1" id="47482" /> <!-- Ring of the Truth-Seeker (INT) -->
+	</item>
+	<item>
+		<ingredient count="1" id="47218" /> <!-- Ring of the Truth-Seeker   -->
+		<ingredient count="20" id="35563" /> <!-- Giant's Energy -->
+		<ingredient count="30" id="47494" /> <!-- Selenite-->
+		<production count="1" id="47482" /> <!-- Ring of the Truth-Seeker  (INT) -->
+	</item>
+
+	<item>
+		<ingredient count="1" id="47482" /> <!-- Ring of the Truth-Seeker  (INT) -->
+		<ingredient count="10" id="35563" /> <!-- Giant's Energy -->
+		<ingredient count="15" id="47494" /> <!-- Selenite-->
+		<production count="1" id="47483" /> <!-- Ring of the Truth-Seeker (CON) -->
+	</item>
+	<item>
+		<ingredient count="1" id="47481" /> <!-- Ring of the Truth-Seeker (STR) -->
+		<ingredient count="10" id="35563" /> <!-- Giant's Energy -->
+		<ingredient count="15" id="47494" /> <!-- Selenite-->
+		<production count="1" id="47483" /> <!-- Ring of the Truth-Seeker  (CON) -->
+	</item>
+	<item>
+		<ingredient count="1" id="47218" /> <!-- Ring of the Truth-Seeker   -->
+		<ingredient count="20" id="35563" /> <!-- Giant's Energy -->
+		<ingredient count="30" id="47494" /> <!-- Selenite-->
+		<production count="1" id="47483" /> <!-- Ring of the Truth-Seeker  (CON) -->
+	</item>
+
+
+	<!-- Fallen Angel's Ring -->
+	<!-- TODO Items charisma level 1 2 3 dont exist -->
+	<item>
+		<ingredient count="1" id="48864" /> <!-- Fallen Angel's Ring -->
+		<ingredient count="20" id="35563" /> <!-- Giant's Energy -->
+		<ingredient count="10" id="47494" /> <!-- Selenite-->
+		<production count="1" id="81364" /> <!-- Fallen Angel's Ring Charisma Level 1 -->
+	</item>
+	<item>
+		<ingredient count="1" id="81364" /> <!-- Fallen Angel's Ring Charisma Level 1 -->
+		<ingredient count="20" id="35563" /> <!-- Giant's Energy -->
+		<ingredient count="10" id="47494" /> <!-- Selenite-->
+		<production count="1" id="81365" /> <!-- Fallen Angel's Ring Charisma Level 2 -->
+	</item>
+	<item>
+		<ingredient count="1" id="81365" /> <!-- Fallen Angel's Ring Charisma Level 2 -->
+		<ingredient count="20" id="35563" /> <!-- Giant's Energy -->
+		<ingredient count="10" id="47494" /> <!-- Selenite-->
+		<production count="1" id="81366" /> <!-- Fallen Angel's Ring Charisma Level 3 -->
+	</item>
+
+</list>
+

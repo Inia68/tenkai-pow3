@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/spawns.xsd">
+	<spawn name="22_14">
+		<group>
+			<npc id="31049" x="91272" y="-117192" z="-3941" heading="7832" respawnTime="60sec" /> <!-- Pepper -->
+		</group>
+	</spawn>
+</list>

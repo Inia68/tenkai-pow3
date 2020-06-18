@@ -1,0 +1,224 @@
+<changelist name="Uncommitted_changes_before_Update_at_5_12_2020_2_12_PM_[Default_Changelist]" date="1589285567927" recycled="false" toDelete="true">
+  <option name="PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_5_12_2020_2_12_PM_[Default_Changelist]/shelved.patch" />
+  <option name="DESCRIPTION" value="Uncommitted changes before Update at 5/12/2020 2:12 PM [Default Changelist]" />
+  <binary>
+    <option name="BEFORE_PATH" value="out/production/Test/handlers/bypasshandlers/UpgradeEquipment.class" />
+    <option name="AFTER_PATH" value="out/production/Test/handlers/bypasshandlers/UpgradeEquipment.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_5_12_2020_2_12_PM_[Default_Changelist]/UpgradeEquipment.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="out/production/Test/org/l2jmobius/gameserver/model/World.class" />
+    <option name="AFTER_PATH" value="out/production/Test/org/l2jmobius/gameserver/model/World.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_5_12_2020_2_12_PM_[Default_Changelist]/World.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="out/production/Test/org/l2jmobius/loginserver/network/clientpackets/RequestAuthLogin.class" />
+    <option name="AFTER_PATH" value="out/production/Test/org/l2jmobius/loginserver/network/clientpackets/RequestAuthLogin.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_5_12_2020_2_12_PM_[Default_Changelist]/RequestAuthLogin.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="out/production/Test/org/l2jmobius/gameserver/model/World$SingletonHolder.class" />
+    <option name="AFTER_PATH" value="out/production/Test/org/l2jmobius/gameserver/model/World$SingletonHolder.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_5_12_2020_2_12_PM_[Default_Changelist]/World$SingletonHolder.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="out/production/Test/org/l2jmobius/gameserver/network/serverpackets/CharInfo.class" />
+    <option name="AFTER_PATH" value="out/production/Test/org/l2jmobius/gameserver/network/serverpackets/CharInfo.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_5_12_2020_2_12_PM_[Default_Changelist]/CharInfo.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="out/production/Test/org/l2jmobius/gameserver/network/serverpackets/sessionzones/TimedHuntingZoneList.class" />
+    <option name="AFTER_PATH" value="out/production/Test/org/l2jmobius/gameserver/network/serverpackets/sessionzones/TimedHuntingZoneList.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_5_12_2020_2_12_PM_[Default_Changelist]/TimedHuntingZoneList.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="out/production/Test/org/l2jmobius/gameserver/network/clientpackets/EnterWorld.class" />
+    <option name="AFTER_PATH" value="out/production/Test/org/l2jmobius/gameserver/network/clientpackets/EnterWorld.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_5_12_2020_2_12_PM_[Default_Changelist]/EnterWorld.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="out/production/Test/org/l2jmobius/gameserver/network/serverpackets/UserInfo.class" />
+    <option name="AFTER_PATH" value="out/production/Test/org/l2jmobius/gameserver/network/serverpackets/UserInfo.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_5_12_2020_2_12_PM_[Default_Changelist]/UserInfo.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="out/production/Test/org/l2jmobius/gameserver/network/clientpackets/MoveBackwardToLocation.class" />
+    <option name="AFTER_PATH" value="out/production/Test/org/l2jmobius/gameserver/network/clientpackets/MoveBackwardToLocation.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_5_12_2020_2_12_PM_[Default_Changelist]/MoveBackwardToLocation.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="out/production/Test/handlers/actionhandlers/PlayerInstanceAction.class" />
+    <option name="AFTER_PATH" value="out/production/Test/handlers/actionhandlers/PlayerInstanceAction.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_5_12_2020_2_12_PM_[Default_Changelist]/PlayerInstanceAction.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="out/production/Test/org/l2jmobius/gameserver/model/base/SubClass.class" />
+    <option name="AFTER_PATH" value="out/production/Test/org/l2jmobius/gameserver/model/base/SubClass.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_5_12_2020_2_12_PM_[Default_Changelist]/SubClass.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="out/production/Test/org/l2jmobius/gameserver/model/base/ClassInfo.class" />
+    <option name="AFTER_PATH" value="out/production/Test/org/l2jmobius/gameserver/model/base/ClassInfo.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_5_12_2020_2_12_PM_[Default_Changelist]/ClassInfo.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="out/production/Test/org/l2jmobius/gameserver/enums/InstanceType.class" />
+    <option name="AFTER_PATH" value="out/production/Test/org/l2jmobius/gameserver/enums/InstanceType.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_5_12_2020_2_12_PM_[Default_Changelist]/InstanceType.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="out/production/Test/org/l2jmobius/loginserver/LoginController.class" />
+    <option name="AFTER_PATH" value="out/production/Test/org/l2jmobius/loginserver/LoginController.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_5_12_2020_2_12_PM_[Default_Changelist]/LoginController.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="out/production/Test/org/l2jmobius/gameserver/model/actor/instance/PlayerInstance$1.class" />
+    <option name="AFTER_PATH" value="out/production/Test/org/l2jmobius/gameserver/model/actor/instance/PlayerInstance$1.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_5_12_2020_2_12_PM_[Default_Changelist]/PlayerInstance$1.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="out/production/Test/org/l2jmobius/gameserver/data/xml/impl/ClassListData.class" />
+    <option name="AFTER_PATH" value="out/production/Test/org/l2jmobius/gameserver/data/xml/impl/ClassListData.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_5_12_2020_2_12_PM_[Default_Changelist]/ClassListData.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="out/production/Test/org/l2jmobius/gameserver/model/itemcontainer/Inventory.class" />
+    <option name="AFTER_PATH" value="out/production/Test/org/l2jmobius/gameserver/model/itemcontainer/Inventory.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_5_12_2020_2_12_PM_[Default_Changelist]/Inventory.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="out/production/Test/org/l2jmobius/loginserver/LoginController$PurgeThread.class" />
+    <option name="AFTER_PATH" value="out/production/Test/org/l2jmobius/loginserver/LoginController$PurgeThread.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_5_12_2020_2_12_PM_[Default_Changelist]/LoginController$PurgeThread.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="out/production/Test/org/l2jmobius/gameserver/network/loginserverpackets/login/PlayerAuthResponse.class" />
+    <option name="AFTER_PATH" value="out/production/Test/org/l2jmobius/gameserver/network/loginserverpackets/login/PlayerAuthResponse.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_5_12_2020_2_12_PM_[Default_Changelist]/PlayerAuthResponse.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="out/production/Test/org/l2jmobius/gameserver/events/instanced/EventsManager.class" />
+    <option name="AFTER_PATH" value="out/production/Test/org/l2jmobius/gameserver/events/instanced/EventsManager.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_5_12_2020_2_12_PM_[Default_Changelist]/EventsManager.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="out/production/Test/org/l2jmobius/gameserver/network/clientpackets/MoveBackwardToLocation$1.class" />
+    <option name="AFTER_PATH" value="out/production/Test/org/l2jmobius/gameserver/network/clientpackets/MoveBackwardToLocation$1.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_5_12_2020_2_12_PM_[Default_Changelist]/MoveBackwardToLocation$1.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="out/production/Test/org/l2jmobius/gameserver/model/items/enchant/AbstractEnchantItem.class" />
+    <option name="AFTER_PATH" value="out/production/Test/org/l2jmobius/gameserver/model/items/enchant/AbstractEnchantItem.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_5_12_2020_2_12_PM_[Default_Changelist]/AbstractEnchantItem.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="out/production/Test/handlers/MasterHandler.class" />
+    <option name="AFTER_PATH" value="out/production/Test/handlers/MasterHandler.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_5_12_2020_2_12_PM_[Default_Changelist]/MasterHandler.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="out/production/Test/org/l2jmobius/Config.class" />
+    <option name="AFTER_PATH" value="out/production/Test/org/l2jmobius/Config.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_5_12_2020_2_12_PM_[Default_Changelist]/Config.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="out/production/Test/org/l2jmobius/gameserver/LoginServerThread.class" />
+    <option name="AFTER_PATH" value="out/production/Test/org/l2jmobius/gameserver/LoginServerThread.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_5_12_2020_2_12_PM_[Default_Changelist]/LoginServerThread.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="out/production/Test/org/l2jmobius/gameserver/network/clientpackets/UseItem.class" />
+    <option name="AFTER_PATH" value="out/production/Test/org/l2jmobius/gameserver/network/clientpackets/UseItem.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_5_12_2020_2_12_PM_[Default_Changelist]/UseItem.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="out/production/Test/org/l2jmobius/gameserver/model/actor/stat/PlayableStat.class" />
+    <option name="AFTER_PATH" value="out/production/Test/org/l2jmobius/gameserver/model/actor/stat/PlayableStat.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_5_12_2020_2_12_PM_[Default_Changelist]/PlayableStat.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="out/production/Test/org/l2jmobius/gameserver/network/clientpackets/CharacterCreate.class" />
+    <option name="AFTER_PATH" value="out/production/Test/org/l2jmobius/gameserver/network/clientpackets/CharacterCreate.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_5_12_2020_2_12_PM_[Default_Changelist]/CharacterCreate.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="out/production/Test/org/l2jmobius/gameserver/network/clientpackets/RequestBypassToServer.class" />
+    <option name="AFTER_PATH" value="out/production/Test/org/l2jmobius/gameserver/network/clientpackets/RequestBypassToServer.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_5_12_2020_2_12_PM_[Default_Changelist]/RequestBypassToServer.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="out/production/Test/org/l2jmobius/loginserver/network/IncomingPackets.class" />
+    <option name="AFTER_PATH" value="out/production/Test/org/l2jmobius/loginserver/network/IncomingPackets.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_5_12_2020_2_12_PM_[Default_Changelist]/IncomingPackets.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="out/production/Test/org/l2jmobius/gameserver/util/FloodProtectors.class" />
+    <option name="AFTER_PATH" value="out/production/Test/org/l2jmobius/gameserver/util/FloodProtectors.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_5_12_2020_2_12_PM_[Default_Changelist]/FloodProtectors.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="out/production/Test/org/l2jmobius/gameserver/util/xml/XmlDocument.class" />
+    <option name="AFTER_PATH" value="out/production/Test/org/l2jmobius/gameserver/util/xml/XmlDocument.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_5_12_2020_2_12_PM_[Default_Changelist]/XmlDocument.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="out/production/Test/org/l2jmobius/gameserver/data/xml/impl/NpcData.class" />
+    <option name="AFTER_PATH" value="out/production/Test/org/l2jmobius/gameserver/data/xml/impl/NpcData.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_5_12_2020_2_12_PM_[Default_Changelist]/NpcData.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="out/production/Test/org/l2jmobius/Config$IPConfigData.class" />
+    <option name="AFTER_PATH" value="out/production/Test/org/l2jmobius/Config$IPConfigData.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_5_12_2020_2_12_PM_[Default_Changelist]/Config$IPConfigData.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="out/production/Test/org/l2jmobius/gameserver/data/xml/impl/ClassListData$SingletonHolder.class" />
+    <option name="AFTER_PATH" value="out/production/Test/org/l2jmobius/gameserver/data/xml/impl/ClassListData$SingletonHolder.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_5_12_2020_2_12_PM_[Default_Changelist]/ClassListData$SingletonHolder.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="out/production/Test/org/l2jmobius/gameserver/events/instanced/EventConfig.class" />
+    <option name="AFTER_PATH" value="out/production/Test/org/l2jmobius/gameserver/events/instanced/EventConfig.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_5_12_2020_2_12_PM_[Default_Changelist]/EventConfig.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="out/production/Test/org/l2jmobius/gameserver/model/actor/templates/CreatureTemplate.class" />
+    <option name="AFTER_PATH" value="out/production/Test/org/l2jmobius/gameserver/model/actor/templates/CreatureTemplate.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_5_12_2020_2_12_PM_[Default_Changelist]/CreatureTemplate.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="out/production/Test/org/l2jmobius/loginserver/LoginController$AuthLoginResult.class" />
+    <option name="AFTER_PATH" value="out/production/Test/org/l2jmobius/loginserver/LoginController$AuthLoginResult.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_5_12_2020_2_12_PM_[Default_Changelist]/LoginController$AuthLoginResult.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="out/production/Test/org/l2jmobius/gameserver/model/actor/instance/PlayerInstance.class" />
+    <option name="AFTER_PATH" value="out/production/Test/org/l2jmobius/gameserver/model/actor/instance/PlayerInstance.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_5_12_2020_2_12_PM_[Default_Changelist]/PlayerInstance.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="out/production/Test/org/l2jmobius/gameserver/data/xml/impl/NpcData$SingletonHolder.class" />
+    <option name="AFTER_PATH" value="out/production/Test/org/l2jmobius/gameserver/data/xml/impl/NpcData$SingletonHolder.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_5_12_2020_2_12_PM_[Default_Changelist]/NpcData$SingletonHolder.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="out/production/Test/org/l2jmobius/gameserver/network/clientpackets/AuthLogin.class" />
+    <option name="AFTER_PATH" value="out/production/Test/org/l2jmobius/gameserver/network/clientpackets/AuthLogin.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_5_12_2020_2_12_PM_[Default_Changelist]/AuthLogin.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="out/production/Test/org/l2jmobius/gameserver/network/clientpackets/Say2.class" />
+    <option name="AFTER_PATH" value="out/production/Test/org/l2jmobius/gameserver/network/clientpackets/Say2.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_5_12_2020_2_12_PM_[Default_Changelist]/Say2.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="out/production/Test/org/l2jmobius/loginserver/network/LoginClient.class" />
+    <option name="AFTER_PATH" value="out/production/Test/org/l2jmobius/loginserver/network/LoginClient.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_5_12_2020_2_12_PM_[Default_Changelist]/LoginClient.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="out/production/Test/org/l2jmobius/gameserver/GameServer.class" />
+    <option name="AFTER_PATH" value="out/production/Test/org/l2jmobius/gameserver/GameServer.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_5_12_2020_2_12_PM_[Default_Changelist]/GameServer.class" />
+  </binary>
+</changelist>

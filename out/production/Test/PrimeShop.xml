@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list enabled="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="xsd/PrimeShop.xsd">
+	<!-- cat = 1 - Exping, 2 - Supplies, 3 - Cosmetic, 4 - Specials, 5 - Other -->
+	<!-- panelType = 0 - None, 1 - Event, 2 - Sale, 3 - New, 4 - Best -->
+	<!-- recommended = 1 - Top, 2 - Left, 4 - Right -->
+	<!-- paymentType = 0 - Euro, 1 - Adena, 2 - Hero Coin -->
+	<!-- on EU 1 NC coin/Prime point shows as 0.01 euros -->
+	<!-- startSale = unixTime -->
+	<!-- endSale = unixTime -->
+	<item id="2222223" cat="1" paymentType="0" price="100" panelType="3" recommended="0" startSale="315558000" endSale="2127452400" dayOfWeek="127" startHour="0" startMinute="0" stopHour="23" stopMinute="59" stock="-1" maxStock="-1" salePercent="0" minLevel="0" maxLevel="0" minBirthday="0" maxBirthday="0" restrictionDay="0" availableCount="0">
+		<item itemId="37731" count="5" /> <!-- Dandys Scroll : Challenge -->
+	</item>
+	<item id="2222222" cat="1" paymentType="0" price="300" panelType="3" recommended="0" startSale="315558000" endSale="2127452400" dayOfWeek="127" startHour="0" startMinute="0" stopHour="23" stopMinute="59" stock="-1" maxStock="-1" salePercent="0" minLevel="0" maxLevel="0" minBirthday="0" maxBirthday="0" restrictionDay="0" availableCount="0">
+		<item itemId="45415" count="5" /> <!-- Danddys Ball -->
+	</item>
+	<item id="1090989" cat="1" paymentType="0" price="100" panelType="3" recommended="0" startSale="315558000" endSale="2127452400" dayOfWeek="127" startHour="0" startMinute="0" stopHour="23" stopMinute="59" stock="-1" maxStock="-1" salePercent="0" minLevel="0" maxLevel="0" minBirthday="0" maxBirthday="0" restrictionDay="0" availableCount="0">
+		<item itemId="37562" count="1" /> <!-- Emperor's Vitality Tonic (Large) -->
+	</item>
+	<item id="1090988" cat="1" paymentType="0" price="100" panelType="3" recommended="0" startSale="315558000" endSale="2127452400" dayOfWeek="127" startHour="0" startMinute="0" stopHour="23" stopMinute="59" stock="-1" maxStock="-1" salePercent="0" minLevel="0" maxLevel="0" minBirthday="0" maxBirthday="0" restrictionDay="0" availableCount="0">
+		<item itemId="37561" count="1" /> <!-- Emperor's Vitality Tonic (Medium) -->
+	</item>
+	<item id="1090987" cat="1" paymentType="0" price="100" panelType="0" recommended="0" startSale="315558000" endSale="2127452400" dayOfWeek="127" startHour="0" startMinute="0" stopHour="23" stopMinute="59" stock="-1" maxStock="-1" salePercent="0" minLevel="0" maxLevel="0" minBirthday="0" maxBirthday="0" restrictionDay="0" availableCount="0">
+		<item itemId="37560" count="1" /> <!-- Emperor's Vitality Tonic -->
+	</item>
+	<item id="1090990" cat="1" paymentType="0" price="100" panelType="0" recommended="0" startSale="315558000" endSale="2127452400" dayOfWeek="127" startHour="0" startMinute="0" stopHour="23" stopMinute="59" stock="-1" maxStock="-1" salePercent="0" minLevel="0" maxLevel="0" minBirthday="0" maxBirthday="0" restrictionDay="0" availableCount="0">
+		<item itemId="23730" count="1" /> <!-- Erupting Vitality Conservation Potion -->
+	</item>
+	<item id="1090991" cat="1" paymentType="0" price="100" panelType="0" recommended="0" startSale="315558000" endSale="2127452400" dayOfWeek="127" startHour="0" startMinute="0" stopHour="23" stopMinute="59" stock="-1" maxStock="-1" salePercent="0" minLevel="0" maxLevel="0" minBirthday="0" maxBirthday="0" restrictionDay="0" availableCount="0">
+		<item itemId="23728" count="1" /> <!-- Erupting Vitality XP Potion -->
+	</item>
+	<item id="1090615" cat="1" paymentType="0" price="4000" panelType="4" recommended="4" startSale="315558000" endSale="2127452400" dayOfWeek="127" startHour="0" startMinute="0" stopHour="23" stopMinute="59" stock="-1" maxStock="-1" salePercent="0" minLevel="0" maxLevel="0" minBirthday="0" maxBirthday="0" restrictionDay="0" availableCount="0">
+		<item itemId="23282" count="1" /> <!-- XP Rune III (Lv. 1-100+) 200% Pack (30-day) -->
+		<item itemId="23812" count="1" /> <!-- High-grade Maphr's Rune 100% Pack (30-day) -->
+		<item itemId="28410" count="1" /> <!-- Eva's Rune Pack (30-day) -->
+		<item itemId="21251" count="50" /> <!-- Vitality Maintain Potion (30 Min) -->
+		<item itemId="47428" count="50" /> <!-- Freya Scrolls -->
+		<item itemId="45415" count="50" /> <!-- Dandys Ball -->
+		<item itemId="37562" count="50" /> <!-- Vitality Replenish Potion -->
+	</item>
+	<item id="1090776" cat="1" paymentType="0" price="1000" panelType="4" recommended="4" startSale="315558000" endSale="2127452400" dayOfWeek="127" startHour="0" startMinute="0" stopHour="23" stopMinute="59" stock="-1" maxStock="-1" salePercent="0" minLevel="0" maxLevel="0" minBirthday="0" maxBirthday="0" restrictionDay="0" availableCount="0">
+		<item itemId="23281" count="1" /> <!-- XP Rune III (Lv. 1-100+) 200% Pack (7-day) -->
+		<item itemId="23760" count="1" /> <!-- High-grade Maphr's Rune 100% Pack -->
+		<item itemId="28409" count="1" /> <!-- Eva's Rune Pack (7-day) -->
+	</item>
+	<item id="1091000" cat="1" paymentType="0" price="100" panelType="0" recommended="0" startSale="315558000" endSale="2127452400" dayOfWeek="127" startHour="0" startMinute="0" stopHour="23" stopMinute="59" stock="-1" maxStock="-1" salePercent="0" minLevel="0" maxLevel="0" minBirthday="0" maxBirthday="0" restrictionDay="0" availableCount="0">
+		<item itemId="28405" count="1" /> <!-- Maphr's Rune 100% Pack (1-hr) -->
+	</item>
+	<item id="1091001" cat="1" paymentType="0" price="400" panelType="0" recommended="0" startSale="315558000" endSale="2127452400" dayOfWeek="127" startHour="0" startMinute="0" stopHour="23" stopMinute="59" stock="-1" maxStock="-1" salePercent="0" minLevel="0" maxLevel="0" minBirthday="0" maxBirthday="0" restrictionDay="0" availableCount="0">
+		<item itemId="28406" count="1" /> <!-- Maphr's Rune 100% Pack (7-day) -->
+	</item>
+	<item id="1091002" cat="1" paymentType="0" price="100" panelType="4" recommended="2" startSale="315558000" endSale="2127452400" dayOfWeek="127" startHour="0" startMinute="0" stopHour="23" stopMinute="59" stock="-1" maxStock="-1" salePercent="0" minLevel="0" maxLevel="0" minBirthday="0" maxBirthday="0" restrictionDay="0" availableCount="0">
+		<item itemId="29215" count="1" /> <!-- Starter Kit -->
+	</item>
+	<item id="1091003" cat="1" paymentType="0" price="300" panelType="4" recommended="2" startSale="315558000" endSale="2127452400" dayOfWeek="127" startHour="0" startMinute="0" stopHour="23" stopMinute="59" stock="-1" maxStock="-1" salePercent="0" minLevel="0" maxLevel="0" minBirthday="0" maxBirthday="0" restrictionDay="0" availableCount="0">
+		<item itemId="29216" count="1" /> <!-- Starter Kit -->
+	</item>
+	<item id="1091004" cat="1" paymentType="0" price="700" panelType="4" recommended="2" startSale="315558000" endSale="2127452400" dayOfWeek="127" startHour="0" startMinute="0" stopHour="23" stopMinute="59" stock="-1" maxStock="-1" salePercent="0" minLevel="0" maxLevel="0" minBirthday="0" maxBirthday="0" restrictionDay="0" availableCount="0">
+		<item itemId="29217" count="1" /> <!-- Starter Kit -->
+	</item>
+	<item id="1090992" cat="1" paymentType="0" price="100" panelType="0" recommended="0" startSale="315558000" endSale="2127452400" dayOfWeek="127" startHour="0" startMinute="0" stopHour="23" stopMinute="59" stock="-1" maxStock="-1" salePercent="0" minLevel="0" maxLevel="0" minBirthday="0" maxBirthday="0" restrictionDay="0" availableCount="0">
+		<item itemId="22710" count="1" /> <!-- Vitality Suspending Potion -->
+	</item>
+	<item id="1090911" cat="1" paymentType="0" price="100" panelType="0" recommended="0" startSale="315558000" endSale="2127452400" dayOfWeek="127" startHour="0" startMinute="0" stopHour="23" stopMinute="59" stock="-1" maxStock="-1" salePercent="0" minLevel="0" maxLevel="0" minBirthday="0" maxBirthday="0" restrictionDay="0" availableCount="0">
+		<item itemId="23332" count="1" /> <!-- XP Buff 50% (1-hour) -->
+	</item>
+	<item id="1090252" cat="1" paymentType="0" price="100" panelType="0" recommended="0" startSale="315558000" endSale="2127452400" dayOfWeek="127" startHour="0" startMinute="0" stopHour="23" stopMinute="59" stock="-1" maxStock="-1" salePercent="0" minLevel="0" maxLevel="0" minBirthday="0" maxBirthday="0" restrictionDay="0" availableCount="0">
+		<item itemId="23333" count="1" /> <!-- XP Buff 50% (2-hour) -->
+	</item>
+	<item id="1091006" cat="1" paymentType="0" price="100" panelType="0" recommended="0" startSale="315558000" endSale="2127452400" dayOfWeek="127" startHour="0" startMinute="0" stopHour="23" stopMinute="59" stock="-1" maxStock="-1" salePercent="0" minLevel="0" maxLevel="0" minBirthday="0" maxBirthday="0" restrictionDay="0" availableCount="0">
+		<item itemId="22981" count="1" /> <!-- XP Rune I (Lv. 1-85) 200% Pack (1-hour) -->
+	</item>
+	<item id="1090994" cat="1" paymentType="0" price="100" panelType="0" recommended="0" startSale="315558000" endSale="2127452400" dayOfWeek="127" startHour="0" startMinute="0" stopHour="23" stopMinute="59" stock="-1" maxStock="-1" salePercent="0" minLevel="0" maxLevel="0" minBirthday="0" maxBirthday="0" restrictionDay="0" availableCount="0">
+		<item itemId="23946" count="1" /> <!-- XP Rune II (Lv. 1-95) 100% Pack (1-hour) -->
+	</item>
+	<item id="1090995" cat="1" paymentType="0" price="900" panelType="0" recommended="0" startSale="315558000" endSale="2127452400" dayOfWeek="127" startHour="0" startMinute="0" stopHour="23" stopMinute="59" stock="-1" maxStock="-1" salePercent="0" minLevel="0" maxLevel="0" minBirthday="0" maxBirthday="0" restrictionDay="0" availableCount="0">
+		<item itemId="28411" count="1" /> <!-- XP Rune II Pack (7-day) -->
+	</item>
+	<item id="1090996" cat="1" paymentType="0" price="100" panelType="0" recommended="0" startSale="315558000" endSale="2127452400" dayOfWeek="127" startHour="0" startMinute="0" stopHour="23" stopMinute="59" stock="-1" maxStock="-1" salePercent="0" minLevel="0" maxLevel="0" minBirthday="0" maxBirthday="0" restrictionDay="0" availableCount="0">
+		<item itemId="28401" count="1" /> <!-- XP Rune III 100% Pack (1-hr) -->
+	</item>
+	<item id="1090997" cat="1" paymentType="0" price="600" panelType="0" recommended="0" startSale="315558000" endSale="2127452400" dayOfWeek="127" startHour="0" startMinute="0" stopHour="23" stopMinute="59" stock="-1" maxStock="-1" salePercent="0" minLevel="0" maxLevel="0" minBirthday="0" maxBirthday="0" restrictionDay="0" availableCount="0">
+		<item itemId="28402" count="1" /> <!-- XP Rune III 100% Pack (7-day) -->
+	</item>
+	<item id="1090639" cat="2" paymentType="0" price="100" panelType="0" recommended="0" startSale="315558000" endSale="2127452400" dayOfWeek="127" startHour="0" startMinute="0" stopHour="23" stopMinute="59" stock="-1" maxStock="-1" salePercent="0" minLevel="0" maxLevel="0" minBirthday="0" maxBirthday="0" restrictionDay="0" availableCount="0">
+		<item itemId="22348" count="1" /> <!-- Adventurer's Song - Energy of Recovery -->
+	</item>
+	<item id="1091007" cat="2" paymentType="0" price="100" panelType="0" recommended="0" startSale="315558000" endSale="2127452400" dayOfWeek="127" startHour="0" startMinute="0" stopHour="23" stopMinute="59" stock="-1" maxStock="-1" salePercent="0" minLevel="0" maxLevel="0" minBirthday="0" maxBirthday="0" restrictionDay="0" availableCount="0">
+		<item itemId="25790" count="1" /> <!-- Ancient Hero's Weapon Pack -->
+	</item>
+	<item id="1090159" cat="2" paymentType="0" price="100" panelType="0" recommended="0" startSale="315558000" endSale="2127452400" dayOfWeek="127" startHour="0" startMinute="0" stopHour="23" stopMinute="59" stock="-1" maxStock="-1" salePercent="0" minLevel="0" maxLevel="0" minBirthday="0" maxBirthday="0" restrictionDay="0" availableCount="0">
+		<item itemId="20326" count="1" /> <!-- Beast Soulshot Pack -->
+	</item>
+	<item id="1090767" cat="2" paymentType="0" price="100" panelType="0" recommended="0" startSale="315558000" endSale="2127452400" dayOfWeek="127" startHour="0" startMinute="0" stopHour="23" stopMinute="59" stock="-1" maxStock="-1" salePercent="0" minLevel="0" maxLevel="0" minBirthday="0" maxBirthday="0" restrictionDay="0" availableCount="0">
+		<item itemId="21210" count="1" /> <!-- MP Recovery Potion -->
+	</item>
+	<item id="1090528" cat="2" paymentType="0" price="100" panelType="0" recommended="0" startSale="315558000" endSale="2127452400" dayOfWeek="127" startHour="0" startMinute="0" stopHour="23" stopMinute="59" stock="-1" maxStock="-1" salePercent="0" minLevel="0" maxLevel="0" minBirthday="0" maxBirthday="0" restrictionDay="0" availableCount="0">
+		<item itemId="37626" count="1" /> <!-- Mysterious Blessed Spiritshot Pack (R-grade) -->
+	</item>
+	<item id="1090953" cat="2" paymentType="0" price="100" panelType="0" recommended="0" startSale="315558000" endSale="2127452400" dayOfWeek="127" startHour="0" startMinute="0" stopHour="23" stopMinute="59" stock="-1" maxStock="-1" salePercent="0" minLevel="0" maxLevel="0" minBirthday="0" maxBirthday="0" restrictionDay="0" availableCount="0">
+		<item itemId="37659" count="1" /> <!-- Mysterious Healthy Juice (HP/ CP) -->
+	</item>
+	<item id="1090529" cat="2" paymentType="0" price="100" panelType="0" recommended="0" startSale="315558000" endSale="2127452400" dayOfWeek="127" startHour="0" startMinute="0" stopHour="23" stopMinute="59" stock="-1" maxStock="-1" salePercent="0" minLevel="0" maxLevel="0" minBirthday="0" maxBirthday="0" restrictionDay="0" availableCount="0">
+		<item itemId="37627" count="1" /> <!-- Mysterious Soulshot Pack (R-grade) -->
+	</item>
+	<item id="1090846" cat="3" paymentType="0" price="400" panelType="0" recommended="0" startSale="315558000" endSale="2127452400" dayOfWeek="127" startHour="0" startMinute="0" stopHour="23" stopMinute="59" stock="-1" maxStock="-1" salePercent="0" minLevel="0" maxLevel="0" minBirthday="0" maxBirthday="0" restrictionDay="0" availableCount="0">
+		<item itemId="23530" count="1" /> <!-- Automatic Appearance Stone: Emerald Weapon -->
+	</item>
+	<item id="1090563" cat="3" paymentType="0" price="400" panelType="0" recommended="0" startSale="315558000" endSale="2127452400" dayOfWeek="127" startHour="0" startMinute="0" stopHour="23" stopMinute="59" stock="-1" maxStock="-1" salePercent="0" minLevel="0" maxLevel="0" minBirthday="0" maxBirthday="0" restrictionDay="0" availableCount="0">
+		<item itemId="23531" count="1" /> <!-- Automatic Appearance Stone: Japanese Weapon -->
+	</item>
+	<item id="1090335" cat="3" paymentType="0" price="100" panelType="0" recommended="0" startSale="315558000" endSale="2127452400" dayOfWeek="127" startHour="0" startMinute="0" stopHour="23" stopMinute="59" stock="-1" maxStock="-1" salePercent="0" minLevel="0" maxLevel="0" minBirthday="0" maxBirthday="0" restrictionDay="0" availableCount="0">
+		<item itemId="36308" count="1" /> <!-- Royal Beauty Ticket -->
+	</item>
+	<item id="1090884" cat="3" paymentType="0" price="1000" panelType="0" recommended="0" startSale="315558000" endSale="2127452400" dayOfWeek="127" startHour="0" startMinute="0" stopHour="23" stopMinute="59" stock="-1" maxStock="-1" salePercent="0" minLevel="0" maxLevel="0" minBirthday="0" maxBirthday="0" restrictionDay="0" availableCount="0">
+		<item itemId="23859" count="1" /> <!-- Change Clan Name -->
+	</item>
+	<item id="1090278" cat="3" paymentType="0" price="100" panelType="0" recommended="0" startSale="315558000" endSale="2127452400" dayOfWeek="127" startHour="0" startMinute="0" stopHour="23" stopMinute="59" stock="-1" maxStock="-1" salePercent="0" minLevel="0" maxLevel="0" minBirthday="0" maxBirthday="0" restrictionDay="0" availableCount="0">
+		<item itemId="22700" count="1" /> <!-- Equipment Restoration Stone (R-grade) -->
+	</item>
+	<item id="1090883" cat="3" paymentType="0" price="500" panelType="0" recommended="0" startSale="315558000" endSale="2127452400" dayOfWeek="127" startHour="0" startMinute="0" stopHour="23" stopMinute="59" stock="-1" maxStock="-1" salePercent="0" minLevel="0" maxLevel="0" minBirthday="0" maxBirthday="0" restrictionDay="0" availableCount="0">
+		<item itemId="23623" count="1" /> <!-- Gender Change Ticket -->
+	</item>
+	<item id="1090882" cat="3" paymentType="0" price="1000" panelType="0" recommended="0" startSale="315558000" endSale="2127452400" dayOfWeek="127" startHour="0" startMinute="0" stopHour="23" stopMinute="59" stock="-1" maxStock="-1" salePercent="0" minLevel="0" maxLevel="0" minBirthday="0" maxBirthday="0" restrictionDay="0" availableCount="0">
+		<item itemId="23622" count="1" /> <!-- Name Change Ticket -->
+	</item>
+
+	<item id="1091130" cat="4" paymentType="0" price="7000" panelType="4" recommended="2" startSale="315558000" endSale="2127452400" dayOfWeek="127" startHour="0" startMinute="0" stopHour="23" stopMinute="59" stock="-1" maxStock="-1" salePercent="0" minLevel="0" maxLevel="0" minBirthday="0" maxBirthday="0" restrictionDay="0" availableCount="0">
+		<item itemId="45928" count="1" /> <!-- Spellbook: Favor of the Exalted (Lv.1) -->
+		<item itemId="45870" count="1" /> <!-- Spellbook: Favor of the Exalted (Lv.2) -->
+		<item itemId="45922" count="1" /> <!-- Spellbook: Dignity of the Exalted (Lv.1) -->
+		<item itemId="45923" count="1" /> <!-- Spellbook: Dignity of the Exalted (Lv.2) -->
+		<item itemId="45924" count="1" /> <!-- Spellbook: Dignity of the Exalted (Lv.3) -->
+		<item itemId="47852" count="1" /> <!-- Spellbook: Dignity of the Exalted (Lv.4) -->
+		<item itemId="47853" count="1" /> <!-- Spellbook: Dignity of the Exalted (Lv.5) -->
+		<item itemId="45925" count="1" /> <!-- Spellbook: Belief of the Exalted -->
+		<item itemId="45926" count="1" /> <!-- Spellbook: Blessing of the Exalted -->
+		<item itemId="46036" count="1" /> <!-- Spellbook: Fate of the Exalted -->
+		<item itemId="47854" count="1" /> <!-- Spellbook: Vitality of the Exalted (Lv.1) -->
+		<item itemId="47855" count="1" /> <!-- Spellbook: Vitality of the Exalted (Lv.2) -->
+		<item itemId="37763" count="1" /> <!-- Exalted Cloak -->
+		<item itemId="45644" count="1" /> <!-- Exalted Tiara -->
+	</item>
+	<item id="1090886" cat="5" paymentType="0" price="1000" panelType="0" recommended="0" startSale="315558000" endSale="2127452400" dayOfWeek="127" startHour="0" startMinute="0" stopHour="23" stopMinute="59" stock="-1" maxStock="-1" salePercent="0" minLevel="0" maxLevel="0" minBirthday="0" maxBirthday="0" restrictionDay="0" availableCount="0">
+		<item itemId="23814" count="1" /> <!-- Chaos Essence Pack -->
+	</item>
+	<item id="1090887" cat="5" paymentType="0" price="1000" panelType="0" recommended="0" startSale="315558000" endSale="2127452400" dayOfWeek="127" startHour="0" startMinute="0" stopHour="23" stopMinute="59" stock="-1" maxStock="-1" salePercent="0" minLevel="0" maxLevel="0" minBirthday="0" maxBirthday="0" restrictionDay="0" availableCount="0">
+		<item itemId="23815" count="1" /> <!-- Chaos Essence Pack (Dual Class) -->
+	</item>
+	<item id="1090263" cat="5" paymentType="0" price="100" panelType="0" recommended="0" startSale="315558000" endSale="2127452400" dayOfWeek="127" startHour="0" startMinute="0" stopHour="23" stopMinute="59" stock="-1" maxStock="-1" salePercent="0" minLevel="0" maxLevel="0" minBirthday="0" maxBirthday="0" restrictionDay="0" availableCount="0">
+		<item itemId="22900" count="1" /> <!-- Expand Inventory Lv. 1 -->
+	</item>
+	<item id="1090264" cat="5" paymentType="0" price="100" panelType="0" recommended="0" startSale="315558000" endSale="2127452400" dayOfWeek="127" startHour="0" startMinute="0" stopHour="23" stopMinute="59" stock="-1" maxStock="-1" salePercent="0" minLevel="0" maxLevel="0" minBirthday="0" maxBirthday="0" restrictionDay="0" availableCount="0">
+		<item itemId="22901" count="1" /> <!-- Expand Inventory Lv. 2 -->
+	</item>
+	<item id="1090265" cat="5" paymentType="0" price="100" panelType="0" recommended="0" startSale="315558000" endSale="2127452400" dayOfWeek="127" startHour="0" startMinute="0" stopHour="23" stopMinute="59" stock="-1" maxStock="-1" salePercent="0" minLevel="0" maxLevel="0" minBirthday="0" maxBirthday="0" restrictionDay="0" availableCount="0">
+		<item itemId="22902" count="1" /> <!-- Spellbook: Expand Warehouse Lv. 1 -->
+	</item>
+	<item id="1090266" cat="5" paymentType="0" price="100" panelType="0" recommended="0" startSale="315558000" endSale="2127452400" dayOfWeek="127" startHour="0" startMinute="0" stopHour="23" stopMinute="59" stock="-1" maxStock="-1" salePercent="0" minLevel="0" maxLevel="0" minBirthday="0" maxBirthday="0" restrictionDay="0" availableCount="0">
+		<item itemId="22903" count="1" /> <!-- Spellbook: Expand Warehouse Lv. 2 -->
+	</item>
+	<item id="1090522" cat="5" paymentType="0" price="100" panelType="0" recommended="0" startSale="315558000" endSale="2127452400" dayOfWeek="127" startHour="0" startMinute="0" stopHour="23" stopMinute="59" stock="-1" maxStock="-1" salePercent="0" minLevel="0" maxLevel="0" minBirthday="0" maxBirthday="0" restrictionDay="0" availableCount="0">
+		<item itemId="14065" count="1" /> <!-- Superior Minion Coupon -->
+	</item>
+</list>

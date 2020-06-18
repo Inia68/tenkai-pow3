@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	   xsi:noNamespaceSchemaLocation="../xsd/multisell.xsd">
+	<npcs>
+		<npc>40004</npc> <!-- Luxury Npc -->
+	</npcs>
+
+	<item>
+		<ingredient count="1" id="34984"/> <!-- Talisman - Infinity  -->
+		<ingredient count="25" id="35562"/> <!-- Energy of Destruction   -->
+		<ingredient count="30" id="35563"/> <!-- Giant's Energy  -->
+		<production count="1" id="34985"/> <!-- Talisman - Destruction -->
+	</item>
+
+	<item>
+		<ingredient count="1" id="34985"/> <!-- Talisman - Destruction  -->
+		<ingredient count="25" id="35562"/> <!-- Energy of Destruction   -->
+		<ingredient count="30" id="35563"/> <!-- Giant's Energy  -->
+		<ingredient count="1" id="81150"/> <!-- Kaliel's Energy - Destruction -->
+		<production count="1" id="34986"/> <!-- Talisman - Annihilation -->
+	</item>
+
+	<item>
+		<ingredient count="1" id="34986"/> <!-- Talisman - Annihilation -->
+		<ingredient count="25" id="35562"/> <!-- Energy of Destruction   -->
+		<ingredient count="30" id="35563"/> <!-- Giant's Energy  -->
+		<ingredient count="1" id="36184"/> <!-- Kaliel's Energy - Annihilation -->
+		<production count="1" id="34987"/> <!-- Talisman - Hellfire -->
+	</item>
+
+	<item>
+		<ingredient count="1" id="34987"/> <!-- Talisman - Hellfire -->
+		<ingredient count="30" id="35562"/> <!-- Energy of Destruction   -->
+		<ingredient count="60" id="35563"/> <!-- Giant's Energy  -->
+		<ingredient count="1" id="36185"/> <!-- Kaliel's Energy - Hellfire -->
+		<production count="1" id="34988"/> <!-- Talisman - Desire -->
+	</item>
+
+	<item>
+		<ingredient count="1" id="34988"/> <!-- Talisman - Desire -->
+		<ingredient count="35" id="35562"/> <!-- Energy of Destruction   -->
+		<ingredient count="70" id="35563"/> <!-- Giant's Energy  -->
+		<ingredient count="1" id="36186"/> <!-- Kaliel's Energy - Desire -->
+		<production count="1" id="34989"/> <!-- Talisman - Longing -->
+	</item>
+
+	<item>
+		<ingredient count="1" id="34989"/> <!-- Talisman - Longing -->
+		<ingredient count="45" id="35562"/> <!-- Energy of Destruction   -->
+		<ingredient count="85" id="35563"/> <!-- Giant's Energy  -->
+		<ingredient count="1" id="26291"/> <!-- Kaliel's Energy - Longing -->
+		<production count="1" id="39572"/> <!-- Talisman - Insanity -->
+	</item>
+</list>

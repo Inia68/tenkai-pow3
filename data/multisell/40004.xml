@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list maintainEnchantment="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../xsd/multisell.xsd">
+	<npcs>
+		<npc>40004</npc> <!-- Luxury Npc -->
+	</npcs>
+
+	<!-- Heavy -->
+	<item>
+		<ingredient count="1" id="80104" /> 		<!-- Leviathan's Circlet (Heavy) -->
+		<ingredient count="9616" id="19440" /> 	<!-- Gemstone (R Grade) -->
+		<ingredient count="8" id="36515" /> 		<!-- Elcyum -->
+		<production count="1" id="80189" /> 		<!-- Enchanted Leviathan's Circlet (Heavy) -->
+	</item>
+	<item>
+		<ingredient count="1" id="80105" /> 		<!-- Leviathan's Tunic (Heavy) -->
+		<ingredient count="25642" id="19440" /> 	<!-- Gemstone (R Grade) -->
+		<ingredient count="20" id="36515" /> 		<!-- Elcyum -->
+		<production count="1" id="80190" /> 		<!-- Enchanted Leviathan's Tunic (Heavy) -->
+	</item>
+	<item>
+		<ingredient count="1" id="80106" /> 		<!-- Leviathan's Stockings (Heavy) -->
+		<ingredient count="16026" id="19440" /> 	<!-- Gemstone (R Grade) -->
+		<ingredient count="13" id="36515" /> 		<!-- Elcyum -->
+		<production count="1" id="80191" /> 		<!-- Enchanted Leviathan's Stockings (Heavy) -->
+	</item>
+	<item>
+		<ingredient count="1" id="80107" /> 		<!-- Leviathan's Gloves (Heavy) -->
+		<ingredient count="6411" id="19440" /> 	<!-- Gemstone (R Grade) -->
+		<ingredient count="6" id="36515" /> 		<!-- Elcyum -->
+		<production count="1" id="80192" /> 		<!-- Enchanted Leviathan's Gloves (Heavy) -->
+	</item>
+	<item>
+		<ingredient count="1" id="80108" /> 		<!-- Leviathan's Shoes (Heavy) -->
+		<ingredient count="6411" id="19440" /> 	<!-- Gemstone (R Grade) -->
+		<ingredient count="6" id="36515" /> 		<!-- Elcyum -->
+		<production count="1" id="80193" /> 		<!-- Enchanted Leviathan's Shoes (Heavy) -->
+	</item>
+
+	<!-- Light -->
+	<item>
+		<ingredient count="1" id="80110" /> 		<!-- Leviathan's Circlet (Light) -->
+		<ingredient count="9616" id="19440" /> 	<!-- Gemstone (R Grade) -->
+		<ingredient count="8" id="36515" /> 		<!-- Elcyum -->
+		<production count="1" id="80195" /> 		<!-- Enchanted Leviathan's Circlet (Light) -->
+	</item>
+	<item>
+		<ingredient count="1" id="80111" /> 		<!-- Leviathan's Tunic (Light) -->
+		<ingredient count="25642" id="19440" /> 	<!-- Gemstone (R Grade) -->
+		<ingredient count="20" id="36515" /> 		<!-- Elcyum -->
+		<production count="1" id="80196" /> 		<!-- Enchanted Leviathan's Tunic (Light) -->
+	</item>
+	<item>
+		<ingredient count="1" id="80112" /> 		<!-- Leviathan's Stockings (Light) -->
+		<ingredient count="16026" id="19440" /> 	<!-- Gemstone (R Grade) -->
+		<ingredient count="13" id="36515" /> 		<!-- Elcyum -->
+		<production count="1" id="80197" /> 		<!-- Enchanted Leviathan's Stockings (Light) -->
+	</item>
+	<item>
+		<ingredient count="1" id="80113" /> 		<!-- Leviathan's Gloves (Robe) -->
+		<ingredient count="6411" id="19440" /> 	<!-- Gemstone (R Grade) -->
+		<ingredient count="6" id="36515" /> 		<!-- Elcyum -->
+		<production count="1" id="80198" /> 		<!-- Enchanted Leviathan's Gloves (Light) -->
+	</item>
+	<item>
+		<ingredient count="1" id="80114" /> 		<!-- Leviathan's Shoes (Light) -->
+		<ingredient count="6411" id="19440" /> 	<!-- Gemstone (R Grade) -->
+		<ingredient count="6" id="36515" /> 		<!-- Elcyum -->
+		<production count="1" id="80199" /> 		<!-- Enchanted Leviathan's Shoes (Light) -->
+	</item>
+
+	<!-- Robe -->
+	<item>
+		<ingredient count="1" id="80115" /> 		<!-- Leviathan's Circlet (Robe) -->
+		<ingredient count="9616" id="19440" /> 	<!-- Gemstone (R Grade) -->
+		<ingredient count="8" id="36515" /> 		<!-- Elcyum -->
+		<production count="1" id="80200" /> 		<!-- Enchanted Leviathan's Circlet (Robe) -->
+	</item>
+	<item>
+		<ingredient count="1" id="80116" /> 		<!-- Leviathan's Tunic (Robe) -->
+		<ingredient count="25642" id="19440" /> 	<!-- Gemstone (R Grade) -->
+		<ingredient count="20" id="36515" /> 		<!-- Elcyum -->
+		<production count="1" id="80201" /> 		<!-- Enchanted Leviathan's Tunic (Robe) -->
+	</item>
+	<item>
+		<ingredient count="1" id="80117" /> 		<!-- Leviathan's Stockings (Robe) -->
+		<ingredient count="16026" id="19440" /> 	<!-- Gemstone (R Grade) -->
+		<ingredient count="13" id="36515" /> 		<!-- Elcyum -->
+		<production count="1" id="80202" /> 		<!-- Enchanted Leviathan's Stockings (Robe) -->
+	</item>
+	<item>
+		<ingredient count="1" id="80118" /> 		<!-- Leviathan's Gloves (Robe) -->
+		<ingredient count="6411" id="19440" /> 	<!-- Gemstone (R Grade) -->
+		<ingredient count="6" id="36515" /> 		<!-- Elcyum -->
+		<production count="1" id="80203" /> 		<!-- Enchanted Leviathan's Gloves (Robe) -->
+	</item>
+	<item>
+		<ingredient count="1" id="80119" /> 		<!-- Leviathan's Shoes (Robe) -->
+		<ingredient count="6411" id="19440" /> 	<!-- Gemstone (R Grade) -->
+		<ingredient count="6" id="36515" /> 		<!-- Elcyum -->
+		<production count="1" id="80204" /> 		<!-- Enchanted Leviathan's Shoes (Robe) -->
+	</item>
+
+</list>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/spawns.xsd">
+	<spawn name="16_10">
+		<group>
+			<npc id="33584" x="-113360" y="-244676" z="-15531" heading="40627" respawnTime="60sec" /> <!-- Moe -->
+			<npc id="33583" x="-113400" y="-244792" z="-15540" heading="31761" respawnTime="60sec" /> <!-- Miny -->
+			<npc id="33581" x="-113320" y="-244776" z="-15540" heading="51895" respawnTime="60sec" /> <!-- Eeny -->
+			<npc id="34445" x="-113272" y="-244600" z="-15540" heading="57343" respawnTime="60sec" /> <!-- Denign -->
+			<npc id="30846" x="-113352" y="-244536" z="-15540" heading="54539" respawnTime="60sec" /> <!-- Wilbert -->
+			<npc id="19644" x="-113542" y="-245277" z="-15537" heading="47470" respawnTime="60sec" /> <!-- Ramona -->
+		</group>
+	</spawn>
+</list>

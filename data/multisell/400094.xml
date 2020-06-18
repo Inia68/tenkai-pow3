@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../xsd/multisell.xsd">
+	<npcs>
+		<npc>40016</npc>
+	</npcs>
+
+
+	<item>
+		<ingredient id="47552" count="10"/> <!-- Powerfull Fish -->
+		<ingredient id="47551" count="20"/> <!-- Nimbul Fish -->
+		<production id="48830" count="1"/> <!-- Freya's Ice Rose -->
+	</item>
+
+	<item>
+		<ingredient id="47552" count="5"/> <!-- Powerfull Fish -->
+		<ingredient id="47551" count="10"/> <!-- Nimbul Fish -->
+		<production id="46264" count="1"/> <!-- Freya's Ice Rose -->
+	</item>
+
+	<item>
+		<ingredient id="47550" count="30"/> <!-- Ugly Fish -->
+		<production id="47551" count="1"/> <!-- Nimbul Hat -->
+	</item>
+	<item>
+		<ingredient id="47551" count="20"/> <!-- Nimbul Fish -->
+		<production id="47552" count="1"/> <!-- Powerfull Hat -->
+	</item>
+
+	<item>
+		<ingredient id="47550" count="10"/> <!-- Ugly Fish -->
+		<production id="21981" count="1"/> <!-- ClownFish Hat -->
+	</item>
+
+	<item>
+		<ingredient id="47550" count="10"/> <!-- Ugly Fish -->
+		<production id="38587" count="1"/> <!-- Fish Hat -->
+	</item>
+
+
+
+	</list>

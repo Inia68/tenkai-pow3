@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/spawns.xsd">
+	<spawn name="16_25">
+		<group>
+			<npc id="40008" x="-114088" y="252456" z="-1569" heading="30212" respawnTime="60sec" /> <!-- Eva -->
+			<npc id="40002" x="-114776" y="252712" z="-1550" heading="63777" respawnTime="60sec" /> <!-- Genius -->
+			<npc id="40010" x="-114776" y="252760" z="-1548" heading="61972" respawnTime="60sec" /> <!-- Dionysos -->
+			<npc id="40011" x="-114344" y="252744" z="-1550" heading="48751" respawnTime="60sec" /> <!-- Dog -->
+			<npc id="40009" x="-114072" y="252840" z="-1535" heading="30709" respawnTime="60sec" /> <!-- Maxi -->
+			<npc id="40026" x="-114792" y="252600" z="-1553" heading="62552" respawnTime="60sec" /> <!-- JukeBox -->
+		</group>
+	</spawn>
+</list>

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/multisell.xsd">
+	<npcs>
+		<npc>-1</npc> <!-- CB -->
+	</npcs>
+	<item>
+		<ingredient count="10" id="80306" /> <!-- Bloody Coin -->
+		<production count="1" id="45928" /> <!-- Spellbook: Favor of The Exalted Level 1  -->
+	</item>
+	<item>
+		<ingredient count="10" id="80306" /> <!-- Bloody Coin -->
+		<production count="1" id="45870" /> <!-- Spellbook: Favor of The Exalted Level 2  -->
+	</item>
+	<item>
+		<ingredient count="10" id="80306" /> <!-- Bloody Coin -->
+		<production count="1" id="45922" /> <!-- Spellbook: Dignity of The Exalted Level 1  -->
+	</item>
+	<item>
+		<ingredient count="10" id="80306" /> <!-- Bloody Coin -->
+		<production count="1" id="45923" /> <!-- Spellbook: Dignity of The Exalted Level 2  -->
+	</item>
+	<item>
+		<ingredient count="10" id="80306" /> <!-- Bloody Coin -->
+		<production count="1" id="45924" /> <!-- Spellbook: Dignity of The Exalted Level 3  -->
+	</item>
+	<item>
+		<ingredient count="10" id="80306" /> <!-- Bloody Coin -->
+		<production count="1" id="47852" /> <!-- Spellbook: Dignity of The Exalted Level 4  -->
+	</item>
+	<item>
+		<ingredient count="10" id="80306" /> <!-- Bloody Coin -->
+		<production count="1" id="47853" /> <!-- Spellbook: Dignity of The Exalted Level 5  -->
+	</item>
+	<item>
+		<ingredient count="10" id="80306" /> <!-- Bloody Coin -->
+		<production count="1" id="80970" /> <!-- Spellbook: Dignity of The Exalted Level 6  -->
+	</item>
+	<item>
+		<ingredient count="10" id="80306" /> <!-- Bloody Coin -->
+		<production count="1" id="45925" /> <!-- Spellbook: Belief of The Exalted -->
+	</item>
+	<item>
+		<ingredient count="10" id="80306" /> <!-- Bloody Coin -->
+		<production count="1" id="45926" /> <!-- Spellbook: Blessing of The Exalted -->
+	</item>
+	<item>
+		<ingredient count="10" id="80306" /> <!-- Bloody Coin -->
+		<production count="1" id="46036" /> <!-- Spellbook: Fate of The Exalted -->
+	</item>
+	<item>
+		<ingredient count="10" id="80306" /> <!-- Bloody Coin -->
+		<production count="1" id="47854" /> <!-- Spellbook: Vitality of The Exalted Level 1 -->
+	</item>
+	<item>
+		<ingredient count="10" id="80306" /> <!-- Bloody Coin -->
+		<production count="1" id="47855" /> <!-- Spellbook: Vitality of The Exalted Level 2 -->
+	</item>
+</list>

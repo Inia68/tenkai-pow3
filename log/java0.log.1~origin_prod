@@ -1,0 +1,28 @@
+2020.05.12 11:49:06,359	INFO	1	org.l2jmobius.commons.database.DatabaseFactory	Database: Initialized.
+2020.05.12 11:49:06,441	INFO	1	org.l2jmobius.loginserver.LoginController	Loading LoginController...
+2020.05.12 11:49:07,030	INFO	1	org.l2jmobius.loginserver.LoginController	Cached 10 KeyPairs for RSA communication.
+2020.05.12 11:49:07,120	INFO	1	org.l2jmobius.loginserver.GameServerTable	Loaded 127 server names.
+2020.05.12 11:49:07,125	INFO	1	org.l2jmobius.loginserver.GameServerTable	Loaded 2 registered Game Servers.
+2020.05.12 11:49:07,190	INFO	1	org.l2jmobius.loginserver.GameServerTable	Cached 10 RSA keys for Game Server communication.
+2020.05.12 11:49:07,193	WARNING	1	org.l2jmobius.loginserver.LoginServer	IP Bans file (banned_ip.cfg) is missing or is a directory, skipped.
+2020.05.12 11:49:07,194	INFO	1	org.l2jmobius.loginserver.LoginServer	Listening for GameServers on 127.0.0.1:9014
+2020.05.12 11:49:07,347	INFO	1	org.l2jmobius.commons.network.NetworkManager	ClientNetworkManager: Listening on 0.0.0.0:2106
+2020.05.12 11:49:57,988	INFO	33	org.l2jmobius.loginserver.GameServerThread	Updated Gameserver [23] Shakdun IP's:
+2020.05.12 11:49:58,000	INFO	33	org.l2jmobius.loginserver.GameServerThread	127.0.0.1/127.0.0.0/8
+2020.05.12 11:49:58,004	INFO	33	org.l2jmobius.loginserver.GameServerThread	169.254.57.29/169.254.0.0/16
+2020.05.12 11:49:58,004	INFO	33	org.l2jmobius.loginserver.GameServerThread	217.182.197.173/217.182.197.0/24
+2020.05.12 11:49:58,005	INFO	33	org.l2jmobius.loginserver.GameServerThread	217.182.197.173/0.0.0.0/0
+2020.05.12 11:56:34,153	INFO	33	org.l2jmobius.loginserver.GameServerThread	GameServer [23] Shakdun: Connection lost: Connection reset
+2020.05.12 11:56:34,154	INFO	33	org.l2jmobius.loginserver.GameServerThread	Server [23] Shakdun is now set as disconnected.
+2020.05.12 11:57:56,757	INFO	36	org.l2jmobius.loginserver.GameServerThread	Updated Gameserver [23] Shakdun IP's:
+2020.05.12 11:57:56,758	INFO	36	org.l2jmobius.loginserver.GameServerThread	127.0.0.1/127.0.0.0/8
+2020.05.12 11:57:56,759	INFO	36	org.l2jmobius.loginserver.GameServerThread	169.254.57.29/169.254.0.0/16
+2020.05.12 11:57:56,759	INFO	36	org.l2jmobius.loginserver.GameServerThread	217.182.197.173/217.182.197.0/24
+2020.05.12 11:57:56,760	INFO	36	org.l2jmobius.loginserver.GameServerThread	217.182.197.173/0.0.0.0/0
+2020.05.12 11:58:50,077	INFO	36	org.l2jmobius.loginserver.GameServerThread	GameServer [23] Shakdun: Connection lost: Connection reset
+2020.05.12 11:58:50,077	INFO	36	org.l2jmobius.loginserver.GameServerThread	Server [23] Shakdun is now set as disconnected.
+2020.05.12 12:00:16,829	INFO	38	org.l2jmobius.loginserver.GameServerThread	Updated Gameserver [23] Shakdun IP's:
+2020.05.12 12:00:16,830	INFO	38	org.l2jmobius.loginserver.GameServerThread	127.0.0.1/127.0.0.0/8
+2020.05.12 12:00:16,830	INFO	38	org.l2jmobius.loginserver.GameServerThread	169.254.57.29/169.254.0.0/16
+2020.05.12 12:00:16,830	INFO	38	org.l2jmobius.loginserver.GameServerThread	217.182.197.173/217.182.197.0/24
+2020.05.12 12:00:16,830	INFO	38	org.l2jmobius.loginserver.GameServerThread	217.182.197.173/0.0.0.0/0

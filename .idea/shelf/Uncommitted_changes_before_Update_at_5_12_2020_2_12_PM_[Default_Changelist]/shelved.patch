@@ -1,0 +1,1557 @@
+Index: java/org/l2jmobius/loginserver/LoginController.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>/*\r\n * This file is part of the L2J Mobius project.\r\n * \r\n * This program is free software: you can redistribute it and/or modify\r\n * it under the terms of the GNU General Public License as published by\r\n * the Free Software Foundation, either version 3 of the License, or\r\n * (at your option) any later version.\r\n * \r\n * This program is distributed in the hope that it will be useful,\r\n * but WITHOUT ANY WARRANTY; without even the implied warranty of\r\n * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU\r\n * General Public License for more details.\r\n * \r\n * You should have received a copy of the GNU General Public License\r\n * along with this program. If not, see <http://www.gnu.org/licenses/>.\r\n */\r\npackage org.l2jmobius.loginserver;\r\n\r\nimport java.net.InetAddress;\r\nimport java.net.UnknownHostException;\r\nimport java.nio.charset.StandardCharsets;\r\nimport java.security.GeneralSecurityException;\r\nimport java.security.KeyPairGenerator;\r\nimport java.security.MessageDigest;\r\nimport java.security.spec.RSAKeyGenParameterSpec;\r\nimport java.sql.Connection;\r\nimport java.sql.PreparedStatement;\r\nimport java.sql.ResultSet;\r\nimport java.util.ArrayList;\r\nimport java.util.Base64;\r\nimport java.util.Collection;\r\nimport java.util.HashMap;\r\nimport java.util.List;\r\nimport java.util.Map;\r\nimport java.util.concurrent.ConcurrentHashMap;\r\nimport java.util.logging.Level;\r\nimport java.util.logging.Logger;\r\n\r\nimport javax.crypto.KeyGenerator;\r\nimport javax.crypto.SecretKey;\r\n\r\nimport org.l2jmobius.Config;\r\nimport org.l2jmobius.commons.database.DatabaseFactory;\r\nimport org.l2jmobius.commons.util.Rnd;\r\nimport org.l2jmobius.commons.util.crypt.ScrambledKeyPair;\r\nimport org.l2jmobius.loginserver.GameServerTable.GameServerInfo;\r\nimport org.l2jmobius.loginserver.model.data.AccountInfo;\r\nimport org.l2jmobius.loginserver.network.LoginClient;\r\nimport org.l2jmobius.loginserver.network.serverpackets.LoginFail.LoginFailReason;\r\n\r\npublic class LoginController\r\n{\r\n\tprotected static final Logger LOGGER = Logger.getLogger(LoginController.class.getName());\r\n\t\r\n\tprivate static LoginController _instance;\r\n\t\r\n\t/** Time before kicking the client if he didn't logged yet */\r\n\tpublic static final int LOGIN_TIMEOUT = 60 * 1000;\r\n\t\r\n\t/** Authed Clients on LoginServer */\r\n\tprotected Map<String, LoginClient> _loginServerClients = new ConcurrentHashMap<>();\r\n\t\r\n\tprivate final Map<InetAddress, Integer> _failedLoginAttemps = new HashMap<>();\r\n\tprivate final Map<InetAddress, Long> _bannedIps = new ConcurrentHashMap<>();\r\n\t\r\n\tprivate final ScrambledKeyPair[] _keyPairs;\r\n\tprivate final KeyGenerator _blowfishKeyGenerator;\r\n\tprivate final Map<InetAddress, FailedLoginAttempt> _hackProtection;\r\n\r\n\r\n\t// SQL Queries\r\n\tprivate static final String USER_INFO_SELECT = \"SELECT login, password, IF(? > value OR value IS NULL, accessLevel, -1) AS accessLevel, lastServer FROM accounts LEFT JOIN (account_data) ON (account_data.account_name=accounts.login AND account_data.var=\\\"ban_temp\\\") WHERE login=?\";\r\n\tprivate static final String AUTOCREATE_ACCOUNTS_INSERT = \"INSERT INTO accounts (login, password, lastactive, accessLevel, lastIP) values (?, ?, ?, ?, ?)\";\r\n\tprivate static final String ACCOUNT_INFO_UPDATE = \"UPDATE accounts SET lastactive = ?, lastIP = ? WHERE login = ?\";\r\n\tprivate static final String ACCOUNT_LAST_SERVER_UPDATE = \"UPDATE accounts SET lastServer = ? WHERE login = ?\";\r\n\tprivate static final String ACCOUNT_ACCESS_LEVEL_UPDATE = \"UPDATE accounts SET accessLevel = ? WHERE login = ?\";\r\n\tprivate static final String ACCOUNT_IPS_UPDATE = \"UPDATE accounts SET pcIp = ?, hop1 = ?, hop2 = ?, hop3 = ?, hop4 = ? WHERE login = ?\";\r\n\tprivate static final String ACCOUNT_IPAUTH_SELECT = \"SELECT * FROM accounts_ipauth WHERE login = ?\";\r\n\t\r\n\tprivate LoginController() throws GeneralSecurityException\r\n\t{\r\n\t\tLOGGER.info(\"Loading LoginController...\");\r\n\t\t_keyPairs = new ScrambledKeyPair[10];\r\n\t\t_blowfishKeyGenerator = KeyGenerator.getInstance(\"Blowfish\");\r\n\t\tfinal KeyPairGenerator rsaKeyPairGenerator = KeyPairGenerator.getInstance(\"RSA\");\r\n\t\tfinal RSAKeyGenParameterSpec spec = new RSAKeyGenParameterSpec(1024, RSAKeyGenParameterSpec.F4);\r\n\t\trsaKeyPairGenerator.initialize(spec);\r\n\t\t_hackProtection = new HashMap<>();\r\n\r\n\t\tfor (int i = 0; i < _keyPairs.length; i++)\r\n\t\t{\r\n\t\t\t_keyPairs[i] = new ScrambledKeyPair(rsaKeyPairGenerator.generateKeyPair());\r\n\t\t}\r\n\t\t\r\n\t\tLOGGER.info(\"Cached 10 KeyPairs for RSA communication.\");\r\n\t\t\r\n\t\tfinal Thread purge = new PurgeThread();\r\n\t\tpurge.setDaemon(true);\r\n\t\tpurge.start();\r\n\t}\r\n\t\r\n\tpublic SecretKey generateBlowfishKey()\r\n\t{\r\n\t\treturn _blowfishKeyGenerator.generateKey();\r\n\t}\r\n\t\r\n\tpublic SessionKey assignSessionKeyToClient(String account, LoginClient client)\r\n\t{\r\n\t\tfinal SessionKey key = new SessionKey(Rnd.nextInt(), Rnd.nextInt(), Rnd.nextInt(), Rnd.nextInt());\r\n\t\t_loginServerClients.put(account, client);\r\n\t\treturn key;\r\n\t}\r\n\t\r\n\tpublic void removeAuthedLoginClient(String account)\r\n\t{\r\n\t\tif (account == null)\r\n\t\t{\r\n\t\t\treturn;\r\n\t\t}\r\n\t\t_loginServerClients.remove(account);\r\n\t}\r\n\t\r\n\tpublic LoginClient getAuthedClient(String account)\r\n\t{\r\n\t\treturn _loginServerClients.get(account);\r\n\t}\r\n\t\r\n\tpublic AccountInfo retriveAccountInfo(InetAddress clientAddr, String login, String password)\r\n\t{\r\n\t\treturn retriveAccountInfo(clientAddr, login, password, true);\r\n\t}\r\n\r\n\r\n\r\n\tprivate void recordFailedLoginAttemp(InetAddress addr)\r\n\t{\r\n\t\t// We need to synchronize this!\r\n\t\t// When multiple connections from the same address fail to login at the\r\n\t\t// same time, unexpected behavior can happen.\r\n\t\tInteger failedLoginAttemps;\r\n\t\tsynchronized (_failedLoginAttemps)\r\n\t\t{\r\n\t\t\tfailedLoginAttemps = _failedLoginAttemps.get(addr);\r\n\t\t\tif (failedLoginAttemps == null)\r\n\t\t\t{\r\n\t\t\t\tfailedLoginAttemps = 1;\r\n\t\t\t}\r\n\t\t\telse\r\n\t\t\t{\r\n\t\t\t\t++failedLoginAttemps;\r\n\t\t\t}\r\n\t\t\t\r\n\t\t\t_failedLoginAttemps.put(addr, failedLoginAttemps);\r\n\t\t}\r\n\t\t\r\n\t\tif (failedLoginAttemps >= Config.LOGIN_TRY_BEFORE_BAN)\r\n\t\t{\r\n\t\t\taddBanForAddress(addr, Config.LOGIN_BLOCK_AFTER_BAN * 1000);\r\n\t\t\t// we need to clear the failed login attempts here, so after the ip ban is over the client has another 5 attempts\r\n\t\t\tclearFailedLoginAttemps(addr);\r\n\t\t\tLOGGER.warning(\"Added banned address \" + addr.getHostAddress() + \"! Too many login attemps.\");\r\n\t\t}\r\n\t}\r\n\t\r\n\tprivate void clearFailedLoginAttemps(InetAddress addr)\r\n\t{\r\n\t\tsynchronized (_failedLoginAttemps)\r\n\t\t{\r\n\t\t\t_failedLoginAttemps.remove(addr);\r\n\t\t}\r\n\t}\r\n\t\r\n\tprivate AccountInfo retriveAccountInfo(InetAddress addr, String login, String password, boolean autoCreateIfEnabled)\r\n\t{\r\n\t\ttry\r\n\t\t{\r\n\t\t\tfinal MessageDigest md = MessageDigest.getInstance(\"SHA\");\r\n\t\t\tfinal byte[] raw = password.getBytes(StandardCharsets.UTF_8);\r\n\t\t\tfinal String hashBase64 = Base64.getEncoder().encodeToString(md.digest(raw));\r\n\t\t\t\r\n\t\t\ttry (Connection con = DatabaseFactory.getConnection();\r\n\t\t\t\tPreparedStatement ps = con.prepareStatement(USER_INFO_SELECT))\r\n\t\t\t{\r\n\t\t\t\tps.setString(1, Long.toString(System.currentTimeMillis()));\r\n\t\t\t\tps.setString(2, login);\r\n\t\t\t\ttry (ResultSet rset = ps.executeQuery())\r\n\t\t\t\t{\r\n\t\t\t\t\tif (rset.next())\r\n\t\t\t\t\t{\r\n\t\t\t\t\t\tfinal AccountInfo info = new AccountInfo(rset.getString(\"login\"), rset.getString(\"password\"), rset.getInt(\"accessLevel\"), rset.getInt(\"lastServer\"));\r\n\t\t\t\t\t\tif (!info.checkPassHash(hashBase64))\r\n\t\t\t\t\t\t{\r\n\t\t\t\t\t\t\t// wrong password\r\n\t\t\t\t\t\t\trecordFailedLoginAttemp(addr);\r\n\t\t\t\t\t\t\treturn null;\r\n\t\t\t\t\t\t}\r\n\t\t\t\t\t\t\r\n\t\t\t\t\t\tclearFailedLoginAttemps(addr);\r\n\t\t\t\t\t\treturn info;\r\n\t\t\t\t\t}\r\n\t\t\t\t}\r\n\t\t\t}\r\n\t\t\t\r\n\t\t\tif (!autoCreateIfEnabled || !Config.AUTO_CREATE_ACCOUNTS)\r\n\t\t\t{\r\n\t\t\t\t// account does not exist and auto create account is not desired\r\n\t\t\t\trecordFailedLoginAttemp(addr);\r\n\t\t\t\treturn null;\r\n\t\t\t}\r\n\t\t\t\r\n\t\t\ttry (Connection con = DatabaseFactory.getConnection();\r\n\t\t\t\tPreparedStatement ps = con.prepareStatement(AUTOCREATE_ACCOUNTS_INSERT))\r\n\t\t\t{\r\n\t\t\t\tps.setString(1, login);\r\n\t\t\t\tps.setString(2, hashBase64);\r\n\t\t\t\tps.setLong(3, System.currentTimeMillis());\r\n\t\t\t\tps.setInt(4, 0);\r\n\t\t\t\tps.setString(5, addr.getHostAddress());\r\n\t\t\t\tps.execute();\r\n\t\t\t}\r\n\t\t\tcatch (Exception e)\r\n\t\t\t{\r\n\t\t\t\tLOGGER.log(Level.WARNING, \"Exception while auto creating account for '\" + login + \"'!\", e);\r\n\t\t\t\treturn null;\r\n\t\t\t}\r\n\t\t\t\r\n\t\t\tLOGGER.info(\"Auto created account '\" + login + \"'.\");\r\n\t\t\treturn retriveAccountInfo(addr, login, password, false);\r\n\t\t}\r\n\t\tcatch (Exception e)\r\n\t\t{\r\n\t\t\tLOGGER.log(Level.WARNING, \"Exception while retriving account info for '\" + login + \"'!\", e);\r\n\t\t\treturn null;\r\n\t\t}\r\n\t}\r\n\t\r\n\tpublic AuthLoginResult tryCheckinAccount(LoginClient client, InetAddress address, AccountInfo info)\r\n\t{\r\n\t\tif (info.getAccessLevel() < 0)\r\n\t\t{\r\n\t\t\treturn AuthLoginResult.ACCOUNT_BANNED;\r\n\t\t}\r\n\t\t\r\n\t\tAuthLoginResult ret = AuthLoginResult.INVALID_PASSWORD;\r\n\t\t// check auth\r\n\t\tif (canCheckin(client, address, info))\r\n\t\t{\r\n\t\t\t// login was successful, verify presence on Gameservers\r\n\t\t\tret = AuthLoginResult.ALREADY_ON_GS;\r\n\t\t\tif (!isAccountInAnyGameServer(info.getLogin()))\r\n\t\t\t{\r\n\t\t\t\t// account isnt on any GS verify LS itself\r\n\t\t\t\tret = AuthLoginResult.ALREADY_ON_LS;\r\n\t\t\t\tif (_loginServerClients.putIfAbsent(info.getLogin(), client) == null)\r\n\t\t\t\t{\r\n\t\t\t\t\tret = AuthLoginResult.AUTH_SUCCESS;\r\n\t\t\t\t}\r\n\t\t\t}\r\n\t\t}\r\n\t\treturn ret;\r\n\t}\r\n\t\r\n\t/**\r\n\t * Adds the address to the ban list of the login server, with the given end time in milliseconds.\r\n\t * @param address The Address to be banned.\r\n\t * @param expiration Timestamp in milliseconds when this ban expires\r\n\t * @throws UnknownHostException if the address is invalid.\r\n\t */\r\n\tpublic void addBanForAddress(String address, long expiration) throws UnknownHostException\r\n\t{\r\n\t\t_bannedIps.putIfAbsent(InetAddress.getByName(address), expiration);\r\n\t}\r\n\t\r\n\t/**\r\n\t * Adds the address to the ban list of the login server, with the given duration.\r\n\t * @param address The Address to be banned.\r\n\t * @param duration is milliseconds\r\n\t */\r\n\tpublic void addBanForAddress(InetAddress address, long duration)\r\n\t{\r\n\t\t_bannedIps.putIfAbsent(address, System.currentTimeMillis() + duration);\r\n\t}\r\n\t\r\n\tpublic boolean isBannedAddress(InetAddress address) throws UnknownHostException\r\n\t{\r\n\t\tfinal String[] parts = address.getHostAddress().split(\"\\\\.\");\r\n\t\tLong bi = _bannedIps.get(address);\r\n\t\tif (bi == null)\r\n\t\t{\r\n\t\t\tbi = _bannedIps.get(InetAddress.getByName(parts[0] + \".\" + parts[1] + \".\" + parts[2] + \".0\"));\r\n\t\t}\r\n\t\tif (bi == null)\r\n\t\t{\r\n\t\t\tbi = _bannedIps.get(InetAddress.getByName(parts[0] + \".\" + parts[1] + \".0.0\"));\r\n\t\t}\r\n\t\tif (bi == null)\r\n\t\t{\r\n\t\t\tbi = _bannedIps.get(InetAddress.getByName(parts[0] + \".0.0.0\"));\r\n\t\t}\r\n\t\tif (bi != null)\r\n\t\t{\r\n\t\t\tif ((bi > 0) && (bi < System.currentTimeMillis()))\r\n\t\t\t{\r\n\t\t\t\t_bannedIps.remove(address);\r\n\t\t\t\tLOGGER.info(\"Removed expired ip address ban \" + address.getHostAddress() + \".\");\r\n\t\t\t\treturn false;\r\n\t\t\t}\r\n\t\t\treturn true;\r\n\t\t}\r\n\t\treturn false;\r\n\t}\r\n\t\r\n\tpublic Map<InetAddress, Long> getBannedIps()\r\n\t{\r\n\t\treturn _bannedIps;\r\n\t}\r\n\t\r\n\t/**\r\n\t * Remove the specified address from the ban list\r\n\t * @param address The address to be removed from the ban list\r\n\t * @return true if the ban was removed, false if there was no ban for this ip\r\n\t */\r\n\tpublic boolean removeBanForAddress(InetAddress address)\r\n\t{\r\n\t\treturn _bannedIps.remove(address) != null;\r\n\t}\r\n\t\r\n\t/**\r\n\t * Remove the specified address from the ban list\r\n\t * @param address The address to be removed from the ban list\r\n\t * @return true if the ban was removed, false if there was no ban for this ip or the address was invalid.\r\n\t */\r\n\tpublic boolean removeBanForAddress(String address)\r\n\t{\r\n\t\ttry\r\n\t\t{\r\n\t\t\treturn removeBanForAddress(InetAddress.getByName(address));\r\n\t\t}\r\n\t\tcatch (UnknownHostException e)\r\n\t\t{\r\n\t\t\treturn false;\r\n\t\t}\r\n\t}\r\n\t\r\n\tpublic SessionKey getKeyForAccount(String account)\r\n\t{\r\n\t\tfinal LoginClient client = _loginServerClients.get(account);\r\n\t\tif (client != null)\r\n\t\t{\r\n\t\t\treturn client.getSessionKey();\r\n\t\t}\r\n\t\treturn null;\r\n\t}\r\n\t\r\n\tpublic boolean isAccountInAnyGameServer(String account)\r\n\t{\r\n\t\tfinal Collection<GameServerInfo> serverList = GameServerTable.getInstance().getRegisteredGameServers().values();\r\n\t\tfor (GameServerInfo gsi : serverList)\r\n\t\t{\r\n\t\t\tfinal GameServerThread gst = gsi.getGameServerThread();\r\n\t\t\tif ((gst != null) && gst.hasAccountOnGameServer(account))\r\n\t\t\t{\r\n\t\t\t\treturn true;\r\n\t\t\t}\r\n\t\t}\r\n\t\treturn false;\r\n\t}\r\n\t\r\n\tpublic GameServerInfo getAccountOnGameServer(String account)\r\n\t{\r\n\t\tfinal Collection<GameServerInfo> serverList = GameServerTable.getInstance().getRegisteredGameServers().values();\r\n\t\tfor (GameServerInfo gsi : serverList)\r\n\t\t{\r\n\t\t\tfinal GameServerThread gst = gsi.getGameServerThread();\r\n\t\t\tif ((gst != null) && gst.hasAccountOnGameServer(account))\r\n\t\t\t{\r\n\t\t\t\treturn gsi;\r\n\t\t\t}\r\n\t\t}\r\n\t\treturn null;\r\n\t}\r\n\t\r\n\tpublic void getCharactersOnAccount(String account)\r\n\t{\r\n\t\tfor (GameServerInfo gsi : GameServerTable.getInstance().getRegisteredGameServers().values())\r\n\t\t{\r\n\t\t\tif (gsi.isAuthed())\r\n\t\t\t{\r\n\t\t\t\tgsi.getGameServerThread().requestCharacters(account);\r\n\t\t\t}\r\n\t\t}\r\n\t}\r\n\t\r\n\t/**\r\n\t * @param client\r\n\t * @param serverId\r\n\t * @return\r\n\t */\r\n\tpublic boolean isLoginPossible(LoginClient client, int serverId)\r\n\t{\r\n\t\tfinal GameServerInfo gsi = GameServerTable.getInstance().getRegisteredGameServerById(serverId);\r\n\t\tif ((gsi != null) && gsi.isAuthed())\r\n\t\t{\r\n\t\t\tfinal boolean loginOk = gsi.canLogin(client);\r\n\t\t\tif (loginOk && (client.getLastServer() != serverId))\r\n\t\t\t{\r\n\t\t\t\ttry (Connection con = DatabaseFactory.getConnection();\r\n\t\t\t\t\tPreparedStatement ps = con.prepareStatement(ACCOUNT_LAST_SERVER_UPDATE))\r\n\t\t\t\t{\r\n\t\t\t\t\tps.setInt(1, serverId);\r\n\t\t\t\t\tps.setString(2, client.getAccount());\r\n\t\t\t\t\tps.executeUpdate();\r\n\t\t\t\t}\r\n\t\t\t\tcatch (Exception e)\r\n\t\t\t\t{\r\n\t\t\t\t\tLOGGER.log(Level.WARNING, \"Could not set lastServer: \" + e.getMessage(), e);\r\n\t\t\t\t}\r\n\t\t\t}\r\n\t\t\treturn loginOk;\r\n\t\t}\r\n\t\treturn false;\r\n\t}\r\n\t\r\n\tpublic void setAccountAccessLevel(String account, int banLevel)\r\n\t{\r\n\t\ttry (Connection con = DatabaseFactory.getConnection();\r\n\t\t\tPreparedStatement ps = con.prepareStatement(ACCOUNT_ACCESS_LEVEL_UPDATE))\r\n\t\t{\r\n\t\t\tps.setInt(1, banLevel);\r\n\t\t\tps.setString(2, account);\r\n\t\t\tps.executeUpdate();\r\n\t\t}\r\n\t\tcatch (Exception e)\r\n\t\t{\r\n\t\t\tLOGGER.log(Level.WARNING, \"Could not set accessLevel: \" + e.getMessage(), e);\r\n\t\t}\r\n\t}\r\n\t\r\n\tpublic void setAccountLastTracert(String account, String pcIp, String hop1, String hop2, String hop3, String hop4)\r\n\t{\r\n\t\ttry (Connection con = DatabaseFactory.getConnection();\r\n\t\t\tPreparedStatement ps = con.prepareStatement(ACCOUNT_IPS_UPDATE))\r\n\t\t{\r\n\t\t\tps.setString(1, pcIp);\r\n\t\t\tps.setString(2, hop1);\r\n\t\t\tps.setString(3, hop2);\r\n\t\t\tps.setString(4, hop3);\r\n\t\t\tps.setString(5, hop4);\r\n\t\t\tps.setString(6, account);\r\n\t\t\tps.executeUpdate();\r\n\t\t}\r\n\t\tcatch (Exception e)\r\n\t\t{\r\n\t\t\tLOGGER.log(Level.WARNING, \"Could not set last tracert: \" + e.getMessage(), e);\r\n\t\t}\r\n\t}\r\n\t\r\n\tpublic void setCharactersOnServer(String account, int charsNum, long[] timeToDel, int serverId)\r\n\t{\r\n\t\tfinal LoginClient client = _loginServerClients.get(account);\r\n\t\tif (client == null)\r\n\t\t{\r\n\t\t\treturn;\r\n\t\t}\r\n\t\t\r\n\t\tif (charsNum > 0)\r\n\t\t{\r\n\t\t\tclient.setCharsOnServ(serverId, charsNum);\r\n\t\t}\r\n\t\t\r\n\t\tif (timeToDel.length > 0)\r\n\t\t{\r\n\t\t\tclient.serCharsWaitingDelOnServ(serverId, timeToDel);\r\n\t\t}\r\n\t}\r\n\t\r\n\t/**\r\n\t * <p>\r\n\t * This method returns one of the cached {@link ScrambledKeyPair ScrambledKeyPairs} for communication with Login Clients.\r\n\t * </p>\r\n\t * @return a scrambled keypair\r\n\t */\r\n\tpublic ScrambledKeyPair getScrambledRSAKeyPair()\r\n\t{\r\n\t\treturn _keyPairs[Rnd.get(10)];\r\n\t}\r\n\t\r\n\t/**\r\n\t * @param client the client\r\n\t * @param address client host address\r\n\t * @param info the account info to checkin\r\n\t * @return true when ok to checkin, false otherwise\r\n\t */\r\n\tpublic boolean canCheckin(LoginClient client, InetAddress address, AccountInfo info)\r\n\t{\r\n\t\ttry\r\n\t\t{\r\n\t\t\tfinal List<InetAddress> ipWhiteList = new ArrayList<>();\r\n\t\t\tfinal List<InetAddress> ipBlackList = new ArrayList<>();\r\n\t\t\ttry (Connection con = DatabaseFactory.getConnection();\r\n\t\t\t\tPreparedStatement ps = con.prepareStatement(ACCOUNT_IPAUTH_SELECT))\r\n\t\t\t{\r\n\t\t\t\tps.setString(1, info.getLogin());\r\n\t\t\t\ttry (ResultSet rset = ps.executeQuery())\r\n\t\t\t\t{\r\n\t\t\t\t\tString ip;\r\n\t\t\t\t\tString type;\r\n\t\t\t\t\twhile (rset.next())\r\n\t\t\t\t\t{\r\n\t\t\t\t\t\tip = rset.getString(\"ip\");\r\n\t\t\t\t\t\ttype = rset.getString(\"type\");\r\n\t\t\t\t\t\tif (!isValidIPAddress(ip))\r\n\t\t\t\t\t\t{\r\n\t\t\t\t\t\t\tcontinue;\r\n\t\t\t\t\t\t}\r\n\t\t\t\t\t\tif (type.equals(\"allow\"))\r\n\t\t\t\t\t\t{\r\n\t\t\t\t\t\t\tipWhiteList.add(InetAddress.getByName(ip));\r\n\t\t\t\t\t\t}\r\n\t\t\t\t\t\telse if (type.equals(\"deny\"))\r\n\t\t\t\t\t\t{\r\n\t\t\t\t\t\t\tipBlackList.add(InetAddress.getByName(ip));\r\n\t\t\t\t\t\t}\r\n\t\t\t\t\t}\r\n\t\t\t\t}\r\n\t\t\t}\r\n\t\t\t\r\n\t\t\t// Check IP\r\n\t\t\tif (!ipWhiteList.isEmpty() || !ipBlackList.isEmpty())\r\n\t\t\t{\r\n\t\t\t\tif (!ipWhiteList.isEmpty() && !ipWhiteList.contains(address))\r\n\t\t\t\t{\r\n\t\t\t\t\tLOGGER.warning(\"Account checkin attemp from address(\" + address.getHostAddress() + \") not present on whitelist for account '\" + info.getLogin() + \"'.\");\r\n\t\t\t\t\treturn false;\r\n\t\t\t\t}\r\n\t\t\t\t\r\n\t\t\t\tif (!ipBlackList.isEmpty() && ipBlackList.contains(address))\r\n\t\t\t\t{\r\n\t\t\t\t\tLOGGER.warning(\"Account checkin attemp from address(\" + address.getHostAddress() + \") on blacklist for account '\" + info.getLogin() + \"'.\");\r\n\t\t\t\t\treturn false;\r\n\t\t\t\t}\r\n\t\t\t}\r\n\t\t\t\r\n\t\t\tclient.setAccessLevel(info.getAccessLevel());\r\n\t\t\tclient.setLastServer(info.getLastServer());\r\n\t\t\ttry (Connection con = DatabaseFactory.getConnection();\r\n\t\t\t\tPreparedStatement ps = con.prepareStatement(ACCOUNT_INFO_UPDATE))\r\n\t\t\t{\r\n\t\t\t\tps.setLong(1, System.currentTimeMillis());\r\n\t\t\t\tps.setString(2, address.getHostAddress());\r\n\t\t\t\tps.setString(3, info.getLogin());\r\n\t\t\t\tps.execute();\r\n\t\t\t}\r\n\t\t\t\r\n\t\t\treturn true;\r\n\t\t}\r\n\t\tcatch (Exception e)\r\n\t\t{\r\n\t\t\tLOGGER.log(Level.WARNING, \"Could not finish login process!\", e);\r\n\t\t\treturn false;\r\n\t\t}\r\n\t}\r\n\t\r\n\tpublic boolean isValidIPAddress(String ipAddress)\r\n\t{\r\n\t\tfinal String[] parts = ipAddress.split(\"\\\\.\");\r\n\t\tif (parts.length != 4)\r\n\t\t{\r\n\t\t\treturn false;\r\n\t\t}\r\n\t\t\r\n\t\tfor (String s : parts)\r\n\t\t{\r\n\t\t\tfinal int i = Integer.parseInt(s);\r\n\t\t\tif ((i < 0) || (i > 255))\r\n\t\t\t{\r\n\t\t\t\treturn false;\r\n\t\t\t}\r\n\t\t}\r\n\t\treturn true;\r\n\t}\r\n\t\r\n\tpublic static void load() throws GeneralSecurityException\r\n\t{\r\n\t\tsynchronized (LoginController.class)\r\n\t\t{\r\n\t\t\tif (_instance == null)\r\n\t\t\t{\r\n\t\t\t\t_instance = new LoginController();\r\n\t\t\t}\r\n\t\t\telse\r\n\t\t\t{\r\n\t\t\t\tthrow new IllegalStateException(\"LoginController can only be loaded a single time.\");\r\n\t\t\t}\r\n\t\t}\r\n\t}\r\n\t\r\n\tpublic static LoginController getInstance()\r\n\t{\r\n\t\treturn _instance;\r\n\t}\r\n\t\r\n\tclass PurgeThread extends Thread\r\n\t{\r\n\t\tpublic PurgeThread()\r\n\t\t{\r\n\t\t\tsetName(\"PurgeThread\");\r\n\t\t}\r\n\t\t\r\n\t\t@Override\r\n\t\tpublic void run()\r\n\t\t{\r\n\t\t\twhile (!isInterrupted())\r\n\t\t\t{\r\n\t\t\t\tfor (LoginClient client : _loginServerClients.values())\r\n\t\t\t\t{\r\n\t\t\t\t\tif (client == null)\r\n\t\t\t\t\t{\r\n\t\t\t\t\t\tcontinue;\r\n\t\t\t\t\t}\r\n\t\t\t\t\tif ((client.getConnectionStartTime() + LOGIN_TIMEOUT) < System.currentTimeMillis())\r\n\t\t\t\t\t{\r\n\t\t\t\t\t\tclient.close(LoginFailReason.REASON_ACCESS_FAILED);\r\n\t\t\t\t\t}\r\n\t\t\t\t}\r\n\t\t\t\t\r\n\t\t\t\ttry\r\n\t\t\t\t{\r\n\t\t\t\t\tThread.sleep(LOGIN_TIMEOUT / 2);\r\n\t\t\t\t}\r\n\t\t\t\tcatch (Exception e)\r\n\t\t\t\t{\r\n\t\t\t\t\t// Ignore.\r\n\t\t\t\t}\r\n\t\t\t}\r\n\t\t}\r\n\t}\r\n\r\n\r\n\tpublic String loginValid(String sessionKey, LoginClient client)// throws HackingException\r\n\t{\r\n\t\tboolean ok = false;\r\n\t\tInetAddress address = client.getConnectionAddress();\r\n\r\n\t\t// player disconnected meanwhile\r\n\t\tif (address == null || sessionKey == null)\r\n\t\t{\r\n\t\t\treturn null;\r\n\t\t}\r\n\r\n\t\tString login = null;\r\n\t\tConnection con = null;\r\n\t\ttry\r\n\t\t{\r\n\t\t\tcon = DatabaseFactory.getConnection();\r\n\t\t\tPreparedStatement statement =\r\n\t\t\t\t\tcon.prepareStatement(\"SELECT login, expiryTime FROM auth_session WHERE `key`=?\");\r\n\t\t\tstatement.setString(1, sessionKey);\r\n\t\t\tResultSet rset = statement.executeQuery();\r\n\t\t\tif (rset.next())\r\n\t\t\t{\r\n\t\t\t\tlogin = rset.getString(\"login\");\r\n\t\t\t\tlong expiryTime = rset.getLong(\"expiryTime\");\r\n\t\t\t\tif (expiryTime > System.currentTimeMillis())\r\n\t\t\t\t{\r\n\t\t\t\t\tok = true;\r\n\t\t\t\t}\r\n\t\t\t}\r\n\t\t\trset.close();\r\n\t\t\tstatement.close();\r\n\r\n\t\t\tif (ok)\r\n\t\t\t{\r\n\t\t\t\tint access = 0;\r\n\t\t\t\tint lastServer = 1;\r\n\t\t\t\tstatement = con.prepareStatement(\"SELECT accessLevel, lastServer, userIP FROM accounts WHERE login=?\");\r\n\t\t\t\tstatement.setString(1, login);\r\n\t\t\t\trset = statement.executeQuery();\r\n\t\t\t\tif (rset.next())\r\n\t\t\t\t{\r\n\t\t\t\t\taccess = rset.getInt(\"accessLevel\");\r\n\t\t\t\t\tlastServer = rset.getInt(\"lastServer\");\r\n\t\t\t\t\tif (lastServer <= 0)\r\n\t\t\t\t\t{\r\n\t\t\t\t\t\tlastServer = 1; // minServerId is 1 in Interlude\r\n\t\t\t\t\t}\r\n\t\t\t\t}\r\n\t\t\t\trset.close();\r\n\t\t\t\tstatement.close();\r\n\r\n\t\t\t\tclient.setAccessLevel(access);\r\n\t\t\t\tclient.setLastServer(lastServer);\r\n\t\t\t\tPreparedStatement statement2 =\r\n\t\t\t\t\t\tcon.prepareStatement(\"SELECT lastIP, lastIP2 FROM accounts WHERE login=?\");\r\n\t\t\t\tstatement2.setString(1, login);\r\n\t\t\t\trset = statement2.executeQuery();\r\n\t\t\t\tString lastIP = null;\r\n\t\t\t\tString lastIP2 = null;\r\n\t\t\t\tif (rset.next())\r\n\t\t\t\t{\r\n\t\t\t\t\tlastIP = rset.getString(\"lastIP\");\r\n\t\t\t\t\tlastIP2 = rset.getString(\"lastIP2\");\r\n\t\t\t\t}\r\n\t\t\t\trset.close();\r\n\t\t\t\tstatement2.close();\r\n\t\t\t\tif (lastIP == null || !lastIP.equals(address.getHostAddress()))\r\n\t\t\t\t{\r\n\t\t\t\t\tPreparedStatement statement3 = con.prepareStatement(\r\n\t\t\t\t\t\t\t\"UPDATE accounts SET lastactive=?, lastIP=?, lastIP2=?, lastIP3=? WHERE login=?\");\r\n\t\t\t\t\tstatement3.setLong(1, System.currentTimeMillis());\r\n\t\t\t\t\tstatement3.setString(2, address.getHostAddress());\r\n\t\t\t\t\tstatement3.setString(3, lastIP);\r\n\t\t\t\t\tstatement3.setString(4, lastIP2);\r\n\t\t\t\t\tstatement3.setString(5, login);\r\n\t\t\t\t\tstatement3.execute();\r\n\t\t\t\t\tstatement3.close();\r\n\t\t\t\t}\r\n\t\t\t\telse\r\n\t\t\t\t{\r\n\t\t\t\t\tPreparedStatement statement3 =\r\n\t\t\t\t\t\t\tcon.prepareStatement(\"UPDATE accounts SET lastactive=? WHERE login=?\");\r\n\t\t\t\t\tstatement3.setLong(1, System.currentTimeMillis());\r\n\t\t\t\t\tstatement3.setString(2, login);\r\n\t\t\t\t\tstatement3.execute();\r\n\t\t\t\t\tstatement3.close();\r\n\t\t\t\t}\r\n\t\t\t}\r\n\t\t}\r\n\t\tcatch (Exception e)\r\n\t\t{\r\n\t\t\tLOGGER.log(Level.WARNING, \"Could not check password(\" + sessionKey + \"):\" + e.getMessage(), e);\r\n\t\t\tok = false;\r\n\t\t}\r\n\t\tfinally\r\n\t\t{\r\n\t\t\tDatabaseFactory.close();\r\n\t\t}\r\n\r\n\t\tif (!ok)\r\n\t\t{\r\n\t\t\tlogin = null;\r\n\r\n\t\t\tFailedLoginAttempt failedAttempt = _hackProtection.get(address);\r\n\t\t\tint failedCount;\r\n\t\t\tif (failedAttempt == null)\r\n\t\t\t{\r\n\t\t\t\t_hackProtection.put(address, new FailedLoginAttempt(address, sessionKey));\r\n\t\t\t\tfailedCount = 1;\r\n\t\t\t}\r\n\t\t\telse\r\n\t\t\t{\r\n\t\t\t\tfailedAttempt.increaseCounter(sessionKey);\r\n\t\t\t\tfailedCount = failedAttempt.getCount();\r\n\t\t\t}\r\n\r\n\t\t\tif (failedCount >= Config.LOGIN_TRY_BEFORE_BAN)\r\n\t\t\t{\r\n\t\t\t\tLOGGER.info(\"Banning '\" + address.getHostAddress() + \"' for \" + Config.LOGIN_BLOCK_AFTER_BAN +\r\n\t\t\t\t\t\t\" seconds due to \" + failedCount + \" invalid user/pass attempts\");\r\n\t\t\t\t// this.(address, Config.LOGIN_BLOCK_AFTER_BAN * 1000);\r\n\t\t\t}\r\n\t\t}\r\n\t\telse\r\n\t\t{\r\n\t\t\t_hackProtection.remove(address);\r\n\t\t}\r\n\r\n\t\treturn login;\r\n\t}\r\n\r\n\tclass FailedLoginAttempt\r\n\t{\r\n\t\t//private InetAddress _ipAddress;\r\n\t\tprivate int _count;\r\n\t\tprivate long _lastAttempTime;\r\n\t\tprivate String _lastPassword;\r\n\r\n\t\tpublic FailedLoginAttempt(InetAddress address, String lastPassword)\r\n\t\t{\r\n\t\t\t//_ipAddress = address;\r\n\t\t\t_count = 1;\r\n\t\t\t_lastAttempTime = System.currentTimeMillis();\r\n\t\t\t_lastPassword = lastPassword;\r\n\t\t}\r\n\r\n\t\tpublic void increaseCounter(String password)\r\n\t\t{\r\n\t\t\tif (!_lastPassword.equals(password))\r\n\t\t\t{\r\n\t\t\t\t// check if theres a long time since last wrong try\r\n\t\t\t\tif (System.currentTimeMillis() - _lastAttempTime < 300 * 1000)\r\n\t\t\t\t{\r\n\t\t\t\t\t_count++;\r\n\t\t\t\t}\r\n\t\t\t\telse\r\n\t\t\t\t{\r\n\t\t\t\t\t// restart the status\r\n\t\t\t\t\t_count = 1;\r\n\t\t\t\t}\r\n\t\t\t\t_lastPassword = password;\r\n\t\t\t\t_lastAttempTime = System.currentTimeMillis();\r\n\t\t\t}\r\n\t\t\telse\r\n\t\t\t//trying the same password is not brute force\r\n\t\t\t{\r\n\t\t\t\t_lastAttempTime = System.currentTimeMillis();\r\n\t\t\t}\r\n\t\t}\r\n\r\n\t\tpublic int getCount()\r\n\t\t{\r\n\t\t\treturn _count;\r\n\t\t}\r\n\r\n\t\tpublic void increaseCounter()\r\n\t\t{\r\n\t\t\t_count++;\r\n\t\t}\r\n\t}\r\n\r\n\r\n\r\n\r\n\tpublic enum AuthLoginResult\r\n\t{\r\n\t\tINVALID_PASSWORD,\r\n\t\tACCOUNT_BANNED,\r\n\t\tALREADY_ON_LS,\r\n\t\tALREADY_ON_GS,\r\n\t\tAUTH_SUCCESS\r\n\t}\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- java/org/l2jmobius/loginserver/LoginController.java	(revision 2ce68f86cda44aaaf0a5400b7f1e3ed76453bf07)
++++ java/org/l2jmobius/loginserver/LoginController.java	(date 1589285002187)
+@@ -1,16 +1,16 @@
+ /*
+  * This file is part of the L2J Mobius project.
+- * 
++ *
+  * This program is free software: you can redistribute it and/or modify
+  * it under the terms of the GNU General Public License as published by
+  * the Free Software Foundation, either version 3 of the License, or
+  * (at your option) any later version.
+- * 
++ *
+  * This program is distributed in the hope that it will be useful,
+  * but WITHOUT ANY WARRANTY; without even the implied warranty of
+  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
+  * General Public License for more details.
+- * 
++ *
+  * You should have received a copy of the GNU General Public License
+  * along with this program. If not, see <http://www.gnu.org/licenses/>.
+  */
+@@ -26,6 +26,7 @@
+ import java.sql.Connection;
+ import java.sql.PreparedStatement;
+ import java.sql.ResultSet;
++import java.sql.SQLException;
+ import java.util.ArrayList;
+ import java.util.Base64;
+ import java.util.Collection;
+@@ -51,18 +52,18 @@
+ public class LoginController
+ {
+ 	protected static final Logger LOGGER = Logger.getLogger(LoginController.class.getName());
+-	
++
+ 	private static LoginController _instance;
+-	
++
+ 	/** Time before kicking the client if he didn't logged yet */
+ 	public static final int LOGIN_TIMEOUT = 60 * 1000;
+-	
++
+ 	/** Authed Clients on LoginServer */
+ 	protected Map<String, LoginClient> _loginServerClients = new ConcurrentHashMap<>();
+-	
++
+ 	private final Map<InetAddress, Integer> _failedLoginAttemps = new HashMap<>();
+ 	private final Map<InetAddress, Long> _bannedIps = new ConcurrentHashMap<>();
+-	
++
+ 	private final ScrambledKeyPair[] _keyPairs;
+ 	private final KeyGenerator _blowfishKeyGenerator;
+ 	private final Map<InetAddress, FailedLoginAttempt> _hackProtection;
+@@ -76,7 +77,7 @@
+ 	private static final String ACCOUNT_ACCESS_LEVEL_UPDATE = "UPDATE accounts SET accessLevel = ? WHERE login = ?";
+ 	private static final String ACCOUNT_IPS_UPDATE = "UPDATE accounts SET pcIp = ?, hop1 = ?, hop2 = ?, hop3 = ?, hop4 = ? WHERE login = ?";
+ 	private static final String ACCOUNT_IPAUTH_SELECT = "SELECT * FROM accounts_ipauth WHERE login = ?";
+-	
++
+ 	private LoginController() throws GeneralSecurityException
+ 	{
+ 		LOGGER.info("Loading LoginController...");
+@@ -91,26 +92,26 @@
+ 		{
+ 			_keyPairs[i] = new ScrambledKeyPair(rsaKeyPairGenerator.generateKeyPair());
+ 		}
+-		
++
+ 		LOGGER.info("Cached 10 KeyPairs for RSA communication.");
+-		
++
+ 		final Thread purge = new PurgeThread();
+ 		purge.setDaemon(true);
+ 		purge.start();
+ 	}
+-	
++
+ 	public SecretKey generateBlowfishKey()
+ 	{
+ 		return _blowfishKeyGenerator.generateKey();
+ 	}
+-	
++
+ 	public SessionKey assignSessionKeyToClient(String account, LoginClient client)
+ 	{
+ 		final SessionKey key = new SessionKey(Rnd.nextInt(), Rnd.nextInt(), Rnd.nextInt(), Rnd.nextInt());
+ 		_loginServerClients.put(account, client);
+ 		return key;
+ 	}
+-	
++
+ 	public void removeAuthedLoginClient(String account)
+ 	{
+ 		if (account == null)
+@@ -119,12 +120,12 @@
+ 		}
+ 		_loginServerClients.remove(account);
+ 	}
+-	
++
+ 	public LoginClient getAuthedClient(String account)
+ 	{
+ 		return _loginServerClients.get(account);
+ 	}
+-	
++
+ 	public AccountInfo retriveAccountInfo(InetAddress clientAddr, String login, String password)
+ 	{
+ 		return retriveAccountInfo(clientAddr, login, password, true);
+@@ -149,10 +150,10 @@
+ 			{
+ 				++failedLoginAttemps;
+ 			}
+-			
++
+ 			_failedLoginAttemps.put(addr, failedLoginAttemps);
+ 		}
+-		
++
+ 		if (failedLoginAttemps >= Config.LOGIN_TRY_BEFORE_BAN)
+ 		{
+ 			addBanForAddress(addr, Config.LOGIN_BLOCK_AFTER_BAN * 1000);
+@@ -161,7 +162,7 @@
+ 			LOGGER.warning("Added banned address " + addr.getHostAddress() + "! Too many login attemps.");
+ 		}
+ 	}
+-	
++
+ 	private void clearFailedLoginAttemps(InetAddress addr)
+ 	{
+ 		synchronized (_failedLoginAttemps)
+@@ -169,7 +170,7 @@
+ 			_failedLoginAttemps.remove(addr);
+ 		}
+ 	}
+-	
++
+ 	private AccountInfo retriveAccountInfo(InetAddress addr, String login, String password, boolean autoCreateIfEnabled)
+ 	{
+ 		try
+@@ -177,9 +178,9 @@
+ 			final MessageDigest md = MessageDigest.getInstance("SHA");
+ 			final byte[] raw = password.getBytes(StandardCharsets.UTF_8);
+ 			final String hashBase64 = Base64.getEncoder().encodeToString(md.digest(raw));
+-			
++
+ 			try (Connection con = DatabaseFactory.getConnection();
+-				PreparedStatement ps = con.prepareStatement(USER_INFO_SELECT))
++				 PreparedStatement ps = con.prepareStatement(USER_INFO_SELECT))
+ 			{
+ 				ps.setString(1, Long.toString(System.currentTimeMillis()));
+ 				ps.setString(2, login);
+@@ -194,22 +195,22 @@
+ 							recordFailedLoginAttemp(addr);
+ 							return null;
+ 						}
+-						
++
+ 						clearFailedLoginAttemps(addr);
+ 						return info;
+ 					}
+ 				}
+ 			}
+-			
++
+ 			if (!autoCreateIfEnabled || !Config.AUTO_CREATE_ACCOUNTS)
+ 			{
+ 				// account does not exist and auto create account is not desired
+ 				recordFailedLoginAttemp(addr);
+ 				return null;
+ 			}
+-			
++
+ 			try (Connection con = DatabaseFactory.getConnection();
+-				PreparedStatement ps = con.prepareStatement(AUTOCREATE_ACCOUNTS_INSERT))
++				 PreparedStatement ps = con.prepareStatement(AUTOCREATE_ACCOUNTS_INSERT))
+ 			{
+ 				ps.setString(1, login);
+ 				ps.setString(2, hashBase64);
+@@ -223,7 +224,7 @@
+ 				LOGGER.log(Level.WARNING, "Exception while auto creating account for '" + login + "'!", e);
+ 				return null;
+ 			}
+-			
++
+ 			LOGGER.info("Auto created account '" + login + "'.");
+ 			return retriveAccountInfo(addr, login, password, false);
+ 		}
+@@ -233,14 +234,14 @@
+ 			return null;
+ 		}
+ 	}
+-	
++
+ 	public AuthLoginResult tryCheckinAccount(LoginClient client, InetAddress address, AccountInfo info)
+ 	{
+ 		if (info.getAccessLevel() < 0)
+ 		{
+ 			return AuthLoginResult.ACCOUNT_BANNED;
+ 		}
+-		
++
+ 		AuthLoginResult ret = AuthLoginResult.INVALID_PASSWORD;
+ 		// check auth
+ 		if (canCheckin(client, address, info))
+@@ -259,7 +260,7 @@
+ 		}
+ 		return ret;
+ 	}
+-	
++
+ 	/**
+ 	 * Adds the address to the ban list of the login server, with the given end time in milliseconds.
+ 	 * @param address The Address to be banned.
+@@ -270,7 +271,7 @@
+ 	{
+ 		_bannedIps.putIfAbsent(InetAddress.getByName(address), expiration);
+ 	}
+-	
++
+ 	/**
+ 	 * Adds the address to the ban list of the login server, with the given duration.
+ 	 * @param address The Address to be banned.
+@@ -280,7 +281,7 @@
+ 	{
+ 		_bannedIps.putIfAbsent(address, System.currentTimeMillis() + duration);
+ 	}
+-	
++
+ 	public boolean isBannedAddress(InetAddress address) throws UnknownHostException
+ 	{
+ 		final String[] parts = address.getHostAddress().split("\\.");
+@@ -309,12 +310,12 @@
+ 		}
+ 		return false;
+ 	}
+-	
++
+ 	public Map<InetAddress, Long> getBannedIps()
+ 	{
+ 		return _bannedIps;
+ 	}
+-	
++
+ 	/**
+ 	 * Remove the specified address from the ban list
+ 	 * @param address The address to be removed from the ban list
+@@ -324,7 +325,7 @@
+ 	{
+ 		return _bannedIps.remove(address) != null;
+ 	}
+-	
++
+ 	/**
+ 	 * Remove the specified address from the ban list
+ 	 * @param address The address to be removed from the ban list
+@@ -341,7 +342,7 @@
+ 			return false;
+ 		}
+ 	}
+-	
++
+ 	public SessionKey getKeyForAccount(String account)
+ 	{
+ 		final LoginClient client = _loginServerClients.get(account);
+@@ -351,7 +352,7 @@
+ 		}
+ 		return null;
+ 	}
+-	
++
+ 	public boolean isAccountInAnyGameServer(String account)
+ 	{
+ 		final Collection<GameServerInfo> serverList = GameServerTable.getInstance().getRegisteredGameServers().values();
+@@ -365,7 +366,7 @@
+ 		}
+ 		return false;
+ 	}
+-	
++
+ 	public GameServerInfo getAccountOnGameServer(String account)
+ 	{
+ 		final Collection<GameServerInfo> serverList = GameServerTable.getInstance().getRegisteredGameServers().values();
+@@ -379,7 +380,7 @@
+ 		}
+ 		return null;
+ 	}
+-	
++
+ 	public void getCharactersOnAccount(String account)
+ 	{
+ 		for (GameServerInfo gsi : GameServerTable.getInstance().getRegisteredGameServers().values())
+@@ -390,7 +391,7 @@
+ 			}
+ 		}
+ 	}
+-	
++
+ 	/**
+ 	 * @param client
+ 	 * @param serverId
+@@ -405,7 +406,7 @@
+ 			if (loginOk && (client.getLastServer() != serverId))
+ 			{
+ 				try (Connection con = DatabaseFactory.getConnection();
+-					PreparedStatement ps = con.prepareStatement(ACCOUNT_LAST_SERVER_UPDATE))
++					 PreparedStatement ps = con.prepareStatement(ACCOUNT_LAST_SERVER_UPDATE))
+ 				{
+ 					ps.setInt(1, serverId);
+ 					ps.setString(2, client.getAccount());
+@@ -420,11 +421,11 @@
+ 		}
+ 		return false;
+ 	}
+-	
++
+ 	public void setAccountAccessLevel(String account, int banLevel)
+ 	{
+ 		try (Connection con = DatabaseFactory.getConnection();
+-			PreparedStatement ps = con.prepareStatement(ACCOUNT_ACCESS_LEVEL_UPDATE))
++			 PreparedStatement ps = con.prepareStatement(ACCOUNT_ACCESS_LEVEL_UPDATE))
+ 		{
+ 			ps.setInt(1, banLevel);
+ 			ps.setString(2, account);
+@@ -435,11 +436,11 @@
+ 			LOGGER.log(Level.WARNING, "Could not set accessLevel: " + e.getMessage(), e);
+ 		}
+ 	}
+-	
++
+ 	public void setAccountLastTracert(String account, String pcIp, String hop1, String hop2, String hop3, String hop4)
+ 	{
+ 		try (Connection con = DatabaseFactory.getConnection();
+-			PreparedStatement ps = con.prepareStatement(ACCOUNT_IPS_UPDATE))
++			 PreparedStatement ps = con.prepareStatement(ACCOUNT_IPS_UPDATE))
+ 		{
+ 			ps.setString(1, pcIp);
+ 			ps.setString(2, hop1);
+@@ -454,7 +455,7 @@
+ 			LOGGER.log(Level.WARNING, "Could not set last tracert: " + e.getMessage(), e);
+ 		}
+ 	}
+-	
++
+ 	public void setCharactersOnServer(String account, int charsNum, long[] timeToDel, int serverId)
+ 	{
+ 		final LoginClient client = _loginServerClients.get(account);
+@@ -462,18 +463,18 @@
+ 		{
+ 			return;
+ 		}
+-		
++
+ 		if (charsNum > 0)
+ 		{
+ 			client.setCharsOnServ(serverId, charsNum);
+ 		}
+-		
++
+ 		if (timeToDel.length > 0)
+ 		{
+ 			client.serCharsWaitingDelOnServ(serverId, timeToDel);
+ 		}
+ 	}
+-	
++
+ 	/**
+ 	 * <p>
+ 	 * This method returns one of the cached {@link ScrambledKeyPair ScrambledKeyPairs} for communication with Login Clients.
+@@ -484,7 +485,7 @@
+ 	{
+ 		return _keyPairs[Rnd.get(10)];
+ 	}
+-	
++
+ 	/**
+ 	 * @param client the client
+ 	 * @param address client host address
+@@ -498,7 +499,7 @@
+ 			final List<InetAddress> ipWhiteList = new ArrayList<>();
+ 			final List<InetAddress> ipBlackList = new ArrayList<>();
+ 			try (Connection con = DatabaseFactory.getConnection();
+-				PreparedStatement ps = con.prepareStatement(ACCOUNT_IPAUTH_SELECT))
++				 PreparedStatement ps = con.prepareStatement(ACCOUNT_IPAUTH_SELECT))
+ 			{
+ 				ps.setString(1, info.getLogin());
+ 				try (ResultSet rset = ps.executeQuery())
+@@ -524,7 +525,7 @@
+ 					}
+ 				}
+ 			}
+-			
++
+ 			// Check IP
+ 			if (!ipWhiteList.isEmpty() || !ipBlackList.isEmpty())
+ 			{
+@@ -533,25 +534,25 @@
+ 					LOGGER.warning("Account checkin attemp from address(" + address.getHostAddress() + ") not present on whitelist for account '" + info.getLogin() + "'.");
+ 					return false;
+ 				}
+-				
++
+ 				if (!ipBlackList.isEmpty() && ipBlackList.contains(address))
+ 				{
+ 					LOGGER.warning("Account checkin attemp from address(" + address.getHostAddress() + ") on blacklist for account '" + info.getLogin() + "'.");
+ 					return false;
+ 				}
+ 			}
+-			
++
+ 			client.setAccessLevel(info.getAccessLevel());
+ 			client.setLastServer(info.getLastServer());
+ 			try (Connection con = DatabaseFactory.getConnection();
+-				PreparedStatement ps = con.prepareStatement(ACCOUNT_INFO_UPDATE))
++				 PreparedStatement ps = con.prepareStatement(ACCOUNT_INFO_UPDATE))
+ 			{
+ 				ps.setLong(1, System.currentTimeMillis());
+ 				ps.setString(2, address.getHostAddress());
+ 				ps.setString(3, info.getLogin());
+ 				ps.execute();
+ 			}
+-			
++
+ 			return true;
+ 		}
+ 		catch (Exception e)
+@@ -559,8 +560,9 @@
+ 			LOGGER.log(Level.WARNING, "Could not finish login process!", e);
+ 			return false;
+ 		}
++
+ 	}
+-	
++
+ 	public boolean isValidIPAddress(String ipAddress)
+ 	{
+ 		final String[] parts = ipAddress.split("\\.");
+@@ -568,7 +570,7 @@
+ 		{
+ 			return false;
+ 		}
+-		
++
+ 		for (String s : parts)
+ 		{
+ 			final int i = Integer.parseInt(s);
+@@ -579,7 +581,7 @@
+ 		}
+ 		return true;
+ 	}
+-	
++
+ 	public static void load() throws GeneralSecurityException
+ 	{
+ 		synchronized (LoginController.class)
+@@ -594,19 +596,19 @@
+ 			}
+ 		}
+ 	}
+-	
++
+ 	public static LoginController getInstance()
+ 	{
+ 		return _instance;
+ 	}
+-	
++
+ 	class PurgeThread extends Thread
+ 	{
+ 		public PurgeThread()
+ 		{
+ 			setName("PurgeThread");
+ 		}
+-		
++
+ 		@Override
+ 		public void run()
+ 		{
+@@ -623,7 +625,7 @@
+ 						client.close(LoginFailReason.REASON_ACCESS_FAILED);
+ 					}
+ 				}
+-				
++
+ 				try
+ 				{
+ 					Thread.sleep(LOGIN_TIMEOUT / 2);
+@@ -637,7 +639,7 @@
+ 	}
+ 
+ 
+-	public String loginValid(String sessionKey, LoginClient client)// throws HackingException
++	public AccountInfo loginValid(String sessionKey, LoginClient client)// throws HackingException
+ 	{
+ 		boolean ok = false;
+ 		InetAddress address = client.getConnectionAddress();
+@@ -647,12 +649,10 @@
+ 		{
+ 			return null;
+ 		}
+-
++		AccountInfo info = null;
+ 		String login = null;
+-		Connection con = null;
+-		try
++		try (Connection con = DatabaseFactory.getConnection();)
+ 		{
+-			con = DatabaseFactory.getConnection();
+ 			PreparedStatement statement =
+ 					con.prepareStatement("SELECT login, expiryTime FROM auth_session WHERE `key`=?");
+ 			statement.setString(1, sessionKey);
+@@ -673,7 +673,7 @@
+ 			{
+ 				int access = 0;
+ 				int lastServer = 1;
+-				statement = con.prepareStatement("SELECT accessLevel, lastServer, userIP FROM accounts WHERE login=?");
++				statement = con.prepareStatement("SELECT accessLevel, lastServer, login, password FROM accounts WHERE login=?");
+ 				statement.setString(1, login);
+ 				rset = statement.executeQuery();
+ 				if (rset.next())
+@@ -684,46 +684,14 @@
+ 					{
+ 						lastServer = 1; // minServerId is 1 in Interlude
+ 					}
++					info = new AccountInfo(rset.getString("login"), rset.getString("password"), rset.getInt("accessLevel"), rset.getInt("lastServer"));
+ 				}
+ 				rset.close();
+ 				statement.close();
+ 
+ 				client.setAccessLevel(access);
+ 				client.setLastServer(lastServer);
+-				PreparedStatement statement2 =
+-						con.prepareStatement("SELECT lastIP, lastIP2 FROM accounts WHERE login=?");
+-				statement2.setString(1, login);
+-				rset = statement2.executeQuery();
+-				String lastIP = null;
+-				String lastIP2 = null;
+-				if (rset.next())
+-				{
+-					lastIP = rset.getString("lastIP");
+-					lastIP2 = rset.getString("lastIP2");
+-				}
+-				rset.close();
+-				statement2.close();
+-				if (lastIP == null || !lastIP.equals(address.getHostAddress()))
+-				{
+-					PreparedStatement statement3 = con.prepareStatement(
+-							"UPDATE accounts SET lastactive=?, lastIP=?, lastIP2=?, lastIP3=? WHERE login=?");
+-					statement3.setLong(1, System.currentTimeMillis());
+-					statement3.setString(2, address.getHostAddress());
+-					statement3.setString(3, lastIP);
+-					statement3.setString(4, lastIP2);
+-					statement3.setString(5, login);
+-					statement3.execute();
+-					statement3.close();
+-				}
+-				else
+-				{
+-					PreparedStatement statement3 =
+-							con.prepareStatement("UPDATE accounts SET lastactive=? WHERE login=?");
+-					statement3.setLong(1, System.currentTimeMillis());
+-					statement3.setString(2, login);
+-					statement3.execute();
+-					statement3.close();
+-				}
++
+ 			}
+ 		}
+ 		catch (Exception e)
+@@ -731,10 +699,7 @@
+ 			LOGGER.log(Level.WARNING, "Could not check password(" + sessionKey + "):" + e.getMessage(), e);
+ 			ok = false;
+ 		}
+-		finally
+-		{
+-			DatabaseFactory.close();
+-		}
++
+ 
+ 		if (!ok)
+ 		{
+@@ -765,7 +730,7 @@
+ 			_hackProtection.remove(address);
+ 		}
+ 
+-		return login;
++		return info;
+ 	}
+ 
+ 	class FailedLoginAttempt
+Index: java/org/l2jmobius/gameserver/network/loginserverpackets/login/PlayerAuthResponse.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>/*\r\n * This file is part of the L2J Mobius project.\r\n * \r\n * This program is free software: you can redistribute it and/or modify\r\n * it under the terms of the GNU General Public License as published by\r\n * the Free Software Foundation, either version 3 of the License, or\r\n * (at your option) any later version.\r\n * \r\n * This program is distributed in the hope that it will be useful,\r\n * but WITHOUT ANY WARRANTY; without even the implied warranty of\r\n * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU\r\n * General Public License for more details.\r\n * \r\n * You should have received a copy of the GNU General Public License\r\n * along with this program. If not, see <http://www.gnu.org/licenses/>.\r\n */\r\npackage org.l2jmobius.gameserver.network.loginserverpackets.login;\r\n\r\nimport org.l2jmobius.commons.network.BaseRecievePacket;\r\n\r\n/**\r\n * @author -Wooden-\r\n */\r\npublic class PlayerAuthResponse extends BaseRecievePacket\r\n{\r\n\tprivate final String _account;\r\n\tprivate final boolean _authed;\r\n\t\r\n\t/**\r\n\t * @param decrypt\r\n\t */\r\n\tpublic PlayerAuthResponse(byte[] decrypt)\r\n\t{\r\n\t\tsuper(decrypt);\r\n\t\t\r\n\t\t_account = readS();\r\n\t\t_authed = readC() != 0;\r\n\t}\r\n\t\r\n\t/**\r\n\t * @return Returns the account.\r\n\t */\r\n\tpublic String getAccount()\r\n\t{\r\n\t\treturn _account;\r\n\t}\r\n\t\r\n\t/**\r\n\t * @return Returns the authed state.\r\n\t */\r\n\tpublic boolean isAuthed()\r\n\t{\r\n\t\treturn _authed;\r\n\t}\r\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- java/org/l2jmobius/gameserver/network/loginserverpackets/login/PlayerAuthResponse.java	(revision 2ce68f86cda44aaaf0a5400b7f1e3ed76453bf07)
++++ java/org/l2jmobius/gameserver/network/loginserverpackets/login/PlayerAuthResponse.java	(date 1589285073969)
+@@ -1,55 +1,64 @@
+ /*
+  * This file is part of the L2J Mobius project.
+- * 
++ *
+  * This program is free software: you can redistribute it and/or modify
+  * it under the terms of the GNU General Public License as published by
+  * the Free Software Foundation, either version 3 of the License, or
+  * (at your option) any later version.
+- * 
++ *
+  * This program is distributed in the hope that it will be useful,
+  * but WITHOUT ANY WARRANTY; without even the implied warranty of
+  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
+  * General Public License for more details.
+- * 
++ *
+  * You should have received a copy of the GNU General Public License
+  * along with this program. If not, see <http://www.gnu.org/licenses/>.
+  */
+ package org.l2jmobius.gameserver.network.loginserverpackets.login;
+ 
++import org.l2jmobius.commons.database.DatabaseFactory;
+ import org.l2jmobius.commons.network.BaseRecievePacket;
++import org.l2jmobius.loginserver.model.data.AccountInfo;
++
++import java.sql.Connection;
++import java.sql.PreparedStatement;
++import java.sql.ResultSet;
++import java.util.logging.Level;
+ 
+ /**
+  * @author -Wooden-
+  */
+-public class PlayerAuthResponse extends BaseRecievePacket
+-{
+-	private final String _account;
+-	private final boolean _authed;
+-	
++public class PlayerAuthResponse extends BaseRecievePacket {
++	private String _account;
++	private boolean _authed;
++	private String _token;
++
+ 	/**
+ 	 * @param decrypt
+ 	 */
+-	public PlayerAuthResponse(byte[] decrypt)
+-	{
++	public PlayerAuthResponse(byte[] decrypt) {
+ 		super(decrypt);
+-		
+-		_account = readS();
++
++		_token = readS();
+ 		_authed = readC() != 0;
++
+ 	}
+-	
++
+ 	/**
+ 	 * @return Returns the account.
+ 	 */
+-	public String getAccount()
+-	{
++	public String getAccount() {
+ 		return _account;
+ 	}
+-	
++
++	public String getToken() {
++		return _token;
++	}
++
+ 	/**
+ 	 * @return Returns the authed state.
+ 	 */
+-	public boolean isAuthed()
+-	{
++	public boolean isAuthed() {
+ 		return _authed;
+ 	}
+ }
+\ No newline at end of file
+Index: java/org/l2jmobius/gameserver/network/clientpackets/AuthLogin.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>/*\r\n * This file is part of the L2J Mobius project.\r\n * \r\n * This program is free software: you can redistribute it and/or modify\r\n * it under the terms of the GNU General Public License as published by\r\n * the Free Software Foundation, either version 3 of the License, or\r\n * (at your option) any later version.\r\n * \r\n * This program is distributed in the hope that it will be useful,\r\n * but WITHOUT ANY WARRANTY; without even the implied warranty of\r\n * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU\r\n * General Public License for more details.\r\n * \r\n * You should have received a copy of the GNU General Public License\r\n * along with this program. If not, see <http://www.gnu.org/licenses/>.\r\n */\r\npackage org.l2jmobius.gameserver.network.clientpackets;\r\n\r\nimport org.l2jmobius.commons.network.PacketReader;\r\nimport org.l2jmobius.gameserver.LoginServerThread;\r\nimport org.l2jmobius.gameserver.LoginServerThread.SessionKey;\r\nimport org.l2jmobius.gameserver.network.GameClient;\r\n\r\n/**\r\n * @version $Revision: 1.9.2.3.2.4 $ $Date: 2005/03/27 15:29:30 $\r\n */\r\npublic class AuthLogin implements IClientIncomingPacket\r\n{\r\n\t// loginName + keys must match what the loginserver used.\r\n\tprivate String _loginName;\r\n\t/*\r\n\t * private final long _key1; private final long _key2; private final long _key3; private final long _key4;\r\n\t */\r\n\tprivate int _playKey1;\r\n\tprivate int _playKey2;\r\n\tprivate int _loginKey1;\r\n\tprivate int _loginKey2;\r\n\t\r\n\t@Override\r\n\tpublic boolean read(GameClient client, PacketReader packet)\r\n\t{\r\n\t\t_loginName = packet.readS().toLowerCase();\r\n\t\t_playKey2 = packet.readD();\r\n\t\t_playKey1 = packet.readD();\r\n\t\t_loginKey1 = packet.readD();\r\n\t\t_loginKey2 = packet.readD();\r\n\t\treturn true;\r\n\t}\r\n\t\r\n\t@Override\r\n\tpublic void run(GameClient client)\r\n\t{\r\n\t\tif (_loginName.isEmpty() || !client.isProtocolOk())\r\n\t\t{\r\n\t\t\tclient.closeNow();\r\n\t\t\treturn;\r\n\t\t}\r\n\t\t\r\n\t\tfinal SessionKey key = new SessionKey(_loginKey1, _loginKey2, _playKey1, _playKey2);\r\n\t\t\r\n\t\t// avoid potential exploits\r\n\t\tif (client.getAccountName() == null)\r\n\t\t{\r\n\t\t\t// Preventing duplicate login in case client login server socket was disconnected or this packet was not sent yet\r\n\t\t\tif (LoginServerThread.getInstance().addGameServerLogin(_loginName, client))\r\n\t\t\t{\r\n\t\t\t\tclient.setAccountName(_loginName);\r\n\t\t\t\tLoginServerThread.getInstance().addWaitingClientAndSendRequest(_loginName, client, key);\r\n\t\t\t}\r\n\t\t\telse\r\n\t\t\t{\r\n\t\t\t\tclient.close(null);\r\n\t\t\t}\r\n\t\t}\r\n\t}\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- java/org/l2jmobius/gameserver/network/clientpackets/AuthLogin.java	(revision 2ce68f86cda44aaaf0a5400b7f1e3ed76453bf07)
++++ java/org/l2jmobius/gameserver/network/clientpackets/AuthLogin.java	(date 1589285310939)
+@@ -1,26 +1,31 @@
+ /*
+  * This file is part of the L2J Mobius project.
+- * 
++ *
+  * This program is free software: you can redistribute it and/or modify
+  * it under the terms of the GNU General Public License as published by
+  * the Free Software Foundation, either version 3 of the License, or
+  * (at your option) any later version.
+- * 
++ *
+  * This program is distributed in the hope that it will be useful,
+  * but WITHOUT ANY WARRANTY; without even the implied warranty of
+  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
+  * General Public License for more details.
+- * 
++ *
+  * You should have received a copy of the GNU General Public License
+  * along with this program. If not, see <http://www.gnu.org/licenses/>.
+  */
+ package org.l2jmobius.gameserver.network.clientpackets;
+ 
++import org.l2jmobius.commons.database.DatabaseFactory;
+ import org.l2jmobius.commons.network.PacketReader;
+ import org.l2jmobius.gameserver.LoginServerThread;
+ import org.l2jmobius.gameserver.LoginServerThread.SessionKey;
+ import org.l2jmobius.gameserver.network.GameClient;
+ 
++import java.sql.Connection;
++import java.sql.PreparedStatement;
++import java.sql.ResultSet;
++
+ /**
+  * @version $Revision: 1.9.2.3.2.4 $ $Date: 2005/03/27 15:29:30 $
+  */
+@@ -35,7 +40,7 @@
+ 	private int _playKey2;
+ 	private int _loginKey1;
+ 	private int _loginKey2;
+-	
++
+ 	@Override
+ 	public boolean read(GameClient client, PacketReader packet)
+ 	{
+@@ -46,7 +51,7 @@
+ 		_loginKey2 = packet.readD();
+ 		return true;
+ 	}
+-	
++
+ 	@Override
+ 	public void run(GameClient client)
+ 	{
+@@ -55,12 +60,25 @@
+ 			client.closeNow();
+ 			return;
+ 		}
+-		
++
+ 		final SessionKey key = new SessionKey(_loginKey1, _loginKey2, _playKey1, _playKey2);
+-		
++
+ 		// avoid potential exploits
+ 		if (client.getAccountName() == null)
+ 		{
++			try (Connection con = DatabaseFactory.getConnection();) {
++				PreparedStatement statement =
++						con.prepareStatement("SELECT login, expiryTime FROM auth_session WHERE `key`=?");
++				statement.setString(1, _loginName);
++				ResultSet rset = statement.executeQuery();
++				if (rset.next()) {
++					_loginName = rset.getString("login");
++				}
++				rset.close();
++				statement.close();
++			} catch (Exception e) {
++			}
++
+ 			// Preventing duplicate login in case client login server socket was disconnected or this packet was not sent yet
+ 			if (LoginServerThread.getInstance().addGameServerLogin(_loginName, client))
+ 			{
+Index: java/org/l2jmobius/loginserver/network/IncomingPackets.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>/*\r\n * This file is part of the L2J Mobius project.\r\n * \r\n * This program is free software: you can redistribute it and/or modify\r\n * it under the terms of the GNU General Public License as published by\r\n * the Free Software Foundation, either version 3 of the License, or\r\n * (at your option) any later version.\r\n * \r\n * This program is distributed in the hope that it will be useful,\r\n * but WITHOUT ANY WARRANTY; without even the implied warranty of\r\n * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU\r\n * General Public License for more details.\r\n * \r\n * You should have received a copy of the GNU General Public License\r\n * along with this program. If not, see <http://www.gnu.org/licenses/>.\r\n */\r\npackage org.l2jmobius.loginserver.network;\r\n\r\nimport java.util.Arrays;\r\nimport java.util.HashSet;\r\nimport java.util.Set;\r\nimport java.util.function.Supplier;\r\n\r\nimport org.l2jmobius.commons.network.IConnectionState;\r\nimport org.l2jmobius.commons.network.IIncomingPacket;\r\nimport org.l2jmobius.commons.network.IIncomingPackets;\r\nimport org.l2jmobius.loginserver.network.clientpackets.*;\r\n\r\n/**\r\n * @author Mobius\r\n */\r\npublic enum IncomingPackets implements IIncomingPackets<LoginClient>\r\n{\r\n\tAUTH_GAME_GUARD(0x07, AuthGameGuard::new, ConnectionState.CONNECTED),\r\n\tREQUEST_AUTH_LOGIN(0x00, RequestAuthLogin::new, ConnectionState.AUTHED_GG),\r\n\tREQUEST_AUTH_LOGIN2(0x12, RequestAuthLogin2::new, ConnectionState.AUTHED_GG),\r\n\tREQUEST_LOGIN(0x0B, RequestCmdLogin::new, ConnectionState.AUTHED_GG),\r\n\tREQUEST_SERVER_LOGIN(0x02, RequestServerLogin::new, ConnectionState.AUTHED_LOGIN),\r\n\tREQUEST_SERVER_LIST(0x05, RequestServerList::new, ConnectionState.AUTHED_LOGIN),\r\n\tREQUEST_PI_AGREEMENT_CHECK(0x0E, RequestPIAgreementCheck::new, ConnectionState.AUTHED_LOGIN),\r\n\tREQUEST_PI_AGREEMENT(0x0F, RequestPIAgreement::new, ConnectionState.AUTHED_LOGIN);\r\n\t\r\n\tpublic static final IncomingPackets[] PACKET_ARRAY;\r\n\t\r\n\tstatic\r\n\t{\r\n\t\tfinal short maxPacketId = (short) Arrays.stream(values()).mapToInt(IIncomingPackets::getPacketId).max().orElse(0);\r\n\t\tPACKET_ARRAY = new IncomingPackets[maxPacketId + 1];\r\n\t\tfor (IncomingPackets incomingPacket : values())\r\n\t\t{\r\n\t\t\tPACKET_ARRAY[incomingPacket.getPacketId()] = incomingPacket;\r\n\t\t}\r\n\t}\r\n\t\r\n\tprivate short _packetId;\r\n\tprivate Supplier<IIncomingPacket<LoginClient>> _incomingPacketFactory;\r\n\tprivate Set<IConnectionState> _connectionStates;\r\n\t\r\n\tIncomingPackets(int packetId, Supplier<IIncomingPacket<LoginClient>> incomingPacketFactory, IConnectionState... connectionStates)\r\n\t{\r\n\t\t// packetId is an unsigned byte\r\n\t\tif (packetId > 0xFF)\r\n\t\t{\r\n\t\t\tthrow new IllegalArgumentException(\"packetId must not be bigger than 0xFF\");\r\n\t\t}\r\n\t\t\r\n\t\t_packetId = (short) packetId;\r\n\t\t_incomingPacketFactory = incomingPacketFactory != null ? incomingPacketFactory : () -> null;\r\n\t\t_connectionStates = new HashSet<>(Arrays.asList(connectionStates));\r\n\t}\r\n\t\r\n\t@Override\r\n\tpublic int getPacketId()\r\n\t{\r\n\t\treturn _packetId;\r\n\t}\r\n\t\r\n\t@Override\r\n\tpublic IIncomingPacket<LoginClient> newIncomingPacket()\r\n\t{\r\n\t\treturn _incomingPacketFactory.get();\r\n\t}\r\n\t\r\n\t@Override\r\n\tpublic Set<IConnectionState> getConnectionStates()\r\n\t{\r\n\t\treturn _connectionStates;\r\n\t}\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- java/org/l2jmobius/loginserver/network/IncomingPackets.java	(revision 2ce68f86cda44aaaf0a5400b7f1e3ed76453bf07)
++++ java/org/l2jmobius/loginserver/network/IncomingPackets.java	(date 1589282239499)
+@@ -33,7 +33,6 @@
+ {
+ 	AUTH_GAME_GUARD(0x07, AuthGameGuard::new, ConnectionState.CONNECTED),
+ 	REQUEST_AUTH_LOGIN(0x00, RequestAuthLogin::new, ConnectionState.AUTHED_GG),
+-	REQUEST_AUTH_LOGIN2(0x12, RequestAuthLogin2::new, ConnectionState.AUTHED_GG),
+ 	REQUEST_LOGIN(0x0B, RequestCmdLogin::new, ConnectionState.AUTHED_GG),
+ 	REQUEST_SERVER_LOGIN(0x02, RequestServerLogin::new, ConnectionState.AUTHED_LOGIN),
+ 	REQUEST_SERVER_LIST(0x05, RequestServerList::new, ConnectionState.AUTHED_LOGIN),
+Index: java/org/l2jmobius/gameserver/LoginServerThread.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>/*\r\n * This file is part of the L2J Mobius project.\r\n * \r\n * This program is free software: you can redistribute it and/or modify\r\n * it under the terms of the GNU General Public License as published by\r\n * the Free Software Foundation, either version 3 of the License, or\r\n * (at your option) any later version.\r\n * \r\n * This program is distributed in the hope that it will be useful,\r\n * but WITHOUT ANY WARRANTY; without even the implied warranty of\r\n * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU\r\n * General Public License for more details.\r\n * \r\n * You should have received a copy of the GNU General Public License\r\n * along with this program. If not, see <http://www.gnu.org/licenses/>.\r\n */\r\npackage org.l2jmobius.gameserver;\r\n\r\nimport java.io.BufferedOutputStream;\r\nimport java.io.IOException;\r\nimport java.io.InputStream;\r\nimport java.io.OutputStream;\r\nimport java.math.BigInteger;\r\nimport java.net.Socket;\r\nimport java.net.SocketException;\r\nimport java.net.UnknownHostException;\r\nimport java.security.GeneralSecurityException;\r\nimport java.security.KeyFactory;\r\nimport java.security.interfaces.RSAPublicKey;\r\nimport java.security.spec.RSAKeyGenParameterSpec;\r\nimport java.security.spec.RSAPublicKeySpec;\r\nimport java.sql.Connection;\r\nimport java.sql.PreparedStatement;\r\nimport java.sql.ResultSet;\r\nimport java.sql.SQLException;\r\nimport java.util.ArrayList;\r\nimport java.util.List;\r\nimport java.util.Map;\r\nimport java.util.Set;\r\nimport java.util.concurrent.ConcurrentHashMap;\r\nimport java.util.logging.Level;\r\nimport java.util.logging.Logger;\r\nimport java.util.stream.Collectors;\r\n\r\nimport org.l2jmobius.Config;\r\nimport org.l2jmobius.commons.database.DatabaseFactory;\r\nimport org.l2jmobius.commons.network.BaseSendablePacket;\r\nimport org.l2jmobius.commons.util.CommonUtil;\r\nimport org.l2jmobius.commons.util.crypt.NewCrypt;\r\nimport org.l2jmobius.gameserver.model.World;\r\nimport org.l2jmobius.gameserver.model.actor.instance.PlayerInstance;\r\nimport org.l2jmobius.gameserver.network.ConnectionState;\r\nimport org.l2jmobius.gameserver.network.Disconnection;\r\nimport org.l2jmobius.gameserver.network.GameClient;\r\nimport org.l2jmobius.gameserver.network.SystemMessageId;\r\nimport org.l2jmobius.gameserver.network.loginserverpackets.game.AuthRequest;\r\nimport org.l2jmobius.gameserver.network.loginserverpackets.game.BlowFishKey;\r\nimport org.l2jmobius.gameserver.network.loginserverpackets.game.ChangeAccessLevel;\r\nimport org.l2jmobius.gameserver.network.loginserverpackets.game.ChangePassword;\r\nimport org.l2jmobius.gameserver.network.loginserverpackets.game.PlayerAuthRequest;\r\nimport org.l2jmobius.gameserver.network.loginserverpackets.game.PlayerInGame;\r\nimport org.l2jmobius.gameserver.network.loginserverpackets.game.PlayerLogout;\r\nimport org.l2jmobius.gameserver.network.loginserverpackets.game.PlayerTracert;\r\nimport org.l2jmobius.gameserver.network.loginserverpackets.game.ReplyCharacters;\r\nimport org.l2jmobius.gameserver.network.loginserverpackets.game.SendMail;\r\nimport org.l2jmobius.gameserver.network.loginserverpackets.game.ServerStatus;\r\nimport org.l2jmobius.gameserver.network.loginserverpackets.game.TempBan;\r\nimport org.l2jmobius.gameserver.network.loginserverpackets.login.AuthResponse;\r\nimport org.l2jmobius.gameserver.network.loginserverpackets.login.ChangePasswordResponse;\r\nimport org.l2jmobius.gameserver.network.loginserverpackets.login.InitLS;\r\nimport org.l2jmobius.gameserver.network.loginserverpackets.login.KickPlayer;\r\nimport org.l2jmobius.gameserver.network.loginserverpackets.login.LoginServerFail;\r\nimport org.l2jmobius.gameserver.network.loginserverpackets.login.PlayerAuthResponse;\r\nimport org.l2jmobius.gameserver.network.loginserverpackets.login.RequestCharacters;\r\nimport org.l2jmobius.gameserver.network.serverpackets.CharSelectionInfo;\r\nimport org.l2jmobius.gameserver.network.serverpackets.LoginFail;\r\nimport org.l2jmobius.gameserver.network.serverpackets.SystemMessage;\r\n\r\npublic class LoginServerThread extends Thread\r\n{\r\n\tprotected static final Logger LOGGER = Logger.getLogger(LoginServerThread.class.getName());\r\n\tprotected static final Logger ACCOUNTING_LOGGER = Logger.getLogger(\"accounting\");\r\n\t\r\n\t/**\r\n\t * @see org.l2jmobius.loginserver.LoginServer#PROTOCOL_REV\r\n\t */\r\n\tprivate static final int REVISION = 0x0106;\r\n\tprivate final String _hostname;\r\n\tprivate final int _port;\r\n\tprivate final int _gamePort;\r\n\tprivate Socket _loginSocket;\r\n\tprivate OutputStream _out;\r\n\t\r\n\t/**\r\n\t * The BlowFish engine used to encrypt packets<br>\r\n\t * It is first initialized with a unified key:<br>\r\n\t * \"_;v.]05-31!|+-%xT!^[$\\00\"<br>\r\n\t * and then after handshake, with a new key sent by<br>\r\n\t * login server during the handshake. This new key is stored<br>\r\n\t * in blowfishKey\r\n\t */\r\n\tprivate NewCrypt _blowfish;\r\n\tprivate byte[] _hexID;\r\n\tprivate final boolean _acceptAlternate;\r\n\tprivate int _requestID;\r\n\tprivate final boolean _reserveHost;\r\n\tprivate int _maxPlayer;\r\n\tprivate final Set<WaitingClient> _waitingClients = ConcurrentHashMap.newKeySet();\r\n\tprivate final Map<String, GameClient> _accountsInGameServer = new ConcurrentHashMap<>();\r\n\tprivate int _status;\r\n\tprivate String _serverName;\r\n\tprivate final List<String> _subnets;\r\n\tprivate final List<String> _hosts;\r\n\t\r\n\t/**\r\n\t * Instantiates a new login server thread.\r\n\t */\r\n\tprotected LoginServerThread()\r\n\t{\r\n\t\tsuper(\"LoginServerThread\");\r\n\t\t_port = Config.GAME_SERVER_LOGIN_PORT;\r\n\t\t_gamePort = Config.PORT_GAME;\r\n\t\t_hostname = Config.GAME_SERVER_LOGIN_HOST;\r\n\t\t_hexID = Config.HEX_ID;\r\n\t\tif (_hexID == null)\r\n\t\t{\r\n\t\t\t_requestID = Config.REQUEST_ID;\r\n\t\t\t_hexID = CommonUtil.generateHex(16);\r\n\t\t}\r\n\t\telse\r\n\t\t{\r\n\t\t\t_requestID = Config.SERVER_ID;\r\n\t\t}\r\n\t\t_acceptAlternate = Config.ACCEPT_ALTERNATE_ID;\r\n\t\t_reserveHost = Config.RESERVE_HOST_ON_LOGIN;\r\n\t\t_subnets = Config.GAME_SERVER_SUBNETS;\r\n\t\t_hosts = Config.GAME_SERVER_HOSTS;\r\n\t\t_maxPlayer = Config.MAXIMUM_ONLINE_USERS;\r\n\t}\r\n\t\r\n\t/**\r\n\t * Gets the single instance of LoginServerThread.\r\n\t * @return single instance of LoginServerThread\r\n\t */\r\n\tpublic static LoginServerThread getInstance()\r\n\t{\r\n\t\treturn SingletonHolder.INSTANCE;\r\n\t}\r\n\t\r\n\t@Override\r\n\tpublic void run()\r\n\t{\r\n\t\twhile (!isInterrupted())\r\n\t\t{\r\n\t\t\tint lengthHi = 0;\r\n\t\t\tint lengthLo = 0;\r\n\t\t\tint length = 0;\r\n\t\t\tboolean checksumOk = false;\r\n\t\t\ttry\r\n\t\t\t{\r\n\t\t\t\t// Connection\r\n\t\t\t\tLOGGER.info(getClass().getSimpleName() + \": Connecting to login on \" + _hostname + \":\" + _port);\r\n\t\t\t\t_loginSocket = new Socket(_hostname, _port);\r\n\t\t\t\tfinal InputStream in = _loginSocket.getInputStream();\r\n\t\t\t\t_out = new BufferedOutputStream(_loginSocket.getOutputStream());\r\n\t\t\t\t\r\n\t\t\t\t// init Blowfish\r\n\t\t\t\tfinal byte[] blowfishKey = CommonUtil.generateHex(40);\r\n\t\t\t\t_blowfish = new NewCrypt(\"_;v.]05-31!|+-%xT!^[$\\00\");\r\n\t\t\t\twhile (!isInterrupted())\r\n\t\t\t\t{\r\n\t\t\t\t\tlengthLo = in.read();\r\n\t\t\t\t\tlengthHi = in.read();\r\n\t\t\t\t\tlength = (lengthHi * 256) + lengthLo;\r\n\t\t\t\t\tif (lengthHi < 0)\r\n\t\t\t\t\t{\r\n\t\t\t\t\t\tLOGGER.finer(getClass().getSimpleName() + \": Login terminated the connection.\");\r\n\t\t\t\t\t\tbreak;\r\n\t\t\t\t\t}\r\n\t\t\t\t\t\r\n\t\t\t\t\tfinal byte[] incoming = new byte[length - 2];\r\n\t\t\t\t\tint receivedBytes = 0;\r\n\t\t\t\t\tint newBytes = 0;\r\n\t\t\t\t\tint left = length - 2;\r\n\t\t\t\t\twhile ((newBytes != -1) && (receivedBytes < (length - 2)))\r\n\t\t\t\t\t{\r\n\t\t\t\t\t\tnewBytes = in.read(incoming, receivedBytes, left);\r\n\t\t\t\t\t\treceivedBytes += newBytes;\r\n\t\t\t\t\t\tleft -= newBytes;\r\n\t\t\t\t\t}\r\n\t\t\t\t\t\r\n\t\t\t\t\tif (receivedBytes != (length - 2))\r\n\t\t\t\t\t{\r\n\t\t\t\t\t\tLOGGER.warning(getClass().getSimpleName() + \": Incomplete Packet is sent to the server, closing connection.(LS)\");\r\n\t\t\t\t\t\tbreak;\r\n\t\t\t\t\t}\r\n\t\t\t\t\t\r\n\t\t\t\t\t// decrypt if we have a key\r\n\t\t\t\t\t_blowfish.decrypt(incoming, 0, incoming.length);\r\n\t\t\t\t\tchecksumOk = NewCrypt.verifyChecksum(incoming);\r\n\t\t\t\t\tif (!checksumOk)\r\n\t\t\t\t\t{\r\n\t\t\t\t\t\tLOGGER.warning(getClass().getSimpleName() + \": Incorrect packet checksum, ignoring packet (LS)\");\r\n\t\t\t\t\t\tbreak;\r\n\t\t\t\t\t}\r\n\t\t\t\t\t\r\n\t\t\t\t\tfinal int packetType = incoming[0] & 0xff;\r\n\t\t\t\t\tswitch (packetType)\r\n\t\t\t\t\t{\r\n\t\t\t\t\t\tcase 0x00:\r\n\t\t\t\t\t\t{\r\n\t\t\t\t\t\t\tfinal InitLS init = new InitLS(incoming);\r\n\t\t\t\t\t\t\tif (init.getRevision() != REVISION)\r\n\t\t\t\t\t\t\t{\r\n\t\t\t\t\t\t\t\t// TODO: revision mismatch\r\n\t\t\t\t\t\t\t\tLOGGER.warning(\"/!\\\\ Revision mismatch between LS and GS /!\\\\\");\r\n\t\t\t\t\t\t\t\tbreak;\r\n\t\t\t\t\t\t\t}\r\n\t\t\t\t\t\t\t\r\n\t\t\t\t\t\t\tRSAPublicKey publicKey;\r\n\t\t\t\t\t\t\t\r\n\t\t\t\t\t\t\ttry\r\n\t\t\t\t\t\t\t{\r\n\t\t\t\t\t\t\t\tfinal KeyFactory kfac = KeyFactory.getInstance(\"RSA\");\r\n\t\t\t\t\t\t\t\tfinal BigInteger modulus = new BigInteger(init.getRSAKey());\r\n\t\t\t\t\t\t\t\tfinal RSAPublicKeySpec kspec1 = new RSAPublicKeySpec(modulus, RSAKeyGenParameterSpec.F4);\r\n\t\t\t\t\t\t\t\tpublicKey = (RSAPublicKey) kfac.generatePublic(kspec1);\r\n\t\t\t\t\t\t\t}\r\n\t\t\t\t\t\t\tcatch (GeneralSecurityException e)\r\n\t\t\t\t\t\t\t{\r\n\t\t\t\t\t\t\t\tLOGGER.warning(getClass().getSimpleName() + \": Trouble while init the public key send by login\");\r\n\t\t\t\t\t\t\t\tbreak;\r\n\t\t\t\t\t\t\t}\r\n\t\t\t\t\t\t\t// send the blowfish key through the rsa encryption\r\n\t\t\t\t\t\t\tsendPacket(new BlowFishKey(blowfishKey, publicKey));\r\n\t\t\t\t\t\t\t// now, only accept packet with the new encryption\r\n\t\t\t\t\t\t\t_blowfish = new NewCrypt(blowfishKey);\r\n\t\t\t\t\t\t\tsendPacket(new AuthRequest(_requestID, _acceptAlternate, _hexID, _gamePort, _reserveHost, _maxPlayer, _subnets, _hosts));\r\n\t\t\t\t\t\t\tbreak;\r\n\t\t\t\t\t\t}\r\n\t\t\t\t\t\tcase 0x01:\r\n\t\t\t\t\t\t{\r\n\t\t\t\t\t\t\tfinal LoginServerFail lsf = new LoginServerFail(incoming);\r\n\t\t\t\t\t\t\tLOGGER.info(getClass().getSimpleName() + \": Damn! Registeration Failed: \" + lsf.getReasonString());\r\n\t\t\t\t\t\t\t// login will close the connection here\r\n\t\t\t\t\t\t\tbreak;\r\n\t\t\t\t\t\t}\r\n\t\t\t\t\t\tcase 0x02:\r\n\t\t\t\t\t\t{\r\n\t\t\t\t\t\t\tfinal AuthResponse aresp = new AuthResponse(incoming);\r\n\t\t\t\t\t\t\tfinal int serverID = aresp.getServerId();\r\n\t\t\t\t\t\t\t_serverName = aresp.getServerName();\r\n\t\t\t\t\t\t\tConfig.saveHexid(serverID, hexToString(_hexID));\r\n\t\t\t\t\t\t\tLOGGER.info(getClass().getSimpleName() + \": Registered on login as Server \" + serverID + \": \" + _serverName);\r\n\t\t\t\t\t\t\tfinal ServerStatus st = new ServerStatus();\r\n\t\t\t\t\t\t\tif (Config.SERVER_LIST_BRACKET)\r\n\t\t\t\t\t\t\t{\r\n\t\t\t\t\t\t\t\tst.addAttribute(ServerStatus.SERVER_LIST_SQUARE_BRACKET, ServerStatus.ON);\r\n\t\t\t\t\t\t\t}\r\n\t\t\t\t\t\t\telse\r\n\t\t\t\t\t\t\t{\r\n\t\t\t\t\t\t\t\tst.addAttribute(ServerStatus.SERVER_LIST_SQUARE_BRACKET, ServerStatus.OFF);\r\n\t\t\t\t\t\t\t}\r\n\t\t\t\t\t\t\tst.addAttribute(ServerStatus.SERVER_TYPE, Config.SERVER_LIST_TYPE);\r\n\t\t\t\t\t\t\tif (Config.SERVER_GMONLY)\r\n\t\t\t\t\t\t\t{\r\n\t\t\t\t\t\t\t\tst.addAttribute(ServerStatus.SERVER_LIST_STATUS, ServerStatus.STATUS_GM_ONLY);\r\n\t\t\t\t\t\t\t}\r\n\t\t\t\t\t\t\telse\r\n\t\t\t\t\t\t\t{\r\n\t\t\t\t\t\t\t\tst.addAttribute(ServerStatus.SERVER_LIST_STATUS, ServerStatus.STATUS_AUTO);\r\n\t\t\t\t\t\t\t}\r\n\t\t\t\t\t\t\tif (Config.SERVER_LIST_AGE == 15)\r\n\t\t\t\t\t\t\t{\r\n\t\t\t\t\t\t\t\tst.addAttribute(ServerStatus.SERVER_AGE, ServerStatus.SERVER_AGE_15);\r\n\t\t\t\t\t\t\t}\r\n\t\t\t\t\t\t\telse if (Config.SERVER_LIST_AGE == 18)\r\n\t\t\t\t\t\t\t{\r\n\t\t\t\t\t\t\t\tst.addAttribute(ServerStatus.SERVER_AGE, ServerStatus.SERVER_AGE_18);\r\n\t\t\t\t\t\t\t}\r\n\t\t\t\t\t\t\telse\r\n\t\t\t\t\t\t\t{\r\n\t\t\t\t\t\t\t\tst.addAttribute(ServerStatus.SERVER_AGE, ServerStatus.SERVER_AGE_ALL);\r\n\t\t\t\t\t\t\t}\r\n\t\t\t\t\t\t\tsendPacket(st);\r\n\t\t\t\t\t\t\tfinal List<String> playerList = World.getInstance().getPlayers().stream().filter(player -> !player.isInOfflineMode()).map(PlayerInstance::getAccountName).collect(Collectors.toList());\r\n\t\t\t\t\t\t\tif (!playerList.isEmpty())\r\n\t\t\t\t\t\t\t{\r\n\t\t\t\t\t\t\t\tsendPacket(new PlayerInGame(playerList));\r\n\t\t\t\t\t\t\t}\r\n\t\t\t\t\t\t\tbreak;\r\n\t\t\t\t\t\t}\r\n\t\t\t\t\t\tcase 0x03:\r\n\t\t\t\t\t\t{\r\n\t\t\t\t\t\t\tfinal PlayerAuthResponse par = new PlayerAuthResponse(incoming);\r\n\t\t\t\t\t\t\tfinal String account = par.getAccount();\r\n\t\t\t\t\t\t\tWaitingClient wcToRemove = null;\r\n\t\t\t\t\t\t\tsynchronized (_waitingClients)\r\n\t\t\t\t\t\t\t{\r\n\t\t\t\t\t\t\t\tfor (WaitingClient wc : _waitingClients)\r\n\t\t\t\t\t\t\t\t{\r\n\t\t\t\t\t\t\t\t\tif (wc.account.equals(account))\r\n\t\t\t\t\t\t\t\t\t{\r\n\t\t\t\t\t\t\t\t\t\twcToRemove = wc;\r\n\t\t\t\t\t\t\t\t\t}\r\n\t\t\t\t\t\t\t\t}\r\n\t\t\t\t\t\t\t}\r\n\t\t\t\t\t\t\tif (wcToRemove != null)\r\n\t\t\t\t\t\t\t{\r\n\t\t\t\t\t\t\t\tif (par.isAuthed())\r\n\t\t\t\t\t\t\t\t{\r\n\t\t\t\t\t\t\t\t\tfinal PlayerInGame pig = new PlayerInGame(par.getAccount());\r\n\t\t\t\t\t\t\t\t\tsendPacket(pig);\r\n\t\t\t\t\t\t\t\t\twcToRemove.gameClient.setConnectionState(ConnectionState.AUTHENTICATED);\r\n\t\t\t\t\t\t\t\t\twcToRemove.gameClient.setSessionId(wcToRemove.session);\r\n\t\t\t\t\t\t\t\t\twcToRemove.gameClient.sendPacket(LoginFail.LOGIN_SUCCESS);\r\n\t\t\t\t\t\t\t\t\tfinal CharSelectionInfo cl = new CharSelectionInfo(wcToRemove.account, wcToRemove.gameClient.getSessionId().playOkID1);\r\n\t\t\t\t\t\t\t\t\twcToRemove.gameClient.sendPacket(cl);\r\n\t\t\t\t\t\t\t\t\twcToRemove.gameClient.setCharSelection(cl.getCharInfo());\r\n\t\t\t\t\t\t\t\t}\r\n\t\t\t\t\t\t\t\telse\r\n\t\t\t\t\t\t\t\t{\r\n\t\t\t\t\t\t\t\t\tLOGGER.warning(getClass().getSimpleName() + \": Session key is not correct. Closing connection for account \" + wcToRemove.account);\r\n\t\t\t\t\t\t\t\t\t// wcToRemove.gameClient.getConnection().sendPacket(new LoginFail(LoginFail.SYSTEM_ERROR_LOGIN_LATER));\r\n\t\t\t\t\t\t\t\t\twcToRemove.gameClient.close(new LoginFail(LoginFail.SYSTEM_ERROR_LOGIN_LATER));\r\n\t\t\t\t\t\t\t\t\t_accountsInGameServer.remove(wcToRemove.account);\r\n\t\t\t\t\t\t\t\t}\r\n\t\t\t\t\t\t\t\t_waitingClients.remove(wcToRemove);\r\n\t\t\t\t\t\t\t}\r\n\t\t\t\t\t\t\tbreak;\r\n\t\t\t\t\t\t}\r\n\t\t\t\t\t\tcase 0x04:\r\n\t\t\t\t\t\t{\r\n\t\t\t\t\t\t\tfinal KickPlayer kp = new KickPlayer(incoming);\r\n\t\t\t\t\t\t\tdoKickPlayer(kp.getAccount());\r\n\t\t\t\t\t\t\tbreak;\r\n\t\t\t\t\t\t}\r\n\t\t\t\t\t\tcase 0x05:\r\n\t\t\t\t\t\t{\r\n\t\t\t\t\t\t\tfinal RequestCharacters rc = new RequestCharacters(incoming);\r\n\t\t\t\t\t\t\tgetCharsOnServer(rc.getAccount());\r\n\t\t\t\t\t\t\tbreak;\r\n\t\t\t\t\t\t}\r\n\t\t\t\t\t\tcase 0x06:\r\n\t\t\t\t\t\t{\r\n\t\t\t\t\t\t\tnew ChangePasswordResponse(incoming);\r\n\t\t\t\t\t\t\tbreak;\r\n\t\t\t\t\t\t}\r\n\t\t\t\t\t}\r\n\t\t\t\t}\r\n\t\t\t}\r\n\t\t\tcatch (UnknownHostException e)\r\n\t\t\t{\r\n\t\t\t\tLOGGER.log(Level.WARNING, getClass().getSimpleName() + \": \", e);\r\n\t\t\t}\r\n\t\t\tcatch (SocketException e)\r\n\t\t\t{\r\n\t\t\t\tLOGGER.warning(getClass().getSimpleName() + \": LoginServer not avaible, trying to reconnect...\");\r\n\t\t\t}\r\n\t\t\tcatch (IOException e)\r\n\t\t\t{\r\n\t\t\t\tLOGGER.log(Level.WARNING, getClass().getSimpleName() + \": Disconnected from Login, Trying to reconnect: \", e);\r\n\t\t\t}\r\n\t\t\tfinally\r\n\t\t\t{\r\n\t\t\t\ttry\r\n\t\t\t\t{\r\n\t\t\t\t\t_loginSocket.close();\r\n\t\t\t\t\tif (isInterrupted())\r\n\t\t\t\t\t{\r\n\t\t\t\t\t\treturn;\r\n\t\t\t\t\t}\r\n\t\t\t\t}\r\n\t\t\t\tcatch (Exception e)\r\n\t\t\t\t{\r\n\t\t\t\t\t// Ignore.\r\n\t\t\t\t}\r\n\t\t\t}\r\n\t\t\t\r\n\t\t\ttry\r\n\t\t\t{\r\n\t\t\t\tThread.sleep(5000); // 5 seconds tempo.\r\n\t\t\t}\r\n\t\t\tcatch (Exception e)\r\n\t\t\t{\r\n\t\t\t\t// Ignore.\r\n\t\t\t}\r\n\t\t}\r\n\t}\r\n\t\r\n\t/**\r\n\t * Adds the waiting client and send request.\r\n\t * @param acc the account\r\n\t * @param client the game client\r\n\t * @param key the session key\r\n\t */\r\n\tpublic void addWaitingClientAndSendRequest(String acc, GameClient client, SessionKey key)\r\n\t{\r\n\t\tfinal WaitingClient wc = new WaitingClient(acc, client, key);\r\n\t\tsynchronized (_waitingClients)\r\n\t\t{\r\n\t\t\t_waitingClients.add(wc);\r\n\t\t}\r\n\t\tfinal PlayerAuthRequest par = new PlayerAuthRequest(acc, key);\r\n\t\ttry\r\n\t\t{\r\n\t\t\tsendPacket(par);\r\n\t\t}\r\n\t\tcatch (IOException e)\r\n\t\t{\r\n\t\t\tLOGGER.warning(getClass().getSimpleName() + \": Error while sending player auth request\");\r\n\t\t}\r\n\t}\r\n\t\r\n\t/**\r\n\t * Removes the waiting client.\r\n\t * @param client the client\r\n\t */\r\n\tpublic void removeWaitingClient(GameClient client)\r\n\t{\r\n\t\tWaitingClient toRemove = null;\r\n\t\tsynchronized (_waitingClients)\r\n\t\t{\r\n\t\t\tfor (WaitingClient c : _waitingClients)\r\n\t\t\t{\r\n\t\t\t\tif (c.gameClient == client)\r\n\t\t\t\t{\r\n\t\t\t\t\ttoRemove = c;\r\n\t\t\t\t}\r\n\t\t\t}\r\n\t\t\tif (toRemove != null)\r\n\t\t\t{\r\n\t\t\t\t_waitingClients.remove(toRemove);\r\n\t\t\t}\r\n\t\t}\r\n\t}\r\n\t\r\n\t/**\r\n\t * Send logout for the given account.\r\n\t * @param account the account\r\n\t */\r\n\tpublic void sendLogout(String account)\r\n\t{\r\n\t\tif (account == null)\r\n\t\t{\r\n\t\t\treturn;\r\n\t\t}\r\n\t\tfinal PlayerLogout pl = new PlayerLogout(account);\r\n\t\ttry\r\n\t\t{\r\n\t\t\tsendPacket(pl);\r\n\t\t}\r\n\t\tcatch (IOException e)\r\n\t\t{\r\n\t\t\tLOGGER.warning(getClass().getSimpleName() + \": Error while sending logout packet to login\");\r\n\t\t}\r\n\t\tfinally\r\n\t\t{\r\n\t\t\t_accountsInGameServer.remove(account);\r\n\t\t}\r\n\t}\r\n\t\r\n\t/**\r\n\t * Adds the game server login.\r\n\t * @param account the account\r\n\t * @param client the client\r\n\t * @return {@code true} if account was not already logged in, {@code false} otherwise\r\n\t */\r\n\tpublic boolean addGameServerLogin(String account, GameClient client)\r\n\t{\r\n\t\treturn _accountsInGameServer.putIfAbsent(account, client) == null;\r\n\t}\r\n\t\r\n\t/**\r\n\t * Send access level.\r\n\t * @param account the account\r\n\t * @param level the access level\r\n\t */\r\n\tpublic void sendAccessLevel(String account, int level)\r\n\t{\r\n\t\tfinal ChangeAccessLevel cal = new ChangeAccessLevel(account, level);\r\n\t\ttry\r\n\t\t{\r\n\t\t\tsendPacket(cal);\r\n\t\t}\r\n\t\tcatch (IOException e)\r\n\t\t{\r\n\t\t\t// Ignore.\r\n\t\t}\r\n\t}\r\n\t\r\n\t/**\r\n\t * Send client tracert.\r\n\t * @param account the account\r\n\t * @param address the address\r\n\t */\r\n\tpublic void sendClientTracert(String account, String[] address)\r\n\t{\r\n\t\tfinal PlayerTracert ptc = new PlayerTracert(account, address[0], address[1], address[2], address[3], address[4]);\r\n\t\ttry\r\n\t\t{\r\n\t\t\tsendPacket(ptc);\r\n\t\t}\r\n\t\tcatch (IOException e)\r\n\t\t{\r\n\t\t\t// Ignore.\r\n\t\t}\r\n\t}\r\n\t\r\n\t/**\r\n\t * Send mail.\r\n\t * @param account the account\r\n\t * @param mailId the mail id\r\n\t * @param args the args\r\n\t */\r\n\tpublic void sendMail(String account, String mailId, String... args)\r\n\t{\r\n\t\tfinal SendMail sem = new SendMail(account, mailId, args);\r\n\t\ttry\r\n\t\t{\r\n\t\t\tsendPacket(sem);\r\n\t\t}\r\n\t\tcatch (IOException e)\r\n\t\t{\r\n\t\t\t// Ignore.\r\n\t\t}\r\n\t}\r\n\t\r\n\t/**\r\n\t * Send temp ban.\r\n\t * @param account the account\r\n\t * @param ip the ip\r\n\t * @param time the time\r\n\t */\r\n\tpublic void sendTempBan(String account, String ip, long time)\r\n\t{\r\n\t\tfinal TempBan tbn = new TempBan(account, ip, time);\r\n\t\ttry\r\n\t\t{\r\n\t\t\tsendPacket(tbn);\r\n\t\t}\r\n\t\tcatch (IOException e)\r\n\t\t{\r\n\t\t\t// Ignore.\r\n\t\t}\r\n\t}\r\n\t\r\n\t/**\r\n\t * Hex to string.\r\n\t * @param hex the hex value\r\n\t * @return the hex value as string\r\n\t */\r\n\tprivate String hexToString(byte[] hex)\r\n\t{\r\n\t\treturn new BigInteger(hex).toString(16);\r\n\t}\r\n\t\r\n\t/**\r\n\t * Kick player for the given account.\r\n\t * @param account the account\r\n\t */\r\n\tprivate void doKickPlayer(String account)\r\n\t{\r\n\t\tfinal GameClient client = _accountsInGameServer.get(account);\r\n\t\tif (client != null)\r\n\t\t{\r\n\t\t\tif (client.isDetached())\r\n\t\t\t{\r\n\t\t\t\tif (client.getPlayer() != null)\r\n\t\t\t\t{\r\n\t\t\t\t\tclient.getPlayer().deleteMe();\r\n\t\t\t\t}\r\n\t\t\t\tclient.close(new SystemMessage(SystemMessageId.YOU_ARE_LOGGED_IN_TO_TWO_PLACES_IF_YOU_SUSPECT_ACCOUNT_THEFT_WE_RECOMMEND_CHANGING_YOUR_PASSWORD_SCANNING_YOUR_COMPUTER_FOR_VIRUSES_AND_USING_AN_ANTI_VIRUS_SOFTWARE));\r\n\t\t\t}\r\n\t\t\telse\r\n\t\t\t{\r\n\t\t\t\tDisconnection.of(client).defaultSequence(new SystemMessage(SystemMessageId.YOU_ARE_LOGGED_IN_TO_TWO_PLACES_IF_YOU_SUSPECT_ACCOUNT_THEFT_WE_RECOMMEND_CHANGING_YOUR_PASSWORD_SCANNING_YOUR_COMPUTER_FOR_VIRUSES_AND_USING_AN_ANTI_VIRUS_SOFTWARE));\r\n\t\t\t\tACCOUNTING_LOGGER.info(\"Kicked by login, \" + client);\r\n\t\t\t}\r\n\t\t}\r\n\t\tsendLogout(account);\r\n\t}\r\n\t\r\n\t/**\r\n\t * Gets the chars on server.\r\n\t * @param account the account\r\n\t */\r\n\tprivate void getCharsOnServer(String account)\r\n\t{\r\n\t\tint chars = 0;\r\n\t\tfinal List<Long> charToDel = new ArrayList<>();\r\n\t\ttry (Connection con = DatabaseFactory.getConnection();\r\n\t\t\tPreparedStatement ps = con.prepareStatement(\"SELECT deletetime FROM characters WHERE account_name=?\"))\r\n\t\t{\r\n\t\t\tps.setString(1, account);\r\n\t\t\ttry (ResultSet rs = ps.executeQuery())\r\n\t\t\t{\r\n\t\t\t\twhile (rs.next())\r\n\t\t\t\t{\r\n\t\t\t\t\tchars++;\r\n\t\t\t\t\tfinal long delTime = rs.getLong(\"deletetime\");\r\n\t\t\t\t\tif (delTime != 0)\r\n\t\t\t\t\t{\r\n\t\t\t\t\t\tcharToDel.add(delTime);\r\n\t\t\t\t\t}\r\n\t\t\t\t}\r\n\t\t\t}\r\n\t\t}\r\n\t\tcatch (SQLException e)\r\n\t\t{\r\n\t\t\tLOGGER.log(Level.WARNING, getClass().getSimpleName() + \": Exception: getCharsOnServer: \" + e.getMessage(), e);\r\n\t\t}\r\n\t\t\r\n\t\tfinal ReplyCharacters rec = new ReplyCharacters(account, chars, charToDel);\r\n\t\ttry\r\n\t\t{\r\n\t\t\tsendPacket(rec);\r\n\t\t}\r\n\t\tcatch (IOException e)\r\n\t\t{\r\n\t\t\t// Ignore.\r\n\t\t}\r\n\t}\r\n\t\r\n\t/**\r\n\t * Send packet.\r\n\t * @param sl the sendable packet\r\n\t * @throws IOException Signals that an I/O exception has occurred.\r\n\t */\r\n\tprivate void sendPacket(BaseSendablePacket sl) throws IOException\r\n\t{\r\n\t\tif (_blowfish == null)\r\n\t\t{\r\n\t\t\treturn;\r\n\t\t}\r\n\t\t\r\n\t\tfinal byte[] data = sl.getContent();\r\n\t\tNewCrypt.appendChecksum(data);\r\n\t\t_blowfish.crypt(data, 0, data.length);\r\n\t\t\r\n\t\tfinal int len = data.length + 2;\r\n\t\tsynchronized (_out) // avoids tow threads writing in the mean time\r\n\t\t{\r\n\t\t\t_out.write(len & 0xff);\r\n\t\t\t_out.write((len >> 8) & 0xff);\r\n\t\t\t_out.write(data);\r\n\t\t\t_out.flush();\r\n\t\t}\r\n\t}\r\n\t\r\n\t/**\r\n\t * Sets the max player.\r\n\t * @param maxPlayer The maxPlayer to set.\r\n\t */\r\n\tpublic void setMaxPlayer(int maxPlayer)\r\n\t{\r\n\t\tsendServerStatus(ServerStatus.MAX_PLAYERS, maxPlayer);\r\n\t\t_maxPlayer = maxPlayer;\r\n\t}\r\n\t\r\n\t/**\r\n\t * Gets the max player.\r\n\t * @return Returns the maxPlayer.\r\n\t */\r\n\tpublic int getMaxPlayer()\r\n\t{\r\n\t\treturn _maxPlayer;\r\n\t}\r\n\t\r\n\t/**\r\n\t * Send server status.\r\n\t * @param id the id\r\n\t * @param value the value\r\n\t */\r\n\tpublic void sendServerStatus(int id, int value)\r\n\t{\r\n\t\tfinal ServerStatus ss = new ServerStatus();\r\n\t\tss.addAttribute(id, value);\r\n\t\ttry\r\n\t\t{\r\n\t\t\tsendPacket(ss);\r\n\t\t}\r\n\t\tcatch (IOException e)\r\n\t\t{\r\n\t\t\t// Ignore.\r\n\t\t}\r\n\t}\r\n\t\r\n\t/**\r\n\t * Send Server Type Config to LS.\r\n\t */\r\n\tpublic void sendServerType()\r\n\t{\r\n\t\tfinal ServerStatus ss = new ServerStatus();\r\n\t\tss.addAttribute(ServerStatus.SERVER_TYPE, Config.SERVER_LIST_TYPE);\r\n\t\ttry\r\n\t\t{\r\n\t\t\tsendPacket(ss);\r\n\t\t}\r\n\t\tcatch (IOException e)\r\n\t\t{\r\n\t\t\t// Ignore.\r\n\t\t}\r\n\t}\r\n\t\r\n\t/**\r\n\t * Send change password.\r\n\t * @param accountName the account name\r\n\t * @param charName the char name\r\n\t * @param oldpass the old pass\r\n\t * @param newpass the new pass\r\n\t */\r\n\tpublic void sendChangePassword(String accountName, String charName, String oldpass, String newpass)\r\n\t{\r\n\t\tfinal ChangePassword cp = new ChangePassword(accountName, charName, oldpass, newpass);\r\n\t\ttry\r\n\t\t{\r\n\t\t\tsendPacket(cp);\r\n\t\t}\r\n\t\tcatch (IOException e)\r\n\t\t{\r\n\t\t\t// Ignore.\r\n\t\t}\r\n\t}\r\n\t\r\n\tpublic int getServerStatus()\r\n\t{\r\n\t\treturn _status;\r\n\t}\r\n\t\r\n\t/**\r\n\t * Gets the status string.\r\n\t * @return the status string\r\n\t */\r\n\tpublic String getStatusString()\r\n\t{\r\n\t\treturn ServerStatus.STATUS_STRING[_status];\r\n\t}\r\n\t\r\n\t/**\r\n\t * Gets the server name.\r\n\t * @return the server name.\r\n\t */\r\n\tpublic String getServerName()\r\n\t{\r\n\t\treturn _serverName;\r\n\t}\r\n\t\r\n\t/**\r\n\t * Sets the server status.\r\n\t * @param status the new server status\r\n\t */\r\n\tpublic void setServerStatus(int status)\r\n\t{\r\n\t\tswitch (status)\r\n\t\t{\r\n\t\t\tcase ServerStatus.STATUS_AUTO:\r\n\t\t\t{\r\n\t\t\t\tsendServerStatus(ServerStatus.SERVER_LIST_STATUS, ServerStatus.STATUS_AUTO);\r\n\t\t\t\t_status = status;\r\n\t\t\t\tbreak;\r\n\t\t\t}\r\n\t\t\tcase ServerStatus.STATUS_DOWN:\r\n\t\t\t{\r\n\t\t\t\tsendServerStatus(ServerStatus.SERVER_LIST_STATUS, ServerStatus.STATUS_DOWN);\r\n\t\t\t\t_status = status;\r\n\t\t\t\tbreak;\r\n\t\t\t}\r\n\t\t\tcase ServerStatus.STATUS_FULL:\r\n\t\t\t{\r\n\t\t\t\tsendServerStatus(ServerStatus.SERVER_LIST_STATUS, ServerStatus.STATUS_FULL);\r\n\t\t\t\t_status = status;\r\n\t\t\t\tbreak;\r\n\t\t\t}\r\n\t\t\tcase ServerStatus.STATUS_GM_ONLY:\r\n\t\t\t{\r\n\t\t\t\tsendServerStatus(ServerStatus.SERVER_LIST_STATUS, ServerStatus.STATUS_GM_ONLY);\r\n\t\t\t\t_status = status;\r\n\t\t\t\tbreak;\r\n\t\t\t}\r\n\t\t\tcase ServerStatus.STATUS_GOOD:\r\n\t\t\t{\r\n\t\t\t\tsendServerStatus(ServerStatus.SERVER_LIST_STATUS, ServerStatus.STATUS_GOOD);\r\n\t\t\t\t_status = status;\r\n\t\t\t\tbreak;\r\n\t\t\t}\r\n\t\t\tcase ServerStatus.STATUS_NORMAL:\r\n\t\t\t{\r\n\t\t\t\tsendServerStatus(ServerStatus.SERVER_LIST_STATUS, ServerStatus.STATUS_NORMAL);\r\n\t\t\t\t_status = status;\r\n\t\t\t\tbreak;\r\n\t\t\t}\r\n\t\t\tdefault:\r\n\t\t\t{\r\n\t\t\t\tthrow new IllegalArgumentException(\"Status does not exists:\" + status);\r\n\t\t\t}\r\n\t\t}\r\n\t}\r\n\t\r\n\tpublic GameClient getClient(String name)\r\n\t{\r\n\t\treturn name != null ? _accountsInGameServer.get(name) : null;\r\n\t}\r\n\t\r\n\tpublic static class SessionKey\r\n\t{\r\n\t\tpublic int playOkID1;\r\n\t\tpublic int playOkID2;\r\n\t\tpublic int loginOkID1;\r\n\t\tpublic int loginOkID2;\r\n\t\t\r\n\t\t/**\r\n\t\t * Instantiates a new session key.\r\n\t\t * @param loginOK1 the login o k1\r\n\t\t * @param loginOK2 the login o k2\r\n\t\t * @param playOK1 the play o k1\r\n\t\t * @param playOK2 the play o k2\r\n\t\t */\r\n\t\tpublic SessionKey(int loginOK1, int loginOK2, int playOK1, int playOK2)\r\n\t\t{\r\n\t\t\tplayOkID1 = playOK1;\r\n\t\t\tplayOkID2 = playOK2;\r\n\t\t\tloginOkID1 = loginOK1;\r\n\t\t\tloginOkID2 = loginOK2;\r\n\t\t}\r\n\t\t\r\n\t\t@Override\r\n\t\tpublic String toString()\r\n\t\t{\r\n\t\t\treturn \"PlayOk: \" + playOkID1 + \" \" + playOkID2 + \" LoginOk:\" + loginOkID1 + \" \" + loginOkID2;\r\n\t\t}\r\n\t}\r\n\t\r\n\tprivate static class WaitingClient\r\n\t{\r\n\t\tpublic String account;\r\n\t\tpublic GameClient gameClient;\r\n\t\tpublic SessionKey session;\r\n\t\t\r\n\t\t/**\r\n\t\t * Instantiates a new waiting client.\r\n\t\t * @param acc the acc\r\n\t\t * @param client the client\r\n\t\t * @param key the key\r\n\t\t */\r\n\t\tpublic WaitingClient(String acc, GameClient client, SessionKey key)\r\n\t\t{\r\n\t\t\taccount = acc;\r\n\t\t\tgameClient = client;\r\n\t\t\tsession = key;\r\n\t\t}\r\n\t}\r\n\t\r\n\tprivate static class SingletonHolder\r\n\t{\r\n\t\tprotected static final LoginServerThread INSTANCE = new LoginServerThread();\r\n\t}\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- java/org/l2jmobius/gameserver/LoginServerThread.java	(revision 2ce68f86cda44aaaf0a5400b7f1e3ed76453bf07)
++++ java/org/l2jmobius/gameserver/LoginServerThread.java	(date 1589285051883)
+@@ -1,16 +1,16 @@
+ /*
+  * This file is part of the L2J Mobius project.
+- * 
++ *
+  * This program is free software: you can redistribute it and/or modify
+  * it under the terms of the GNU General Public License as published by
+  * the Free Software Foundation, either version 3 of the License, or
+  * (at your option) any later version.
+- * 
++ *
+  * This program is distributed in the hope that it will be useful,
+  * but WITHOUT ANY WARRANTY; without even the implied warranty of
+  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
+  * General Public License for more details.
+- * 
++ *
+  * You should have received a copy of the GNU General Public License
+  * along with this program. If not, see <http://www.gnu.org/licenses/>.
+  */
+@@ -80,7 +80,7 @@
+ {
+ 	protected static final Logger LOGGER = Logger.getLogger(LoginServerThread.class.getName());
+ 	protected static final Logger ACCOUNTING_LOGGER = Logger.getLogger("accounting");
+-	
++
+ 	/**
+ 	 * @see org.l2jmobius.loginserver.LoginServer#PROTOCOL_REV
+ 	 */
+@@ -90,7 +90,7 @@
+ 	private final int _gamePort;
+ 	private Socket _loginSocket;
+ 	private OutputStream _out;
+-	
++
+ 	/**
+ 	 * The BlowFish engine used to encrypt packets<br>
+ 	 * It is first initialized with a unified key:<br>
+@@ -111,7 +111,7 @@
+ 	private String _serverName;
+ 	private final List<String> _subnets;
+ 	private final List<String> _hosts;
+-	
++
+ 	/**
+ 	 * Instantiates a new login server thread.
+ 	 */
+@@ -137,7 +137,7 @@
+ 		_hosts = Config.GAME_SERVER_HOSTS;
+ 		_maxPlayer = Config.MAXIMUM_ONLINE_USERS;
+ 	}
+-	
++
+ 	/**
+ 	 * Gets the single instance of LoginServerThread.
+ 	 * @return single instance of LoginServerThread
+@@ -146,7 +146,7 @@
+ 	{
+ 		return SingletonHolder.INSTANCE;
+ 	}
+-	
++
+ 	@Override
+ 	public void run()
+ 	{
+@@ -163,7 +163,7 @@
+ 				_loginSocket = new Socket(_hostname, _port);
+ 				final InputStream in = _loginSocket.getInputStream();
+ 				_out = new BufferedOutputStream(_loginSocket.getOutputStream());
+-				
++
+ 				// init Blowfish
+ 				final byte[] blowfishKey = CommonUtil.generateHex(40);
+ 				_blowfish = new NewCrypt("_;v.]05-31!|+-%xT!^[$\00");
+@@ -177,7 +177,7 @@
+ 						LOGGER.finer(getClass().getSimpleName() + ": Login terminated the connection.");
+ 						break;
+ 					}
+-					
++
+ 					final byte[] incoming = new byte[length - 2];
+ 					int receivedBytes = 0;
+ 					int newBytes = 0;
+@@ -188,13 +188,13 @@
+ 						receivedBytes += newBytes;
+ 						left -= newBytes;
+ 					}
+-					
++
+ 					if (receivedBytes != (length - 2))
+ 					{
+ 						LOGGER.warning(getClass().getSimpleName() + ": Incomplete Packet is sent to the server, closing connection.(LS)");
+ 						break;
+ 					}
+-					
++
+ 					// decrypt if we have a key
+ 					_blowfish.decrypt(incoming, 0, incoming.length);
+ 					checksumOk = NewCrypt.verifyChecksum(incoming);
+@@ -203,7 +203,7 @@
+ 						LOGGER.warning(getClass().getSimpleName() + ": Incorrect packet checksum, ignoring packet (LS)");
+ 						break;
+ 					}
+-					
++
+ 					final int packetType = incoming[0] & 0xff;
+ 					switch (packetType)
+ 					{
+@@ -216,9 +216,9 @@
+ 								LOGGER.warning("/!\\ Revision mismatch between LS and GS /!\\");
+ 								break;
+ 							}
+-							
++
+ 							RSAPublicKey publicKey;
+-							
++
+ 							try
+ 							{
+ 								final KeyFactory kfac = KeyFactory.getInstance("RSA");
+@@ -293,13 +293,13 @@
+ 						case 0x03:
+ 						{
+ 							final PlayerAuthResponse par = new PlayerAuthResponse(incoming);
+-							final String account = par.getAccount();
++							final String token = par.getToken();
+ 							WaitingClient wcToRemove = null;
+ 							synchronized (_waitingClients)
+ 							{
+ 								for (WaitingClient wc : _waitingClients)
+ 								{
+-									if (wc.account.equals(account))
++									if (wc.account.equals(token))
+ 									{
+ 										wcToRemove = wc;
+ 									}
+@@ -314,7 +314,7 @@
+ 									wcToRemove.gameClient.setConnectionState(ConnectionState.AUTHENTICATED);
+ 									wcToRemove.gameClient.setSessionId(wcToRemove.session);
+ 									wcToRemove.gameClient.sendPacket(LoginFail.LOGIN_SUCCESS);
+-									final CharSelectionInfo cl = new CharSelectionInfo(wcToRemove.account, wcToRemove.gameClient.getSessionId().playOkID1);
++									final CharSelectionInfo cl = new CharSelectionInfo(par.getToken(), wcToRemove.gameClient.getSessionId().playOkID1);
+ 									wcToRemove.gameClient.sendPacket(cl);
+ 									wcToRemove.gameClient.setCharSelection(cl.getCharInfo());
+ 								}
+@@ -376,7 +376,7 @@
+ 					// Ignore.
+ 				}
+ 			}
+-			
++
+ 			try
+ 			{
+ 				Thread.sleep(5000); // 5 seconds tempo.
+@@ -387,7 +387,7 @@
+ 			}
+ 		}
+ 	}
+-	
++
+ 	/**
+ 	 * Adds the waiting client and send request.
+ 	 * @param acc the account
+@@ -411,7 +411,7 @@
+ 			LOGGER.warning(getClass().getSimpleName() + ": Error while sending player auth request");
+ 		}
+ 	}
+-	
++
+ 	/**
+ 	 * Removes the waiting client.
+ 	 * @param client the client
+@@ -434,7 +434,7 @@
+ 			}
+ 		}
+ 	}
+-	
++
+ 	/**
+ 	 * Send logout for the given account.
+ 	 * @param account the account
+@@ -459,7 +459,7 @@
+ 			_accountsInGameServer.remove(account);
+ 		}
+ 	}
+-	
++
+ 	/**
+ 	 * Adds the game server login.
+ 	 * @param account the account
+@@ -470,7 +470,7 @@
+ 	{
+ 		return _accountsInGameServer.putIfAbsent(account, client) == null;
+ 	}
+-	
++
+ 	/**
+ 	 * Send access level.
+ 	 * @param account the account
+@@ -488,7 +488,7 @@
+ 			// Ignore.
+ 		}
+ 	}
+-	
++
+ 	/**
+ 	 * Send client tracert.
+ 	 * @param account the account
+@@ -506,7 +506,7 @@
+ 			// Ignore.
+ 		}
+ 	}
+-	
++
+ 	/**
+ 	 * Send mail.
+ 	 * @param account the account
+@@ -525,7 +525,7 @@
+ 			// Ignore.
+ 		}
+ 	}
+-	
++
+ 	/**
+ 	 * Send temp ban.
+ 	 * @param account the account
+@@ -544,7 +544,7 @@
+ 			// Ignore.
+ 		}
+ 	}
+-	
++
+ 	/**
+ 	 * Hex to string.
+ 	 * @param hex the hex value
+@@ -554,7 +554,7 @@
+ 	{
+ 		return new BigInteger(hex).toString(16);
+ 	}
+-	
++
+ 	/**
+ 	 * Kick player for the given account.
+ 	 * @param account the account
+@@ -580,7 +580,7 @@
+ 		}
+ 		sendLogout(account);
+ 	}
+-	
++
+ 	/**
+ 	 * Gets the chars on server.
+ 	 * @param account the account
+@@ -590,7 +590,7 @@
+ 		int chars = 0;
+ 		final List<Long> charToDel = new ArrayList<>();
+ 		try (Connection con = DatabaseFactory.getConnection();
+-			PreparedStatement ps = con.prepareStatement("SELECT deletetime FROM characters WHERE account_name=?"))
++			 PreparedStatement ps = con.prepareStatement("SELECT deletetime FROM characters WHERE account_name=?"))
+ 		{
+ 			ps.setString(1, account);
+ 			try (ResultSet rs = ps.executeQuery())
+@@ -610,7 +610,7 @@
+ 		{
+ 			LOGGER.log(Level.WARNING, getClass().getSimpleName() + ": Exception: getCharsOnServer: " + e.getMessage(), e);
+ 		}
+-		
++
+ 		final ReplyCharacters rec = new ReplyCharacters(account, chars, charToDel);
+ 		try
+ 		{
+@@ -621,7 +621,7 @@
+ 			// Ignore.
+ 		}
+ 	}
+-	
++
+ 	/**
+ 	 * Send packet.
+ 	 * @param sl the sendable packet
+@@ -633,11 +633,11 @@
+ 		{
+ 			return;
+ 		}
+-		
++
+ 		final byte[] data = sl.getContent();
+ 		NewCrypt.appendChecksum(data);
+ 		_blowfish.crypt(data, 0, data.length);
+-		
++
+ 		final int len = data.length + 2;
+ 		synchronized (_out) // avoids tow threads writing in the mean time
+ 		{
+@@ -647,7 +647,7 @@
+ 			_out.flush();
+ 		}
+ 	}
+-	
++
+ 	/**
+ 	 * Sets the max player.
+ 	 * @param maxPlayer The maxPlayer to set.
+@@ -657,7 +657,7 @@
+ 		sendServerStatus(ServerStatus.MAX_PLAYERS, maxPlayer);
+ 		_maxPlayer = maxPlayer;
+ 	}
+-	
++
+ 	/**
+ 	 * Gets the max player.
+ 	 * @return Returns the maxPlayer.
+@@ -666,7 +666,7 @@
+ 	{
+ 		return _maxPlayer;
+ 	}
+-	
++
+ 	/**
+ 	 * Send server status.
+ 	 * @param id the id
+@@ -685,7 +685,7 @@
+ 			// Ignore.
+ 		}
+ 	}
+-	
++
+ 	/**
+ 	 * Send Server Type Config to LS.
+ 	 */
+@@ -702,7 +702,7 @@
+ 			// Ignore.
+ 		}
+ 	}
+-	
++
+ 	/**
+ 	 * Send change password.
+ 	 * @param accountName the account name
+@@ -722,12 +722,12 @@
+ 			// Ignore.
+ 		}
+ 	}
+-	
++
+ 	public int getServerStatus()
+ 	{
+ 		return _status;
+ 	}
+-	
++
+ 	/**
+ 	 * Gets the status string.
+ 	 * @return the status string
+@@ -736,7 +736,7 @@
+ 	{
+ 		return ServerStatus.STATUS_STRING[_status];
+ 	}
+-	
++
+ 	/**
+ 	 * Gets the server name.
+ 	 * @return the server name.
+@@ -745,7 +745,7 @@
+ 	{
+ 		return _serverName;
+ 	}
+-	
++
+ 	/**
+ 	 * Sets the server status.
+ 	 * @param status the new server status
+@@ -796,19 +796,19 @@
+ 			}
+ 		}
+ 	}
+-	
++
+ 	public GameClient getClient(String name)
+ 	{
+ 		return name != null ? _accountsInGameServer.get(name) : null;
+ 	}
+-	
++
+ 	public static class SessionKey
+ 	{
+ 		public int playOkID1;
+ 		public int playOkID2;
+ 		public int loginOkID1;
+ 		public int loginOkID2;
+-		
++
+ 		/**
+ 		 * Instantiates a new session key.
+ 		 * @param loginOK1 the login o k1
+@@ -823,20 +823,20 @@
+ 			loginOkID1 = loginOK1;
+ 			loginOkID2 = loginOK2;
+ 		}
+-		
++
+ 		@Override
+ 		public String toString()
+ 		{
+ 			return "PlayOk: " + playOkID1 + " " + playOkID2 + " LoginOk:" + loginOkID1 + " " + loginOkID2;
+ 		}
+ 	}
+-	
++
+ 	private static class WaitingClient
+ 	{
+ 		public String account;
+ 		public GameClient gameClient;
+ 		public SessionKey session;
+-		
++
+ 		/**
+ 		 * Instantiates a new waiting client.
+ 		 * @param acc the acc
+@@ -850,7 +850,7 @@
+ 			session = key;
+ 		}
+ 	}
+-	
++
+ 	private static class SingletonHolder
+ 	{
+ 		protected static final LoginServerThread INSTANCE = new LoginServerThread();
+Index: java/org/l2jmobius/loginserver/network/clientpackets/RequestAuthLogin.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>/*\r\n * This file is part of the L2J Mobius project.\r\n * \r\n * This program is free software: you can redistribute it and/or modify\r\n * it under the terms of the GNU General Public License as published by\r\n * the Free Software Foundation, either version 3 of the License, or\r\n * (at your option) any later version.\r\n * \r\n * This program is distributed in the hope that it will be useful,\r\n * but WITHOUT ANY WARRANTY; without even the implied warranty of\r\n * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU\r\n * General Public License for more details.\r\n * \r\n * You should have received a copy of the GNU General Public License\r\n * along with this program. If not, see <http://www.gnu.org/licenses/>.\r\n */\r\npackage org.l2jmobius.loginserver.network.clientpackets;\r\n\r\nimport java.net.InetAddress;\r\nimport java.security.GeneralSecurityException;\r\nimport java.util.logging.Level;\r\nimport java.util.logging.Logger;\r\n\r\nimport javax.crypto.Cipher;\r\n\r\nimport org.l2jmobius.Config;\r\nimport org.l2jmobius.commons.network.IIncomingPacket;\r\nimport org.l2jmobius.commons.network.PacketReader;\r\nimport org.l2jmobius.loginserver.GameServerTable.GameServerInfo;\r\nimport org.l2jmobius.loginserver.LoginController;\r\nimport org.l2jmobius.loginserver.LoginController.AuthLoginResult;\r\nimport org.l2jmobius.loginserver.model.data.AccountInfo;\r\nimport org.l2jmobius.loginserver.network.ConnectionState;\r\nimport org.l2jmobius.loginserver.network.LoginClient;\r\nimport org.l2jmobius.loginserver.network.serverpackets.AccountKicked;\r\nimport org.l2jmobius.loginserver.network.serverpackets.AccountKicked.AccountKickedReason;\r\nimport org.l2jmobius.loginserver.network.serverpackets.LoginFail.LoginFailReason;\r\nimport org.l2jmobius.loginserver.network.serverpackets.LoginOk;\r\nimport org.l2jmobius.loginserver.network.serverpackets.ServerList;\r\n\r\n/**\r\n * Format: x 0 (a leading null) x: the rsa encrypted block with the login an password.\r\n */\r\npublic class RequestAuthLogin implements IIncomingPacket<LoginClient>\r\n{\r\n\tprivate static final Logger LOGGER = Logger.getLogger(RequestAuthLogin.class.getName());\r\n\t\r\n\tprivate final byte[] _raw1 = new byte[128];\r\n\tprivate final byte[] _raw2 = new byte[128];\r\n\tprivate boolean _newAuthMethod = false;\r\n\t\r\n\t@Override\r\n\tpublic boolean read(LoginClient client, PacketReader packet)\r\n\t{\r\n\t\tif (packet.getReadableBytes() >= 256)\r\n\t\t{\r\n\t\t\t_newAuthMethod = true;\r\n\t\t\tpacket.readB(_raw1, 0, _raw1.length);\r\n\t\t\tpacket.readB(_raw2, 0, _raw2.length);\r\n\t\t\treturn true;\r\n\t\t}\r\n\t\telse if (packet.getReadableBytes() >= 128)\r\n\t\t{\r\n\t\t\tpacket.readB(_raw1, 0, _raw1.length);\r\n\t\t\treturn true;\r\n\t\t}\r\n\t\treturn false;\r\n\t}\r\n\t\r\n\t@Override\r\n\tpublic void run(LoginClient client)\r\n\t{\r\n\t\tif (Config.ENABLE_CMD_LINE_LOGIN && Config.ONLY_CMD_LINE_LOGIN)\r\n\t\t{\r\n\t\t\treturn;\r\n\t\t}\r\n\t\t\r\n\t\tfinal byte[] decrypted = new byte[_newAuthMethod ? 256 : 128];\r\n\t\ttry\r\n\t\t{\r\n\t\t\tfinal Cipher rsaCipher = Cipher.getInstance(\"RSA/ECB/nopadding\");\r\n\t\t\trsaCipher.init(Cipher.DECRYPT_MODE, client.getScrambledKeyPair().getPrivateKey());\r\n\t\t\trsaCipher.doFinal(_raw1, 0, 128, decrypted, 0);\r\n\t\t\tif (_newAuthMethod)\r\n\t\t\t{\r\n\t\t\t\trsaCipher.doFinal(_raw2, 0, 128, decrypted, 128);\r\n\t\t\t}\r\n\t\t}\r\n\t\tcatch (GeneralSecurityException e)\r\n\t\t{\r\n\t\t\tLOGGER.log(Level.INFO, \"\", e);\r\n\t\t\treturn;\r\n\t\t}\r\n\t\t\r\n\t\tfinal String user;\r\n\t\tfinal String password;\r\n\t\ttry\r\n\t\t{\r\n\t\t\tif (_newAuthMethod)\r\n\t\t\t{\r\n\t\t\t\tuser = new String(decrypted, 0x4E, 50).trim() + new String(decrypted, 0xCE, 14).trim();\r\n\t\t\t\tpassword = new String(decrypted, 0xDC, 16).trim();\r\n\t\t\t}\r\n\t\t\telse\r\n\t\t\t{\r\n\t\t\t\tuser = new String(decrypted, 0x5E, 14).trim();\r\n\t\t\t\tpassword = new String(decrypted, 0x6C, 16).trim();\r\n\t\t\t}\r\n\t\t}\r\n\t\tcatch (Exception e)\r\n\t\t{\r\n\t\t\tLOGGER.log(Level.WARNING, \"\", e);\r\n\t\t\treturn;\r\n\t\t}\r\n\t\t\r\n\t\tfinal InetAddress clientAddr = client.getConnectionAddress();\r\n\t\tfinal LoginController lc = LoginController.getInstance();\r\n\t\tfinal AccountInfo info = lc.retriveAccountInfo(clientAddr, user, password);\r\n\t\tif (info == null)\r\n\t\t{\r\n\t\t\t// user or pass wrong\r\n\t\t\t// client.close(LoginFailReason.REASON_SYSTEM_ERROR);\r\n\t\t\t// above message crashes client\r\n\t\t\t// REASON_ACCOUNT_INFO_INCORRECT_CONTACT_SUPPORT seems ok as well\r\n\t\t\tclient.close(LoginFailReason.REASON_ACCESS_FAILED);\r\n\t\t\treturn;\r\n\t\t}\r\n\t\t\r\n\t\tfinal AuthLoginResult result = lc.tryCheckinAccount(client, clientAddr, info);\r\n\t\tswitch (result)\r\n\t\t{\r\n\t\t\tcase AUTH_SUCCESS:\r\n\t\t\t{\r\n\t\t\t\tclient.setAccount(info.getLogin());\r\n\t\t\t\tclient.setConnectionState(ConnectionState.AUTHED_LOGIN);\r\n\t\t\t\tclient.setSessionKey(lc.assignSessionKeyToClient(info.getLogin(), client));\r\n\t\t\t\tlc.getCharactersOnAccount(info.getLogin());\r\n\t\t\t\tif (Config.SHOW_LICENCE)\r\n\t\t\t\t{\r\n\t\t\t\t\tclient.sendPacket(new LoginOk(client.getSessionKey()));\r\n\t\t\t\t}\r\n\t\t\t\telse\r\n\t\t\t\t{\r\n\t\t\t\t\tclient.sendPacket(new ServerList(client));\r\n\t\t\t\t}\r\n\t\t\t\tbreak;\r\n\t\t\t}\r\n\t\t\tcase INVALID_PASSWORD:\r\n\t\t\t{\r\n\t\t\t\tclient.close(LoginFailReason.REASON_USER_OR_PASS_WRONG);\r\n\t\t\t\tbreak;\r\n\t\t\t}\r\n\t\t\tcase ACCOUNT_BANNED:\r\n\t\t\t{\r\n\t\t\t\tclient.close(new AccountKicked(AccountKickedReason.REASON_PERMANENTLY_BANNED));\r\n\t\t\t\treturn;\r\n\t\t\t}\r\n\t\t\tcase ALREADY_ON_LS:\r\n\t\t\t{\r\n\t\t\t\tfinal LoginClient oldClient = lc.getAuthedClient(info.getLogin());\r\n\t\t\t\tif (oldClient != null)\r\n\t\t\t\t{\r\n\t\t\t\t\t// kick the other client\r\n\t\t\t\t\toldClient.close(LoginFailReason.REASON_ACCOUNT_IN_USE);\r\n\t\t\t\t\tlc.removeAuthedLoginClient(info.getLogin());\r\n\t\t\t\t}\r\n\t\t\t\t// kick also current client\r\n\t\t\t\tclient.close(LoginFailReason.REASON_ACCOUNT_IN_USE);\r\n\t\t\t\tbreak;\r\n\t\t\t}\r\n\t\t\tcase ALREADY_ON_GS:\r\n\t\t\t{\r\n\t\t\t\tfinal GameServerInfo gsi = lc.getAccountOnGameServer(info.getLogin());\r\n\t\t\t\tif (gsi != null)\r\n\t\t\t\t{\r\n\t\t\t\t\tclient.close(LoginFailReason.REASON_ACCOUNT_IN_USE);\r\n\t\t\t\t\t// kick from there\r\n\t\t\t\t\tif (gsi.isAuthed())\r\n\t\t\t\t\t{\r\n\t\t\t\t\t\tgsi.getGameServerThread().kickPlayer(info.getLogin());\r\n\t\t\t\t\t}\r\n\t\t\t\t}\r\n\t\t\t\tbreak;\r\n\t\t\t}\r\n\t\t}\r\n\t}\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- java/org/l2jmobius/loginserver/network/clientpackets/RequestAuthLogin.java	(revision 2ce68f86cda44aaaf0a5400b7f1e3ed76453bf07)
++++ java/org/l2jmobius/loginserver/network/clientpackets/RequestAuthLogin.java	(date 1589284991173)
+@@ -1,16 +1,16 @@
+ /*
+  * This file is part of the L2J Mobius project.
+- * 
++ *
+  * This program is free software: you can redistribute it and/or modify
+  * it under the terms of the GNU General Public License as published by
+  * the Free Software Foundation, either version 3 of the License, or
+  * (at your option) any later version.
+- * 
++ *
+  * This program is distributed in the hope that it will be useful,
+  * but WITHOUT ANY WARRANTY; without even the implied warranty of
+  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
+  * General Public License for more details.
+- * 
++ *
+  * You should have received a copy of the GNU General Public License
+  * along with this program. If not, see <http://www.gnu.org/licenses/>.
+  */
+@@ -44,11 +44,11 @@
+ public class RequestAuthLogin implements IIncomingPacket<LoginClient>
+ {
+ 	private static final Logger LOGGER = Logger.getLogger(RequestAuthLogin.class.getName());
+-	
++
+ 	private final byte[] _raw1 = new byte[128];
+ 	private final byte[] _raw2 = new byte[128];
+ 	private boolean _newAuthMethod = false;
+-	
++
+ 	@Override
+ 	public boolean read(LoginClient client, PacketReader packet)
+ 	{
+@@ -66,7 +66,7 @@
+ 		}
+ 		return false;
+ 	}
+-	
++
+ 	@Override
+ 	public void run(LoginClient client)
+ 	{
+@@ -74,7 +74,7 @@
+ 		{
+ 			return;
+ 		}
+-		
++
+ 		final byte[] decrypted = new byte[_newAuthMethod ? 256 : 128];
+ 		try
+ 		{
+@@ -91,19 +91,19 @@
+ 			LOGGER.log(Level.INFO, "", e);
+ 			return;
+ 		}
+-		
++
+ 		final String user;
+ 		final String password;
+ 		try
+ 		{
+ 			if (_newAuthMethod)
+ 			{
+-				user = new String(decrypted, 0x4E, 50).trim() + new String(decrypted, 0xCE, 14).trim();
++				user = new String(decrypted, 0x4E, 50).trim() + new String(decrypted, 0xCE, 32).trim();
+ 				password = new String(decrypted, 0xDC, 16).trim();
+ 			}
+ 			else
+ 			{
+-				user = new String(decrypted, 0x5E, 14).trim();
++				user = new String(decrypted, 0x5E, 32).trim();
+ 				password = new String(decrypted, 0x6C, 16).trim();
+ 			}
+ 		}
+@@ -112,10 +112,10 @@
+ 			LOGGER.log(Level.WARNING, "", e);
+ 			return;
+ 		}
+-		
++
+ 		final InetAddress clientAddr = client.getConnectionAddress();
+ 		final LoginController lc = LoginController.getInstance();
+-		final AccountInfo info = lc.retriveAccountInfo(clientAddr, user, password);
++		final AccountInfo info = lc.loginValid(user, client);
+ 		if (info == null)
+ 		{
+ 			// user or pass wrong
+@@ -125,7 +125,7 @@
+ 			client.close(LoginFailReason.REASON_ACCESS_FAILED);
+ 			return;
+ 		}
+-		
++
+ 		final AuthLoginResult result = lc.tryCheckinAccount(client, clientAddr, info);
+ 		switch (result)
+ 		{
+Index: java/org/l2jmobius/loginserver/network/clientpackets/RequestAuthLogin2.java
+===================================================================
+--- java/org/l2jmobius/loginserver/network/clientpackets/RequestAuthLogin2.java	(revision 2ce68f86cda44aaaf0a5400b7f1e3ed76453bf07)
++++ java/org/l2jmobius/loginserver/network/clientpackets/RequestAuthLogin2.java	(revision 2ce68f86cda44aaaf0a5400b7f1e3ed76453bf07)
+@@ -1,193 +0,0 @@
+-/*
+- * This file is part of the L2J Mobius project.
+- * 
+- * This program is free software: you can redistribute it and/or modify
+- * it under the terms of the GNU General Public License as published by
+- * the Free Software Foundation, either version 3 of the License, or
+- * (at your option) any later version.
+- * 
+- * This program is distributed in the hope that it will be useful,
+- * but WITHOUT ANY WARRANTY; without even the implied warranty of
+- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
+- * General Public License for more details.
+- * 
+- * You should have received a copy of the GNU General Public License
+- * along with this program. If not, see <http://www.gnu.org/licenses/>.
+- */
+-package org.l2jmobius.loginserver.network.clientpackets;
+-
+-import org.l2jmobius.Config;
+-import org.l2jmobius.commons.network.IIncomingPacket;
+-import org.l2jmobius.commons.network.PacketReader;
+-import org.l2jmobius.loginserver.GameServerTable.GameServerInfo;
+-import org.l2jmobius.loginserver.LoginController;
+-import org.l2jmobius.loginserver.LoginController.AuthLoginResult;
+-import org.l2jmobius.loginserver.model.data.AccountInfo;
+-import org.l2jmobius.loginserver.network.ConnectionState;
+-import org.l2jmobius.loginserver.network.LoginClient;
+-import org.l2jmobius.loginserver.network.serverpackets.AccountKicked;
+-import org.l2jmobius.loginserver.network.serverpackets.AccountKicked.AccountKickedReason;
+-import org.l2jmobius.loginserver.network.serverpackets.LoginFail.LoginFailReason;
+-import org.l2jmobius.loginserver.network.serverpackets.LoginOk;
+-import org.l2jmobius.loginserver.network.serverpackets.ServerList;
+-
+-import javax.crypto.Cipher;
+-import java.net.InetAddress;
+-import java.security.GeneralSecurityException;
+-import java.util.logging.Level;
+-import java.util.logging.Logger;
+-
+-/**
+- * Format: x 0 (a leading null) x: the rsa encrypted block with the login an password.
+- */
+-public class RequestAuthLogin2 implements IIncomingPacket<LoginClient>
+-{
+-	private static final Logger LOGGER = Logger.getLogger(RequestAuthLogin2.class.getName());
+-	
+-	private final byte[] _raw1 = new byte[128];
+-	private final byte[] _raw2 = new byte[128];
+-	private boolean _newAuthMethod = false;
+-	private String _authKey;
+-
+-	@Override
+-	public boolean read(LoginClient client, PacketReader packet)
+-	{
+-		packet.readD(); // Session ID
+-		packet.readD(); // ???
+-		packet.readD(); // ???
+-		packet.readD(); // ???
+-		packet.readD(); // ???
+-		packet.readC(); // ???
+-		packet.readH(); // ???
+-		_authKey = packet.readString();
+-		packet.readC(); // ???
+-		packet.readH(); // ???
+-		packet.readD(); // ???
+-		packet.readString(); // ???
+-		packet.readH(); // ???
+-		packet.readD(); // ???
+-		packet.readD(); // ???
+-		packet.readD(); // ???
+-		packet.readD(); // ???
+-		return false;
+-	}
+-	
+-	@Override
+-	public void run(LoginClient client)
+-	{
+-
+-		LoginController lc = LoginController.getInstance();
+-
+-		AuthLoginResult result = AuthLoginResult.INVALID_PASSWORD;
+-		String user = lc.loginValid(_authKey, client);
+-
+-		final byte[] decrypted = new byte[_newAuthMethod ? 256 : 128];
+-		try
+-		{
+-			final Cipher rsaCipher = Cipher.getInstance("RSA/ECB/nopadding");
+-			rsaCipher.init(Cipher.DECRYPT_MODE, client.getScrambledKeyPair().getPrivateKey());
+-			rsaCipher.doFinal(_raw1, 0, 128, decrypted, 0);
+-			if (_newAuthMethod)
+-			{
+-				rsaCipher.doFinal(_raw2, 0, 128, decrypted, 128);
+-			}
+-		}
+-		catch (GeneralSecurityException e)
+-		{
+-			LOGGER.log(Level.INFO, "", e);
+-			return;
+-		}
+-		
+-
+-		final String password;
+-		try
+-		{
+-			if (_newAuthMethod)
+-			{
+-				user = new String(decrypted, 0x4E, 50).trim() + new String(decrypted, 0xCE, 14).trim();
+-				password = new String(decrypted, 0xDC, 16).trim();
+-			}
+-			else
+-			{
+-				user = new String(decrypted, 0x5E, 14).trim();
+-				password = new String(decrypted, 0x6C, 16).trim();
+-			}
+-		}
+-		catch (Exception e)
+-		{
+-			LOGGER.log(Level.WARNING, "", e);
+-			return;
+-		}
+-		
+-		final InetAddress clientAddr = client.getConnectionAddress();
+-		final LoginController lc = LoginController.getInstance();
+-		final AccountInfo info = lc.retriveAccountInfo(clientAddr, user, password);
+-		if (info == null)
+-		{
+-			// user or pass wrong
+-			// client.close(LoginFailReason.REASON_SYSTEM_ERROR);
+-			// above message crashes client
+-			// REASON_ACCOUNT_INFO_INCORRECT_CONTACT_SUPPORT seems ok as well
+-			client.close(LoginFailReason.REASON_ACCESS_FAILED);
+-			return;
+-		}
+-		
+-		final AuthLoginResult result = lc.tryCheckinAccount(client, clientAddr, info);
+-		switch (result)
+-		{
+-			case AUTH_SUCCESS:
+-			{
+-				client.setAccount(info.getLogin());
+-				client.setConnectionState(ConnectionState.AUTHED_LOGIN);
+-				client.setSessionKey(lc.assignSessionKeyToClient(info.getLogin(), client));
+-				lc.getCharactersOnAccount(info.getLogin());
+-				if (Config.SHOW_LICENCE)
+-				{
+-					client.sendPacket(new LoginOk(client.getSessionKey()));
+-				}
+-				else
+-				{
+-					client.sendPacket(new ServerList(client));
+-				}
+-				break;
+-			}
+-			case INVALID_PASSWORD:
+-			{
+-				client.close(LoginFailReason.REASON_USER_OR_PASS_WRONG);
+-				break;
+-			}
+-			case ACCOUNT_BANNED:
+-			{
+-				client.close(new AccountKicked(AccountKickedReason.REASON_PERMANENTLY_BANNED));
+-				return;
+-			}
+-			case ALREADY_ON_LS:
+-			{
+-				final LoginClient oldClient = lc.getAuthedClient(info.getLogin());
+-				if (oldClient != null)
+-				{
+-					// kick the other client
+-					oldClient.close(LoginFailReason.REASON_ACCOUNT_IN_USE);
+-					lc.removeAuthedLoginClient(info.getLogin());
+-				}
+-				// kick also current client
+-				client.close(LoginFailReason.REASON_ACCOUNT_IN_USE);
+-				break;
+-			}
+-			case ALREADY_ON_GS:
+-			{
+-				final GameServerInfo gsi = lc.getAccountOnGameServer(info.getLogin());
+-				if (gsi != null)
+-				{
+-					client.close(LoginFailReason.REASON_ACCOUNT_IN_USE);
+-					// kick from there
+-					if (gsi.isAuthed())
+-					{
+-						gsi.getGameServerThread().kickPlayer(info.getLogin());
+-					}
+-				}
+-				break;
+-			}
+-		}
+-	}
+-}
+Index: .idea/misc.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"ProjectRootManager\" version=\"2\" languageLevel=\"JDK_X\" default=\"false\" project-jdk-name=\"14\" project-jdk-type=\"JavaSDK\">\r\n    <output url=\"file://$PROJECT_DIR$/out\" />\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- .idea/misc.xml	(revision 2ce68f86cda44aaaf0a5400b7f1e3ed76453bf07)
++++ .idea/misc.xml	(date 1589282304706)
+@@ -1,6 +1,6 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ <project version="4">
+-  <component name="ProjectRootManager" version="2" languageLevel="JDK_X" default="false" project-jdk-name="14" project-jdk-type="JavaSDK">
++  <component name="ProjectRootManager" version="2" languageLevel="JDK_14" default="false" project-jdk-name="14" project-jdk-type="JavaSDK">
+     <output url="file://$PROJECT_DIR$/out" />
+   </component>
+ </project>
+\ No newline at end of file

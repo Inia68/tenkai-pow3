@@ -1,0 +1,36 @@
+DROP TABLE IF EXISTS `account_data`;
+CREATE TABLE IF NOT EXISTS `account_data` (
+  `account_name` VARCHAR(45) NOT NULL DEFAULT '',
+  `var`  VARCHAR(20) NOT NULL DEFAULT '',
+  `value` VARCHAR(255) ,
+  PRIMARY KEY (`account_name`,`var`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;DROP TABLE IF EXISTS `accounts`;
+CREATE TABLE IF NOT EXISTS `accounts` (
+  `login` VARCHAR(45) NOT NULL default '',
+  `password` VARCHAR(45),
+  `email` varchar(255) DEFAULT NULL,
+  `created_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `lastactive` bigint(13) unsigned NOT NULL DEFAULT '0',
+  `accessLevel` TINYINT NOT NULL DEFAULT 0,
+  `lastIP` CHAR(15) NULL DEFAULT NULL,
+  `lastServer` TINYINT DEFAULT 1,
+  `pcIp` char(15) DEFAULT NULL,
+  `hop1` char(15) DEFAULT NULL,
+  `hop2` char(15) DEFAULT NULL,
+  `hop3` char(15) DEFAULT NULL,
+  `hop4` char(15) DEFAULT NULL,
+  PRIMARY KEY (`login`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;DROP TABLE IF EXISTS `accounts_ipauth`;
+CREATE TABLE IF NOT EXISTS `accounts_ipauth` (
+  `login` varchar(45) NOT NULL,
+  `ip` char(15) NOT NULL,
+  `type` enum('deny','allow') NULL DEFAULT 'allow'
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;DROP TABLE IF EXISTS `gameservers`;
+CREATE TABLE IF NOT EXISTS `gameservers` (
+  `server_id` int(11) NOT NULL DEFAULT '0',
+  `hexid` varchar(50) NOT NULL DEFAULT '',
+  `host` varchar(50) NOT NULL DEFAULT '',
+  PRIMARY KEY (`server_id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+INSERT INTO `gameservers` VALUES ('2', '-2ad66b3f483c22be097019f55c8abdf0', '');
