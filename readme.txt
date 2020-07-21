@@ -41,4 +41,5 @@ we didnt encounter any problems during our closed beta (2 weeks).
 
 As i said i used mobius pow1 free to start but as you can see i had fun touching the whole project and as result it became quite different than mobius which mean you probably wont be able to get their next updates.
 Second point is i made these sources to be runnable directly from intellij idea (10x faster for dev purposes), you can run your prod server from idea its not a problem but you have to know its not optimized / made for that.
-I wrote those two points to warn you: these srcs arn't easy to handle, you have to know what you're doing and have a competent team with you.
+And finally i added kotlin to the srcs for some classes
+I wrote those three points to warn you: these srcs arn't easy to handle, you have to know what you're doing and have a competent team with you.
