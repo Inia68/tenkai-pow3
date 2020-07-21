@@ -33,7 +33,7 @@ The pow3 packets should be 100% done but i may be have forgot something since i 
 
  - First point: As i said i used mobius pow1 free to start but as you can see i had fun touching the whole project and as result it became quite different than mobius which mean you probably wont be able to get their next updates.
 
- - Second point:  is i made these sources to be runnable directly from intellij idea (10x faster for dev purposes), you can run your prod server from idea its not a problem but you have to know its not optimized / made for that.
+ - Second point: i made these sources to be runnable directly from intellij idea (for dev purposes), you can run your prod server from idea its not a problem but you have to know its not optimized / made for that.
 
  - Third Point: i added kotlin to the srcs for some classes
 
