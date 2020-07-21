@@ -2,6 +2,7 @@
 
 I  will maybe put public my homunculus sources soon aswell if this repo got some merge requests
 
+We created a open-source channel aswell if you have any question: [Join the discord's channel](https://discord.gg/7U5bJUy)
 
 ### TODO: 
 - Datapack isnt 100% complete
