@@ -41,3 +41,4 @@ The pow3 packets should be 100% done but i may be have forgot something since i 
 >I wrote those three points to warn you: these srcs arn't easy to handle, you have to know what you're doing and have a competent team with you.
 
 
+If you're willing to pay for support you can contact me on discord
